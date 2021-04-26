@@ -1,6 +1,6 @@
 # Authentication
 
-For general information on how to authenticate on publiq APIs, see the [global Authentication documentation](https://publiq.stoplight.io/docs/authentication/docs/Introduction.md).
+For general information on how to authenticate on publiq APIs, see the [global Authentication documentation](https://publiq.stoplight.io/docs/authentication/docs/Overview.md).
 
 ## Entry API
 
