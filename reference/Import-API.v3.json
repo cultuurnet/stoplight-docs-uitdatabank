@@ -1,0 +1,511 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Import API Reference",
+    "version": "3.0",
+    "contact": {
+      "email": "vragen@publiq.be"
+    },
+    "description": "Import and update events, places and organizers as complete JSON documents in UiTDatabank."
+  },
+  "servers": [
+    {
+      "url": "https://io.uitdatabank.be/imports",
+      "description": "Production"
+    },
+    {
+      "url": "https://io-test.uitdatabank.be/imports",
+      "description": "Testing"
+    }
+  ],
+  "paths": {
+    "/events/": {
+      "post": {
+        "summary": "Import a new event",
+        "operationId": "import-new-event",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "UUID of the created event."
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "54646d8f-994e-4509-8a8c-01fed8f9a241"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiProblem"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "title": "These rules must pass for { \"@id\": \"https://io-test.uitdatabank.be/event/073fdab8-89ad-4b15-892b-b1d95b85dfb9\" }",
+                      "validation_messages": [
+                        "Key mainLanguage must be present",
+                        "Key name must be present",
+                        "Key terms must be present",
+                        "Key calendarType must be present",
+                        "Key location must be present"
+                      ],
+                      "type": "about:blank",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventImport"
+              },
+              "examples": {
+                "Single day": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Example name"
+                    },
+                    "calendarType": "single",
+                    "startDate": "2021-01-01T16:00:00+01:00",
+                    "endDate": "2021-01-01T17:00:00+01:00",
+                    "terms": [
+                      {
+                        "id": "0.50.4.0.0"
+                      }
+                    ],
+                    "location": {
+                      "@id": "https://io.uitdatabank.be/places/ADCB5AEB-37C3-4812-9D16-F1676093600F"
+                    }
+                  }
+                },
+                "Multiple days": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Example name"
+                    },
+                    "calendarType": "multiple",
+                    "startDate": "2021-01-01T16:00:00+01:00",
+                    "endDate": "2021-02-01T17:00:00+01:00",
+                    "subEvent": [
+                      {
+                        "startDate": "2021-01-01T16:00:00+01:00",
+                        "endDate": "2021-01-01T17:00:00+01:00"
+                      },
+                      {
+                        "startDate": "2021-02-01T16:00:00+01:00",
+                        "endDate": "2021-02-01T17:00:00+01:00"
+                      }
+                    ],
+                    "terms": [
+                      {
+                        "id": "0.50.4.0.0"
+                      }
+                    ],
+                    "location": {
+                      "@id": "https://io.uitdatabank.be/places/ADCB5AEB-37C3-4812-9D16-F1676093600F"
+                    }
+                  }
+                },
+                "With base price": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Example name"
+                    },
+                    "calendarType": "single",
+                    "startDate": "2021-01-01T16:00:00+01:00",
+                    "endDate": "2021-01-01T17:00:00+01:00",
+                    "terms": [
+                      {
+                        "id": "0.50.4.0.0"
+                      }
+                    ],
+                    "location": {
+                      "@id": "https://io.uitdatabank.be/places/ADCB5AEB-37C3-4812-9D16-F1676093600F"
+                    },
+                    "priceInfo": [
+                      {
+                        "category": "base",
+                        "price": 10,
+                        "priceCurrency": "EUR"
+                      }
+                    ]
+                  }
+                },
+                "With extra price tariffs": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Example name"
+                    },
+                    "calendarType": "single",
+                    "startDate": "2021-01-01T16:00:00+01:00",
+                    "endDate": "2021-01-01T17:00:00+01:00",
+                    "terms": [
+                      {
+                        "id": "0.50.4.0.0"
+                      }
+                    ],
+                    "location": {
+                      "@id": "https://io.uitdatabank.be/places/ADCB5AEB-37C3-4812-9D16-F1676093600F"
+                    },
+                    "priceInfo": [
+                      {
+                        "category": "base",
+                        "price": 10,
+                        "priceCurrency": "EUR"
+                      },
+                      {
+                        "category": "tariff",
+                        "name": {
+                          "nl": "Jongeren"
+                        },
+                        "price": 8,
+                        "priceCurrency": "EUR"
+                      },
+                      {
+                        "category": "tariff",
+                        "name": {
+                          "nl": "Senioren"
+                        },
+                        "price": 6,
+                        "priceCurrency": "EUR"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "description": "The new event to import."
+        },
+        "description": "Imports a new event from a complete JSON document."
+      }
+    },
+    "/events/{eventId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "eventId",
+          "in": "path",
+          "required": true,
+          "description": "UUID of the event in UiTDatabank"
+        }
+      ],
+      "put": {
+        "summary": "Import and update an existing event",
+        "operationId": "update-existing-event",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "UUID of the updated event."
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiProblem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "description": "Updates an existing event from a complete JSON document.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventImport"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiProblem": {
+        "description": "Problem details as described in https://tools.ietf.org/html/rfc7807.",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Error message",
+            "readOnly": true
+          },
+          "validation_messages": {
+            "type": "array",
+            "description": "More detailed validation messages if multiple validation problems were encountered.",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            },
+            "readOnly": true
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Problem type as described in https://tools.ietf.org/html/rfc7807. Usually \"about:blank\"",
+            "readOnly": true
+          },
+          "status": {
+            "type": "number",
+            "description": "Problem status code. Usually the same as the HTTP status code, e.g. 400, 404, 500, ...",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "title",
+          "type",
+          "status"
+        ],
+        "x-examples": {}
+      },
+      "TranslatableString": {
+        "description": "Object with values per language code. Requires at least one language code to be set, usually the one specified in the mainLanguage property of the entity.",
+        "type": "object",
+        "title": "TranslatableString",
+        "properties": {
+          "en": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nl": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fr": {
+            "type": "string",
+            "minLength": 1
+          },
+          "de": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "MainLanguage": {
+        "type": "string",
+        "title": "MainLanguage",
+        "enum": [
+          "nl",
+          "fr",
+          "de",
+          "en"
+        ],
+        "description": "The original language that the document is written in. Every translatable property on the document will be required to at least have this language code set."
+      },
+      "Date": {
+        "type": "string",
+        "title": "Date",
+        "pattern": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2})\\:(\\d{2})\\:(\\d{2})[+-](\\d{2})\\:(\\d{2})",
+        "description": "An ISO-8601 datetime string.",
+        "x-examples": {
+          "Example": "2012-10-06T04:13:00+00:00"
+        }
+      },
+      "SubEvent": {
+        "description": "A single occurence of an event that takes place multiple times.",
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "endDate": {
+            "$ref": "#/components/schemas/Date"
+          }
+        },
+        "required": [
+          "startDate",
+          "endDate"
+        ],
+        "title": "SubEvent"
+      },
+      "Term": {
+        "title": "Term",
+        "type": "object",
+        "description": "A taxonomy term. Events and places require at least one \"eventtype\" term.",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "EventImport": {
+        "type": "object",
+        "title": "EventImport",
+        "properties": {
+          "mainLanguage": {
+            "$ref": "#/components/schemas/MainLanguage"
+          },
+          "name": {
+            "$ref": "#/components/schemas/TranslatableString"
+          },
+          "calendarType": {
+            "type": "string",
+            "enum": [
+              "single",
+              "multiple",
+              "periodic",
+              "permanent"
+            ],
+            "description": "What kind of calendar info the event will have. Single or multiple is recommended for events."
+          },
+          "startDate": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "endDate": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "subEvent": {
+            "type": "array",
+            "uniqueItems": true,
+            "description": "Required if calendar type is \"multiple\"",
+            "items": {
+              "$ref": "#/components/schemas/SubEvent"
+            }
+          },
+          "terms": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/Term"
+            }
+          },
+          "location": {
+            "type": "object",
+            "required": [
+              "@id"
+            ],
+            "properties": {
+              "@id": {
+                "type": "string",
+                "description": "URL of the place that should be linked as location.",
+                "example": "https://io.uitdatabank.be/places/ADCB5AEB-37C3-4812-9D16-F1676093600F"
+              }
+            }
+          },
+          "priceInfo": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "description": "The various price tariffs of tickets for the event",
+            "items": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "base",
+                    "tariff"
+                  ],
+                  "description": "\"base\" for the standard price or \"tariff\" for special prices for youth, seniors, etc. If \"tariff\" the name property is required."
+                },
+                "name": {
+                  "$ref": "#/components/schemas/TranslatableString"
+                },
+                "price": {
+                  "type": "number",
+                  "description": "Price as a float"
+                },
+                "priceCurrency": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "category"
+              ]
+            }
+          }
+        },
+        "required": [
+          "mainLanguage",
+          "name",
+          "calendarType",
+          "startDate",
+          "endDate",
+          "terms",
+          "location"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "X-Api-Key": {
+        "name": "X-Api-Key",
+        "type": "apiKey",
+        "in": "header",
+        "description": ""
+      },
+      "JWT": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    },
+    {
+      "X-Api-Key": []
+    }
+  ]
+}
