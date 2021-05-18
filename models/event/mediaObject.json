@@ -34,7 +34,7 @@
       "description": "Name of the copyright holder of the media object."
     },
     "language": {
-      "$ref": "./language.json"
+      "$ref": "../language.json"
     }
   },
   "required": [
