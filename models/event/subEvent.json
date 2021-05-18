@@ -1,50 +1,80 @@
 {
   "title": "subEvent",
-  "description": "A single occurence of an event on events with calendarType `multiple`.",
-  "type": "object",
+  "type": "array",
+  "description": "A list of occurences of the event when using calendarTypes `single` or `multiple`.",
+  "items": {
+    "type": "object",
+    "x-examples": {
+      "Available": {
+        "startDate": "2021-05-17T16:00:00+00:00",
+        "endDate": "2021-05-17T22:00:00+00:00",
+        "status": {
+          "type": "available"
+        }
+      },
+      "Temporarily Unavailable": {
+        "startDate": "2021-05-17T16:00:00+00:00",
+        "endDate": "2021-05-17T22:00:00+00:00",
+        "status": {
+          "type": "temporarilyUnavailable",
+          "reason": {
+            "nl": "Uitgesteld wegens covid-19"
+          }
+        }
+      },
+      "Unavailable": {
+        "startDate": "2021-05-17T16:00:00+00:00",
+        "endDate": "2021-05-17T22:00:00+00:00",
+        "status": {
+          "type": "unavailable",
+          "reason": {
+            "nl": "Afgelast wegens onvoorziene omstandigheden"
+          }
+        }
+      }
+    },
+    "properties": {
+      "startDate": {
+        "$ref": "./startDate.json"
+      },
+      "endDate": {
+        "$ref": "./endDate.json"
+      },
+      "status": {
+        "$ref": "./status.json"
+      }
+    },
+    "required": [
+      "startDate",
+      "endDate",
+      "status"
+    ]
+  },
   "x-examples": {
-    "Available": {
-      "startDate": "2021-05-17T16:00:00+00:00",
-      "endDate": "2021-05-17T22:00:00+00:00",
-      "status": {
-        "type": "available"
-      }
-    },
-    "Temporarily Unavailable": {
-      "startDate": "2021-05-17T16:00:00+00:00",
-      "endDate": "2021-05-17T22:00:00+00:00",
-      "status": {
-        "type": "temporarilyUnavailable",
-        "reason": {
-          "nl": "Uitgesteld wegens covid-19"
+    "Single": [
+      {
+        "startDate": "2021-05-17T16:00:00+00:00",
+        "endDate": "2021-05-17T22:00:00+00:00",
+        "status": {
+          "type": "available"
         }
       }
-    },
-    "Unavailable": {
-      "startDate": "2021-05-17T16:00:00+00:00",
-      "endDate": "2021-05-17T22:00:00+00:00",
-      "status": {
-        "type": "unavailable",
-        "reason": {
-          "nl": "Afgelast wegens onvoorziene omstandigheden"
+    ],
+    "Multiple": [
+      {
+        "startDate": "2021-05-17T16:00:00+00:00",
+        "endDate": "2021-05-17T22:00:00+00:00",
+        "status": {
+          "type": "available"
+        }
+      },
+      {
+        "startDate": "2021-05-20T16:00:00+00:00",
+        "endDate": "2021-05-20T22:00:00+00:00",
+        "status": {
+          "type": "available"
         }
       }
-    }
-  },
-  "properties": {
-    "startDate": {
-      "$ref": "./startDate.json"
-    },
-    "endDate": {
-      "$ref": "./endDate.json"
-    },
-    "status": {
-      "$ref": "./status.json"
-    }
-  },
-  "required": [
-    "startDate",
-    "endDate",
-    "status"
-  ]
+    ]
+  }
 }

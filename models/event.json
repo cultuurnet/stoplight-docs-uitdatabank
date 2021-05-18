@@ -26,13 +26,7 @@
       "$ref": "./event/status.json"
     },
     "subEvent": {
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "description": "A list of individual date & time occurences that the event takes place.",
-      "items": {
-        "$ref": "./event/subEvent.json"
-      }
+      "$ref": "./event/subEvent.json"
     },
     "openingHours": {
       "type": "array",
