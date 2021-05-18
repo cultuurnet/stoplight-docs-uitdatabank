@@ -1,0 +1,19 @@
+{
+  "title": "audience",
+  "type": "object",
+  "description": "Indicates the intended audience of the event.",
+  "properties": {
+    "audienceType": {
+      "type": "string",
+      "enum": [
+        "everyone",
+        "member",
+        "education"
+      ],
+      "description": "Indicates whether the event or place is accessible to everyone, members only, or education only."
+    }
+  },
+  "required": [
+    "audienceType"
+  ]
+}
