@@ -1,0 +1,6 @@
+{
+  "type": "string",
+  "title": "image",
+  "description": "URL to the main image of the event or place.",
+  "format": "uri"
+}

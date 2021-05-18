@@ -1,0 +1,49 @@
+{
+  "title": "mediaObject",
+  "type": "object",
+  "description": "A single media object, for example an image.",
+  "properties": {
+    "@id": {
+      "$ref": "./@id.json"
+    },
+    "@type": {
+      "type": "string",
+      "description": "Indicates the type of the media object. Currently only `schema:ImageObject` is supported (images).",
+      "enum": [
+        "schema:ImageObject"
+      ]
+    },
+    "contentUrl": {
+      "type": "string",
+      "description": "URL of the media object file.",
+      "format": "uri",
+      "example": "https://io-test.uitdatabank.be/images/example.png"
+    },
+    "thumbnailUrl": {
+      "type": "string",
+      "description": "URL to a thumbnail image of the media object file.",
+      "format": "uri",
+      "example": "https://io-test.uitdatabank.be/images/example.png"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the media object, in the language used in the `language` property of the media object."
+    },
+    "copyrightHolder": {
+      "type": "string",
+      "description": "Name of the copyright holder of the media object."
+    },
+    "language": {
+      "$ref": "./language.json"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "contentUrl",
+    "thumbnailUrl",
+    "description",
+    "copyrightHolder",
+    "language"
+  ]
+}

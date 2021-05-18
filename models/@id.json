@@ -4,7 +4,7 @@
   "minLength": 1,
   "format": "uri",
   "example": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
-  "description": "A unique URI that acts as globally unique ID for the event, place or organizer. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
+  "description": "A unique URI that acts as globally unique ID for the entity. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
   "readOnly": true,
   "x-examples": {
     "Event example": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3"
