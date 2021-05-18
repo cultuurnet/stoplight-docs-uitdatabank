@@ -1,0 +1,5 @@
+{
+  "$ref": "./date.json",
+  "title": "availableTo",
+  "description": "The last date & time that the event or place is allowed to be visible on publication channels.\nUsually derived from `endDate`, but in some edge cases it can deviate."
+}

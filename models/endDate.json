@@ -1,0 +1,8 @@
+{
+  "$ref": "./date.json",
+  "description": "The date & time that an event, subEvent, or (periodic) place ends.\n\n- event: The very last date & time that the event ends\n- subEvent: The end date & time of this specific occurence of the event\n- place: The end date & time of the period that the `periodic` place exists (see `calendarType`)\n\nAlways required on subEvents.\n\nRequired on events and places when using one of the following calendarTypes:\n\n- single\n- multiple\n- periodic",
+  "title": "endDate",
+  "x-examples": {
+    "Example": "2021-05-17T22:00:00+00:00"
+  }
+}
