@@ -1,4 +1,6 @@
-# UiTdatabank
+![](../assets/images/uitdatabank.png)
+
+# Introduction
 
 Welcome to the UiTdatabank API documentation! 👋
 
