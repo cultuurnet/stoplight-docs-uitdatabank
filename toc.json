@@ -155,6 +155,40 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "title": "Place",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "models/place.json"
+        },
+        {
+          "type": "group",
+          "title": "Properties",
+          "items": [
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Organizer",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "models/organizer.json"
+        },
+        {
+          "type": "group",
+          "title": "Properties",
+          "items": [
+          ]
+        }
+      ]
     }
   ]
 }
