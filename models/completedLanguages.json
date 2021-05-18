@@ -1,0 +1,8 @@
+{
+  "title": "completedLanguages",
+  "description": "List of languages that the event, place or organizer is completely available in. All localizable properties are guaranteed to have this language (except optional properties that may not be present at all).",
+  "type": "array",
+  "items": {
+    "$ref": "./language.json"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "$ref": "./language.json",
+  "description": "The main language that an event, place or organizer is described in. All localized properties will be required to have at least a value for this language.",
+  "title": "mainLanguage"
+}

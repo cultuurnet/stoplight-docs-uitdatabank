@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": "language",
+  "description": "One of the language codes supported by UiTdatabank.",
+  "enum": [
+    "nl",
+    "fr",
+    "de",
+    "en"
+  ],
+  "example": "nl"
+}
