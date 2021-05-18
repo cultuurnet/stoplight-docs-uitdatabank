@@ -1,49 +1,74 @@
 {
+  "type": "array",
   "title": "mediaObject",
-  "type": "object",
-  "description": "A single media object, for example an image.",
-  "properties": {
-    "@id": {
-      "$ref": "./@id.json"
-    },
-    "@type": {
-      "type": "string",
-      "description": "Indicates the type of the media object. Currently only `schema:ImageObject` is supported (images).",
-      "enum": [
-        "schema:ImageObject"
-      ]
-    },
-    "contentUrl": {
-      "type": "string",
-      "description": "URL of the media object file.",
-      "format": "uri",
-      "example": "https://io-test.uitdatabank.be/images/example.png"
-    },
-    "thumbnailUrl": {
-      "type": "string",
-      "description": "URL to a thumbnail image of the media object file.",
-      "format": "uri",
-      "example": "https://io-test.uitdatabank.be/images/example.png"
-    },
-    "description": {
-      "type": "string",
-      "description": "Description of the media object, in the language used in the `language` property of the media object."
-    },
-    "copyrightHolder": {
-      "type": "string",
-      "description": "Name of the copyright holder of the media object."
-    },
-    "language": {
-      "$ref": "../language.json"
-    }
+  "description": "A list of media objects related to the event, for example images.",
+  "minItems": 1,
+  "x-examples": {
+    "Example": [
+      {
+        "@id": "https://io.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+        "@type": "schema:ImageObject",
+        "contentUrl": "https://io-test.uitdatabank.be/images/example.png",
+        "thumbnailUrl": "https://io-test.uitdatabank.be/images/example.png",
+        "description": "Een voorbeeld beschrijving",
+        "copyrightHolder": "Jan",
+        "language": "nl"
+      }
+    ]
   },
-  "required": [
-    "@id",
-    "@type",
-    "contentUrl",
-    "thumbnailUrl",
-    "description",
-    "copyrightHolder",
-    "language"
-  ]
+  "items": {
+    "type": "object",
+    "properties": {
+      "@id": {
+        "type": "string",
+        "minLength": 1,
+        "format": "uri",
+        "example": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
+        "description": "A unique URI that acts as globally unique ID for the media object. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
+        "readOnly": true,
+        "x-examples": {
+          "Event example": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3"
+        }
+      },
+      "@type": {
+        "type": "string",
+        "description": "Indicates the type of the media object. Currently only `schema:ImageObject` is supported (images).",
+        "enum": [
+          "schema:ImageObject"
+        ]
+      },
+      "contentUrl": {
+        "type": "string",
+        "description": "URL of the media object file.",
+        "format": "uri",
+        "example": "https://io-test.uitdatabank.be/images/example.png"
+      },
+      "thumbnailUrl": {
+        "type": "string",
+        "description": "URL to a thumbnail image of the media object file.",
+        "format": "uri",
+        "example": "https://io-test.uitdatabank.be/images/example.png"
+      },
+      "description": {
+        "type": "string",
+        "description": "Description of the media object, in the language used in the `language` property of the media object."
+      },
+      "copyrightHolder": {
+        "type": "string",
+        "description": "Name of the copyright holder of the media object."
+      },
+      "language": {
+        "$ref": "../language.json"
+      }
+    },
+    "required": [
+      "@id",
+      "@type",
+      "contentUrl",
+      "thumbnailUrl",
+      "description",
+      "copyrightHolder",
+      "language"
+    ]
+  }
 }
