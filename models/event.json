@@ -68,7 +68,7 @@
       "$ref": "./event/workflowStatus.json"
     },
     "audience": {
-      "$ref": "./event/event/audience.json"
+      "$ref": "./event/audience.json"
     },
     "languages": {
       "$ref": "./event/languages.json"
