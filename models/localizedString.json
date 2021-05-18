@@ -15,19 +15,19 @@
   "properties": {
     "nl": {
       "type": "string",
-      "description": "Nederlandse tekst"
+      "description": "Dutch translation"
     },
     "fr": {
       "type": "string",
-      "description": "Text français"
+      "description": "French translation"
     },
     "de": {
       "type": "string",
-      "description": "Deutscher Text"
+      "description": "German translation"
     },
     "en": {
       "type": "string",
-      "description": "English text"
+      "description": "English translation"
     }
   }
 }
