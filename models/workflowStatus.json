@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": "workflowStatus",
+  "description": "The status of an event or place in the moderation workflow.",
+  "enum": [
+    "DRAFT",
+    "READY_FOR_VALIDATION",
+    "APPROVED",
+    "DELETED"
+  ],
+  "x-examples": {}
+}
