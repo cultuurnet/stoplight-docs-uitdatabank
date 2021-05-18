@@ -5,18 +5,154 @@
       "title": "Models"
     },
     {
-      "type": "item",
-      "title": "Event",
-      "uri": "models/event.json"
-    },
-    {
       "type": "group",
-      "title": "Properties",
+      "title": "Event",
       "items": [
         {
           "type": "item",
-          "title": "@id",
-          "uri": "models/@id.json"
+          "title": "Overview",
+          "uri": "models/event.json"
+        },
+        {
+          "type": "group",
+          "title": "Properties",
+          "items": [
+            {
+              "type": "item",
+              "title": "@id",
+              "uri": "models/@id.json"
+            },
+            {
+              "type": "item",
+              "title": "mainLanguage",
+              "uri": "models/mainLanguage.json"
+            },
+            {
+              "type": "item",
+              "title": "languages",
+              "uri": "models/languages.json"
+            },
+            {
+              "type": "item",
+              "title": "completedLanguages",
+              "uri": "models/completedLanguages.json"
+            },
+            {
+              "type": "item",
+              "title": "name",
+              "uri": "models/name.json"
+            },
+            {
+              "type": "item",
+              "title": "description",
+              "uri": "models/description.json"
+            },
+            {
+              "type": "item",
+              "title": "terms",
+              "uri": "models/terms.json"
+            },
+            {
+              "type": "item",
+              "title": "calendarType",
+              "uri": "models/calendarType.json"
+            },
+            {
+              "type": "item",
+              "title": "startDate",
+              "uri": "models/startDate.json"
+            },
+            {
+              "type": "item",
+              "title": "endDate",
+              "uri": "models/endDate.json"
+            },
+            {
+              "type": "item",
+              "title": "subEvent",
+              "uri": "models/subEvent.json"
+            },
+            {
+              "type": "item",
+              "title": "openingHours",
+              "uri": "models/openingHours.json"
+            },
+            {
+              "type": "item",
+              "title": "availableFrom",
+              "uri": "models/availableFrom.json"
+            },
+            {
+              "type": "item",
+              "title": "availableTo",
+              "uri": "models/availableTo.json"
+            },
+            {
+              "type": "item",
+              "title": "status",
+              "uri": "models/status.json"
+            },
+            {
+              "type": "item",
+              "title": "audience",
+              "uri": "models/audience.json"
+            },
+            {
+              "type": "item",
+              "title": "typicalAgeRange",
+              "uri": "models/typicalAgeRange.json"
+            },
+            {
+              "type": "item",
+              "title": "contactPoint",
+              "uri": "models/contactPoint.json"
+            },
+            {
+              "type": "item",
+              "title": "bookingInfo",
+              "uri": "models/bookingInfo.json"
+            },
+            {
+              "type": "item",
+              "title": "priceInfo",
+              "uri": "models/priceInfo.json"
+            },
+            {
+              "type": "item",
+              "title": "mediaObject",
+              "uri": "models/mediaObject.json"
+            },
+            {
+              "type": "item",
+              "title": "image",
+              "uri": "models/image.json"
+            },
+            {
+              "type": "item",
+              "title": "creator",
+              "uri": "models/creator.json"
+            },
+            {
+              "type": "item",
+              "title": "created",
+              "uri": "models/created.json"
+            },
+            {
+              "type": "item",
+              "title": "modified",
+              "uri": "models/modified.json"
+            },
+            {
+              "type": "item",
+              "title": "workflowStatus",
+              "uri": "models/workflowStatus.json"
+            },
+            {
+              "type": "item",
+              "title": "sameAs",
+              "uri": "models/sameAs.json"
+            }
+          ]
         }
       ]
     }
