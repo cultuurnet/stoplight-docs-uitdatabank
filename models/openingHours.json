@@ -2,6 +2,19 @@
   "title": "openingHours",
   "type": "object",
   "description": "Indicates the start and end time of a periodic event, or opening and closing time of a place, on one or more specific weekdays.",
+  "x-examples": {
+    "Example": {
+      "opens": "09:00",
+      "closes": "17:00",
+      "dayOfWeek": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ]
+    }
+  },
   "properties": {
     "opens": {
       "$ref": "./openingHoursTime.json"
@@ -13,6 +26,7 @@
       "type": "array",
       "uniqueItems": true,
       "minItems": 1,
+      "description": "One or more days that the opening and closing hour are applicable for.",
       "items": {
         "type": "string",
         "enum": [
@@ -32,18 +46,5 @@
     "opens",
     "closes",
     "dayOfWeek"
-  ],
-  "x-examples": {
-    "Example": {
-      "opens": "09:00",
-      "closes": "17:00",
-      "dayOfWeek": [
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday"
-      ]
-    }
-  }
+  ]
 }
