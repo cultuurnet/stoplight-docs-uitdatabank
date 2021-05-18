@@ -1,5 +1,5 @@
 {
   "$ref": "../localizedString.json",
   "title": "description",
-  "description": "The description of an event. \n\nRequires at least one value, for the language specified in the `mainLanguage` property."
+  "description": "The description of the event. \n\nRequires at least one value, for the language specified in the `mainLanguage` property."
 }

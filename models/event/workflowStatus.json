@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "workflowStatus",
-  "description": "The status of an event or place in the moderation workflow.\n\nCan be one of four types:\n\n- `DRAFT`: The event is still a draft and should not be visible on publication channels\n- `READY_FOR_VALIDATION`: The event is submitted for validation. Some publication channels may choose to show these\n- `APPROVED`: The event is approved and will be visible on all publication channels (depending on its `availableFrom` and `availableTo`)\n- `DELETED`: The event was deleted and should not be visible on any publication channels.",
+  "description": "The status of an event in the moderation workflow.\n\nCan be one of four types:\n\n- `DRAFT`: The event is still a draft and should not be visible on publication channels\n- `READY_FOR_VALIDATION`: The event is submitted for validation. Some publication channels may choose to show these\n- `APPROVED`: The event is approved and will be visible on all publication channels (depending on its `availableFrom` and `availableTo`)\n- `DELETED`: The event was deleted and should not be visible on any publication channels.",
   "enum": [
     "DRAFT",
     "READY_FOR_VALIDATION",
