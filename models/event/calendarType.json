@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "calendarType",
-  "description": "Indicates how the event is planned based on 1 of 4 possible types.\n\n- `single`: The event happens once (on one day or spanning multiple days)\n- `multiple`: The event happens multiple times, on _specific_ dates\n- `periodic`: The event spans a longer period of time, optionally with a recurring weekscheme (as defined in `openingHours`)\n- `permanent`: The event has no planned end date, optionally with a recurring weekscheme (as defined in `openingHours`). *Not recommended for events, consider creating a place instead*",
+  "description": "Possible values: `single`, `multiple`, `periodic`, `permanent`.\n\n## single\n\nFor events that take place at one single day (f.e. a concert of Radiohead) and events with only one start and end date (f.e. camping from monday until sunday).\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\nCan have 1 [subEvent](./subEvent.json).\n\n## multiple\n\nFor events that take place on several occasions, whether or not contiguous (f.e. a festival).\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\n**Must** have 2+ [subEvents](./subEvent.json).\n\n## periodic\n\nFor offers that take places on recurring moments (f.e. a course watercolor painting, each wednesday evening).\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\nCan be combined with [openingHours](./openingHours.json).\n\n## permanent\n\nNot recommended for events, consider creating a [place](../place.json) instead.\n\nCan be combined with [openingHours](./openingHours.json).",
   "enum": [
     "single",
     "multiple",
