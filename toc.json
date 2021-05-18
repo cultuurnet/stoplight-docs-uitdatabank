@@ -8,6 +8,17 @@
       "type": "item",
       "title": "Event",
       "uri": "models/event.json"
+    },
+    {
+      "type": "group",
+      "title": "Properties",
+      "items": [
+        {
+          "type": "item",
+          "title": "@id",
+          "uri": "models/@id.json"
+        }
+      ]
     }
   ]
 }
