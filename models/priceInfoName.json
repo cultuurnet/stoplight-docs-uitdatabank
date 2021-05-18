@@ -1,7 +1,7 @@
 {
   "$ref": "./localizedString.json",
   "title": "priceInfoName",
-  "description": "Name of a tariff inside priceInfo.",
+  "description": "Name of a tariff inside priceInfo. Requires at least one value, for the language specified in the `mainLanguage` property.",
   "x-examples": {
     "Base tariff": {
       "nl": "Basistarief",
