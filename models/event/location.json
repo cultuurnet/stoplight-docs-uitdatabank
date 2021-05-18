@@ -1,0 +1,5 @@
+{
+  "$ref": "./place.json",
+  "title": "location",
+  "description": "The location an event takes place at. Same model as a [Place](./place.json)."
+}

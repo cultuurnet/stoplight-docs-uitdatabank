@@ -5,25 +5,25 @@
   "title": "Event",
   "properties": {
     "@id": {
-      "$ref": "./@id.json"
+      "$ref": "./event/@id.json"
     },
     "mainLanguage": {
-      "$ref": "./mainLanguage.json"
+      "$ref": "./event/mainLanguage.json"
     },
     "name": {
-      "$ref": "./name.json"
+      "$ref": "./event/name.json"
     },
     "calendarType": {
-      "$ref": "./calendarType.json"
+      "$ref": "./event/calendarType.json"
     },
     "startDate": {
-      "$ref": "./startDate.json"
+      "$ref": "./event/startDate.json"
     },
     "endDate": {
-      "$ref": "./endDate.json"
+      "$ref": "./event/endDate.json"
     },
     "status": {
-      "$ref": "./status.json"
+      "$ref": "./event/status.json"
     },
     "subEvent": {
       "type": "array",
@@ -31,7 +31,7 @@
       "minItems": 1,
       "description": "A list of individual date & time occurences that the event takes place.",
       "items": {
-        "$ref": "./subEvent.json"
+        "$ref": "./event/subEvent.json"
       }
     },
     "openingHours": {
@@ -40,17 +40,17 @@
       "minItems": 1,
       "description": "A scheme of weekly recurring hours that an event is happening or a place is open.",
       "items": {
-        "$ref": "./openingHours.json"
+        "$ref": "./event/openingHours.json"
       }
     },
     "availableFrom": {
-      "$ref": "./availableFrom.json"
+      "$ref": "./event/availableFrom.json"
     },
     "availableTo": {
-      "$ref": "./availableTo.json"
+      "$ref": "./event/availableTo.json"
     },
     "sameAs": {
-      "$ref": "./sameAs.json"
+      "$ref": "./event/sameAs.json"
     },
     "terms": {
       "type": "array",
@@ -58,54 +58,54 @@
       "minItems": 1,
       "description": "A list of taxonomy terms used to categorize the event or place.",
       "items": {
-        "$ref": "./term.json"
+        "$ref": "./event/term.json"
       }
     },
     "created": {
-      "$ref": "./created.json"
+      "$ref": "./event/created.json"
     },
     "modified": {
-      "$ref": "./modified.json"
+      "$ref": "./event/modified.json"
     },
     "creator": {
-      "$ref": "./creator.json"
+      "$ref": "./event/creator.json"
     },
     "workflowStatus": {
-      "$ref": "./workflowStatus.json"
+      "$ref": "./event/workflowStatus.json"
     },
     "audience": {
-      "$ref": "./audience.json"
+      "$ref": "./event/event/audience.json"
     },
     "languages": {
-      "$ref": "./languages.json"
+      "$ref": "./event/languages.json"
     },
     "completedLanguages": {
-      "$ref": "./completedLanguages.json"
+      "$ref": "./event/completedLanguages.json"
     },
     "typicalAgeRange": {
-      "$ref": "./typicalAgeRange.json"
+      "$ref": "./event/typicalAgeRange.json"
     },
     "description": {
-      "$ref": "./description.json"
+      "$ref": "./event/description.json"
     },
     "priceInfo": {
-      "$ref": "./priceInfo.json"
+      "$ref": "./event/priceInfo.json"
     },
     "contactPoint": {
-      "$ref": "./contactPoint.json"
+      "$ref": "./event/contactPoint.json"
     },
     "bookingInfo": {
-      "$ref": "./bookingInfo.json"
+      "$ref": "./event/bookingInfo.json"
     },
     "mediaObject": {
       "type": "array",
       "description": "A list of one or more media objects, for example images, related to the event.",
       "items": {
-        "$ref": "./mediaObject.json"
+        "$ref": "./event/mediaObject.json"
       }
     },
     "image": {
-      "$ref": "./image.json"
+      "$ref": "./event/image.json"
     }
   },
   "required": [
