@@ -1,7 +1,7 @@
 {
   "title": "status",
   "type": "object",
-  "description": "Indicates if an event or place is still happening or not.",
+  "description": "Indicates if an event is still happening or not.",
   "x-examples": {
     "Available": {
       "type": "available"
@@ -29,7 +29,7 @@
         "unavailable"
       ],
       "example": "available",
-      "description": "One of three possible status types.\n\nEvent:\n- `available`: The event is happening as planned\n- `temporarilyUnavailable`: The event will be postponed\n- `unavailable`: The event is permanently cancelled\n\nPlace:\n- `available`: The place is open (during its openingHours if applicable)\n- `temporarilyUnavailable`: The place is temporarily closed\n- `unavailable`: The place is permanently closed",
+      "description": "One of three possible status types.\n\n- `available`: The event is happening as planned\n- `temporarilyUnavailable`: The event will be postponed\n- `unavailable`: The event is permanently cancelled",
       "type": "string"
     },
     "reason": {

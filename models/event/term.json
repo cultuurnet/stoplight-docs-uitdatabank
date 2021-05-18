@@ -1,7 +1,7 @@
 {
   "title": "term",
   "type": "object",
-  "description": "A taxonomy term used to categorize events and places.\n\nAll events and places require exactly one term of the `eventtype` domain, and can optionally contain other terms.\n\nWhen reading events or places all properties will be available. When creating or updating events or places only the `id` is required to be included.",
+  "description": "A taxonomy term used to categorize events.\n\nAll events require exactly one term of the `eventtype` domain, and can optionally contain other terms.\n\nWhen reading events, all properties will be available. When creating or updating events only the `id` is required to be included.",
   "x-examples": {
     "Example": {
       "id": "0.50.4.0.0",

@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "calendarType",
-  "description": "Determines how an event or place is planned based on 1 of 4 possible types.\n\nEvent:\n- `single`: The event happens once (on one day or spanning multiple days)\n- `multiple`: The event happens multiple times, on _specific_ dates\n- `periodic`: The event spans a longer period of time, optionally with a recurring weekscheme (as defined in `openingHours`)\n- `permanent`: The event has no planned end date, optionally with a recurring weekscheme (as defined in `openingHours`). *Not recommended for events, consider creating a place instead*\n\nPlace:\n- `periodic`: The place exists for a specific period (e.g. a pop-up location), optionally with a recurring weekscheme (as defined in `openingHours`)\n- `permanent`: The place exists for the foreseeable future, optionally with a recurring weekscheme (as definedin `openingHours`).",
+  "description": "Determines how an event is planned based on 1 of 4 possible types.\n\n- `single`: The event happens once (on one day or spanning multiple days)\n- `multiple`: The event happens multiple times, on _specific_ dates\n- `periodic`: The event spans a longer period of time, optionally with a recurring weekscheme (as defined in `openingHours`)\n- `permanent`: The event has no planned end date, optionally with a recurring weekscheme (as defined in `openingHours`). *Not recommended for events, consider creating a place instead*",
   "enum": [
     "single",
     "multiple",

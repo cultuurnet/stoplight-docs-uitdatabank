@@ -1,7 +1,7 @@
 {
   "title": "openingHours",
   "type": "object",
-  "description": "Indicates the start and end time of a periodic event, or opening and closing time of a place, on one or more specific weekdays.",
+  "description": "Indicates the weekly start and end times of a `periodic` event.",
   "x-examples": {
     "Example": {
       "opens": "09:00",

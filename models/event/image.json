@@ -1,6 +1,6 @@
 {
   "type": "string",
   "title": "image",
-  "description": "URL to the main image of the event or place.",
+  "description": "URL to the main image of the event. Must be one of the `contentUrl` properties in the `mediaObject` property.",
   "format": "uri"
 }

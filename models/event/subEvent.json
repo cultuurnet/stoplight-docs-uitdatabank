@@ -1,6 +1,6 @@
 {
   "title": "subEvent",
-  "description": "A single occurence of an event with calendarType `multiple`.",
+  "description": "A single occurence of an event on events with calendarType `multiple`.",
   "type": "object",
   "x-examples": {
     "Available": {
