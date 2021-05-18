@@ -1,3 +1,0 @@
-# Authentication
-
-To be documented.
