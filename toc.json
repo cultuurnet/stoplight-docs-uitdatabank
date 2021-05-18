@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "type": "item",
+      "title": "Introduction",
+      "uri": "models/introduction.json"
+    },
+    {
       "type": "divider",
       "title": "Models"
     },
