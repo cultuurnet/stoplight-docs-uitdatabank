@@ -49,7 +49,21 @@
       "description": "The currency of the price. Currently only `EUR` is supported."
     },
     "name": {
-      "$ref": "./priceInfoName.json"
+      "$ref": "../localizedString.json",
+      "title": "",
+      "description": "Name of a tariff inside priceInfo. Requires at least one value, for the language specified in the `mainLanguage` property.",
+      "x-examples": {
+        "Base tariff": {
+          "nl": "Basistarief",
+          "fr": "Tarif de base",
+          "en": "Base tariff",
+          "de": "Basisrate"
+        },
+        "Youth": {
+          "nl": "Jongeren (<18j)",
+          "en": "Youth (<18yo)"
+        }
+      }
     }
   },
   "required": [
