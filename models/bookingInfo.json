@@ -5,21 +5,32 @@
   "properties": {
     "phone": {
       "type": "array",
+      "description": "List of phone numbers (can be empty)",
+      "minItems": 0,
       "items": {
         "$ref": "./contactPhone.json"
       }
     },
     "email": {
       "type": "array",
+      "description": "List of email addresses (can be empty)",
+      "minItems": 0,
       "items": {
         "$ref": "./contactEmail.json"
       }
     },
     "url": {
       "type": "array",
+      "description": "List of one or more URLs (can be empty)",
+      "minItems": 0,
       "items": {
         "$ref": "./contactUrl.json"
       }
     }
-  }
+  },
+  "required": [
+    "phone",
+    "email",
+    "url"
+  ]
 }
