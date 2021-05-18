@@ -1,64 +1,68 @@
 {
   "title": "openingHours",
-  "type": "object",
-  "description": "Indicates the weekly start and end times of a `periodic` event.",
-  "x-examples": {
-    "Example": {
-      "opens": "09:00",
-      "closes": "17:00",
-      "dayOfWeek": [
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday"
-      ]
-    }
-  },
-  "properties": {
-    "opens": {
-      "type": "string",
-      "title": "openingHoursTime",
-      "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
-      "example": "17:00",
-      "format": "time",
-      "x-examples": {
-        "Example": "17:00"
-      }
-    },
-    "closes": {
-      "type": "string",
-      "title": "openingHoursTime",
-      "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
-      "example": "17:00",
-      "format": "time",
-      "x-examples": {
-        "Example": "17:00"
-      }
-    },
-    "dayOfWeek": {
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "description": "One or more days that the opening and closing hour are applicable for.",
-      "items": {
-        "type": "string",
-        "enum": [
+  "type": "array",
+  "items": {
+    "type": "object",
+    "description": "Indicates the weekly start and end times of a `periodic` event.",
+    "x-examples": {
+      "Example": {
+        "opens": "09:00",
+        "closes": "17:00",
+        "dayOfWeek": [
           "monday",
           "tuesday",
           "wednesday",
           "thursday",
-          "friday",
-          "saturday",
-          "sunday"
-        ],
-        "example": "monday"
+          "friday"
+        ]
       }
-    }
+    },
+    "properties": {
+      "opens": {
+        "type": "string",
+        "title": "openingHoursTime",
+        "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
+        "example": "17:00",
+        "format": "time",
+        "x-examples": {
+          "Example": "17:00"
+        }
+      },
+      "closes": {
+        "type": "string",
+        "title": "openingHoursTime",
+        "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
+        "example": "17:00",
+        "format": "time",
+        "x-examples": {
+          "Example": "17:00"
+        }
+      },
+      "dayOfWeek": {
+        "type": "array",
+        "uniqueItems": true,
+        "minItems": 1,
+        "description": "One or more days that the opening and closing hour are applicable for.",
+        "items": {
+          "type": "string",
+          "enum": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "example": "monday"
+        }
+      }
+    },
+    "required": [
+      "opens",
+      "closes",
+      "dayOfWeek"
+    ]
   },
-  "required": [
-    "opens",
-    "closes",
-    "dayOfWeek"
-  ]
+  "description": "A list of opening hour entries indicating the weekly start and end times of the event when using the `periodic` [calendarType](./calendarType.json)."
 }

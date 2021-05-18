@@ -29,13 +29,7 @@
       "$ref": "./event/subEvent.json"
     },
     "openingHours": {
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "description": "A scheme of weekly recurring hours that an event is happening or a place is open.",
-      "items": {
-        "$ref": "./event/openingHours.json"
-      }
+      "$ref": "./event/openingHours.json"
     },
     "availableFrom": {
       "$ref": "./event/availableFrom.json"
