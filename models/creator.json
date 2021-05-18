@@ -1,0 +1,5 @@
+{
+  "title": "creator",
+  "type": "string",
+  "description": "The unique identifier of the creator of the event, place or organizer. Usually a UUID, but can historally be an e-mail address."
+}
