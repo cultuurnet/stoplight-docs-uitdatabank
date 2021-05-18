@@ -1,0 +1,17 @@
+{
+  "$ref": "./localizedString.json",
+  "title": "priceInfoName",
+  "description": "Name of a tariff inside priceInfo.",
+  "x-examples": {
+    "Base tariff": {
+      "nl": "Basistarief",
+      "fr": "Tarif de base",
+      "en": "Base tariff",
+      "de": "Basisrate"
+    },
+    "Youth": {
+      "nl": "Jongeren (<18j)",
+      "en": "Youth (<18yo)"
+    }
+  }
+}
