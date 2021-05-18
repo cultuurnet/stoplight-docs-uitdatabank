@@ -15,5 +15,16 @@
   },
   "required": [
     "audienceType"
-  ]
+  ],
+  "x-examples": {
+    "Everyone": {
+      "audienceType": "everyone"
+    },
+    "Members": {
+      "audienceType": "members"
+    },
+    "Education": {
+      "audienceType": "education"
+    }
+  }
 }
