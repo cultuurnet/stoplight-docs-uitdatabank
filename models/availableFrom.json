@@ -1,5 +1,8 @@
 {
   "$ref": "./date.json",
-  "description": "The first date & time that the event or place is allowed to be visible on publication channels.\nUsually derived from the `created` date, unless it is scheduled to only appear after a specific date & time.",
-  "title": "availableFrom"
+  "description": "The first date & time that the event or place is allowed to be visible on publication channels.\nUsually derived from the `created` date, unless it is scheduled to only appear after a specific date & time.\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
+  "title": "availableFrom",
+  "x-examples": {
+    "Example": "2021-05-17T22:00:00+00:00"
+  }
 }

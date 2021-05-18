@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "openingHoursTime",
-  "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time.",
+  "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
   "example": "17:00",
   "format": "time",
   "x-examples": {

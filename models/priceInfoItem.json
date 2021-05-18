@@ -38,13 +38,15 @@
       "type": "number",
       "format": "float",
       "minimum": 0,
-      "example": 10.5
+      "example": 10.5,
+      "description": "The price of a ticket in this tariff."
     },
     "priceCurrency": {
       "type": "string",
       "enum": [
         "EUR"
-      ]
+      ],
+      "description": "The currency of the price. Currently only `EUR` is supported."
     },
     "name": {
       "$ref": "./priceInfoName.json"

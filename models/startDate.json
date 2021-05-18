@@ -1,6 +1,6 @@
 {
   "$ref": "./date.json",
-  "description": "The date & time that an event, subEvent, or (periodic) place starts.\n\n- Event: The very first date & time that the event starts\n- SubEvent: The start date & time of this specific occurence of the event\n- Place: The start date & time of the period that the `periodic` place exists (see `calendarType`)\n\nAlways required on subEvents.\n\nRequired on events and places when using one of the following calendarTypes:\n\n- single\n- multiple\n- periodic",
+  "description": "The date & time that an event, subEvent, or (periodic) place starts as an ISO-8601 date. For example `2021-05-17T22:00:00+00:00`.\n\n- Event: The very first date & time that the event starts\n- SubEvent: The start date & time of this specific occurence of the event\n- Place: The start date & time of the period that the `periodic` place exists (see `calendarType`)\n\nAlways required on subEvents.\n\nRequired on events and places when using one of the following calendarTypes:\n\n- single\n- multiple\n- periodic",
   "title": "startDate",
   "x-examples": {
     "Example": "2021-05-17T22:00:00+00:00"

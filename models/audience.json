@@ -10,7 +10,7 @@
         "member",
         "education"
       ],
-      "description": "Indicates whether the event or place is accessible to everyone, members only, or education only."
+      "description": "Indicates whether the event or place is accessible to `everyone`, `members` only, or `education` only."
     }
   },
   "required": [
