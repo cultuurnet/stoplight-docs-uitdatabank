@@ -3,7 +3,7 @@
     {
       "type": "item",
       "title": "Introduction",
-      "uri": "models/introduction.json"
+      "uri": "docs/introduction.md"
     },
     {
       "type": "divider",
