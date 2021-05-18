@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "title": "localizedString",
+  "description": "An object used on properties that can be localized. Consists of a map of language keys and localized string values. \n\nIf used on an object with a `mainLanguage` property the language key of the main language is required to be set.",
+  "minProperties": 1,
+  "properties": {
+    "nl": {
+      "type": "string"
+    },
+    "fr": {
+      "type": "string"
+    },
+    "de": {
+      "type": "string"
+    },
+    "en": {
+      "type": "string"
+    }
+  },
+  "x-examples": {
+    "Example": {
+      "nl": "Nederlandse tekst",
+      "fr": "Texte français",
+      "de": "Deutscher Text",
+      "en": "English text"
+    }
+  },
+  "x-internal": true
+}

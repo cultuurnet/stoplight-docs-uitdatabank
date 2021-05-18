@@ -1,0 +1,5 @@
+{
+  "$ref": "./localizedString.json",
+  "title": "name",
+  "description": "The name of an event, place, or organizer."
+}
