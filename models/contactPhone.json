@@ -1,0 +1,5 @@
+{
+  "title": "contactPhone",
+  "type": "string",
+  "description": "Phone number for contact or booking purposes."
+}

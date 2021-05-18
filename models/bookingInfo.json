@@ -1,0 +1,25 @@
+{
+  "title": "bookingInfo",
+  "type": "object",
+  "description": "Booking info of an event or place, containing one or more phone numbers, email addresses, and/or website URLs.",
+  "properties": {
+    "phone": {
+      "type": "array",
+      "items": {
+        "$ref": "./contactPhone.json"
+      }
+    },
+    "email": {
+      "type": "array",
+      "items": {
+        "$ref": "./contactEmail.json"
+      }
+    },
+    "url": {
+      "type": "array",
+      "items": {
+        "$ref": "./contactUrl.json"
+      }
+    }
+  }
+}

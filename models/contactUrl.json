@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "title": "contactUrl",
+  "format": "uri",
+  "example": "https://www.example.com",
+  "description": "URL to a website for contact or booking purposes."
+}
