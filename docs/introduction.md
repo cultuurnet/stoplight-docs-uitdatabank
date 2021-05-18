@@ -2,7 +2,7 @@
 
 # Introduction
 
-Welcome to the UiTdatabank API documentation! 👋
+A warm welcome to our UiTdatabank API documentation! 👋
 
 <!-- theme: warning -->
 
