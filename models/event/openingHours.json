@@ -17,10 +17,24 @@
   },
   "properties": {
     "opens": {
-      "$ref": "./openingHoursTime.json"
+      "type": "string",
+      "title": "openingHoursTime",
+      "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
+      "example": "17:00",
+      "format": "time",
+      "x-examples": {
+        "Example": "17:00"
+      }
     },
     "closes": {
-      "$ref": "./openingHoursTime.json"
+      "type": "string",
+      "title": "openingHoursTime",
+      "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
+      "example": "17:00",
+      "format": "time",
+      "x-examples": {
+        "Example": "17:00"
+      }
     },
     "dayOfWeek": {
       "type": "array",
