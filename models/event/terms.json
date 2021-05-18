@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "title": "terms",
+  "description": "A list of taxonomy terms used to categorize the event.",
+  "uniqueItems": true,
+  "minItems": 1,
+  "items": {
+    "$ref": "./term.json"
+  }
+}
