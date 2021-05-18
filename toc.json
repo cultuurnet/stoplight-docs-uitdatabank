@@ -6,6 +6,11 @@
       "uri": "docs/introduction.md"
     },
     {
+      "type": "item",
+      "title": "Terminology",
+      "uri": "docs/terminology.md"
+    },
+    {
       "type": "divider",
       "title": "Models"
     },
@@ -15,150 +20,144 @@
       "items": [
         {
           "type": "item",
-          "title": "Overview",
+          "title": "Entity overview",
           "uri": "models/event.json"
         },
         {
-          "type": "group",
-          "title": "Properties",
-          "items": [
-            {
-              "type": "item",
-              "title": "@id",
-              "uri": "models/event/@id.json"
-            },
-            {
-              "type": "item",
-              "title": "mainLanguage",
-              "uri": "models/event/mainLanguage.json"
-            },
-            {
-              "type": "item",
-              "title": "name",
-              "uri": "models/event/name.json"
-            },
-            {
-              "type": "item",
-              "title": "description",
-              "uri": "models/event/description.json"
-            },
-            {
-              "type": "item",
-              "title": "terms",
-              "uri": "models/event/terms.json"
-            },
-            {
-              "type": "item",
-              "title": "calendarType",
-              "uri": "models/event/calendarType.json"
-            },
-            {
-              "type": "item",
-              "title": "startDate",
-              "uri": "models/event/startDate.json"
-            },
-            {
-              "type": "item",
-              "title": "endDate",
-              "uri": "models/event/endDate.json"
-            },
-            {
-              "type": "item",
-              "title": "subEvent",
-              "uri": "models/event/subEvent.json"
-            },
-            {
-              "type": "item",
-              "title": "openingHours",
-              "uri": "models/event/openingHours.json"
-            },
-            {
-              "type": "item",
-              "title": "availableFrom",
-              "uri": "models/event/availableFrom.json"
-            },
-            {
-              "type": "item",
-              "title": "availableTo",
-              "uri": "models/event/availableTo.json"
-            },
-            {
-              "type": "item",
-              "title": "status",
-              "uri": "models/event/status.json"
-            },
-            {
-              "type": "item",
-              "title": "audience",
-              "uri": "models/event/audience.json"
-            },
-            {
-              "type": "item",
-              "title": "typicalAgeRange",
-              "uri": "models/event/typicalAgeRange.json"
-            },
-            {
-              "type": "item",
-              "title": "contactPoint",
-              "uri": "models/event/contactPoint.json"
-            },
-            {
-              "type": "item",
-              "title": "bookingInfo",
-              "uri": "models/event/bookingInfo.json"
-            },
-            {
-              "type": "item",
-              "title": "priceInfo",
-              "uri": "models/event/priceInfo.json"
-            },
-            {
-              "type": "item",
-              "title": "mediaObject",
-              "uri": "models/event/mediaObject.json"
-            },
-            {
-              "type": "item",
-              "title": "image",
-              "uri": "models/event/image.json"
-            },
-            {
-              "type": "item",
-              "title": "creator",
-              "uri": "models/event/creator.json"
-            },
-            {
-              "type": "item",
-              "title": "created",
-              "uri": "models/event/created.json"
-            },
-            {
-              "type": "item",
-              "title": "modified",
-              "uri": "models/event/modified.json"
-            },
-            {
-              "type": "item",
-              "title": "workflowStatus",
-              "uri": "models/event/workflowStatus.json"
-            },
-            {
-              "type": "item",
-              "title": "languages",
-              "uri": "models/event/languages.json"
-            },
-            {
-              "type": "item",
-              "title": "completedLanguages",
-              "uri": "models/event/completedLanguages.json"
-            },
-            {
-              "type": "item",
-              "title": "sameAs",
-              "uri": "models/event/sameAs.json"
-            }
-          ]
-        }
+            "type": "item",
+            "title": "@id",
+            "uri": "models/event/@id.json"
+          },
+          {
+            "type": "item",
+            "title": "mainLanguage",
+            "uri": "models/event/mainLanguage.json"
+          },
+          {
+            "type": "item",
+            "title": "name",
+            "uri": "models/event/name.json"
+          },
+          {
+            "type": "item",
+            "title": "description",
+            "uri": "models/event/description.json"
+          },
+          {
+            "type": "item",
+            "title": "terms",
+            "uri": "models/event/terms.json"
+          },
+          {
+            "type": "item",
+            "title": "calendarType",
+            "uri": "models/event/calendarType.json"
+          },
+          {
+            "type": "item",
+            "title": "startDate",
+            "uri": "models/event/startDate.json"
+          },
+          {
+            "type": "item",
+            "title": "endDate",
+            "uri": "models/event/endDate.json"
+          },
+          {
+            "type": "item",
+            "title": "subEvent",
+            "uri": "models/event/subEvent.json"
+          },
+          {
+            "type": "item",
+            "title": "openingHours",
+            "uri": "models/event/openingHours.json"
+          },
+          {
+            "type": "item",
+            "title": "availableFrom",
+            "uri": "models/event/availableFrom.json"
+          },
+          {
+            "type": "item",
+            "title": "availableTo",
+            "uri": "models/event/availableTo.json"
+          },
+          {
+            "type": "item",
+            "title": "status",
+            "uri": "models/event/status.json"
+          },
+          {
+            "type": "item",
+            "title": "audience",
+            "uri": "models/event/audience.json"
+          },
+          {
+            "type": "item",
+            "title": "typicalAgeRange",
+            "uri": "models/event/typicalAgeRange.json"
+          },
+          {
+            "type": "item",
+            "title": "contactPoint",
+            "uri": "models/event/contactPoint.json"
+          },
+          {
+            "type": "item",
+            "title": "bookingInfo",
+            "uri": "models/event/bookingInfo.json"
+          },
+          {
+            "type": "item",
+            "title": "priceInfo",
+            "uri": "models/event/priceInfo.json"
+          },
+          {
+            "type": "item",
+            "title": "mediaObject",
+            "uri": "models/event/mediaObject.json"
+          },
+          {
+            "type": "item",
+            "title": "image",
+            "uri": "models/event/image.json"
+          },
+          {
+            "type": "item",
+            "title": "creator",
+            "uri": "models/event/creator.json"
+          },
+          {
+            "type": "item",
+            "title": "created",
+            "uri": "models/event/created.json"
+          },
+          {
+            "type": "item",
+            "title": "modified",
+            "uri": "models/event/modified.json"
+          },
+          {
+            "type": "item",
+            "title": "workflowStatus",
+            "uri": "models/event/workflowStatus.json"
+          },
+          {
+            "type": "item",
+            "title": "languages",
+            "uri": "models/event/languages.json"
+          },
+          {
+            "type": "item",
+            "title": "completedLanguages",
+            "uri": "models/event/completedLanguages.json"
+          },
+          {
+            "type": "item",
+            "title": "sameAs",
+            "uri": "models/event/sameAs.json"
+          }
       ]
     },
     {
