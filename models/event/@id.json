@@ -1,5 +1,5 @@
 {
-  "title": "@id",
+  "title": "event.@id",
   "type": "string",
   "minLength": 1,
   "format": "uri",

@@ -1,5 +1,5 @@
 {
-  "title": "subEvent",
+  "title": "event.subEvent",
   "type": "array",
   "description": "A list of occurences of the event when using the `single` or `multiple` [calendarType](./calendarType.json).",
   "items": {

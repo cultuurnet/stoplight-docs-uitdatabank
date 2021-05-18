@@ -1,6 +1,6 @@
 {
   "type": "array",
-  "title": "priceInfo",
+  "title": "event.priceInfo",
   "description": "A list of tariffs available for tickets to the event.",
   "x-examples": {
     "Base tariff only": [

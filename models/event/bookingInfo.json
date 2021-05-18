@@ -1,5 +1,5 @@
 {
-  "title": "bookingInfo",
+  "title": "event.bookingInfo",
   "type": "object",
   "description": "Booking info of an event, containing one or more phone numbers, email addresses, and/or website URLs.",
   "properties": {

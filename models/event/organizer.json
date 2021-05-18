@@ -1,5 +1,5 @@
 {
   "$ref": "../organizer.json",
-  "title": "organizer",
+  "title": "event.organizer",
   "description": "The organizer of the event. Same model as a [Organizer](./organizer.json)."
 }

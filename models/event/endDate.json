@@ -1,7 +1,7 @@
 {
   "$ref": "../date.json",
   "description": "The date & time that the (sub)event ends, as an ISO-8601 date. For example `2021-05-17T22:00:00+00:00`.\n\nRequired on events when using one of the following calendarTypes:\n\n- `single`\n- `multiple`\n- `periodic`\n\nAlways required on subEvents.",
-  "title": "endDate",
+  "title": "event.endDate",
   "x-examples": {
     "Example": "2021-05-17T22:00:00+00:00"
   }

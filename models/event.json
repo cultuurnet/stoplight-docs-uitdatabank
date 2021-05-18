@@ -2,7 +2,7 @@
   "description": "A cultural, sport, or leisure activity.",
   "type": "object",
   "x-examples": {},
-  "title": "Event",
+  "title": "event",
   "properties": {
     "@id": {
       "$ref": "./event/@id.json"

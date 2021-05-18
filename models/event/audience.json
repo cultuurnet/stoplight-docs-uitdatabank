@@ -1,5 +1,5 @@
 {
-  "title": "audience",
+  "title": "event.audience",
   "type": "object",
   "description": "Indicates the intended audience of the event.",
   "properties": {

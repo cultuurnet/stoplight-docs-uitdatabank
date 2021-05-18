@@ -1,5 +1,5 @@
 {
-  "title": "status",
+  "title": "event.status",
   "type": "object",
   "description": "Indicates if the event is still happening or not.",
   "x-examples": {

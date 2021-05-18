@@ -1,5 +1,5 @@
 {
-  "title": "languages",
+  "title": "event.languages",
   "type": "array",
   "description": "List of languages that the event is available in. (Not all localizable properties may contain every language though)\n\nSee also [completedLanguages](./completedLanguages.json).",
   "items": {

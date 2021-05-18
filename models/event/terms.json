@@ -1,6 +1,6 @@
 {
   "type": "array",
-  "title": "terms",
+  "title": "event.terms",
   "description": "A list of taxonomy terms used to categorize the event.",
   "uniqueItems": true,
   "minItems": 1,

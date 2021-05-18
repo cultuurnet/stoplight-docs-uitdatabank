@@ -1,6 +1,6 @@
 {
   "type": "array",
-  "title": "mediaObject",
+  "title": "event.mediaObject",
   "description": "A list of media objects related to the event, for example images.",
   "minItems": 1,
   "x-examples": {

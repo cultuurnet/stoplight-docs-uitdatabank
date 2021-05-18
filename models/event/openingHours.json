@@ -1,5 +1,5 @@
 {
-  "title": "openingHours",
+  "title": "event.openingHours",
   "type": "array",
   "items": {
     "type": "object",
