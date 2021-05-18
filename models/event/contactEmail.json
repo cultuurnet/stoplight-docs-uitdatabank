@@ -1,7 +1,0 @@
-{
-  "type": "string",
-  "title": "contactEmail",
-  "description": "Email address for contact or booking purposes.",
-  "format": "email",
-  "example": "info@example.com"
-}
