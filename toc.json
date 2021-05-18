@@ -6,7 +6,7 @@
     },
     {
       "type": "item",
-      "title": "event",
+      "title": "Event",
       "uri": "models/event.json"
     }
   ]
