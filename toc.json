@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "type": "divider",
+      "title": "Models"
+    },
+    {
+      "type": "item",
+      "title": "event",
+      "uri": "models/event.json"
+    }
+  ]
+}
