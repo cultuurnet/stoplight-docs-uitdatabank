@@ -1,0 +1,114 @@
+{
+  "description": "A cultural, sport, or leisure activity",
+  "type": "object",
+  "x-examples": {},
+  "title": "event",
+  "properties": {
+    "@id": {
+      "$ref": "./@id.json"
+    },
+    "mainLanguage": {
+      "$ref": "./mainLanguage.json"
+    },
+    "name": {
+      "$ref": "./name.json"
+    },
+    "calendarType": {
+      "$ref": "./calendarType.json"
+    },
+    "startDate": {
+      "$ref": "./startDate.json"
+    },
+    "endDate": {
+      "$ref": "./endDate.json"
+    },
+    "status": {
+      "$ref": "./status.json"
+    },
+    "subEvent": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "./subEvent.json"
+      }
+    },
+    "openingHours": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "./openingHours.json"
+      }
+    },
+    "availableFrom": {
+      "$ref": "./availableFrom.json"
+    },
+    "availableTo": {
+      "$ref": "./availableTo.json"
+    },
+    "sameAs": {
+      "$ref": "./sameAs.json"
+    },
+    "terms": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "./term.json"
+      }
+    },
+    "created": {
+      "$ref": "./created.json"
+    },
+    "modified": {
+      "$ref": "./modified.json"
+    },
+    "creator": {
+      "$ref": "./creator.json"
+    },
+    "workflowStatus": {
+      "$ref": "./workflowStatus.json"
+    },
+    "audience": {
+      "$ref": "./audience.json"
+    },
+    "languages": {
+      "$ref": "./languages.json"
+    },
+    "completedLanguages": {
+      "$ref": "./completedLanguages.json"
+    },
+    "typicalAgeRange": {
+      "$ref": "./typicalAgeRange.json"
+    },
+    "description": {
+      "$ref": "./description.json"
+    },
+    "priceInfo": {
+      "$ref": "./priceInfo.json"
+    },
+    "contactPoint": {
+      "$ref": "./contactPoint.json"
+    },
+    "bookingInfo": {
+      "$ref": "./bookingInfo.json"
+    }
+  },
+  "required": [
+    "@id",
+    "mainLanguage",
+    "name",
+    "calendarType",
+    "status",
+    "availableFrom",
+    "availableTo",
+    "terms",
+    "created",
+    "creator",
+    "workflowStatus",
+    "audience",
+    "languages",
+    "completedLanguages"
+  ]
+}
