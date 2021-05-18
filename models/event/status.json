@@ -33,7 +33,10 @@
       "type": "string"
     },
     "reason": {
-      "$ref": "./statusReason.json"
+      "$ref": "../localizedString.json",
+      "description": "The reason of the status on the event, as a localized human-readable text.",
+      "title": "",
+      "x-examples": {}
     }
   },
   "required": [
