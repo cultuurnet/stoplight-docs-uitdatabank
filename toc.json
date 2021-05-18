@@ -29,16 +29,6 @@
             },
             {
               "type": "item",
-              "title": "languages",
-              "uri": "models/event/languages.json"
-            },
-            {
-              "type": "item",
-              "title": "completedLanguages",
-              "uri": "models/event/completedLanguages.json"
-            },
-            {
-              "type": "item",
               "title": "name",
               "uri": "models/event/name.json"
             },
@@ -146,6 +136,16 @@
               "type": "item",
               "title": "workflowStatus",
               "uri": "models/event/workflowStatus.json"
+            },
+            {
+              "type": "item",
+              "title": "languages",
+              "uri": "models/event/languages.json"
+            },
+            {
+              "type": "item",
+              "title": "completedLanguages",
+              "uri": "models/event/completedLanguages.json"
             },
             {
               "type": "item",
