@@ -1,6 +1,6 @@
 {
   "title": "place.description",
-  "description": "The description of the [place](../place.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./mainLanguage.json) property.",
+  "description": "A human-readable, localized description of the [place](../place.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./mainLanguage.json) property.",
   "type": "object",
   "minProperties": 1,
   "x-examples": {
