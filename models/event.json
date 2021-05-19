@@ -37,6 +37,9 @@
     "availableTo": {
       "$ref": "./event/availableTo.json"
     },
+    "location": {
+      "$ref": "./event/location.json"
+    },
     "sameAs": {
       "$ref": "./event/sameAs.json"
     },
