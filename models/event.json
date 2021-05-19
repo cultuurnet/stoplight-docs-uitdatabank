@@ -184,12 +184,12 @@
             "language": "nl"
           }
         ],
-        "image": "http://example.com",
+        "image": "https://io-test.uitdatabank.be/images/example.png",
         "labels": [
-          "http://www.uitinvlaanderen.be/agenda/e/test-place/85b04295-479c-40f5-b3dd-469dfb4387b3"
+          "label1"
         ],
         "hiddenLabels": [
-          "http://www.uitinvlaanderen.be/agenda/e/test-place/85b04295-479c-40f5-b3dd-469dfb4387b3"
+          "label2"
         ]
       },
       "sameAs": [
@@ -268,12 +268,12 @@
           "language": "nl"
         }
       ],
-      "image": "http://example.com",
+      "image": "https://io-test.uitdatabank.be/images/example.png",
       "labels": [
-        "http://www.uitinvlaanderen.be/agenda/e/test-event/85b04295-479c-40f5-b3dd-469dfb4387b3"
+        "label1"
       ],
       "hiddenLabels": [
-        "http://www.uitinvlaanderen.be/agenda/e/test-event/85b04295-479c-40f5-b3dd-469dfb4387b3"
+        "label2"
       ]
     }
   },

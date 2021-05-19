@@ -8,7 +8,7 @@
   "items": {
     "type": "string",
     "format": "uri",
-    "example": "http://www.uitinvlaanderen.be/agenda/e/test-place/85b04295-479c-40f5-b3dd-469dfb4387b3",
+    "example": "label2",
     "minLength": 2,
     "maxLength": 50,
     "pattern": "^[A-Za-z0-9-_]+"
