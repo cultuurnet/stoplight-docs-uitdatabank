@@ -1,5 +1,5 @@
 {
-  "title": "geo",
+  "title": "place.geo",
   "type": "object",
   "description": "Geocoordinates corresponding to the [address](./address.json) the place is located at. Calculated automatically by UiTdatabank.",
   "properties": {

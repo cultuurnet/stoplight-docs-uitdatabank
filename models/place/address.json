@@ -17,7 +17,7 @@
       }
     }
   },
-  "title": "address",
+  "title": "place.address",
   "properties": {
     "nl": {
       "type": "object",
