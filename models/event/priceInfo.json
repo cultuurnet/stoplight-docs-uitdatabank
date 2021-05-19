@@ -90,9 +90,27 @@
         "description": "The currency of the price. Currently only `EUR` is supported."
       },
       "name": {
-        "$ref": "../localizedString.json",
-        "title": "",
         "description": "Name of a tariff inside priceInfo. Requires at least one value, for the language specified in the `mainLanguage` property.",
+        "type": "object",
+        "minProperties": 1,
+        "properties": {
+          "nl": {
+            "type": "string",
+            "description": "Dutch tariff name"
+          },
+          "fr": {
+            "type": "string",
+            "description": "French tariff name"
+          },
+          "de": {
+            "type": "string",
+            "description": "German tariff name"
+          },
+          "en": {
+            "type": "string",
+            "description": "English tariff name"
+          }
+        },
         "x-examples": {
           "Base tariff": {
             "nl": "Basistarief",

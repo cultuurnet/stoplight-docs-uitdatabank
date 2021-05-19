@@ -33,10 +33,36 @@
       "type": "string"
     },
     "reason": {
-      "$ref": "../localizedString.json",
       "description": "The reason of the status on the event, as a localized human-readable text.",
       "title": "",
-      "x-examples": {}
+      "type": "object",
+      "minProperties": 1,
+      "x-examples": {
+        "Example": {
+          "nl": "Nederlandse tekst",
+          "fr": "Texte français",
+          "de": "Deutscher Text",
+          "en": "English text"
+        }
+      },
+      "properties": {
+        "nl": {
+          "type": "string",
+          "description": "Dutch reason"
+        },
+        "fr": {
+          "type": "string",
+          "description": "French reason"
+        },
+        "de": {
+          "type": "string",
+          "description": "German reason"
+        },
+        "en": {
+          "type": "string",
+          "description": "English reason"
+        }
+      }
     }
   },
   "required": [
