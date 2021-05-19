@@ -4,91 +4,91 @@
   "description": "A cultural, leisure, or sports-related location that can be visited or where an event can be located at.",
   "properties": {
     "@id": {
-      "$ref": "./place/@id.json"
+      "$ref": "./place-@id.json"
     },
     "mainLanguage": {
-      "$ref": "./place/mainLanguage.json"
+      "$ref": "./place-mainLanguage.json"
     },
     "name": {
-      "$ref": "./place/name.json"
+      "$ref": "./place-name.json"
     },
     "address": {
-      "$ref": "./place/address.json"
+      "$ref": "./place-address.json"
     },
     "geo": {
-      "$ref": "./place/geo.json"
+      "$ref": "./place-geo.json"
     },
     "calendarType": {
-      "$ref": "./place/calendarType.json"
+      "$ref": "./place-calendarType.json"
     },
     "startDate": {
-      "$ref": "./place/startDate.json"
+      "$ref": "./place-startDate.json"
     },
     "endDate": {
-      "$ref": "./place/endDate.json"
+      "$ref": "./place-endDate.json"
     },
     "status": {
-      "$ref": "./place/status.json"
+      "$ref": "./place-status.json"
     },
     "openingHours": {
-      "$ref": "./place/openingHours.json"
+      "$ref": "./place-openingHours.json"
     },
     "availableFrom": {
-      "$ref": "./place/availableFrom.json"
+      "$ref": "./place-availableFrom.json"
     },
     "availableTo": {
-      "$ref": "./place/availableTo.json"
+      "$ref": "./place-availableTo.json"
     },
     "sameAs": {
-      "$ref": "./place/sameAs.json"
+      "$ref": "./place-sameAs.json"
     },
     "terms": {
-      "$ref": "./place/terms.json"
+      "$ref": "./place-terms.json"
     },
     "created": {
-      "$ref": "./place/created.json"
+      "$ref": "./place-created.json"
     },
     "modified": {
-      "$ref": "./place/modified.json"
+      "$ref": "./place-modified.json"
     },
     "creator": {
-      "$ref": "./place/creator.json"
+      "$ref": "./place-creator.json"
     },
     "workflowStatus": {
-      "$ref": "./place/workflowStatus.json"
+      "$ref": "./place-workflowStatus.json"
     },
     "languages": {
-      "$ref": "./place/languages.json"
+      "$ref": "./place-languages.json"
     },
     "completedLanguages": {
-      "$ref": "./place/completedLanguages.json"
+      "$ref": "./place-completedLanguages.json"
     },
     "typicalAgeRange": {
-      "$ref": "./place/typicalAgeRange.json"
+      "$ref": "./place-typicalAgeRange.json"
     },
     "description": {
-      "$ref": "./place/description.json"
+      "$ref": "./place-description.json"
     },
     "priceInfo": {
-      "$ref": "./place/priceInfo.json"
+      "$ref": "./place-priceInfo.json"
     },
     "contactPoint": {
-      "$ref": "./place/contactPoint.json"
+      "$ref": "./place-contactPoint.json"
     },
     "bookingInfo": {
-      "$ref": "./place/bookingInfo.json"
+      "$ref": "./place-bookingInfo.json"
     },
     "mediaObject": {
-      "$ref": "./place/mediaObject.json"
+      "$ref": "./place-mediaObject.json"
     },
     "image": {
-      "$ref": "./place/image.json"
+      "$ref": "./place-image.json"
     },
     "labels": {
-      "$ref": "./place/labels.json"
+      "$ref": "./place-labels.json"
     },
     "hiddenLabels": {
-      "$ref": "./place/hiddenLabels.json"
+      "$ref": "./place-hiddenLabels.json"
     }
   },
   "required": [
