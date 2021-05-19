@@ -12,6 +12,15 @@
     },
     {
       "type": "divider",
+      "title": "Guides"
+    },
+    {
+      "type": "item",
+      "title": "Taxonomy terms",
+      "uri": "docs/terms.md"
+    },
+    {
+      "type": "divider",
       "title": "Models"
     },
     {
