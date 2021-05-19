@@ -1,7 +1,10 @@
 {
-  "$ref": "../date.json",
   "description": "The first date & time that the [event](../event.json) is allowed to be visible on publication channels.\n\nUsually derived from the [created](./created.json) date, unless it is scheduled to only appear after a specific date & time.\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
   "title": "event.availableFrom",
+  "type": "string",
+  "format": "date-time",
+  "example": "2021-05-17T22:00:00+00:00",
+  "minLength": 1,
   "x-examples": {
     "Example": "2021-05-17T22:00:00+00:00"
   }
