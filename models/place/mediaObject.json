@@ -58,7 +58,15 @@
         "description": "Name of the copyright holder of the media object."
       },
       "language": {
-        "$ref": "../language.json"
+        "type": "string",
+        "description": "Locale of text or speech used in the mediaObject or its description",
+        "enum": [
+          "nl",
+          "fr",
+          "de",
+          "en"
+        ],
+        "example": "nl"
       }
     },
     "required": [
