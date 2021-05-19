@@ -5,94 +5,94 @@
   "title": "event",
   "properties": {
     "@id": {
-      "$ref": "./event/@id.json"
+      "$ref": "./event-@id.json"
     },
     "mainLanguage": {
-      "$ref": "./event/mainLanguage.json"
+      "$ref": "./event-mainLanguage.json"
     },
     "name": {
-      "$ref": "./event/name.json"
+      "$ref": "./event-name.json"
     },
     "calendarType": {
-      "$ref": "./event/calendarType.json"
+      "$ref": "./event-calendarType.json"
     },
     "startDate": {
-      "$ref": "./event/startDate.json"
+      "$ref": "./event-startDate.json"
     },
     "endDate": {
-      "$ref": "./event/endDate.json"
+      "$ref": "./event-endDate.json"
     },
     "status": {
-      "$ref": "./event/status.json"
+      "$ref": "./event-status.json"
     },
     "subEvent": {
-      "$ref": "./event/subEvent.json"
+      "$ref": "./event-subEvent.json"
     },
     "openingHours": {
-      "$ref": "./event/openingHours.json"
+      "$ref": "./event-openingHours.json"
     },
     "availableFrom": {
-      "$ref": "./event/availableFrom.json"
+      "$ref": "./event-availableFrom.json"
     },
     "availableTo": {
-      "$ref": "./event/availableTo.json"
+      "$ref": "./event-availableTo.json"
     },
     "location": {
-      "$ref": "./event/location.json"
+      "$ref": "./event-location.json"
     },
     "sameAs": {
-      "$ref": "./event/sameAs.json"
+      "$ref": "./event-sameAs.json"
     },
     "terms": {
-      "$ref": "./event/terms.json"
+      "$ref": "./event-terms.json"
     },
     "created": {
-      "$ref": "./event/created.json"
+      "$ref": "./event-created.json"
     },
     "modified": {
-      "$ref": "./event/modified.json"
+      "$ref": "./event-modified.json"
     },
     "creator": {
-      "$ref": "./event/creator.json"
+      "$ref": "./event-creator.json"
     },
     "workflowStatus": {
-      "$ref": "./event/workflowStatus.json"
+      "$ref": "./event-workflowStatus.json"
     },
     "audience": {
-      "$ref": "./event/audience.json"
+      "$ref": "./event-audience.json"
     },
     "languages": {
-      "$ref": "./event/languages.json"
+      "$ref": "./event-languages.json"
     },
     "completedLanguages": {
-      "$ref": "./event/completedLanguages.json"
+      "$ref": "./event-completedLanguages.json"
     },
     "typicalAgeRange": {
-      "$ref": "./event/typicalAgeRange.json"
+      "$ref": "./event-typicalAgeRange.json"
     },
     "description": {
-      "$ref": "./event/description.json"
+      "$ref": "./event-description.json"
     },
     "priceInfo": {
-      "$ref": "./event/priceInfo.json"
+      "$ref": "./event-priceInfo.json"
     },
     "contactPoint": {
-      "$ref": "./event/contactPoint.json"
+      "$ref": "./event-contactPoint.json"
     },
     "bookingInfo": {
-      "$ref": "./event/bookingInfo.json"
+      "$ref": "./event-bookingInfo.json"
     },
     "mediaObject": {
-      "$ref": "./event/mediaObject.json"
+      "$ref": "./event-mediaObject.json"
     },
     "image": {
-      "$ref": "./event/image.json"
+      "$ref": "./event-image.json"
     },
     "labels": {
-      "$ref": "./event/labels.json"
+      "$ref": "./event-labels.json"
     },
     "hiddenLabels": {
-      "$ref": "./event/hiddenLabels.json"
+      "$ref": "./event-hiddenLabels.json"
     }
   },
   "required": [

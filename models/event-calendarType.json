@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": "event.calendarType",
+  "description": "Determines how often the [event](./event.json) occurs.\n\nPossible values: `single`, `multiple`, `periodic`, `permanent`.\n\n## single\n\nFor events that take place at one single day (f.e. a concert of Radiohead) and events with only one start and end date (f.e. camping from monday until sunday).\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\nCan have 1 [subEvent](./subEvent.json).\n\n## multiple\n\nFor events that take place on several occasions, whether or not contiguous (f.e. a festival).\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\n**Must** have 2+ [subEvents](./subEvent.json).\n\n## periodic\n\nFor events that take places on recurring moments (f.e. a course watercolor painting, each wednesday evening).\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\nCan be combined with [openingHours](./openingHours.json).\n\n## permanent\n\nNot recommended for events, consider creating a [place](./place.json) instead.\n\nCan be combined with [openingHours](./openingHours.json).",
+  "enum": [
+    "single",
+    "multiple",
+    "periodic",
+    "permanent"
+  ],
+  "x-examples": {}
+}

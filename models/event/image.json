@@ -1,6 +1,0 @@
-{
-  "type": "string",
-  "title": "event.image",
-  "description": "URL to the main image of the [event](../event.json). Must be one of the available `contentUrl` properties in the [mediaObject](./mediaObject.json) property.",
-  "format": "uri"
-}

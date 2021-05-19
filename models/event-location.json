@@ -1,0 +1,5 @@
+{
+  "$ref": "./place.json",
+  "title": "event.location",
+  "description": "The location the [event](./event.json) takes place at. Links to another entity, but also embeds it. Same model as a [place](./place.json)."
+}

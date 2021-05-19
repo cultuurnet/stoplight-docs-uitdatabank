@@ -1,7 +1,7 @@
 {
   "title": "event.subEvent",
   "type": "array",
-  "description": "A list of occurences of the [event](../event.json) when using the `single` or `multiple` [calendarType](./calendarType.json).",
+  "description": "A list of occurences of the [event](./event.json) when using the `single` or `multiple` [calendarType](./calendarType.json).",
   "items": {
     "type": "object",
     "x-examples": {
@@ -35,13 +35,13 @@
     },
     "properties": {
       "startDate": {
-        "$ref": "./startDate.json"
+        "$ref": "./event-startDate.json"
       },
       "endDate": {
-        "$ref": "./endDate.json"
+        "$ref": "./event-endDate.json"
       },
       "status": {
-        "$ref": "./status.json"
+        "$ref": "./event-status.json"
       }
     },
     "required": [

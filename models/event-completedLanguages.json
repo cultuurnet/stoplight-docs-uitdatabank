@@ -1,0 +1,15 @@
+{
+  "title": "event.completedLanguages",
+  "description": "List of languages that _every_ localizable property on the [event](./event.json) is available in.\n\nAdded automatically by UiTdatabank based on the languages present in localized properties.\n\nSee also [languages](./languages.json).",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "nl",
+      "fr",
+      "de",
+      "en"
+    ],
+    "example": "nl"
+  }
+}

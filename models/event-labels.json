@@ -1,0 +1,16 @@
+{
+  "type": "array",
+  "title": "event.labels",
+  "description": "One or more labels that categorize the [event](./event.json). Compared to [terms](./terms.json), labels do not have a defined set of possible values or a hierarchy.\n\nLabels are allowed to be visible for end users on publication channels.\n\nSee [hiddenLabels](./hiddenLabels.json) for labels that should not be visible on publication channels.",
+  "uniqueItems": true,
+  "minItems": 1,
+  "x-examples": {},
+  "items": {
+    "type": "string",
+    "format": "uri",
+    "example": "http://www.uitinvlaanderen.be/agenda/e/test-event/85b04295-479c-40f5-b3dd-469dfb4387b3",
+    "minLength": 2,
+    "maxLength": 50,
+    "pattern": "^[A-Za-z0-9-_]+"
+  }
+}

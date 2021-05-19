@@ -1,7 +1,7 @@
 {
   "title": "event.contactPoint",
   "type": "object",
-  "description": "Contact info of the [event](../event.json), containing one or more phone numbers, email addresses, and/or website URLs.",
+  "description": "Contact info of the [event](./event.json), containing one or more phone numbers, email addresses, and/or website URLs.",
   "properties": {
     "phone": {
       "type": "array",
