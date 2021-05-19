@@ -1,5 +1,5 @@
 {
-  "description": "The date & time that the [event](../event.json) was first created.\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
+  "description": "Date formatted as an ISO-8601 datetime, added automatically by UiTdatabank based on the date & time the [event](../event.json) was created at.\n\nFor example `2021-05-17T22:00:00+00:00`.",
   "title": "event.created",
   "type": "string",
   "format": "date-time",

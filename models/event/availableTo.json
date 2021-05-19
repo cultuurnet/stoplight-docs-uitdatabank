@@ -1,6 +1,6 @@
 {
   "title": "event.availableTo",
-  "description": "The last date & time that the [event](../event.json) is allowed to be visible on publication channels.\n\nUsually derived from [endDate](./endDate.json), but in some edge cases it can deviate.\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
+  "description": "The last date & time that the [event](../event.json) is allowed to be visible on publication channels.\n\nAdded automatically by UiTdatabank based on either the [startDate](./startDate) or [endDate](./endDate.json) depending on the [event type](./terms.json).\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
   "type": "string",
   "format": "date-time",
   "example": "2021-05-17T22:00:00+00:00",
