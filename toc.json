@@ -198,6 +198,151 @@
           "type": "group",
           "title": "Properties",
           "items": [
+            {
+              "type": "item",
+              "title": "@id",
+              "uri": "models/place/@id.json"
+            },
+            {
+              "type": "item",
+              "title": "mainLanguage",
+              "uri": "models/place/mainLanguage.json"
+            },
+            {
+              "type": "item",
+              "title": "name",
+              "uri": "models/place/name.json"
+            },
+            {
+              "type": "item",
+              "title": "description",
+              "uri": "models/place/description.json"
+            },
+            {
+              "type": "item",
+              "title": "terms",
+              "uri": "models/place/terms.json"
+            },
+            {
+              "type": "item",
+              "title": "address",
+              "uri": "models/place/address.json"
+            },
+            {
+              "type": "item",
+              "title": "geo",
+              "uri": "models/place/geo.json"
+            },
+            {
+              "type": "item",
+              "title": "calendarType",
+              "uri": "models/place/calendarType.json"
+            },
+            {
+              "type": "item",
+              "title": "startDate",
+              "uri": "models/place/startDate.json"
+            },
+            {
+              "type": "item",
+              "title": "endDate",
+              "uri": "models/place/endDate.json"
+            },
+            {
+              "type": "item",
+              "title": "openingHours",
+              "uri": "models/place/openingHours.json"
+            },
+            {
+              "type": "item",
+              "title": "availableFrom",
+              "uri": "models/place/availableFrom.json"
+            },
+            {
+              "type": "item",
+              "title": "availableTo",
+              "uri": "models/place/availableTo.json"
+            },
+            {
+              "type": "item",
+              "title": "status",
+              "uri": "models/place/status.json"
+            },
+            {
+              "type": "item",
+              "title": "typicalAgeRange",
+              "uri": "models/place/typicalAgeRange.json"
+            },
+            {
+              "type": "item",
+              "title": "contactPoint",
+              "uri": "models/place/contactPoint.json"
+            },
+            {
+              "type": "item",
+              "title": "bookingInfo",
+              "uri": "models/place/bookingInfo.json"
+            },
+            {
+              "type": "item",
+              "title": "priceInfo",
+              "uri": "models/place/priceInfo.json"
+            },
+            {
+              "type": "item",
+              "title": "mediaObject",
+              "uri": "models/place/mediaObject.json"
+            },
+            {
+              "type": "item",
+              "title": "image",
+              "uri": "models/place/image.json"
+            },
+            {
+              "type": "item",
+              "title": "creator",
+              "uri": "models/place/creator.json"
+            },
+            {
+              "type": "item",
+              "title": "created",
+              "uri": "models/place/created.json"
+            },
+            {
+              "type": "item",
+              "title": "modified",
+              "uri": "models/place/modified.json"
+            },
+            {
+              "type": "item",
+              "title": "workflowStatus",
+              "uri": "models/place/workflowStatus.json"
+            },
+            {
+              "type": "item",
+              "title": "languages",
+              "uri": "models/place/languages.json"
+            },
+            {
+              "type": "item",
+              "title": "completedLanguages",
+              "uri": "models/place/completedLanguages.json"
+            },
+            {
+              "type": "item",
+              "title": "labels",
+              "uri": "models/place/labels.json"
+            },
+            {
+              "type": "item",
+              "title": "hiddenLabels",
+              "uri": "models/place/hiddenLabels.json"
+            },
+            {
+              "type": "item",
+              "title": "sameAs",
+              "uri": "models/place/sameAs.json"
+            }
           ]
         }
       ]
