@@ -112,10 +112,10 @@
       "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
-        "nl": "string",
-        "fr": "string",
-        "de": "string",
-        "en": "string"
+        "nl": "Nederlandse naam",
+        "fr": "Nom français",
+        "de": "Deutscher Name",
+        "en": "English name"
       },
       "address": {
         "nl": {
@@ -153,10 +153,10 @@
       "status": {
         "type": "available",
         "reason": {
-          "nl": "string",
-          "fr": "string",
-          "de": "string",
-          "en": "string"
+          "nl": "Nederlandse reden",
+          "fr": "Raison français",
+          "de": "Deutscher Grund",
+          "en": "English reason"
         }
       },
       "openingHours": [
@@ -192,10 +192,10 @@
       ],
       "typicalAgeRange": "6-12",
       "description": {
-        "nl": "string",
-        "fr": "string",
-        "de": "string",
-        "en": "string"
+        "nl": "Nederlandse beschrijving",
+        "fr": "Description français",
+        "de": "Deutscher Beschreibung",
+        "en": "English description"
       },
       "priceInfo": [
         {
@@ -203,10 +203,10 @@
           "price": 10.5,
           "priceCurrency": "EUR",
           "name": {
-            "nl": "string",
-            "fr": "string",
-            "de": "string",
-            "en": "string"
+            "nl": "Basistarief",
+            "fr": "Tarif de base",
+            "de": "Base tariff",
+            "en": "Basisrate"
           }
         }
       ],

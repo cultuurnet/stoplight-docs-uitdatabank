@@ -14,19 +14,23 @@
   "properties": {
     "nl": {
       "type": "string",
-      "description": "Dutch name"
+      "description": "Dutch name",
+      "example": "Nederlandse naam"
     },
     "fr": {
       "type": "string",
-      "description": "French name"
+      "description": "French name",
+      "example": "Nom français"
     },
     "de": {
       "type": "string",
-      "description": "German name"
+      "description": "German name",
+      "example": "Deutscher Name"
     },
     "en": {
       "type": "string",
-      "description": "English name"
+      "description": "English name",
+      "example": "English name"
     }
   }
 }

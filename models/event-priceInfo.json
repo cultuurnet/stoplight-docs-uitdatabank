@@ -93,24 +93,6 @@
         "description": "Name of a tariff inside priceInfo. Requires at least one value, for the language specified in the `mainLanguage` property.",
         "type": "object",
         "minProperties": 1,
-        "properties": {
-          "nl": {
-            "type": "string",
-            "description": "Dutch tariff name"
-          },
-          "fr": {
-            "type": "string",
-            "description": "French tariff name"
-          },
-          "de": {
-            "type": "string",
-            "description": "German tariff name"
-          },
-          "en": {
-            "type": "string",
-            "description": "English tariff name"
-          }
-        },
         "x-examples": {
           "Base tariff": {
             "nl": "Basistarief",
@@ -121,6 +103,28 @@
           "Youth": {
             "nl": "Jongeren (<18j)",
             "en": "Youth (<18yo)"
+          }
+        },
+        "properties": {
+          "nl": {
+            "type": "string",
+            "description": "Dutch tariff name",
+            "example": "Basistarief"
+          },
+          "fr": {
+            "type": "string",
+            "description": "French tariff name",
+            "example": "Tarif de base"
+          },
+          "de": {
+            "type": "string",
+            "description": "German tariff name",
+            "example": "Base tariff"
+          },
+          "en": {
+            "type": "string",
+            "description": "English tariff name",
+            "example": "Basisrate"
           }
         }
       }

@@ -48,19 +48,23 @@
       "properties": {
         "nl": {
           "type": "string",
-          "description": "Dutch reason"
+          "description": "Dutch reason",
+          "example": "Nederlandse reden"
         },
         "fr": {
           "type": "string",
-          "description": "French reason"
+          "description": "French reason",
+          "example": "Raison français"
         },
         "de": {
           "type": "string",
-          "description": "German reason"
+          "description": "German reason",
+          "example": "Deutscher Grund"
         },
         "en": {
           "type": "string",
-          "description": "English reason"
+          "description": "English reason",
+          "example": "English reason"
         }
       }
     }
