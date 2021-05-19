@@ -159,6 +159,16 @@
             },
             {
               "type": "item",
+              "title": "labels",
+              "uri": "models/event/labels.json"
+            },
+            {
+              "type": "item",
+              "title": "hiddenLabels",
+              "uri": "models/event/hiddenLabels.json"
+            },
+            {
+              "type": "item",
               "title": "sameAs",
               "uri": "models/event/sameAs.json"
             }

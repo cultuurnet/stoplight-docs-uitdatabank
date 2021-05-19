@@ -84,6 +84,12 @@
     },
     "image": {
       "$ref": "./event/image.json"
+    },
+    "labels": {
+      "$ref": "./event/labels.json"
+    },
+    "hiddenLabels": {
+      "$ref": "./event/hiddenLabels.json"
     }
   },
   "required": [
