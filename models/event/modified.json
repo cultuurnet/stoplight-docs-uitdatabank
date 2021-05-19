@@ -1,7 +1,7 @@
 {
   "$ref": "../date.json",
   "title": "event.modified",
-  "description": "The date & time that the event was last modified.\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
+  "description": "The date & time that the [event](../event.json) was last modified.\n\nFormatted as an ISO-8601 datetime. For example `2021-05-17T22:00:00+00:00`.",
   "x-examples": {
     "Example": "2021-05-17T22:00:00+00:00"
   }

@@ -64,5 +64,5 @@
       "dayOfWeek"
     ]
   },
-  "description": "A list of opening hour entries indicating the weekly start and end times of the event when using the `periodic` [calendarType](./calendarType.json)."
+  "description": "A list of opening hour entries indicating the weekly start and end times of the [event](../event.json) when using the `periodic` [calendarType](./calendarType.json)."
 }

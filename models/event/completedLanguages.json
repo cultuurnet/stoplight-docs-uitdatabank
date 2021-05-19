@@ -1,6 +1,6 @@
 {
   "title": "event.completedLanguages",
-  "description": "List of languages that _every_ localizable property on the event is available in.\n\nSee also [languages](./languages.json).",
+  "description": "List of languages that _every_ localizable property on the [event](../event.json) is available in.\n\nSee also [languages](./languages.json).",
   "type": "array",
   "items": {
     "$ref": "../language.json"

@@ -1,7 +1,7 @@
 {
   "title": "event.status",
   "type": "object",
-  "description": "Indicates if the event is still happening or not.",
+  "description": "Indicates if the [event](../event.json) is still happening or not.",
   "x-examples": {
     "Available": {
       "type": "available"
