@@ -1,0 +1,29 @@
+{
+  "title": "geo",
+  "type": "object",
+  "description": "Geocoordinates corresponding to the [address](./address.json) the place is located at. Calculated automatically by UiTdatabank.",
+  "properties": {
+    "latitude": {
+      "type": "number",
+      "format": "float",
+      "example": 50.8816177,
+      "description": "For example `50.8816177`"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "For example `4.7137986`",
+      "format": "float",
+      "example": 4.7137986
+    }
+  },
+  "required": [
+    "latitude",
+    "longitude"
+  ],
+  "x-examples": {
+    "Example": {
+      "latitude": 50.8816177,
+      "longitude": 4.7137986
+    }
+  }
+}
