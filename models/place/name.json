@@ -1,0 +1,32 @@
+{
+  "title": "place.name",
+  "description": "The name of the [place](../place.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./mainLanguage.json) property.",
+  "type": "object",
+    "minProperties": 1,
+    "x-examples": {
+      "Example": {
+        "nl": "Nederlandse tekst",
+        "fr": "Texte français",
+        "de": "Deutscher Text",
+        "en": "English text"
+      }
+    },
+    "properties": {
+      "nl": {
+        "type": "string",
+        "description": "Dutch name"
+      },
+      "fr": {
+        "type": "string",
+        "description": "French name"
+      },
+      "de": {
+        "type": "string",
+        "description": "German name"
+      },
+      "en": {
+        "type": "string",
+        "description": "English name"
+      }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "array",
+  "title": "place.hiddenLabels",
+  "description": "Same as [labels](./labels.json), but for labels that should not be visible for end users on publication channels and should instead only be used for filtering or other processing.",
+  "uniqueItems": true,
+  "minItems": 1,
+  "x-examples": {},
+  "items": {
+    "type": "string",
+    "format": "uri",
+    "example": "http://www.uitinvlaanderen.be/agenda/e/test-place/85b04295-479c-40f5-b3dd-469dfb4387b3",
+    "minLength": 2,
+    "maxLength": 50,
+    "pattern": "^[A-Za-z0-9-_]+"
+  }
+}

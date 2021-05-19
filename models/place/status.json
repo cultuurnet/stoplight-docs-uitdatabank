@@ -1,0 +1,71 @@
+{
+  "title": "place.status",
+  "type": "object",
+  "description": "Indicates if the [place](../place.json) is still happening or not.",
+  "x-examples": {
+    "Available": {
+      "type": "available"
+    },
+    "Temporarily Unavailable": {
+      "type": "temporarilyUnavailable",
+      "reason": {
+        "nl": "Uitgesteld wegens covid-19",
+        "en": "Postponed due to covid-19"
+      }
+    },
+    "Unavailable": {
+      "type": "unavailable",
+      "reason": {
+        "nl": "Permanent gesloten"
+      }
+    }
+  },
+  "properties": {
+    "type": {
+      "minLength": 1,
+      "enum": [
+        "available",
+        "temporarilyUnavailable",
+        "unavailable"
+      ],
+      "example": "available",
+      "description": "One of three possible status types.\n\n- `available`: The place is happening as planned\n- `temporarilyUnavailable`: The place will be postponed\n- `unavailable`: The place is permanently cancelled",
+      "type": "string"
+    },
+    "reason": {
+      "description": "The reason of the status on the place, as a localized human-readable text.",
+      "title": "",
+      "type": "object",
+      "minProperties": 1,
+      "x-examples": {
+        "Example": {
+          "nl": "Nederlandse tekst",
+          "fr": "Texte français",
+          "de": "Deutscher Text",
+          "en": "English text"
+        }
+      },
+      "properties": {
+        "nl": {
+          "type": "string",
+          "description": "Dutch reason"
+        },
+        "fr": {
+          "type": "string",
+          "description": "French reason"
+        },
+        "de": {
+          "type": "string",
+          "description": "German reason"
+        },
+        "en": {
+          "type": "string",
+          "description": "English reason"
+        }
+      }
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

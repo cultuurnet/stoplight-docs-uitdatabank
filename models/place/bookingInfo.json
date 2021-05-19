@@ -1,0 +1,43 @@
+{
+  "title": "place.bookingInfo",
+  "type": "object",
+  "description": "Booking info of the [place](../place.json), containing one or more phone numbers, email addresses, and/or website URLs.",
+  "properties": {
+    "phone": {
+      "type": "array",
+      "description": "List of phone numbers for booking purposes (can be empty)",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "description": "Phone number for booking purposes."
+      }
+    },
+    "email": {
+      "type": "array",
+      "description": "List of email addresses for booking purposes (can be empty)",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "description": "Email address for booking purposes.",
+        "format": "email",
+        "example": "info@example.com"
+      }
+    },
+    "url": {
+      "type": "array",
+      "description": "List of URLs for booking purposes (can be empty)",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "example": "https://www.example.com",
+        "description": "URL to a website for booking purposes."
+      }
+    }
+  },
+  "required": [
+    "phone",
+    "email",
+    "url"
+  ]
+}
