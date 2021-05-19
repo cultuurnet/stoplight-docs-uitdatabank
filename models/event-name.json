@@ -1,6 +1,6 @@
 {
   "title": "event.name",
-  "description": "The human-readable, localized name of the [event](./event.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./mainLanguage.json) property.",
+  "description": "The human-readable, localized name of the [event](./event.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./event-mainLanguage.json) property.",
   "type": "object",
   "minProperties": 1,
   "x-examples": {

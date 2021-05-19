@@ -1,7 +1,7 @@
 {
   "type": "array",
   "title": "place.priceInfo",
-  "description": "A list of tariffs available for tickets to the [place](../place.json).",
+  "description": "A list of tariffs available for tickets to the [place](./place.json).",
   "x-examples": {
     "Base tariff only": [
       {

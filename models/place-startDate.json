@@ -1,6 +1,6 @@
 {
   "title": "place.startDate",
-  "description": "The date & time that the [place](../place.json) starts when using the `periodic` [calendarType](./calendarType.json), as an ISO-8601 date.\n\nFor example `2021-05-17T22:00:00+00:00`.",
+  "description": "The date & time that the [place](./place.json) starts when using the `periodic` [calendarType](./place-calendarType.json), as an ISO-8601 date.\n\nFor example `2021-05-17T22:00:00+00:00`.",
   "type": "string",
   "format": "date-time",
   "example": "2021-05-17T22:00:00+00:00",

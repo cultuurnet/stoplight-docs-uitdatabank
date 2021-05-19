@@ -1,7 +1,7 @@
 {
   "title": "place.status",
   "type": "object",
-  "description": "Indicates if the [place](../place.json) is still open for visitations or not.",
+  "description": "Indicates if the [place](./place.json) is still open for visitations or not.",
   "x-examples": {
     "Available": {
       "type": "available"

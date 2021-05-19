@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "place.typicalAgeRange",
-  "description": "Indicates the minimum and maximum age to visit the [place](../place.json). For example `6-12`, `0-12`, `-12`, or `6-`.",
+  "description": "Indicates the minimum and maximum age to visit the [place](./place.json). For example `6-12`, `0-12`, `-12`, or `6-`.",
   "example": "6-12",
   "x-examples": {
     "Min age and max age": "6-12",

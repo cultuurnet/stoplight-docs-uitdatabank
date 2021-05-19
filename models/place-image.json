@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "place.image",
-  "description": "URL to the main image of the [place](../place.json). Must be one of the available `contentUrl` properties in the [mediaObject](./mediaObject.json) property.",
+  "description": "URL to the main image of the [place](./place.json). Must be one of the available `contentUrl` properties in the [mediaObject](./place-mediaObject.json) property.",
   "format": "uri",
   "example": "https://io-test.uitdatabank.be/images/example.png"
 }

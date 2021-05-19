@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "event.image",
-  "description": "URL to the main image of the [event](./event.json). Must be one of the available `contentUrl` properties in the [mediaObject](./mediaObject.json) property.",
+  "description": "URL to the main image of the [event](./event.json). Must be one of the available `contentUrl` properties in the [mediaObject](./event-mediaObject.json) property.",
   "format": "uri",
   "example": "https://io-test.uitdatabank.be/images/example.png"
 }

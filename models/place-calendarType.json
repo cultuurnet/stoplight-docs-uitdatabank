@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": "place.calendarType",
-  "description": "Determines how long the [place](../place.json) exists.\n\nPossible values: `periodic`, `permanent`.\n\n## periodic\n\nFor places that only exist for a specific period.\n\n**Must** be combined with [startDate](./startDate.json) and [endDate](./endDate.json).\n\nCan be combined with [openingHours](./openingHours.json).\n\n## permanent\n\nFor places that exist permanently.\n\nCan be combined with [openingHours](./openingHours.json).",
+  "description": "Determines how long the [place](./place.json) exists.\n\nPossible values: `periodic`, `permanent`.\n\n## periodic\n\nFor places that only exist for a specific period.\n\n**Must** be combined with [startDate](./place-startDate.json) and [endDate](./place-endDate.json).\n\nCan be combined with [openingHours](./place-openingHours.json).\n\n## permanent\n\nFor places that exist permanently.\n\nCan be combined with [openingHours](./place-openingHours.json).",
   "enum": [
     "periodic",
     "permanent"

@@ -1,7 +1,7 @@
 {
   "type": "array",
   "title": "place.mediaObject",
-  "description": "A list of media objects related to the [place](../place.json), for example images.",
+  "description": "A list of media objects related to the [place](./place.json), for example images.",
   "minItems": 1,
   "x-examples": {
     "Example": [
