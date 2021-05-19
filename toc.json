@@ -39,152 +39,152 @@
             {
               "type": "item",
               "title": "@id",
-              "uri": "models/event/@id.json"
+              "uri": "models/event-@id.json"
             },
             {
               "type": "item",
               "title": "mainLanguage",
-              "uri": "models/event/mainLanguage.json"
+              "uri": "models/event-mainLanguage.json"
             },
             {
               "type": "item",
               "title": "name",
-              "uri": "models/event/name.json"
+              "uri": "models/event-name.json"
             },
             {
               "type": "item",
               "title": "description",
-              "uri": "models/event/description.json"
+              "uri": "models/event-description.json"
             },
             {
               "type": "item",
               "title": "terms",
-              "uri": "models/event/terms.json"
+              "uri": "models/event-terms.json"
             },
             {
               "type": "item",
               "title": "calendarType",
-              "uri": "models/event/calendarType.json"
+              "uri": "models/event-calendarType.json"
             },
             {
               "type": "item",
               "title": "startDate",
-              "uri": "models/event/startDate.json"
+              "uri": "models/event-startDate.json"
             },
             {
               "type": "item",
               "title": "endDate",
-              "uri": "models/event/endDate.json"
+              "uri": "models/event-endDate.json"
             },
             {
               "type": "item",
               "title": "subEvent",
-              "uri": "models/event/subEvent.json"
+              "uri": "models/event-subEvent.json"
             },
             {
               "type": "item",
               "title": "openingHours",
-              "uri": "models/event/openingHours.json"
+              "uri": "models/event-openingHours.json"
             },
             {
               "type": "item",
               "title": "availableFrom",
-              "uri": "models/event/availableFrom.json"
+              "uri": "models/event-availableFrom.json"
             },
             {
               "type": "item",
               "title": "availableTo",
-              "uri": "models/event/availableTo.json"
+              "uri": "models/event-availableTo.json"
             },
             {
               "type": "item",
               "title": "status",
-              "uri": "models/event/status.json"
+              "uri": "models/event-status.json"
             },
             {
               "type": "item",
               "title": "location",
-              "uri": "models/event/location.json"
+              "uri": "models/event-location.json"
             },
             {
               "type": "item",
               "title": "audience",
-              "uri": "models/event/audience.json"
+              "uri": "models/event-audience.json"
             },
             {
               "type": "item",
               "title": "typicalAgeRange",
-              "uri": "models/event/typicalAgeRange.json"
+              "uri": "models/event-typicalAgeRange.json"
             },
             {
               "type": "item",
               "title": "contactPoint",
-              "uri": "models/event/contactPoint.json"
+              "uri": "models/event-contactPoint.json"
             },
             {
               "type": "item",
               "title": "bookingInfo",
-              "uri": "models/event/bookingInfo.json"
+              "uri": "models/event-bookingInfo.json"
             },
             {
               "type": "item",
               "title": "priceInfo",
-              "uri": "models/event/priceInfo.json"
+              "uri": "models/event-priceInfo.json"
             },
             {
               "type": "item",
               "title": "mediaObject",
-              "uri": "models/event/mediaObject.json"
+              "uri": "models/event-mediaObject.json"
             },
             {
               "type": "item",
               "title": "image",
-              "uri": "models/event/image.json"
+              "uri": "models/event-image.json"
             },
             {
               "type": "item",
               "title": "creator",
-              "uri": "models/event/creator.json"
+              "uri": "models/event-creator.json"
             },
             {
               "type": "item",
               "title": "created",
-              "uri": "models/event/created.json"
+              "uri": "models/event-created.json"
             },
             {
               "type": "item",
               "title": "modified",
-              "uri": "models/event/modified.json"
+              "uri": "models/event-modified.json"
             },
             {
               "type": "item",
               "title": "workflowStatus",
-              "uri": "models/event/workflowStatus.json"
+              "uri": "models/event-workflowStatus.json"
             },
             {
               "type": "item",
               "title": "languages",
-              "uri": "models/event/languages.json"
+              "uri": "models/event-languages.json"
             },
             {
               "type": "item",
               "title": "completedLanguages",
-              "uri": "models/event/completedLanguages.json"
+              "uri": "models/event-completedLanguages.json"
             },
             {
               "type": "item",
               "title": "labels",
-              "uri": "models/event/labels.json"
+              "uri": "models/event-labels.json"
             },
             {
               "type": "item",
               "title": "hiddenLabels",
-              "uri": "models/event/hiddenLabels.json"
+              "uri": "models/event-hiddenLabels.json"
             },
             {
               "type": "item",
               "title": "sameAs",
-              "uri": "models/event/sameAs.json"
+              "uri": "models/event-sameAs.json"
             }
           ]
         }
@@ -206,147 +206,147 @@
             {
               "type": "item",
               "title": "@id",
-              "uri": "models/place/@id.json"
+              "uri": "models/place-@id.json"
             },
             {
               "type": "item",
               "title": "mainLanguage",
-              "uri": "models/place/mainLanguage.json"
+              "uri": "models/place-mainLanguage.json"
             },
             {
               "type": "item",
               "title": "name",
-              "uri": "models/place/name.json"
+              "uri": "models/place-name.json"
             },
             {
               "type": "item",
               "title": "description",
-              "uri": "models/place/description.json"
+              "uri": "models/place-description.json"
             },
             {
               "type": "item",
               "title": "terms",
-              "uri": "models/place/terms.json"
+              "uri": "models/place-terms.json"
             },
             {
               "type": "item",
               "title": "address",
-              "uri": "models/place/address.json"
+              "uri": "models/place-address.json"
             },
             {
               "type": "item",
               "title": "geo",
-              "uri": "models/place/geo.json"
+              "uri": "models/place-geo.json"
             },
             {
               "type": "item",
               "title": "calendarType",
-              "uri": "models/place/calendarType.json"
+              "uri": "models/place-calendarType.json"
             },
             {
               "type": "item",
               "title": "startDate",
-              "uri": "models/place/startDate.json"
+              "uri": "models/place-startDate.json"
             },
             {
               "type": "item",
               "title": "endDate",
-              "uri": "models/place/endDate.json"
+              "uri": "models/place-endDate.json"
             },
             {
               "type": "item",
               "title": "openingHours",
-              "uri": "models/place/openingHours.json"
+              "uri": "models/place-openingHours.json"
             },
             {
               "type": "item",
               "title": "availableFrom",
-              "uri": "models/place/availableFrom.json"
+              "uri": "models/place-availableFrom.json"
             },
             {
               "type": "item",
               "title": "availableTo",
-              "uri": "models/place/availableTo.json"
+              "uri": "models/place-availableTo.json"
             },
             {
               "type": "item",
               "title": "status",
-              "uri": "models/place/status.json"
+              "uri": "models/place-status.json"
             },
             {
               "type": "item",
               "title": "typicalAgeRange",
-              "uri": "models/place/typicalAgeRange.json"
+              "uri": "models/place-typicalAgeRange.json"
             },
             {
               "type": "item",
               "title": "contactPoint",
-              "uri": "models/place/contactPoint.json"
+              "uri": "models/place-contactPoint.json"
             },
             {
               "type": "item",
               "title": "bookingInfo",
-              "uri": "models/place/bookingInfo.json"
+              "uri": "models/place-bookingInfo.json"
             },
             {
               "type": "item",
               "title": "priceInfo",
-              "uri": "models/place/priceInfo.json"
+              "uri": "models/place-priceInfo.json"
             },
             {
               "type": "item",
               "title": "mediaObject",
-              "uri": "models/place/mediaObject.json"
+              "uri": "models/place-mediaObject.json"
             },
             {
               "type": "item",
               "title": "image",
-              "uri": "models/place/image.json"
+              "uri": "models/place-image.json"
             },
             {
               "type": "item",
               "title": "creator",
-              "uri": "models/place/creator.json"
+              "uri": "models/place-creator.json"
             },
             {
               "type": "item",
               "title": "created",
-              "uri": "models/place/created.json"
+              "uri": "models/place-created.json"
             },
             {
               "type": "item",
               "title": "modified",
-              "uri": "models/place/modified.json"
+              "uri": "models/place-modified.json"
             },
             {
               "type": "item",
               "title": "workflowStatus",
-              "uri": "models/place/workflowStatus.json"
+              "uri": "models/place-workflowStatus.json"
             },
             {
               "type": "item",
               "title": "languages",
-              "uri": "models/place/languages.json"
+              "uri": "models/place-languages.json"
             },
             {
               "type": "item",
               "title": "completedLanguages",
-              "uri": "models/place/completedLanguages.json"
+              "uri": "models/place-completedLanguages.json"
             },
             {
               "type": "item",
               "title": "labels",
-              "uri": "models/place/labels.json"
+              "uri": "models/place-labels.json"
             },
             {
               "type": "item",
               "title": "hiddenLabels",
-              "uri": "models/place/hiddenLabels.json"
+              "uri": "models/place-hiddenLabels.json"
             },
             {
               "type": "item",
               "title": "sameAs",
-              "uri": "models/place/sameAs.json"
+              "uri": "models/place-sameAs.json"
             }
           ]
         }
