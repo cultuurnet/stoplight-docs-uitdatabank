@@ -3,6 +3,13 @@
   "type": "array",
   "description": "List of languages that the [event](../event.json) is available in. (Not all localizable properties may contain every language though)\n\nSee also [completedLanguages](./completedLanguages.json).",
   "items": {
-    "$ref": "../language.json"
+    "type": "string",
+    "enum": [
+      "nl",
+      "fr",
+      "de",
+      "en"
+    ],
+    "example": "nl"
   }
 }
