@@ -183,6 +183,11 @@
             },
             {
               "type": "item",
+              "title": "production",
+              "uri": "models/event-production.json"
+            },
+            {
+              "type": "item",
               "title": "sameAs",
               "uri": "models/event-sameAs.json"
             }

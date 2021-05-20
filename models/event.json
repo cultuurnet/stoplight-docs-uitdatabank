@@ -368,6 +368,9 @@
     },
     "hiddenLabels": {
       "$ref": "./event-hiddenLabels.json"
+    },
+    "production": {
+      "$ref": "./event-production.json"
     }
   },
   "required": [
