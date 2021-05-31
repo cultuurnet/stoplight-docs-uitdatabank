@@ -5,4 +5,5 @@ On this page you can get a grasp of common UiTdatabank terminology and concepts,
 <!-- theme: warning -->
 
 > ##### Construction ahead 🚧
+>
 > This page is a placeholder and under construction.

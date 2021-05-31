@@ -7,4 +7,5 @@ A warm welcome to our UiTdatabank API documentation! 👋
 <!-- theme: warning -->
 
 > ##### Construction ahead 🚧
-> This space is still under heavy construction. For the stable documentation, see [https://documentatie.uitdatabank.be](https://documentatie.uitdatabank.be).
+>
+> This space is still under heavy construction. For the stable documentation, see <https://documentatie.uitdatabank.be>.
