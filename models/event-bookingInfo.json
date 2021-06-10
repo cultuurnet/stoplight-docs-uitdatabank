@@ -18,6 +18,61 @@
       "format": "uri",
       "example": "https://www.example.com",
       "description": "URL to a website for booking purposes."
+    },
+    "urlLabel": {
+      "type": "object",
+      "description": "Call-to-action text to show for the link to the booking url",
+      "minProperties": 1,
+      "x-examples": {
+        "Example": {
+          "nl": "Nederlandse tekst",
+          "fr": "Texte français",
+          "de": "Deutscher Text",
+          "en": "English text"
+        }
+      },
+      "properties": {
+        "nl": {
+          "type": "string",
+          "description": "Dutch description",
+          "example": "Nederlandse beschrijving"
+        },
+        "fr": {
+          "type": "string",
+          "description": "French description",
+          "example": "Description français"
+        },
+        "de": {
+          "type": "string",
+          "description": "German description",
+          "example": "Deutscher Beschreibung"
+        },
+        "en": {
+          "type": "string",
+          "description": "English description",
+          "example": "English description"
+        }
+      }
+    },
+    "availabilityStarts": {
+      "description": "The date & time when the booking period starts",
+      "type": "string",
+      "format": "date-time",
+      "example": "2021-05-17T22:00:00+00:00",
+      "minLength": 1,
+      "x-examples": {
+        "Example": "2021-05-17T22:00:00+00:00"
+      }
+    },
+    "availabilityEnds": {
+      "description": "The date & time when the booking period ends",
+      "type": "string",
+      "format": "date-time",
+      "example": "2021-05-17T22:00:00+00:00",
+      "minLength": 1,
+      "x-examples": {
+        "Example": "2021-05-17T22:00:00+00:00"
+      }
     }
   },
   "required": []
