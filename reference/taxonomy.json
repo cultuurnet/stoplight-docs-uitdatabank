@@ -332,9 +332,6 @@
             ]
           }
         },
-        "x-tags": [
-          "Term"
-        ],
         "properties": {
           "id": {
             "type": "string",
@@ -505,9 +502,6 @@
           "name",
           "zip"
         ],
-        "x-tags": [
-          "Municipality"
-        ]
       }
     },
     "securitySchemes": {}
