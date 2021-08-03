@@ -14,7 +14,69 @@
   ],
   "paths": {},
   "components": {
-    "schemas": {},
+    "schemas": {
+      "term": {
+        "title": "term",
+        "type": "object",
+        "x-internal": false,
+        "description": "A taxonomy term like an event type, place type, theme, or facility.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "3.23.1.0.0"
+          },
+          "domain": {
+            "type": "string",
+            "enum": [
+              "eventType",
+              "placeType",
+              "facility",
+              "theme"
+            ],
+            "description": "Indicates to what domain the taxonomy term belongs.",
+            "example": "facility"
+          },
+          "name": {
+            "type": "object",
+            "description": "Localized human-readable names of the term, as an object with languages as properties.",
+            "properties": {
+              "nl": {
+                "type": "string",
+                "example": "Voorzieningen voor rolstoelgebruikers"
+              },
+              "fr": {
+                "type": "string",
+                "example": "Facilités pour fauteuils roulants"
+              },
+              "de": {
+                "type": "string",
+                "example": "EInrichtung für Rollstuhlfahrer"
+              },
+              "en": {
+                "type": "string",
+                "example": "Wheelchair facilities"
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "domain"
+        ],
+        "examples": [
+          {
+            "id": "3.23.1.0.0",
+            "domain": "facility",
+            "name": {
+              "nl": "Voorzieningen voor rolstoelgebruikers",
+              "fr": "Facilités pour fauteuils roulants",
+              "de": "EInrichtung für Rollstuhlfahrer",
+              "en": "Wheelchair facilities"
+            }
+          }
+        ]
+      }
+    },
     "securitySchemes": {}
   }
 }
