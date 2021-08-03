@@ -23,7 +23,8 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "3.23.1.0.0"
+            "example": "3.23.1.0.0",
+            "description": "Unique id of the taxonomy term."
           },
           "domain": {
             "type": "string",
