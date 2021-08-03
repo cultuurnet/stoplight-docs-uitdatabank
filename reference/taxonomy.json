@@ -1,0 +1,20 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Taxonomy API",
+    "version": "3.0",
+    "description": "UiTdatabank's taxonomy API, used to programmatically retrieve lists of taxonomy terms like event types, place types, themes and facilities, as well as cities and other geographical regions.\n\n**Authentication**\n\nThe taxonomy API requires no authentication.\n\n**Environments**\n\nThe taxonomy API only has one environment, the production environment. Since the taxonomy terms are the same on all environments, you can also connect to this environment from your testing environment to retrieve taxonomy terms.",
+    "summary": "Programmatically find lists of terms, cities, etc."
+  },
+  "servers": [
+    {
+      "url": "http://taxonomy.uitdatabank.be",
+      "description": "Production"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  }
+}
