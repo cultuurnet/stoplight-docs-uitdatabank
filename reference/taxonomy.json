@@ -19,7 +19,9 @@
     "/terms": {
       "get": {
         "summary": "Retrieve taxonomy terms",
-        "tags": [],
+        "tags": [
+          "Term"
+        ],
         "responses": {
           "200": {
             "description": "A list of taxonomy terms.",
@@ -138,6 +140,9 @@
         "required": [
           "id",
           "domain"
+        ],
+        "x-tags": [
+          "Term"
         ]
       },
       "Error": {
@@ -178,5 +183,10 @@
       }
     },
     "securitySchemes": {}
-  }
+  },
+  "tags": [
+    {
+      "name": "Term"
+    }
+  ]
 }
