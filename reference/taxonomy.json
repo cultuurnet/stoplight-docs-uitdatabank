@@ -1,10 +1,9 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.0",
   "info": {
     "title": "Taxonomy API",
     "version": "3.0",
-    "description": "UiTdatabank's taxonomy API is used to programmatically retrieve lists of taxonomy terms like event types, place types, themes and facilities, as well as cities and other geographical regions.\n\n**Authentication**\n\nThe taxonomy API requires no authentication.\n\n**Environments**\n\nThe taxonomy API only has one environment, the production environment. Since the taxonomy terms are the same on all environments, you can also connect to this environment from your testing environment to retrieve taxonomy terms.",
-    "summary": "Programmatically find lists of terms, cities, etc."
+    "description": "UiTdatabank's taxonomy API is used to programmatically retrieve lists of taxonomy terms like event types, place types, themes and facilities, as well as cities and other geographical regions.\n\n**Authentication**\n\nThe taxonomy API requires no authentication.\n\n**Environments**\n\nThe taxonomy API only has one environment, the production environment. Since the taxonomy terms are the same on all environments, you can also connect to this environment from your testing environment to retrieve taxonomy terms."
   },
   "servers": [
     {
@@ -80,7 +79,7 @@
         "type": "object",
         "x-internal": false,
         "description": "A taxonomy term like an event type, place type, theme, or facility.",
-        "examples": [
+        "x-examples": [
           {
             "id": "3.23.1.0.0",
             "domain": "facility",
