@@ -12,7 +12,67 @@
       "description": "Production"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/terms": {
+      "get": {
+        "summary": "Retrieve taxonomy terms",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "A list of taxonomy terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Term"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The response will include a JSON body with more details in the form of a RFC7807 error model. Possible error types:\n\n* https://api.publiq.be/probs/uitdatabank/invalid-taxonomy-domain",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid taxonomy term": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/uitdatabank/invalid-taxonomy-domain",
+                      "title": "Invalid taxonomy domain",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-terms",
+        "description": "Returns the taxonomy terms of all existing domains or filtered by domain.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "eventType",
+                "placeType",
+                "theme",
+                "facility"
+              ]
+            },
+            "in": "query",
+            "name": "domain",
+            "description": "Limits the results to the taxonomy terms that belong to the given domain."
+          }
+        ]
+      },
+      "parameters": []
+    }
+  },
   "components": {
     "schemas": {
       "Term": {
