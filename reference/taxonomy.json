@@ -80,7 +80,9 @@
     "/municipalities": {
       "get": {
         "summary": "List municipalities",
-        "tags": [],
+        "tags": [
+          "Municipality"
+        ],
         "responses": {
           "200": {
             "description": "A list of all Belgian municipalities.",
@@ -364,12 +366,18 @@
           "id",
           "name",
           "zip"
+        ],
+        "x-tags": [
+          "Municipality"
         ]
       }
     },
     "securitySchemes": {}
   },
   "tags": [
+    {
+      "name": "Municipality"
+    },
     {
       "name": "Term"
     }
