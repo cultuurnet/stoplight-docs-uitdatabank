@@ -271,6 +271,76 @@
           "title",
           "status"
         ]
+      },
+      "Municipality": {
+        "title": "Municipality",
+        "type": "object",
+        "description": "A Belgian municipality.",
+        "x-examples": {
+          "example-1": {
+            "id": "3018_WIJGMAAL",
+            "name": {
+              "nl": "Wijgmaal",
+              "fr": "Wijgmaal",
+              "de": "Wijgmaal",
+              "en": "Wijgmaal"
+            },
+            "zip": "3018",
+            "parent": "3000_LEUVEN",
+            "subMunicipality": true
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique id of the municipality.",
+            "example": "3018_WIJGMAAL"
+          },
+          "name": {
+            "type": "object",
+            "description": "Localized human-readable names of the municipality, as an object with languages as properties.",
+            "required": [
+              "nl"
+            ],
+            "properties": {
+              "nl": {
+                "type": "string",
+                "example": "Wijgmaal"
+              },
+              "fr": {
+                "type": "string",
+                "example": "Wijgmaal"
+              },
+              "de": {
+                "type": "string",
+                "example": "Wijgmaal"
+              },
+              "en": {
+                "type": "string",
+                "example": "Wijgmaal"
+              }
+            }
+          },
+          "zip": {
+            "type": "string",
+            "description": "Postal code of the municipality.",
+            "example": "3018"
+          },
+          "parent": {
+            "type": "string",
+            "description": "Only present if subMunicipality is set to true. Unique id of the municipality that is the parent of this subMunicipality.",
+            "example": "3000_LEUVEN"
+          },
+          "subMunicipality": {
+            "type": "boolean",
+            "description": "Whether this city/municipality is a submunicipality or not."
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "zip"
+        ]
       }
     },
     "securitySchemes": {}
