@@ -20,6 +20,18 @@
         "type": "object",
         "x-internal": false,
         "description": "A taxonomy term like an event type, place type, theme, or facility.",
+        "examples": [
+          {
+            "id": "3.23.1.0.0",
+            "domain": "facility",
+            "name": {
+              "nl": "Voorzieningen voor rolstoelgebruikers",
+              "fr": "Facilités pour fauteuils roulants",
+              "de": "EInrichtung für Rollstuhlfahrer",
+              "en": "Wheelchair facilities"
+            }
+          }
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -64,16 +76,6 @@
           "id",
           "domain"
         ],
-        "examples": [
-          {
-            "id": "3.23.1.0.0",
-            "domain": "facility",
-            "name": {
-              "nl": "Voorzieningen voor rolstoelgebruikers",
-              "fr": "Facilités pour fauteuils roulants",
-              "de": "EInrichtung für Rollstuhlfahrer",
-              "en": "Wheelchair facilities"
-            }
           }
         ]
       }
