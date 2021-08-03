@@ -32,6 +32,22 @@
                   "items": {
                     "$ref": "#/components/schemas/Term"
                   }
+                },
+                "examples": {
+                  "Facility": {
+                    "value": [
+                      {
+                        "id": "3.23.1.0.0",
+                        "domain": "facility",
+                        "name": {
+                          "nl": "Voorzieningen voor rolstoelgebruikers",
+                          "fr": "Facilités pour fauteuils roulants",
+                          "de": "EInrichtung für Rollstuhlfahrer",
+                          "en": "Wheelchair facilities"
+                        }
+                      }
+                    ]
+                  }
                 }
               }
             }
