@@ -34,7 +34,7 @@
                   }
                 },
                 "examples": {
-                  "Facility": {
+                  "Example": {
                     "value": [
                       {
                         "id": "3.23.1.0.0",
@@ -45,6 +45,88 @@
                           "de": "EInrichtung für Rollstuhlfahrer",
                           "en": "Wheelchair facilities"
                         }
+                      },
+                      {
+                        "id": "0.50.4.0.0",
+                        "domain": "eventType",
+                        "name": {
+                          "nl": "Concert",
+                          "fr": "Concert",
+                          "de": "Konzert",
+                          "en": "Concert"
+                        },
+                        "otherSuggestedTerms": [
+                          {
+                            "id": "1.8.3.5.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Amusementsmuziek",
+                              "fr": "Cabaret",
+                              "de": "Schlager",
+                              "en": "Cabaret music"
+                            }
+                          },
+                          {
+                            "id": "1.8.3.3.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Dance muziek",
+                              "fr": "Musique de danse",
+                              "de": "Tanzmusik",
+                              "en": "Dance music"
+                            }
+                          },
+                          {
+                            "id": "1.8.4.0.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Folk en wereldmuziek",
+                              "fr": "Musique folklorique et mondiale",
+                              "de": "Folk und World",
+                              "en": "Folk and world music"
+                            }
+                          },
+                          {
+                            "id": "1.8.3.2.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Hip hop, rnb en rap",
+                              "fr": "Hip hop, rnb et rap",
+                              "de": "Hip-Hop, R und B und Rap",
+                              "en": "Hip hop, rnb and rap"
+                            }
+                          },
+                          {
+                            "id": "1.8.2.0.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Jazz en blues",
+                              "fr": "Jazz et blues",
+                              "de": "Jazz und Blues",
+                              "en": "Jazz and blues"
+                            }
+                          },
+                          {
+                            "id": "1.8.1.0.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Klassieke muziek",
+                              "fr": "Musique classique",
+                              "de": "Klassische Musik",
+                              "en": "Classical music"
+                            }
+                          },
+                          {
+                            "id": "1.8.3.1.0",
+                            "domain": "theme",
+                            "name": {
+                              "nl": "Pop en rock",
+                              "fr": "Pop et rock",
+                              "de": "Pop und Rock",
+                              "en": "Pop and rock"
+                            }
+                          }
+                        ]
                       }
                     ]
                   }
