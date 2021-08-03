@@ -20,7 +20,7 @@
       "get": {
         "summary": "List taxonomy terms",
         "tags": [
-          "Term"
+          "Terms"
         ],
         "responses": {
           "200": {
@@ -179,7 +179,7 @@
       "get": {
         "summary": "List municipalities",
         "tags": [
-          "Municipality"
+          "Municipalities"
         ],
         "responses": {
           "200": {
@@ -513,13 +513,10 @@
   },
   "tags": [
     {
-      "name": "Municipality"
+      "name": "Municipalities"
     },
     {
-      "name": "Term"
-    },
-    {
-      "name": "Models"
+      "name": "Terms"
     }
   ]
 }
