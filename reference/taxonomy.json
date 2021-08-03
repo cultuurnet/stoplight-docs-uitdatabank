@@ -97,6 +97,9 @@
             }
           }
         },
+        "x-tags": [
+          "Term"
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -139,10 +142,8 @@
         },
         "required": [
           "id",
-          "domain"
-        ],
-        "x-tags": [
-          "Term"
+          "domain",
+          "name"
         ]
       },
       "Error": {
