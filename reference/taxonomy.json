@@ -76,6 +76,30 @@
         ]
       },
       "parameters": []
+    },
+    "/municipalities": {
+      "get": {
+        "summary": "List municipalities",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "A list of all Belgian municipalities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Municipality"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-municipalities",
+        "description": "Returns all municipalities in Belgium with their postal code and whether they are a submunicipality (_\"deelgemeente\"_) or not."
+      },
+      "parameters": []
     }
   },
   "components": {
