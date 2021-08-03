@@ -83,8 +83,8 @@
         "type": "object",
         "x-internal": false,
         "description": "A taxonomy term like an event type, place type, theme, or facility.",
-        "x-examples": [
-          {
+        "x-examples": {
+          "Facility": {
             "id": "3.23.1.0.0",
             "domain": "facility",
             "name": {
@@ -94,7 +94,7 @@
               "en": "Wheelchair facilities"
             }
           }
-        ],
+        },
         "properties": {
           "id": {
             "type": "string",
