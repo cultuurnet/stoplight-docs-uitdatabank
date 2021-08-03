@@ -303,7 +303,7 @@
         "type": "object",
         "description": "A Belgian municipality.",
         "x-examples": {
-          "example-1": {
+          "Submunicipality": {
             "id": "3018_WIJGMAAL",
             "name": {
               "nl": "Wijgmaal",
@@ -314,6 +314,17 @@
             "zip": "3018",
             "parent": "3000_LEUVEN",
             "subMunicipality": true
+          },
+          "Municipality": {
+            "id": "3000_LEUVEN",
+            "name": {
+              "nl": "Leuven",
+              "fr": "Louvain",
+              "de": "Leuven",
+              "en": "Louvain"
+            },
+            "zip": "3000",
+            "parent": "3000_LEUVEN"
           }
         },
         "properties": {
