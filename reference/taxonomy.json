@@ -15,8 +15,8 @@
   "paths": {},
   "components": {
     "schemas": {
-      "term": {
-        "title": "term",
+      "Term": {
+        "title": "Term",
         "type": "object",
         "x-internal": false,
         "description": "A taxonomy term like an event type, place type, theme, or facility.",
