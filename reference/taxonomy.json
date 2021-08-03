@@ -236,7 +236,7 @@
       "Term": {
         "title": "Term",
         "type": "object",
-        "x-internal": false,
+        "x-internal": true,
         "description": "A taxonomy term like an event type, place type, theme, or facility.",
         "x-examples": {
           "Facility": {
@@ -423,7 +423,8 @@
           "type",
           "title",
           "status"
-        ]
+        ],
+        "x-internal": true
       },
       "Municipality": {
         "title": "Municipality",
@@ -507,7 +508,8 @@
         ],
         "x-tags": [
           "Municipality"
-        ]
+        ],
+        "x-internal": true
       }
     },
     "securitySchemes": {}
