@@ -373,6 +373,11 @@
           ]
         }
       ]
+    },
+    {
+      "type": "item",
+      "title": "Taxonomy API",
+      "uri": "reference/taxonomy.json"
     }
   ]
 }
