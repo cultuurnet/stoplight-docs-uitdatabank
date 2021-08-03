@@ -236,7 +236,6 @@
       "Term": {
         "title": "Term",
         "type": "object",
-        "x-internal": false,
         "description": "A taxonomy term like an event type, place type, theme, or facility.",
         "x-examples": {
           "Facility": {
@@ -384,6 +383,9 @@
           "id",
           "domain",
           "name"
+        ],
+        "x-tags": [
+          "Models"
         ]
       },
       "Error": {
@@ -501,6 +503,9 @@
           "id",
           "name",
           "zip"
+        ],
+        "x-tags": [
+          "Models"
         ]
       }
     },
@@ -512,6 +517,9 @@
     },
     {
       "name": "Term"
+    },
+    {
+      "name": "Models"
     }
   ]
 }
