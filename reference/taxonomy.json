@@ -109,6 +109,35 @@
                   "items": {
                     "$ref": "#/components/schemas/Municipality"
                   }
+                },
+                "examples": {
+                  "Example": {
+                    "value": [
+                      {
+                        "id": "3000_LEUVEN",
+                        "name": {
+                          "nl": "Leuven",
+                          "fr": "Louvain",
+                          "de": "Leuven",
+                          "en": "Louvain"
+                        },
+                        "zip": "3000",
+                        "parent": "3000_LEUVEN"
+                      },
+                      {
+                        "id": "3018_WIJGMAAL",
+                        "name": {
+                          "nl": "Wijgmaal",
+                          "fr": "Wijgmaal",
+                          "de": "Wijgmaal",
+                          "en": "Wijgmaal"
+                        },
+                        "zip": "3018",
+                        "parent": "3000_LEUVEN",
+                        "subMunicipality": true
+                      }
+                    ]
+                  }
                 }
               }
             }
