@@ -128,6 +128,11 @@
             },
             {
               "type": "item",
+              "title": "bookingAvailability",
+              "uri": "models/event-bookingAvailability.json"
+            },
+            {
+              "type": "item",
               "title": "priceInfo",
               "uri": "models/event-priceInfo.json"
             },
@@ -292,6 +297,11 @@
               "type": "item",
               "title": "bookingInfo",
               "uri": "models/place-bookingInfo.json"
+            },
+            {
+              "type": "item",
+              "title": "bookingAvailability",
+              "uri": "models/place-bookingAvailability.json"
             },
             {
               "type": "item",
