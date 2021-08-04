@@ -163,15 +163,17 @@
           ]
         },
         "bookingInfo": {
-          "phone": [
-            "string"
-          ],
-          "email": [
-            "info@example.com"
-          ],
-          "url": [
-            "https://www.example.com"
-          ]
+          "phone": "string",
+          "email": "info@example.com",
+          "url": "https://www.example.com",
+          "urlLabel": {
+            "nl": "Nederlandse beschrijving",
+            "fr": "Description français",
+            "de": "Deutscher Beschreibung",
+            "en": "English description"
+          },
+          "availabilityStarts": "2021-05-17T22:00:00+00:00",
+          "availabilityEnds": "2021-05-17T22:00:00+00:00"
         },
         "mediaObject": [
           {
@@ -247,15 +249,17 @@
         ]
       },
       "bookingInfo": {
-        "phone": [
-          "string"
-        ],
-        "email": [
-          "info@example.com"
-        ],
-        "url": [
-          "https://www.example.com"
-        ]
+        "phone": "string",
+        "email": "info@example.com",
+        "url": "https://www.example.com",
+        "urlLabel": {
+          "nl": "Nederlandse beschrijving",
+          "fr": "Description français",
+          "de": "Deutscher Beschreibung",
+          "en": "English description"
+        },
+        "availabilityStarts": "2021-05-17T22:00:00+00:00",
+        "availabilityEnds": "2021-05-17T22:00:00+00:00"
       },
       "mediaObject": [
         {
