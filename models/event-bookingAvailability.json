@@ -1,5 +1,5 @@
 {
-  "title": "event-bookingAvailability",
+  "title": "event.bookingAvailability",
   "type": "object",
   "description": "Indicates whether the event still has tickets or reservations available. Currently only contains a `type` that can be `Available` or `Unavailable`, but can later be expanded with more detailed info.",
   "properties": {
