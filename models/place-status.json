@@ -4,17 +4,17 @@
   "description": "Indicates if the [place](./place.json) is still open for visitations or not.",
   "x-examples": {
     "Available": {
-      "type": "available"
+      "type": "Available"
     },
     "Temporarily Unavailable": {
-      "type": "temporarilyUnavailable",
+      "type": "TemporarilyUnavailable",
       "reason": {
         "nl": "Uitgesteld wegens covid-19",
         "en": "Postponed due to covid-19"
       }
     },
     "Unavailable": {
-      "type": "unavailable",
+      "type": "Unavailable",
       "reason": {
         "nl": "Permanent gesloten"
       }
@@ -24,12 +24,12 @@
     "type": {
       "minLength": 1,
       "enum": [
-        "available",
-        "temporarilyUnavailable",
-        "unavailable"
+        "Available",
+        "TemporarilyUnavailable",
+        "Unavailable"
       ],
-      "example": "available",
-      "description": "One of three possible status types.\n\n- `available`: The place is open for visitations as scheduled\n- `temporarilyUnavailable`: The place is temporarily closed\n- `unavailable`: The place is permanently closed",
+      "example": "Available",
+      "description": "One of three possible status types.\n\n- `Available`: The place is open for visitations as scheduled\n- `TemporarilyUnavailable`: The place is temporarily closed\n- `Unavailable`: The place is permanently closed",
       "type": "string"
     },
     "reason": {
