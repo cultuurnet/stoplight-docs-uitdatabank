@@ -35,6 +35,9 @@
               "de": "Deutscher Grund",
               "en": "English reason"
             }
+          },
+          "bookingAvailability": {
+            "type": "Available"
           }
         }
       ],
