@@ -1,0 +1,19 @@
+{
+  "title": "event-bookingAvailability",
+  "type": "object",
+  "description": "Indicates whether the event still has tickets or reservations available. Currently only contains a `type` that can be `Available` or `Unavailable`, but can later be expanded with more detailed info.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "Available",
+        "Unavailable"
+      ],
+      "description": "One of two possible types.\n\n- `Available`: The event still has available tickets or reservations\n- `Unavailable`: The event has no more available tickets or reservations."
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "x-examples": {}
+}
