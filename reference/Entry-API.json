@@ -32,6 +32,15 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
           }
         },
         "description": "Updates the general bookingAvailability info on the top level of the event with the given `eventId`.\n\nThe bookingAvailability of any subEvents that the event has will also be updated to match the general bookingAvailability.",
