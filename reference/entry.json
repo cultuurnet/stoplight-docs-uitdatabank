@@ -20,6 +20,36 @@
     }
   ],
   "paths": {
+    "/events/{eventId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "get": {
+        "summary": "Get event details",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/event.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "get-event",
+        "description": "Returns the details of the event for the given `eventId`."
+      }
+    },
     "/events/{eventId}/bookingAvailability": {
       "parameters": [
         {
@@ -97,36 +127,6 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
-      }
-    },
-    "/events/{eventId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/eventId"
-        }
-      ],
-      "get": {
-        "summary": "Get event details",
-        "tags": [
-          "Events"
-        ],
-        "responses": {
-          "200": {
-            "description": "Event details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../models/event.json"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/EventNotFound"
-          }
-        },
-        "operationId": "get-event",
-        "description": "Returns the details of the event for the given `eventId`."
       }
     }
   },
