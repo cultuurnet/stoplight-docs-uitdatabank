@@ -1,0 +1,295 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Entry API",
+    "version": "3.0",
+    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.",
+    "contact": {
+      "name": "publiq helpdesk",
+      "email": "vragen@publiq.be"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://io-test.uitdatabank.be",
+      "description": "Testing"
+    },
+    {
+      "url": "http://io.uitdatabank.be",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/events/{eventId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "get": {
+        "summary": "Get event details",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/event.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "get-event",
+        "description": "Returns the details of the event for the given `eventId`."
+      }
+    },
+    "/events/{eventId}/bookingAvailability": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update bookingAvailability",
+        "operationId": "put-event-bookingAvailability",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+                      "title": "Calendar type not supported",
+                      "status": 400,
+                      "detail": "Not allowed to update booking availability on calendar type: \"permanent\". Only single and multiple calendar types can be updated."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Updates the general bookingAvailability info on the top level of the event with the given `eventId`.\n\nThe bookingAvailability of any subEvents that the event has will also be updated to match the general bookingAvailability.\n\n<!-- theme: warning -->\n\n> Note that you cannot update the bookingAvailability of an event with [calendar type](/models/event-calendarType.json) `periodic` or `permanent`. For now, they can only have \"Available\" as bookingAvailability.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "type": "Available"
+                  }
+                },
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "enum": [
+                      "Available",
+                      "Unavailable"
+                    ],
+                    "description": "`Available` if the event still has tickets or places for reservation. `Unavailable` if there are no more tickets or places left."
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "examples": {
+                "Tickets/places available": {
+                  "value": {
+                    "type": "Available"
+                  }
+                },
+                "No more tickets/places available": {
+                  "value": {
+                    "type": "Unavailable"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "title": "Error",
+        "type": "object",
+        "description": "RFC7807 error model for all publiq APIs",
+        "x-tags": [
+          "Models"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type."
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code."
+          },
+          "jsonPointer": {
+            "type": "string",
+            "description": "Pointer to the erroneous request object in JavaScript Object Notation (JSON) Pointer format.",
+            "format": "json-pointer"
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem. "
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "status"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "USER_ACCESS_TOKEN": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "",
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        }
+      },
+      "CLIENT_ACCESS_TOKEN": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "parameters": {
+      "eventId": {
+        "name": "eventId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of an event, in the format of a UUID"
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Unauthorized. Your request is missing the required credentials to authenticate. See the Authentication documentation for more info.\n\n* type: https://api.publiq.be/probs/auth/unauthorized\n* detail: might contain a developer-readable explanation of the reason",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/auth/unauthorized",
+                  "title": "Unauthorized",
+                  "status": 401
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Forbidden. Your request was successfully authenticated but you do not have permission to perform this particular request.\n\n* type: https://api.publiq.be/probs/auth/forbidden\n* detail: might contain a developer-readable explanation of the reason",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/auth/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "user must be admin of organiser abcd1234"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EventNotFound": {
+        "description": "No event found for the given `eventId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/event-not-found",
+                  "title": "Event not found",
+                  "status": 404,
+                  "detail": "The event with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Events"
+    }
+  ]
+}
