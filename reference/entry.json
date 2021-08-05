@@ -64,7 +64,7 @@
             "description": "No Content"
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/uitdatabank/update-booking-availability-not-supported",
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -73,8 +73,8 @@
                 "examples": {
                   "Example": {
                     "value": {
-                      "type": "https://api.publiq.be/probs/uitdatabank/update-booking-availability-not-supported",
-                      "title": "Update of booking availability is not supported",
+                      "type": "https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+                      "title": "Calendar type not supported",
                       "status": 400,
                       "detail": "Not allowed to update booking availability on calendar type: \"permanent\". Only single and multiple calendar types can be updated."
                     }
