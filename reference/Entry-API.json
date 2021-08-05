@@ -88,6 +88,14 @@
         },
         "tags": [
           "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
         ]
       }
     }
