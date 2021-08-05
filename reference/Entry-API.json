@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Entry API",
+    "version": "3.0",
+    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.",
+    "contact": {
+      "name": "publiq helpdesk",
+      "email": "vragen@publiq.be"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://io-test.uitdatabank.be",
+      "description": "Testing"
+    },
+    {
+      "url": "http://io.uitdatabank.be",
+      "description": "Production"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "USER_ACCESS_TOKEN": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "",
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        }
+      },
+      "CLIENT_ACCESS_TOKEN": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  }
+}
