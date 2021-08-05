@@ -214,7 +214,7 @@
               "$ref": "#/components/schemas/Error"
             },
             "examples": {
-              "Unauthorized": {
+              "Example": {
                 "value": {
                   "type": "https://api.publiq.be/probs/auth/unauthorized",
                   "title": "Unauthorized",
@@ -233,7 +233,7 @@
               "$ref": "#/components/schemas/Error"
             },
             "examples": {
-              "Forbidden": {
+              "Example": {
                 "value": {
                   "type": "https://api.publiq.be/probs/auth/forbidden",
                   "title": "Forbidden",
