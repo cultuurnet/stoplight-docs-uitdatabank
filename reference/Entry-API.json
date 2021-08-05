@@ -197,6 +197,26 @@
             }
           }
         }
+      },
+      "EventNotFound": {
+        "description": "No event found for the given `eventId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/event-not-found",
+                  "title": "Event not found",
+                  "status": 404,
+                  "detail": "The event with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
