@@ -19,7 +19,70 @@
       "description": "Production"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/events/{eventId}/bookingAvailability": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "",
+        "operationId": "put-event-bookingAvailability",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "description": "Updates the general bookingAvailability info on the top level of the event with the given `eventId`.\n\nThe bookingAvailability of any subEvents that the event has will also be updated to match the general bookingAvailability.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "type": "Available"
+                  }
+                },
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "enum": [
+                      "Available",
+                      "Unavailable"
+                    ],
+                    "description": "`Available` if the event still has tickets or places for reservation. `Unavailable` if there are no more tickets or places left."
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "examples": {
+                "Tickets/places available": {
+                  "value": {
+                    "type": "Available"
+                  }
+                },
+                "No more tickets/places available": {
+                  "value": {
+                    "type": "Unavailable"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Events"
+        ]
+      }
+    }
+  },
   "components": {
     "schemas": {},
     "securitySchemes": {
