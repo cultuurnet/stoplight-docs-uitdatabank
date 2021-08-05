@@ -11,6 +11,11 @@
       "uri": "docs/terminology.md"
     },
     {
+      "type": "item",
+      "title": "Errors",
+      "uri": "docs/errors.md"
+    },
+    {
       "type": "divider",
       "title": "Guides"
     },
