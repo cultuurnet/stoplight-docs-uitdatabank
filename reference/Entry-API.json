@@ -27,7 +27,7 @@
         }
       ],
       "put": {
-        "summary": "",
+        "summary": "Update bookingAvailability",
         "operationId": "put-event-bookingAvailability",
         "responses": {
           "204": {
