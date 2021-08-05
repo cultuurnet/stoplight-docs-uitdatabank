@@ -157,6 +157,47 @@
         },
         "description": "Unique id of an event, in the format of a UUID"
       }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Unauthorized. Your request is missing the required credentials to authenticate. See the Authentication documentation for more info.\n\n* type: https://api.publiq.be/probs/auth/unauthorized\n* detail: might contain a developer-readable explanation of the reason",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Unauthorized": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/auth/unauthorized",
+                  "title": "Unauthorized",
+                  "status": 401
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Forbidden. Your request was successfully authenticated but you do not have permission to perform this particular request.\n\n* type: https://api.publiq.be/probs/auth/forbidden\n* detail: might contain a developer-readable explanation of the reason",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Forbidden": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/auth/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "user must be admin of organiser abcd1234"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "tags": [
