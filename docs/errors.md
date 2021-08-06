@@ -10,8 +10,8 @@ This page contains an overview of all possible error types inside the `https://a
 *   **Title**: `Calendar type not supported`
 *   **Status**: `400`
 
-The request you are trying to perform is not supported on the calendar type of the given [event](/models/event-calendarType.json) or [place](/models/place-calendarType.json). For example, you cannot update the bookingAvailability of events or places with calendar types `periodic` and `permanent`.
+The request you are trying to perform is not supported on the calendar type of the given [event](/models/event-calendarType.json) or [place](/models/place-calendarType.json). For example, you cannot add or update subEvents to offers that use calendar type `periodic` or `permanent`.
 
-Usually the `detail` of the error will contain more information.
+Usually the `detail` of the error will contain more information about the specific operation that is not supported and on which calendar types.
 
 Try using an event or place id with a calendar type that is supported by the operation that you are trying to perform.
