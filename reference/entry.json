@@ -64,7 +64,7 @@
             "description": "No Content"
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -166,7 +166,7 @@
             "description": "No Content. The subEvents have been successfully updated."
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
             "content": {
               "application/problem+json": {
                 "schema": {
