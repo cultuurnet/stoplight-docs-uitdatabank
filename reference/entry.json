@@ -195,7 +195,7 @@
             "$ref": "#/components/responses/EventNotFound"
           }
         },
-        "summary": "Partially update subEvents",
+        "summary": "Update subEvents",
         "requestBody": {
           "content": {
             "application/json": {
