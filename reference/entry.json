@@ -439,7 +439,8 @@
             "refreshUrl": "",
             "scopes": {}
           }
-        }
+        },
+        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/user-access-token.md)"
       },
       "CLIENT_ACCESS_TOKEN": {
         "type": "oauth2",
@@ -449,7 +450,8 @@
             "refreshUrl": "",
             "scopes": {}
           }
-        }
+        },
+        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/client-access-token.md)"
       }
     },
     "parameters": {
