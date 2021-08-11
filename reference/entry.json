@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.0",
+  "openapi": "3.1.0",
   "info": {
     "title": "Entry API",
     "version": "3.0",
@@ -195,7 +195,7 @@
             "$ref": "#/components/responses/EventNotFound"
           }
         },
-        "summary": "Partially update subEvents",
+        "summary": "Update subEvents",
         "requestBody": {
           "content": {
             "application/json": {
@@ -439,7 +439,8 @@
             "refreshUrl": "",
             "scopes": {}
           }
-        }
+        },
+        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/user-access-token.md)"
       },
       "CLIENT_ACCESS_TOKEN": {
         "type": "oauth2",
@@ -449,7 +450,8 @@
             "refreshUrl": "",
             "scopes": {}
           }
-        }
+        },
+        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/client-access-token.md)"
       }
     },
     "parameters": {
