@@ -236,8 +236,8 @@
         "title": "Term",
         "type": "object",
         "description": "A taxonomy term like an event type, theme, or facility.",
-        "x-examples": {
-          "Facility": {
+        "examples": [
+          {
             "id": "3.23.1.0.0",
             "domain": "facility",
             "name": {
@@ -247,7 +247,7 @@
               "en": "Wheelchair facilities"
             }
           },
-          "With other suggested terms": {
+          {
             "id": "0.50.4.0.0",
             "domain": "eventtype",
             "name": {
@@ -329,7 +329,7 @@
               }
             ]
           }
-        },
+        ],
         "x-tags": [
           "Models"
         ],
@@ -426,8 +426,8 @@
         "title": "Municipality",
         "type": "object",
         "description": "A Belgian municipality.",
-        "x-examples": {
-          "Submunicipality": {
+        "examples": [
+          {
             "id": "3018_WIJGMAAL",
             "name": {
               "nl": "Wijgmaal",
@@ -439,7 +439,7 @@
             "parent": "3000_LEUVEN",
             "subMunicipality": true
           },
-          "Municipality": {
+          {
             "id": "3000_LEUVEN",
             "name": {
               "nl": "Leuven",
@@ -450,7 +450,7 @@
             "postalCode": "3000",
             "parent": "3000_LEUVEN"
           }
-        },
+        ],
         "properties": {
           "id": {
             "type": "string",
