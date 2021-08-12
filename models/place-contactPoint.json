@@ -39,5 +39,18 @@
     "phone",
     "email",
     "url"
+  ],
+  "examples": [
+    {
+      "phone": [
+        "+32/01234567890"
+      ],
+      "email": [
+        "info@example.com"
+      ],
+      "url": [
+        "https://www.example.com"
+      ]
+    }
   ]
 }

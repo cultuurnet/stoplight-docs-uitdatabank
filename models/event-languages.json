@@ -11,5 +11,13 @@
       "en"
     ],
     "example": "nl"
-  }
+  },
+  "examples": [
+    [
+      "nl",
+      "fr",
+      "de",
+      "en"
+    ]
+  ]
 }

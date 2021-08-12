@@ -107,8 +107,8 @@
     "languages",
     "completedLanguages"
   ],
-  "x-examples": {
-    "Example": {
+  "examples": [
+    {
       "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
@@ -253,5 +253,5 @@
         "label2"
       ]
     }
-  }
+  ]
 }

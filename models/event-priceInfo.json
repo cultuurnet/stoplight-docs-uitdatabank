@@ -2,21 +2,8 @@
   "type": "array",
   "title": "event.priceInfo",
   "description": "A list of tariffs available for tickets to the [event](./event.json).",
-  "x-examples": {
-    "Base tariff only": [
-      {
-        "category": "base",
-        "price": 10.5,
-        "priceCurrency": "EUR",
-        "name": {
-          "nl": "Basistarief",
-          "fr": "Tarif de base",
-          "en": "Base tariff",
-          "de": "Basisrate"
-        }
-      }
-    ],
-    "Multiple tariffs": [
+  "examples": [
+    [
       {
         "category": "base",
         "price": 10.5,
@@ -38,32 +25,10 @@
         }
       }
     ]
-  },
+  ],
   "minItems": 1,
   "items": {
     "type": "object",
-    "x-examples": {
-      "Base tariff": {
-        "category": "base",
-        "price": 10.5,
-        "priceCurrency": "EUR",
-        "name": {
-          "nl": "Basistarief",
-          "fr": "Tarif de base",
-          "en": "Base tariff",
-          "de": "Basisrate"
-        }
-      },
-      "Custom tariff": {
-        "category": "tariff",
-        "price": 6,
-        "priceCurrency": "EUR",
-        "name": {
-          "nl": "Jongeren (<18j)",
-          "en": "Youth (<18yo)"
-        }
-      }
-    },
     "description": "A single priceInfo item.",
     "properties": {
       "category": {
@@ -93,18 +58,6 @@
         "description": "Name of a tariff inside priceInfo. Requires at least one value, for the language specified in the `mainLanguage` property.",
         "type": "object",
         "minProperties": 1,
-        "x-examples": {
-          "Base tariff": {
-            "nl": "Basistarief",
-            "fr": "Tarif de base",
-            "en": "Base tariff",
-            "de": "Basisrate"
-          },
-          "Youth": {
-            "nl": "Jongeren (<18j)",
-            "en": "Youth (<18yo)"
-          }
-        },
         "properties": {
           "nl": {
             "type": "string",

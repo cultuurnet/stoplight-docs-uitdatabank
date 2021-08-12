@@ -2,24 +2,24 @@
   "title": "place.status",
   "type": "object",
   "description": "Indicates if the [place](./place.json) is still open for visitations or not.",
-  "x-examples": {
-    "Available": {
+  "examples": [
+    {
       "type": "Available"
     },
-    "Temporarily Unavailable": {
+    {
       "type": "TemporarilyUnavailable",
       "reason": {
         "nl": "Uitgesteld wegens covid-19",
         "en": "Postponed due to covid-19"
       }
     },
-    "Unavailable": {
+    {
       "type": "Unavailable",
       "reason": {
         "nl": "Permanent gesloten"
       }
     }
-  },
+  ],
   "properties": {
     "type": {
       "minLength": 1,
@@ -37,14 +37,14 @@
       "title": "",
       "type": "object",
       "minProperties": 1,
-      "x-examples": {
-        "Example": {
+      "examples": [
+        {
           "nl": "Nederlandse tekst",
           "fr": "Texte français",
           "de": "Deutscher Text",
           "en": "English text"
         }
-      },
+      ],
       "properties": {
         "nl": {
           "type": "string",

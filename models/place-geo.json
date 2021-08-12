@@ -20,10 +20,10 @@
     "latitude",
     "longitude"
   ],
-  "x-examples": {
-    "Example": {
+  "examples": [
+    {
       "latitude": 50.8816177,
       "longitude": 4.7137986
     }
-  }
+  ]
 }
