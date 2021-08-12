@@ -7,6 +7,5 @@
     "READY_FOR_VALIDATION",
     "APPROVED",
     "DELETED"
-  ],
-  "x-examples": {}
+  ]
 }
