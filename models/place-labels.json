@@ -11,5 +11,12 @@
     "maxLength": 50,
     "pattern": "^[A-Za-z0-9-_]+",
     "example": "label1"
-  }
+  },
+  "examples": [
+    [
+      "label1",
+      "label2",
+      "label3"
+    ]
+  ]
 }

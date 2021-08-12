@@ -74,5 +74,20 @@
         "2021-05-17T22:00:00+00:00"
       ]
     }
-  }
+  },
+  "examples": [
+    {
+      "phone": "+32/01234567890",
+      "email": "info@example.com",
+      "url": "https://www.example.com",
+      "urlLabel": {
+        "nl": "Nederlandse tekst",
+        "fr": "Texte français",
+        "de": "Deutscher Text",
+        "en": "English text"
+      },
+      "availabilityStarts": "2021-05-17T22:00:00+00:00",
+      "availabilityEnds": "2021-05-17T22:00:00+00:00"
+    }
+  ]
 }

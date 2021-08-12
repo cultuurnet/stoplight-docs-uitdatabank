@@ -64,5 +64,28 @@
       "dayOfWeek"
     ]
   },
-  "description": "A list of opening hour entries indicating the weekly opening and closing hours of the [place](./place.json)."
+  "description": "A list of opening hour entries indicating the weekly opening and closing hours of the [place](./place.json).",
+  "examples": [
+    [
+      {
+        "opens": "13:00",
+        "closes": "17:00",
+        "dayOfWeek": [
+          "monday"
+        ]
+      },
+      {
+        "opens": "09:00",
+        "closes": "17:00",
+        "dayOfWeek": [
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ]
+      }
+    ]
+  ]
 }
