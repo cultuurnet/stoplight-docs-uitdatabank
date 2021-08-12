@@ -4,15 +4,15 @@
   "description": "A list of occurences of the [event](./event.json) when using the `single` or `multiple` [calendarType](./event-calendarType.json).",
   "items": {
     "type": "object",
-    "x-examples": {
-      "Available": {
+    "examples": [
+      {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
         "status": {
           "type": "Available"
         }
       },
-      "Temporarily Unavailable": {
+      {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
         "status": {
@@ -22,7 +22,7 @@
           }
         }
       },
-      "Unavailable": {
+      {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
         "status": {
@@ -32,7 +32,7 @@
           }
         }
       }
-    },
+    ],
     "properties": {
       "startDate": {
         "$ref": "./event-startDate.json"
@@ -50,8 +50,8 @@
       "status"
     ]
   },
-  "x-examples": {
-    "Single": [
+  "examples": [
+    [
       {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
@@ -60,7 +60,7 @@
         }
       }
     ],
-    "Multiple": [
+    [
       {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
@@ -76,5 +76,5 @@
         }
       }
     ]
-  }
+  ]
 }

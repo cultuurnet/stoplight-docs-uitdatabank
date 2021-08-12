@@ -4,8 +4,8 @@
   "items": {
     "type": "object",
     "description": "Indicates the weekly start and end times of a `periodic` event.",
-    "x-examples": {
-      "Example": {
+    "examples": [
+      {
         "opens": "09:00",
         "closes": "17:00",
         "dayOfWeek": [
@@ -16,7 +16,7 @@
           "friday"
         ]
       }
-    },
+    ],
     "properties": {
       "opens": {
         "type": "string",
@@ -24,9 +24,9 @@
         "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
         "example": "17:00",
         "format": "time",
-        "x-examples": {
-          "Example": "17:00"
-        }
+        "examples": [
+          "17:00"
+        ]
       },
       "closes": {
         "type": "string",
@@ -34,9 +34,9 @@
         "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
         "example": "17:00",
         "format": "time",
-        "x-examples": {
-          "Example": "17:00"
-        }
+        "examples": [
+          "17:00"
+        ]
       },
       "dayOfWeek": {
         "type": "array",

@@ -1,8 +1,8 @@
 {
   "description": "A cultural, sport, or leisure activity.",
   "type": "object",
-  "x-examples": {
-    "Example": {
+  "examples": [
+    {
       "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
@@ -287,7 +287,7 @@
         ]
       }
     }
-  },
+  ],
   "title": "event",
   "properties": {
     "@id": {

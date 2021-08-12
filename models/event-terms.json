@@ -8,13 +8,13 @@
     "title": "",
     "type": "object",
     "description": "A taxonomy term used to categorize events.\n\nAll events require exactly one term of the `eventtype` domain, and can optionally contain other terms.\n\nWhen reading events, all properties will be available. When creating or updating events only the `id` is required to be included.",
-    "x-examples": {
-      "Example": {
+    "examples": [
+      {
         "id": "0.50.4.0.0",
         "label": "Concert",
         "domain": "eventtype"
       }
-    },
+    ],
     "properties": {
       "id": {
         "type": "string",
