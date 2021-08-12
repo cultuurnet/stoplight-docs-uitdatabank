@@ -3,8 +3,8 @@
   "title": "event.mediaObject",
   "description": "A list of media objects related to the [event](./event.json), for example images.",
   "minItems": 1,
-  "x-examples": {
-    "Example": [
+  "examples": [
+    [
       {
         "@id": "https://io.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
         "@type": "schema:ImageObject",
@@ -15,7 +15,7 @@
         "language": "nl"
       }
     ]
-  },
+  ],
   "items": {
     "type": "object",
     "properties": {
@@ -26,9 +26,9 @@
         "example": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
         "description": "A unique URI that acts as globally unique ID for the media object. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
         "readOnly": true,
-        "x-examples": {
-          "Event example": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3"
-        }
+        "examples": [
+          "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3"
+        ]
       },
       "@type": {
         "type": "string",

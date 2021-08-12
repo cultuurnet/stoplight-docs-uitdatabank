@@ -4,7 +4,6 @@
   "description": "Same as [labels](./place-labels.json), but for labels that should not be visible for end users on publication channels and should instead only be used for filtering or other processing.",
   "uniqueItems": true,
   "minItems": 1,
-  "x-examples": {},
   "items": {
     "type": "string",
     "format": "uri",
@@ -12,5 +11,12 @@
     "minLength": 2,
     "maxLength": 50,
     "pattern": "^[A-Za-z0-9-_]+"
-  }
+  },
+  "examples": [
+    [
+      "label1",
+      "label2",
+      "label3"
+    ]
+  ]
 }

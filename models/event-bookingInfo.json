@@ -23,14 +23,14 @@
       "type": "object",
       "description": "Call-to-action text to show for the link to the booking url",
       "minProperties": 1,
-      "x-examples": {
-        "Example": {
+      "examples": [
+        {
           "nl": "Nederlandse tekst",
           "fr": "Texte français",
           "de": "Deutscher Text",
           "en": "English text"
         }
-      },
+      ],
       "properties": {
         "nl": {
           "type": "string",
@@ -59,20 +59,29 @@
       "type": "string",
       "format": "date-time",
       "example": "2021-05-17T22:00:00+00:00",
-      "minLength": 1,
-      "x-examples": {
-        "Example": "2021-05-17T22:00:00+00:00"
-      }
+      "minLength": 1
     },
     "availabilityEnds": {
       "description": "The date & time when the booking period ends",
       "type": "string",
       "format": "date-time",
       "example": "2021-05-17T22:00:00+00:00",
-      "minLength": 1,
-      "x-examples": {
-        "Example": "2021-05-17T22:00:00+00:00"
-      }
+      "minLength": 1
     }
-  }
+  },
+  "examples": [
+    {
+      "phone": "+32/01234567890",
+      "email": "info@example.com",
+      "url": "https://www.example.com",
+      "urlLabel": {
+        "nl": "Nederlandse tekst",
+        "fr": "Texte français",
+        "de": "Deutscher Text",
+        "en": "English text"
+      },
+      "availabilityStarts": "2021-05-17T22:00:00+00:00",
+      "availabilityEnds": "2021-05-17T22:00:00+00:00"
+    }
+  ]
 }

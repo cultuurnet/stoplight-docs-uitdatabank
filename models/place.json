@@ -2,8 +2,117 @@
   "title": "place",
   "type": "object",
   "description": "A cultural, leisure, or sports-related location that can be visited or where an event can be located at.",
-  "x-examples": {
-    "Example": {
+  "properties": {
+    "@id": {
+      "$ref": "./place-@id.json"
+    },
+    "mainLanguage": {
+      "$ref": "./place-mainLanguage.json"
+    },
+    "name": {
+      "$ref": "./place-name.json"
+    },
+    "address": {
+      "$ref": "./place-address.json"
+    },
+    "geo": {
+      "$ref": "./place-geo.json"
+    },
+    "calendarType": {
+      "$ref": "./place-calendarType.json"
+    },
+    "startDate": {
+      "$ref": "./place-startDate.json"
+    },
+    "endDate": {
+      "$ref": "./place-endDate.json"
+    },
+    "status": {
+      "$ref": "./place-status.json"
+    },
+    "openingHours": {
+      "$ref": "./place-openingHours.json"
+    },
+    "availableFrom": {
+      "$ref": "./place-availableFrom.json"
+    },
+    "availableTo": {
+      "$ref": "./place-availableTo.json"
+    },
+    "sameAs": {
+      "$ref": "./place-sameAs.json"
+    },
+    "terms": {
+      "$ref": "./place-terms.json"
+    },
+    "created": {
+      "$ref": "./place-created.json"
+    },
+    "modified": {
+      "$ref": "./place-modified.json"
+    },
+    "creator": {
+      "$ref": "./place-creator.json"
+    },
+    "workflowStatus": {
+      "$ref": "./place-workflowStatus.json"
+    },
+    "languages": {
+      "$ref": "./place-languages.json"
+    },
+    "completedLanguages": {
+      "$ref": "./place-completedLanguages.json"
+    },
+    "typicalAgeRange": {
+      "$ref": "./place-typicalAgeRange.json"
+    },
+    "description": {
+      "$ref": "./place-description.json"
+    },
+    "priceInfo": {
+      "$ref": "./place-priceInfo.json"
+    },
+    "contactPoint": {
+      "$ref": "./place-contactPoint.json"
+    },
+    "bookingInfo": {
+      "$ref": "./place-bookingInfo.json"
+    },
+    "mediaObject": {
+      "$ref": "./place-mediaObject.json"
+    },
+    "image": {
+      "$ref": "./place-image.json"
+    },
+    "labels": {
+      "$ref": "./place-labels.json"
+    },
+    "hiddenLabels": {
+      "$ref": "./place-hiddenLabels.json"
+    },
+    "bookingAvailability": {
+      "$ref": "./place-bookingAvailability.json"
+    }
+  },
+  "required": [
+    "@id",
+    "mainLanguage",
+    "name",
+    "calendarType",
+    "status",
+    "availableFrom",
+    "availableTo",
+    "terms",
+    "created",
+    "creator",
+    "workflowStatus",
+    "audience",
+    "languages",
+    "completedLanguages",
+    "bookingAvailability"
+  ],
+  "examples": [
+    {
       "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
@@ -151,113 +260,5 @@
         "type": "Available"
       }
     }
-  },
-  "properties": {
-    "@id": {
-      "$ref": "./place-@id.json"
-    },
-    "mainLanguage": {
-      "$ref": "./place-mainLanguage.json"
-    },
-    "name": {
-      "$ref": "./place-name.json"
-    },
-    "address": {
-      "$ref": "./place-address.json"
-    },
-    "geo": {
-      "$ref": "./place-geo.json"
-    },
-    "calendarType": {
-      "$ref": "./place-calendarType.json"
-    },
-    "startDate": {
-      "$ref": "./place-startDate.json"
-    },
-    "endDate": {
-      "$ref": "./place-endDate.json"
-    },
-    "status": {
-      "$ref": "./place-status.json"
-    },
-    "openingHours": {
-      "$ref": "./place-openingHours.json"
-    },
-    "availableFrom": {
-      "$ref": "./place-availableFrom.json"
-    },
-    "availableTo": {
-      "$ref": "./place-availableTo.json"
-    },
-    "sameAs": {
-      "$ref": "./place-sameAs.json"
-    },
-    "terms": {
-      "$ref": "./place-terms.json"
-    },
-    "created": {
-      "$ref": "./place-created.json"
-    },
-    "modified": {
-      "$ref": "./place-modified.json"
-    },
-    "creator": {
-      "$ref": "./place-creator.json"
-    },
-    "workflowStatus": {
-      "$ref": "./place-workflowStatus.json"
-    },
-    "languages": {
-      "$ref": "./place-languages.json"
-    },
-    "completedLanguages": {
-      "$ref": "./place-completedLanguages.json"
-    },
-    "typicalAgeRange": {
-      "$ref": "./place-typicalAgeRange.json"
-    },
-    "description": {
-      "$ref": "./place-description.json"
-    },
-    "priceInfo": {
-      "$ref": "./place-priceInfo.json"
-    },
-    "contactPoint": {
-      "$ref": "./place-contactPoint.json"
-    },
-    "bookingInfo": {
-      "$ref": "./place-bookingInfo.json"
-    },
-    "mediaObject": {
-      "$ref": "./place-mediaObject.json"
-    },
-    "image": {
-      "$ref": "./place-image.json"
-    },
-    "labels": {
-      "$ref": "./place-labels.json"
-    },
-    "hiddenLabels": {
-      "$ref": "./place-hiddenLabels.json"
-    },
-    "bookingAvailability": {
-      "$ref": "./place-bookingAvailability.json"
-    }
-  },
-  "required": [
-    "@id",
-    "mainLanguage",
-    "name",
-    "calendarType",
-    "status",
-    "availableFrom",
-    "availableTo",
-    "terms",
-    "created",
-    "creator",
-    "workflowStatus",
-    "languages",
-    "completedLanguages",
-    "bookingAvailability"
-  ]
+  }
 }

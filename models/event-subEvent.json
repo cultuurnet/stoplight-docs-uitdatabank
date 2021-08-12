@@ -2,8 +2,8 @@
   "title": "event.subEvent",
   "type": "array",
   "description": "A list of occurences of the [event](./event.json) when using the `single` or `multiple` [calendarType](./event-calendarType.json).",
-  "x-examples": {
-    "Single": [
+  "examples": [
+    [
       {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
@@ -15,7 +15,7 @@
         }
       }
     ],
-    "Multiple": [
+    [
       {
         "startDate": "2021-05-17T16:00:00+00:00",
         "endDate": "2021-05-17T22:00:00+00:00",
@@ -37,38 +37,9 @@
         }
       }
     ]
-  },
+  ],
   "items": {
     "type": "object",
-    "x-examples": {
-      "Available": {
-        "startDate": "2021-05-17T16:00:00+00:00",
-        "endDate": "2021-05-17T22:00:00+00:00",
-        "status": {
-          "type": "Available"
-        }
-      },
-      "Temporarily Unavailable": {
-        "startDate": "2021-05-17T16:00:00+00:00",
-        "endDate": "2021-05-17T22:00:00+00:00",
-        "status": {
-          "type": "TemporarilyUnavailable",
-          "reason": {
-            "nl": "Uitgesteld wegens covid-19"
-          }
-        }
-      },
-      "Unavailable": {
-        "startDate": "2021-05-17T16:00:00+00:00",
-        "endDate": "2021-05-17T22:00:00+00:00",
-        "status": {
-          "type": "Unavailable",
-          "reason": {
-            "nl": "Afgelast wegens onvoorziene omstandigheden"
-          }
-        }
-      }
-    },
     "properties": {
       "startDate": {
         "$ref": "./event-startDate.json"
