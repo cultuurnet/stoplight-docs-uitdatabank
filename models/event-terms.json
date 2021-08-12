@@ -40,5 +40,14 @@
     "required": [
       "id"
     ]
-  }
+  },
+  "examples": [
+    [
+      {
+        "id": "0.50.4.0.0",
+        "label": "Concert",
+        "domain": "eventtype"
+      }
+    ]
+  ]
 }

@@ -7,5 +7,8 @@
     "READY_FOR_VALIDATION",
     "APPROVED",
     "DELETED"
+  ],
+  "examples": [
+    "DRAFT"
   ]
 }

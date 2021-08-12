@@ -7,5 +7,8 @@
     "multiple",
     "periodic",
     "permanent"
+  ],
+  "examples": [
+    "single"
   ]
 }

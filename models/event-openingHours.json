@@ -64,5 +64,28 @@
       "dayOfWeek"
     ]
   },
-  "description": "A list of opening hour entries indicating the weekly start and end times of the [event](./event.json) when using the `periodic` [calendarType](./event-calendarType.json)."
+  "description": "A list of opening hour entries indicating the weekly start and end times of the [event](./event.json) when using the `periodic` [calendarType](./event-calendarType.json).",
+  "examples": [
+    [
+      {
+        "opens": "13:00",
+        "closes": "17:00",
+        "dayOfWeek": [
+          "monday"
+        ]
+      },
+      {
+        "opens": "09:00",
+        "closes": "17:00",
+        "dayOfWeek": [
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ]
+      }
+    ]
+  ]
 }
