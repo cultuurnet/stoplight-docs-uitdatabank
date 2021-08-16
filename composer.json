@@ -1,5 +1,5 @@
 {
-    "name": "cultuurnet/stoplight-docs-uitdatabank",
+    "name": "publiq/stoplight-docs-uitdatabank",
     "description": "UiTdatabank API documentation. Useful for including JSON schemas in your application to work with.",
     "type": "library",
     "license": "GPL-3.0-only",
