@@ -98,27 +98,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "description": "",
-                "type": "object",
-                "x-examples": {
-                  "example-1": {
-                    "type": "Available"
-                  }
-                },
-                "properties": {
-                  "type": {
-                    "type": "string",
-                    "minLength": 1,
-                    "enum": [
-                      "Available",
-                      "Unavailable"
-                    ],
-                    "description": "`Available` if the event still has tickets or places for reservation. `Unavailable` if there are no more tickets or places left."
-                  }
-                },
-                "required": [
-                  "type"
-                ]
+                "$ref": "../models/event-bookingAvailability-put.json"
               },
               "examples": {
                 "Tickets/places available": {
