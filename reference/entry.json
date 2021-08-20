@@ -98,11 +98,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "oneOf": [
-                  {
-                    "$ref": "../models/event-bookingAvailability-put.json"
-                  }
-                ]
+                "$ref": "../models/event-bookingAvailability-put.json"
               },
               "examples": {
                 "Tickets/places available": {
