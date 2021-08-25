@@ -61,7 +61,7 @@
         "operationId": "put-event-bookingAvailability",
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "No Content. The bookingAvailability has been updated successfully."
           },
           "400": {
             "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
@@ -313,14 +313,14 @@
         }
       ],
       "patch": {
-        "operationId": "patch-subEvents",
+        "operationId": "patch-event-subEvents",
         "description": "Updates the given subEvents on the event with the given `eventId`.\n\nAllows partial updates, omitted properties will be ignored and remain unchanged. Omitted subEvents will also remain unchanged.\n\nEvery subEvent to update requires an `id` property that is an integer that corresponds to their index in the list of subEvents on the parent event. For example `0` for the first subEvent, `1` for the second subEvent, and so on.\n\n<!-- theme: warning -->\n\n> Note! If you change the `startDate` of a subEvent, the subEvents will be re-ordered on the parent event afterwards because subEvents are always sorted chronologically.\n\nOnly events with calendar type `single` and `multiple` have subEvents, so only events with those calendar types support this endpoint.",
         "tags": [
           "Events"
         ],
         "responses": {
           "204": {
-            "description": "No Content. The subEvents have been successfully updated."
+            "description": "No Content. The subEvents have been updated successfully."
           },
           "400": {
             "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
