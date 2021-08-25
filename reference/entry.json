@@ -479,6 +479,17 @@
           "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
         },
         "description": "Unique id of an event, in the format of a UUID"
+      },
+      "placeId": {
+        "name": "placeId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of an place, in the format of a UUID"
       }
     },
     "responses": {
