@@ -10,6 +10,9 @@
     "status": {
       "$ref": "./event-status.json"
     },
+    "bookingAvailability": {
+      "$ref": "./event-bookingAvailability.json"
+    },
     "subEvent": {
       "$ref": "./event-subEvent.json"
     },

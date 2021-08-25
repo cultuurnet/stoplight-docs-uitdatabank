@@ -270,6 +270,9 @@
                     ],
                     "status": {
                       "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
                     }
                   }
                 },
@@ -298,6 +301,9 @@
                       }
                     ],
                     "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
                       "type": "Available"
                     }
                   }
@@ -529,6 +535,9 @@
                     ],
                     "status": {
                       "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
                     }
                   }
                 },
@@ -557,6 +566,9 @@
                       }
                     ],
                     "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
                       "type": "Available"
                     }
                   }

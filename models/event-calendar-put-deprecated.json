@@ -11,6 +11,9 @@
     "status": {
       "$ref": "./event-status.json"
     },
+    "bookingAvailability": {
+      "$ref": "./event-bookingAvailability.json"
+    },
     "timeSpans": {
       "type": "array",
       "items": {
