@@ -158,10 +158,10 @@
                       "title": "Invalid body data",
                       "status": 400,
                       "schemaErrors": [
-                          {
-                              "jsonPointer": "/",
-                              "error": "The required properties (subEvent) are missing"
-                          }
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (subEvent) are missing"
+                        }
                       ]
                     }
                   }
