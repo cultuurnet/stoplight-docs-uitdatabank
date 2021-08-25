@@ -129,6 +129,183 @@
         ]
       }
     },
+    "/events/{eventId}/calendar": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update calendar",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The calendar information has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+                      "title": "Calendar type not supported",
+                      "status": 400,
+                      "detail": "Not allowed to update subEvents on calendar type: \"permanent\". Only subEvents on single and multiple calendar types can be updated."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "put-event-calendar",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-calendar-put.json"
+              },
+              "examples": {
+                "single": {
+                  "value": {
+                    "calendarType": "single",
+                    "subEvent": [
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "multiple": {
+                  "value": {
+                    "calendarType": "multiple",
+                    "subEvent": [
+                      {
+                        "startDate": "2020-05-17T22:00:00+00:00",
+                        "endDate": "2020-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Unavailable",
+                          "reason": {
+                            "nl": "Geannuleerd wegens COVID-19",
+                            "en": "Cancelled due to COVID-19"
+                          }
+                        },
+                        "bookingAvailability": {
+                          "type": "Unavailable"
+                        }
+                      },
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "periodic": {
+                  "value": {
+                    "calendarType": "periodic",
+                    "startDate": "2021-05-17T22:00:00+00:00",
+                    "endDate": "2021-05-17T22:00:00+00:00",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    }
+                  }
+                },
+                "permanent": {
+                  "value": {
+                    "calendarType": "permanent",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "New calendar information."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "description": "Updates the calendar information of the given `eventId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| single  | subEvent | status, bookingAvailability  |\n| multiple  | subEvent  | status, bookingAvailability  |\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If the event has a `status` or `bookingAvailability` that is not `Available`, and you do not include this `status` or `bookingAvailability` in the new calendar information, they will get reverted back to the default `Available`!"
+      }
+    },
     "/events/{eventId}/subEvents": {
       "parameters": [
         {
