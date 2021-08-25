@@ -145,19 +145,24 @@
             "description": "No Content. The calendar information has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "Example": {
+                  "Invalid data": {
                     "value": {
-                      "type": "https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
-                      "title": "Calendar type not supported",
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
                       "status": 400,
-                      "detail": "Not allowed to update subEvents on calendar type: \"permanent\". Only subEvents on single and multiple calendar types can be updated."
+                      "schemaErrors": [
+                          {
+                              "jsonPointer": "/",
+                              "error": "The required properties (subEvent) are missing"
+                          }
+                      ]
                     }
                   }
                 }
