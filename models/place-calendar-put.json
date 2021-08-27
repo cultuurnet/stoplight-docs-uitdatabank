@@ -11,7 +11,7 @@
       "$ref": "./place-status.json"
     },
     "bookingAvailability": {
-      "$ref": "./event-bookingAvailability.json"
+      "$ref": "./place-bookingAvailability.json"
     },
     "openingHours": {
       "$ref": "./place-openingHours.json"
