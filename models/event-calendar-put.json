@@ -14,7 +14,7 @@
       "$ref": "./event-bookingAvailability.json"
     },
     "subEvent": {
-      "$ref": "./event-subEvent.json"
+      "$ref": "./event-subEvent-put.json"
     },
     "openingHours": {
       "$ref": "./event-openingHours.json"
