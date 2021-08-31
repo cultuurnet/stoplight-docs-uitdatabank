@@ -36,7 +36,6 @@
       "description": "The reason of the status on the place, as a localized human-readable text.",
       "title": "",
       "type": "object",
-      "minProperties": 1,
       "examples": [
         {
           "nl": "Nederlandse tekst",
