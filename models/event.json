@@ -35,6 +35,9 @@
               "de": "Deutscher Grund",
               "en": "English reason"
             }
+          },
+          "bookingAvailability": {
+            "type": "Available"
           }
         }
       ],
@@ -285,6 +288,9 @@
         "otherEvents": [
           "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367"
         ]
+      },
+      "bookingAvailability": {
+        "type": "Available"
       }
     }
   ],
@@ -382,6 +388,9 @@
     },
     "production": {
       "$ref": "./event-production.json"
+    },
+    "bookingAvailability": {
+      "$ref": "./event-bookingAvailability.json"
     }
   },
   "required": [

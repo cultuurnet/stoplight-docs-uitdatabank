@@ -89,6 +89,9 @@
     },
     "hiddenLabels": {
       "$ref": "./place-hiddenLabels.json"
+    },
+    "bookingAvailability": {
+      "$ref": "./place-bookingAvailability.json"
     }
   },
   "required": [
@@ -105,7 +108,8 @@
     "workflowStatus",
     "audience",
     "languages",
-    "completedLanguages"
+    "completedLanguages",
+    "bookingAvailability"
   ],
   "examples": [
     {
@@ -251,7 +255,10 @@
       ],
       "hiddenLabels": [
         "label2"
-      ]
+      ],
+      "bookingAvailability": {
+        "type": "Available"
+      }
     }
   ]
 }

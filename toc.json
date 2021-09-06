@@ -11,6 +11,11 @@
       "uri": "docs/terminology.md"
     },
     {
+      "type": "item",
+      "title": "Errors",
+      "uri": "docs/errors.md"
+    },
+    {
       "type": "divider",
       "title": "Guides"
     },
@@ -125,6 +130,11 @@
               "type": "item",
               "title": "bookingInfo",
               "uri": "models/event-bookingInfo.json"
+            },
+            {
+              "type": "item",
+              "title": "bookingAvailability",
+              "uri": "models/event-bookingAvailability.json"
             },
             {
               "type": "item",
@@ -295,6 +305,11 @@
             },
             {
               "type": "item",
+              "title": "bookingAvailability",
+              "uri": "models/place-bookingAvailability.json"
+            },
+            {
+              "type": "item",
               "title": "priceInfo",
               "uri": "models/place-priceInfo.json"
             },
@@ -373,6 +388,11 @@
           ]
         }
       ]
+    },
+    {
+      "type": "item",
+      "title": "Entry API",
+      "uri": "reference/entry.json"
     }
   ]
 }

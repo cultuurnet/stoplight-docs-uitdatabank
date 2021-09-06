@@ -23,20 +23,20 @@
         "title": "openingHoursTime",
         "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
         "example": "17:00",
-        "format": "time",
         "examples": [
           "17:00"
-        ]
+        ],
+        "pattern": "^\\d?\\d:\\d\\d$"
       },
       "closes": {
         "type": "string",
         "title": "openingHoursTime",
         "description": "A string in the format of ISO-8601 hour and minutes, representing an opening- or closing time. For example `17:00`.",
         "example": "17:00",
-        "format": "time",
         "examples": [
           "17:00"
-        ]
+        ],
+        "pattern": "^\\d?\\d:\\d\\d$"
       },
       "dayOfWeek": {
         "type": "array",
