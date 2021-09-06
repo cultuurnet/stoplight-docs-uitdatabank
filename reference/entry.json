@@ -528,7 +528,8 @@
                 "required": [
                   "name",
                   "type",
-                  "location"
+                  "location",
+                  "calendar"
                 ]
               },
               "examples": {}
