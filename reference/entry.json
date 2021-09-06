@@ -812,7 +812,79 @@
                   "calendar"
                 ]
               },
-              "examples": {}
+              "examples": {
+                "Permanent place": {
+                  "value": {
+                    "name": "Sint-Pieterskerk",
+                    "type": "0.14.0.0.0",
+                    "theme": "1.44.0.0.0",
+                    "address": {
+                      "streetAddress": "Grote Markt 1",
+                      "postalCode": "3000",
+                      "addressLocality": "Leuven",
+                      "addressCountry": "BE"
+                    },
+                    "calendar": {
+                      "calendarType": "permanent",
+                      "openingHours": [
+                        {
+                          "opens": "10:00",
+                          "closes": "16:30",
+                          "dayOfWeek": [
+                            "monday",
+                            "tuesday",
+                            "thursday",
+                            "friday",
+                            "saturday"
+                          ]
+                        },
+                        {
+                          "opens": "11:00",
+                          "closes": "16:30",
+                          "dayOfWeek": [
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Periodic place": {
+                  "value": {
+                    "name": "Velodroom",
+                    "type": "Yf4aZBfsUEu2NsQqsprngw",
+                    "address": {
+                      "streetAddress": "Brusselsestraat",
+                      "postalCode": "3000",
+                      "addressLocality": "Leuven",
+                      "addressCountry": "BE"
+                    },
+                    "calendar": {
+                      "calendarType": "periodic",
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2023-11-17T22:00:00+00:00",
+                      "openingHours": [
+                        {
+                          "opens": "17:00",
+                          "closes": "22:00",
+                          "dayOfWeek": [
+                            "thursday",
+                            "friday"
+                          ]
+                        },
+                        {
+                          "opens": "13:00",
+                          "closes": "22:00",
+                          "dayOfWeek": [
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
             }
           },
           "description": ""
