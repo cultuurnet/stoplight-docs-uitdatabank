@@ -449,6 +449,36 @@
         ]
       }
     },
+    "/places/{placeId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "get": {
+        "summary": "Get place details",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Place details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/place.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "operationId": "get-place",
+        "description": "Returns the details of the place for the given `placeId`."
+      }
+    },
     "/places/{placeId}/calendar": {
       "parameters": [
         {
