@@ -8,5 +8,7 @@
     "APPROVED",
     "DELETED"
   ],
-  "x-examples": {}
+  "examples": [
+    "DRAFT"
+  ]
 }

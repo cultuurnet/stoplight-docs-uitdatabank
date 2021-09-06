@@ -8,5 +8,8 @@
     "de",
     "en"
   ],
-  "example": "nl"
+  "example": "nl",
+  "examples": [
+    "nl"
+  ]
 }

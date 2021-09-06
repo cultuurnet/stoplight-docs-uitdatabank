@@ -89,6 +89,9 @@
     },
     "hiddenLabels": {
       "$ref": "./place-hiddenLabels.json"
+    },
+    "bookingAvailability": {
+      "$ref": "./place-bookingAvailability.json"
     }
   },
   "required": [
@@ -105,10 +108,11 @@
     "workflowStatus",
     "audience",
     "languages",
-    "completedLanguages"
+    "completedLanguages",
+    "bookingAvailability"
   ],
-  "x-examples": {
-    "Example": {
+  "examples": [
+    {
       "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
@@ -251,7 +255,10 @@
       ],
       "hiddenLabels": [
         "label2"
-      ]
+      ],
+      "bookingAvailability": {
+        "type": "Available"
+      }
     }
-  }
+  ]
 }

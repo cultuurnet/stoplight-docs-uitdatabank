@@ -1,8 +1,8 @@
 {
   "description": "A cultural, sport, or leisure activity.",
   "type": "object",
-  "x-examples": {
-    "Example": {
+  "examples": [
+    {
       "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
@@ -35,6 +35,9 @@
               "de": "Deutscher Grund",
               "en": "English reason"
             }
+          },
+          "bookingAvailability": {
+            "type": "Available"
           }
         }
       ],
@@ -285,9 +288,12 @@
         "otherEvents": [
           "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367"
         ]
+      },
+      "bookingAvailability": {
+        "type": "Available"
       }
     }
-  },
+  ],
   "title": "event",
   "properties": {
     "@id": {
@@ -382,6 +388,9 @@
     },
     "production": {
       "$ref": "./event-production.json"
+    },
+    "bookingAvailability": {
+      "$ref": "./event-bookingAvailability.json"
     }
   },
   "required": [

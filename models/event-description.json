@@ -3,14 +3,14 @@
   "description": "A human-readable, localized description of the [event](./event.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./event-mainLanguage.json) property.",
   "type": "object",
   "minProperties": 1,
-  "x-examples": {
-    "Example": {
+  "examples": [
+    {
       "nl": "Nederlandse tekst",
       "fr": "Texte français",
       "de": "Deutscher Text",
       "en": "English text"
     }
-  },
+  ],
   "properties": {
     "nl": {
       "type": "string",

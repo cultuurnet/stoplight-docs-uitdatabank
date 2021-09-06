@@ -1,0 +1,718 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Entry API",
+    "version": "3.0",
+    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.",
+    "contact": {
+      "name": "publiq helpdesk",
+      "email": "vragen@publiq.be"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://io-test.uitdatabank.be",
+      "description": "Testing"
+    },
+    {
+      "url": "http://io.uitdatabank.be",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/events/{eventId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "get": {
+        "summary": "Get event details",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/event.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "get-event",
+        "description": "Returns the details of the event for the given `eventId`."
+      }
+    },
+    "/events/{eventId}/bookingAvailability": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update bookingAvailability",
+        "operationId": "put-event-bookingAvailability",
+        "responses": {
+          "204": {
+            "description": "No Content. The bookingAvailability has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+                      "title": "Calendar type not supported",
+                      "status": 400,
+                      "detail": "Not allowed to update booking availability on calendar type: \"permanent\". Only single and multiple calendar types can be updated."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Updates the general bookingAvailability info on the top level of the event with the given `eventId`.\n\nThe bookingAvailability of any subEvents that the event has will also be updated to match the general bookingAvailability.\n\n<!-- theme: warning -->\n\n> Note that you cannot update the bookingAvailability of an event with [calendar type](/models/event-calendarType.json) `periodic` or `permanent`. For now, they can only have \"Available\" as bookingAvailability.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-bookingAvailability.json"
+              },
+              "examples": {
+                "Tickets/places available": {
+                  "value": {
+                    "type": "Available"
+                  }
+                },
+                "No more tickets/places available": {
+                  "value": {
+                    "type": "Unavailable"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/events/{eventId}/calendar": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update calendar",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The calendar information has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (subEvent) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "put-event-calendar",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "../models/event-calendar-put.json"
+                  },
+                  {
+                    "$ref": "../models/event-calendar-put-deprecated.json"
+                  }
+                ]
+              },
+              "examples": {
+                "single": {
+                  "value": {
+                    "calendarType": "single",
+                    "subEvent": [
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "multiple": {
+                  "value": {
+                    "calendarType": "multiple",
+                    "subEvent": [
+                      {
+                        "startDate": "2020-05-17T22:00:00+00:00",
+                        "endDate": "2020-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Unavailable",
+                          "reason": {
+                            "nl": "Geannuleerd wegens COVID-19",
+                            "en": "Cancelled due to COVID-19"
+                          }
+                        },
+                        "bookingAvailability": {
+                          "type": "Unavailable"
+                        }
+                      },
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "periodic": {
+                  "value": {
+                    "calendarType": "periodic",
+                    "startDate": "2021-05-17T22:00:00+00:00",
+                    "endDate": "2021-05-17T22:00:00+00:00",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                },
+                "permanent": {
+                  "value": {
+                    "calendarType": "permanent",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "New calendar information."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "description": "Updates the calendar information of the given `eventId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| single  | subEvent\\[0\\].startDate, subEvent\\[0\\].endDate | subEvent\\[0\\].status, subEvent\\[0\\].bookingAvailability  |\n| multiple  | subEvent\\[\\*\\].startDate, subEvent[\\*\\].endDate  | subEvent\\[\\*\\].status, subEvent\\[\\*\\].bookingAvailability  |\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If `status` or `bookingAvailability` is missing on the event or a subEvent, it will default to `Available`.\n>\n> Although the status and bookingAvailability are optional they have a default value of `Available`. When the status and bookingAvailability is not provided an already set value will be overwritten to `Available`!\n\n<!-- theme: success -->\n\n> You can use `single` and `multiple` interchangeably as long as you also include `subEvent` as well. The API will use the correct type based on the number of subEvents inside `subEvent`.\n\n<!-- theme: info -->\n\n> This endpoint also supports a deprecated schema that uses `timeSpans` instead of `subEvent`. The `timeSpans` also have a slightly different structure than `subEvent`. For new integrations, it is recommended to use the schema with the `subEvent` property. \n> \n> For existing integrations the `timeSpans` property will be supported indefinitely for backward compatibility."
+      }
+    },
+    "/events/{eventId}/subEvents": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "patch": {
+        "operationId": "patch-event-subEvents",
+        "description": "Updates the given subEvents on the event with the given `eventId`.\n\nAllows partial updates, omitted properties will be ignored and remain unchanged. Omitted subEvents will also remain unchanged.\n\nEvery subEvent to update requires an `id` property that is an integer that corresponds to their index in the list of subEvents on the parent event. For example `0` for the first subEvent, `1` for the second subEvent, and so on.\n\n<!-- theme: warning -->\n\n> Note! If you change the `startDate` of a subEvent, the subEvents will be re-ordered on the parent event afterwards because subEvents are always sorted chronologically.\n\nOnly events with calendar type `single` and `multiple` have subEvents, so only events with those calendar types support this endpoint.",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The subEvents have been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+                      "title": "Calendar type not supported",
+                      "status": 400,
+                      "detail": "Not allowed to update subEvents on calendar type: \"permanent\". Only subEvents on single and multiple calendar types can be updated."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "summary": "Update subEvents",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-subEvent-patch.json"
+              },
+              "examples": {
+                "Updating the dates of the first subEvent": {
+                  "value": [
+                    {
+                      "id": 0,
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2021-05-17T22:00:00+00:00"
+                    }
+                  ]
+                },
+                "Updating the status of the second subEvent": {
+                  "value": [
+                    {
+                      "id": 1,
+                      "status": {
+                        "type": "Unavailable",
+                        "reason": {
+                          "nl": "Afgelast wegens corona"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "Updating the booking availability of the third subEvent": {
+                  "value": [
+                    {
+                      "id": 2,
+                      "bookingAvailability": {
+                        "type": "Unavailable"
+                      }
+                    }
+                  ]
+                },
+                "Updating multiple": {
+                  "value": [
+                    {
+                      "id": 0,
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2021-05-17T22:00:00+00:00"
+                    },
+                    {
+                      "id": 1,
+                      "status": {
+                        "type": "Unavailable",
+                        "reason": {
+                          "nl": "Afgelast wegens corona"
+                        }
+                      }
+                    },
+                    {
+                      "id": 2,
+                      "bookingAvailability": {
+                        "type": "Unavailable"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "The subEvents to update, with the properties to update. \n\nEach subEvent must have an `id` property to indicate which subEvent should be updated. This `id` is the position of the subEvent in the list of subEvents on the parent event. For example `0` for the first subEvent, `1` for the second subEvent, and so on.\n\nAll other properties are optional, and only properties that are included will be updated. No subEvents or properties will be removed."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/places/{placeId}/calendar": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "summary": "Update calendar",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The calendar information has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (calendarType) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "put-place-calendar",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-calendar-put.json"
+              },
+              "examples": {
+                "periodic": {
+                  "value": {
+                    "calendarType": "periodic",
+                    "startDate": "2021-05-17T22:00:00+00:00",
+                    "endDate": "2021-05-17T22:00:00+00:00",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                },
+                "permanent": {
+                  "value": {
+                    "calendarType": "permanent",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "New calendar information."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "description": "Updates the calendar information of the given `placeId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If the event has a `status` or `bookingAvailability` that is not `Available`, and you do not include this `status` or `bookingAvailability` in the new calendar information, they will get reverted back to the default `Available`!\n\n<!-- theme: danger -->\n\n> Contrary to events, places cannot use calendarType `single` or `multiple`!"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "$ref": "https://raw.githubusercontent.com/cultuurnet/stoplight-docs-errors/main/models/Error.json"
+      }
+    },
+    "securitySchemes": {
+      "USER_ACCESS_TOKEN": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "",
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        },
+        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/user-access-token.md)"
+      },
+      "CLIENT_ACCESS_TOKEN": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        },
+        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/client-access-token.md)"
+      }
+    },
+    "parameters": {
+      "eventId": {
+        "name": "eventId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of an event, in the format of a UUID"
+      },
+      "placeId": {
+        "name": "placeId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of an place, in the format of a UUID"
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Unauthorized. Your request is missing the required credentials to authenticate. See the Authentication documentation for more info.\n\n* type: https://api.publiq.be/probs/auth/unauthorized\n* detail: might contain a developer-readable explanation of the reason",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/auth/unauthorized",
+                  "title": "Unauthorized",
+                  "status": 401
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Forbidden. Your request was successfully authenticated but you do not have permission to perform this particular request.\n\n* type: https://api.publiq.be/probs/auth/forbidden\n* detail: might contain a developer-readable explanation of the reason",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/auth/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "user must be admin of organiser abcd1234"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EventNotFound": {
+        "description": "No event found for the given `eventId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/event-not-found",
+                  "title": "Event not found",
+                  "status": 404,
+                  "detail": "The event with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Events"
+    },
+    {
+      "name": "Places"
+    }
+  ]
+}
