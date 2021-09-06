@@ -532,7 +532,138 @@
                   "calendar"
                 ]
               },
-              "examples": {}
+              "examples": {
+                "Single day": {
+                  "value": {
+                    "name": "Single day example",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "single",
+                      "timeSpans": [
+                        {
+                          "start": "2021-05-17T22:00:00+00:00",
+                          "end": "2021-05-17T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Multiple days": {
+                  "value": {
+                    "name": "Multiple days example",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "multiple",
+                      "timeSpans": [
+                        {
+                          "start": "2021-05-17T22:00:00+00:00",
+                          "end": "2021-05-17T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        },
+                        {
+                          "start": "2021-05-18T22:00:00+00:00",
+                          "end": "2021-05-18T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Periodic with opening hours": {
+                  "value": {
+                    "name": "Periodic with opening hours",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "periodic",
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2021-05-17T22:00:00+00:00",
+                      "openingHours": [
+                        {
+                          "opens": "13:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "monday"
+                          ]
+                        },
+                        {
+                          "opens": "09:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Permanent with opening hours": {
+                  "value": {
+                    "name": "Periodic with opening hours",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "permanent",
+                      "openingHours": [
+                        {
+                          "opens": "13:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "monday"
+                          ]
+                        },
+                        {
+                          "opens": "09:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
             }
           },
           "description": ""
