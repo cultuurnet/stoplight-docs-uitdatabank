@@ -941,7 +941,7 @@
                 ]
               },
               "examples": {
-                "Permanent place": {
+                "Permanent with opening hours": {
                   "value": {
                     "name": "Sint-Pieterskerk",
                     "type": "0.14.0.0.0",
@@ -977,7 +977,7 @@
                     }
                   }
                 },
-                "Periodic place": {
+                "Periodic with opening hours": {
                   "value": {
                     "name": "Velodroom",
                     "type": "Yf4aZBfsUEu2NsQqsprngw",
