@@ -449,6 +449,235 @@
         ]
       }
     },
+    "/event/{eventId}/major-info": {
+      "parameters": [
+        {
+          "name": "eventId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+          },
+          "description": "Unique id of an event, in the format of a UUID"
+        }
+      ],
+      "post": {
+        "operationId": "post-event-major-info",
+        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\n<!-- theme: warning -->\n\n> Note that `/event/` is singular in this endpoint!\n\nUpdates the \"major info\" of the event with the given `eventId`.\n\nThe major info contains:\n\n* `name`: The name of the event in the event's `mainLanguage`, as a string\n* `type`: Id of the event's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the event's `theme` taxonomy `term`, as a string\n* `location`: Object with the id of the event's location, as a place's uuid (string)\n* `calendar`: Object with the event's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the event. If the event has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.",
+        "summary": "Update major info (deprecated)",
+        "deprecated": true,
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The major-info has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "theme": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "object",
+                    "required": [
+                      "id"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "calendar": {
+                    "$ref": "../models/event-calendar-put-deprecated.json"
+                  }
+                },
+                "required": [
+                  "name",
+                  "type",
+                  "location",
+                  "calendar"
+                ]
+              },
+              "examples": {
+                "Single day": {
+                  "value": {
+                    "name": "Single day example",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "single",
+                      "timeSpans": [
+                        {
+                          "start": "2021-05-17T22:00:00+00:00",
+                          "end": "2021-05-17T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Multiple days": {
+                  "value": {
+                    "name": "Multiple days example",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "multiple",
+                      "timeSpans": [
+                        {
+                          "start": "2021-05-17T22:00:00+00:00",
+                          "end": "2021-05-17T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        },
+                        {
+                          "start": "2021-05-18T22:00:00+00:00",
+                          "end": "2021-05-18T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Periodic with opening hours": {
+                  "value": {
+                    "name": "Periodic with opening hours",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "periodic",
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2021-05-17T22:00:00+00:00",
+                      "openingHours": [
+                        {
+                          "opens": "13:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "monday"
+                          ]
+                        },
+                        {
+                          "opens": "09:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Permanent with opening hours": {
+                  "value": {
+                    "name": "Periodic with opening hours",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "permanent",
+                      "openingHours": [
+                        {
+                          "opens": "13:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "monday"
+                          ]
+                        },
+                        {
+                          "opens": "09:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/places/{placeId}": {
       "parameters": [
         {
@@ -617,6 +846,188 @@
           }
         ],
         "description": "Updates the calendar information of the given `placeId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If the event has a `status` or `bookingAvailability` that is not `Available`, and you do not include this `status` or `bookingAvailability` in the new calendar information, they will get reverted back to the default `Available`!\n\n<!-- theme: danger -->\n\n> Contrary to events, places cannot use calendarType `single` or `multiple`!"
+      }
+    },
+    "/place/{placeId}/major-info": {
+      "parameters": [
+        {
+          "name": "placeId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+          },
+          "description": "Unique id of the place, in the format of a UUID"
+        }
+      ],
+      "post": {
+        "operationId": "post-place-major-info",
+        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\n<!-- theme: warning -->\n\n> Note that `/place/` is singular in this endpoint!\n\nUpdates the \"major info\" of the event with the given `placeId`.\n\nThe major info contains:\n\n* `name`: The name of the place in the place's `mainLanguage`, as a string\n* `type`: Id of the place's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the place's `theme` taxonomy `term`, as a string\n* `address`: Object with the address of the place (see schema below)\n* `calendar`: Object with the place's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the place. If the place has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.",
+        "summary": "Update major info (deprecated)",
+        "deprecated": true,
+        "responses": {
+          "204": {
+            "description": "No Content. The major-info has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "theme": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "object",
+                    "required": [
+                      "streetAddress",
+                      "postalCode",
+                      "addressLocality",
+                      "addressCountry"
+                    ],
+                    "properties": {
+                      "streetAddress": {
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "type": "string"
+                      },
+                      "addressLocality": {
+                        "type": "string"
+                      },
+                      "addressCountry": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "calendar": {
+                    "$ref": "../models/place-calendar-put.json"
+                  }
+                },
+                "required": [
+                  "name",
+                  "type",
+                  "address",
+                  "calendar"
+                ]
+              },
+              "examples": {
+                "Permanent with opening hours": {
+                  "value": {
+                    "name": "Sint-Pieterskerk",
+                    "type": "0.14.0.0.0",
+                    "theme": "1.44.0.0.0",
+                    "address": {
+                      "streetAddress": "Grote Markt 1",
+                      "postalCode": "3000",
+                      "addressLocality": "Leuven",
+                      "addressCountry": "BE"
+                    },
+                    "calendar": {
+                      "calendarType": "permanent",
+                      "openingHours": [
+                        {
+                          "opens": "10:00",
+                          "closes": "16:30",
+                          "dayOfWeek": [
+                            "monday",
+                            "tuesday",
+                            "thursday",
+                            "friday",
+                            "saturday"
+                          ]
+                        },
+                        {
+                          "opens": "11:00",
+                          "closes": "16:30",
+                          "dayOfWeek": [
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Periodic with opening hours": {
+                  "value": {
+                    "name": "Velodroom",
+                    "type": "Yf4aZBfsUEu2NsQqsprngw",
+                    "address": {
+                      "streetAddress": "Brusselsestraat",
+                      "postalCode": "3000",
+                      "addressLocality": "Leuven",
+                      "addressCountry": "BE"
+                    },
+                    "calendar": {
+                      "calendarType": "periodic",
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2023-11-17T22:00:00+00:00",
+                      "openingHours": [
+                        {
+                          "opens": "17:00",
+                          "closes": "22:00",
+                          "dayOfWeek": [
+                            "thursday",
+                            "friday"
+                          ]
+                        },
+                        {
+                          "opens": "13:00",
+                          "closes": "22:00",
+                          "dayOfWeek": [
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Places"
+        ]
       }
     }
   },
