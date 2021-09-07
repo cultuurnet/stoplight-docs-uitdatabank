@@ -449,6 +449,36 @@
         ]
       }
     },
+    "/places/{placeId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "get": {
+        "summary": "Get place details",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Place details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/place.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "operationId": "get-place",
+        "description": "Returns the details of the place for the given `placeId`."
+      }
+    },
     "/places/{placeId}/calendar": {
       "parameters": [
         {
@@ -496,7 +526,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "$ref": "#/components/responses/EventNotFound"
+            "$ref": "#/components/responses/PlaceNotFound"
           }
         },
         "operationId": "put-place-calendar",
@@ -699,6 +729,26 @@
                   "title": "Event not found",
                   "status": 404,
                   "detail": "The event with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
+      },
+      "PlaceNotFound": {
+        "description": "No place found for the given `placeId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/place-not-found",
+                  "title": "Place not found",
+                  "status": 404,
+                  "detail": "The place with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
                 }
               }
             }
