@@ -42,6 +42,11 @@
   "items": {
     "type": "object",
     "properties": {
+      "id": {
+        "type": "integer",
+        "description": "Index of the subEvent to update on the parent event. `0` for the first subEvent, `1` for the second event, and so on.",
+        "example": 0
+      },
       "startDate": {
         "$ref": "./event-startDate.json"
       },
@@ -56,6 +61,7 @@
       }
     },
     "required": [
+      "id",
       "startDate",
       "endDate",
       "status",
