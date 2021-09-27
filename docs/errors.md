@@ -16,12 +16,12 @@ Usually the `detail` of the error will contain more information about the specif
 
 Try using an event or place id with a calendar type that is supported by the operation that you are trying to perform.
 
-## id-already-in-use
+## resource-id-already-in-use
 
-*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/id-already-in-use`
-*   **Title**: `Id already in use`
+*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/resource-id-already-in-use`
+*   **Title**: `Resource id already in use`
 *   **Status**: `400`
 
-The given id to create a new resource is already in use by an existing resource.
+The given id to create a new resource is already in use by an existing resource of another type.
 
-Try creating the new resource with another unique id or update the existing resource.
+Try creating the new resource with another unique resource id.
