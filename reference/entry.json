@@ -50,10 +50,18 @@
         "description": "Returns the details of the event for the given `eventId`."
       }
     },
-    "/events/{eventId}/bookingAvailability": {
+    "/events/{eventId}/booking-availability": {
       "parameters": [
         {
-          "$ref": "#/components/parameters/eventId"
+          "name": "eventId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+          },
+          "description": "Unique id of an event, in the format of a UUID"
         }
       ],
       "put": {
@@ -324,10 +332,18 @@
         "description": "Updates the calendar information of the given `eventId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| single  | subEvent\\[0\\].startDate, subEvent\\[0\\].endDate | subEvent\\[0\\].status, subEvent\\[0\\].bookingAvailability  |\n| multiple  | subEvent\\[\\*\\].startDate, subEvent[\\*\\].endDate  | subEvent\\[\\*\\].status, subEvent\\[\\*\\].bookingAvailability  |\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If `status` or `bookingAvailability` is missing on the event or a subEvent, it will default to `Available`.\n>\n> Although the status and bookingAvailability are optional they have a default value of `Available`. When the status and bookingAvailability is not provided an already set value will be overwritten to `Available`!\n\n<!-- theme: success -->\n\n> You can use `single` and `multiple` interchangeably as long as you also include `subEvent` as well. The API will use the correct type based on the number of subEvents inside `subEvent`.\n\n<!-- theme: info -->\n\n> This endpoint also supports a deprecated schema that uses `timeSpans` instead of `subEvent`. The `timeSpans` also have a slightly different structure than `subEvent`. For new integrations, it is recommended to use the schema with the `subEvent` property. \n> \n> For existing integrations the `timeSpans` property will be supported indefinitely for backward compatibility."
       }
     },
-    "/events/{eventId}/subEvents": {
+    "/events/{eventId}/sub-events": {
       "parameters": [
         {
-          "$ref": "#/components/parameters/eventId"
+          "name": "eventId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+          },
+          "description": "Unique id of an event, in the format of a UUID"
         }
       ],
       "patch": {
