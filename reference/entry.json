@@ -53,15 +53,7 @@
     "/events/{eventId}/booking-availability": {
       "parameters": [
         {
-          "name": "eventId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
-          },
-          "description": "Unique id of an event, in the format of a UUID"
+          "$ref": "#/components/parameters/eventId"
         }
       ],
       "put": {
@@ -335,15 +327,7 @@
     "/events/{eventId}/sub-events": {
       "parameters": [
         {
-          "name": "eventId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
-          },
-          "description": "Unique id of an event, in the format of a UUID"
+          "$ref": "#/components/parameters/eventId"
         }
       ],
       "patch": {
@@ -468,15 +452,7 @@
     "/events/{eventId}/major-info": {
       "parameters": [
         {
-          "name": "eventId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
-          },
-          "description": "Unique id of an event, in the format of a UUID"
+          "$ref": "#/components/parameters/eventId"
         }
       ],
       "put": {
@@ -867,15 +843,7 @@
     "/places/{placeId}/major-info": {
       "parameters": [
         {
-          "name": "placeId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
-          },
-          "description": "Unique id of the place, in the format of a UUID"
+          "$ref": "#/components/parameters/placeId"
         }
       ],
       "put": {
