@@ -1,0 +1,31 @@
+{
+  "title": "place.add.video",
+  "type": "object",
+  "description": "Describes the request body to add a video to a place.",
+  "examples": [
+    {
+      "url": "https://www.youtube.com/?v=ewr53d",
+      "copyrightHolder": "publiq"
+    },
+    {
+      "url": "https://www.vimeo.com/54fdrg"
+    }
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "url",
+      "example": "https://www.youtube.com/?v=ewr53d",
+      "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed."
+    },
+    "copyrightHolder": {
+      "type": "string",
+      "example": "publiq",
+      "minLength": 3,
+      "description": "The copyright holder of the video source."
+    }
+  },
+  "required": [
+    "url"
+  ]
+}
