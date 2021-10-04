@@ -768,7 +768,7 @@
         },
         "description": "Add a video with a URL to an event",
         "tags": [
-          "Events", "Video"
+          "Events"
         ],
         "security": [
           {
@@ -1222,7 +1222,7 @@
         },
         "description": "Add a video with a URL to a place",
         "tags": [
-          "Places", "Video"
+          "Places"
         ],
         "security": [
           {
