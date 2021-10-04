@@ -85,7 +85,7 @@
       "$ref": "./place-image.json"
     },
     "videos": {
-      "$ref": "./place-video.json"
+      "$ref": "./place-videos.json"
     },
     "labels": {
       "$ref": "./place-labels.json"
