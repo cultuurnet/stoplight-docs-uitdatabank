@@ -50,7 +50,7 @@
         "description": "Returns the details of the event for the given `eventId`."
       }
     },
-    "/events/{eventId}/bookingAvailability": {
+    "/events/{eventId}/booking-availability": {
       "parameters": [
         {
           "$ref": "#/components/parameters/eventId"
@@ -324,7 +324,7 @@
         "description": "Updates the calendar information of the given `eventId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| single  | subEvent\\[0\\].startDate, subEvent\\[0\\].endDate | subEvent\\[0\\].status, subEvent\\[0\\].bookingAvailability  |\n| multiple  | subEvent\\[\\*\\].startDate, subEvent[\\*\\].endDate  | subEvent\\[\\*\\].status, subEvent\\[\\*\\].bookingAvailability  |\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If `status` or `bookingAvailability` is missing on the event or a subEvent, it will default to `Available`.\n>\n> Although the status and bookingAvailability are optional they have a default value of `Available`. When the status and bookingAvailability is not provided an already set value will be overwritten to `Available`!\n\n<!-- theme: success -->\n\n> You can use `single` and `multiple` interchangeably as long as you also include `subEvent` as well. The API will use the correct type based on the number of subEvents inside `subEvent`.\n\n<!-- theme: info -->\n\n> This endpoint also supports a deprecated schema that uses `timeSpans` instead of `subEvent`. The `timeSpans` also have a slightly different structure than `subEvent`. For new integrations, it is recommended to use the schema with the `subEvent` property. \n> \n> For existing integrations the `timeSpans` property will be supported indefinitely for backward compatibility."
       }
     },
-    "/events/{eventId}/subEvents": {
+    "/events/{eventId}/sub-events": {
       "parameters": [
         {
           "$ref": "#/components/parameters/eventId"
@@ -449,23 +449,15 @@
         ]
       }
     },
-    "/event/{eventId}/major-info": {
+    "/events/{eventId}/major-info": {
       "parameters": [
         {
-          "name": "eventId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
-          },
-          "description": "Unique id of an event, in the format of a UUID"
+          "$ref": "#/components/parameters/eventId"
         }
       ],
-      "post": {
-        "operationId": "post-event-major-info",
-        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\n<!-- theme: warning -->\n\n> Note that `/event/` is singular in this endpoint!\n\nUpdates the \"major info\" of the event with the given `eventId`.\n\nThe major info contains:\n\n* `name`: The name of the event in the event's `mainLanguage`, as a string\n* `type`: Id of the event's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the event's `theme` taxonomy `term`, as a string\n* `location`: Object with the id of the event's location, as a place's uuid (string)\n* `calendar`: Object with the event's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the event. If the event has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.",
+      "put": {
+        "operationId": "put-event-major-info",
+        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\nUpdates the \"major info\" of the event with the given `eventId`.\n\nThe major info contains:\n\n* `name`: The name of the event in the event's `mainLanguage`, as a string\n* `type`: Id of the event's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the event's `theme` taxonomy `term`, as a string\n* `location`: Object with the id of the event's location, as a place's uuid (string)\n* `calendar`: Object with the event's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the event. If the event has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.\n\n<!-- theme: success -->\n> For backward-compatibility with older integrations, this operation can also be requested via `POST /event/{eventId}/major-info`.",
         "summary": "Update major info (deprecated)",
         "deprecated": true,
         "tags": [
@@ -950,23 +942,15 @@
         "description": "Updates the calendar information of the given `placeId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If the event has a `status` or `bookingAvailability` that is not `Available`, and you do not include this `status` or `bookingAvailability` in the new calendar information, they will get reverted back to the default `Available`!\n\n<!-- theme: danger -->\n\n> Contrary to events, places cannot use calendarType `single` or `multiple`!"
       }
     },
-    "/place/{placeId}/major-info": {
+    "/places/{placeId}/major-info": {
       "parameters": [
         {
-          "name": "placeId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
-          },
-          "description": "Unique id of the place, in the format of a UUID"
+          "$ref": "#/components/parameters/placeId"
         }
       ],
-      "post": {
-        "operationId": "post-place-major-info",
-        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\n<!-- theme: warning -->\n\n> Note that `/place/` is singular in this endpoint!\n\nUpdates the \"major info\" of the event with the given `placeId`.\n\nThe major info contains:\n\n* `name`: The name of the place in the place's `mainLanguage`, as a string\n* `type`: Id of the place's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the place's `theme` taxonomy `term`, as a string\n* `address`: Object with the address of the place (see schema below)\n* `calendar`: Object with the place's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the place. If the place has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.",
+      "put": {
+        "operationId": "put-place-major-info",
+        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\nUpdates the \"major info\" of the event with the given `placeId`.\n\nThe major info contains:\n\n* `name`: The name of the place in the place's `mainLanguage`, as a string\n* `type`: Id of the place's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the place's `theme` taxonomy `term`, as a string\n* `address`: Object with the address of the place (see schema below)\n* `calendar`: Object with the place's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the place. If the place has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.\n\n<!-- theme: success -->\n> For backward-compatibility with older integrations, this operation can also be requested via `POST /place/{placeId}/major-info`",
         "summary": "Update major info (deprecated)",
         "deprecated": true,
         "responses": {
