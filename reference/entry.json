@@ -677,7 +677,7 @@
         }
       ],
       "post": {
-        "summary": "Add a video to an event",
+        "summary": "Add a video",
         "operationId": "post-event-video",
         "responses": {
           "200": {
@@ -1149,7 +1149,7 @@
         }
       ],
       "post": {
-        "summary": "Add a video to a place",
+        "summary": "Add a video",
         "operationId": "post-place-video",
         "responses": {
           "200": {
