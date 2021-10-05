@@ -750,7 +750,7 @@
                     "format": "uri",
                     "example": "https://www.youtube.com/?v=re34sf",
                     "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed.",
-                    "pattern": "^http(s?)://(www.)?(youtube|vimeo)\\."
+                    "pattern": "^http(s?):\\/\\/(www.)?(youtube|vimeo)\\."
                   },
                   "copyrightHolder": {
                     "type": "string",
@@ -1224,7 +1224,7 @@
                     "format": "uri",
                     "example": "https://www.youtube.com/?v=re34sf",
                     "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed.",
-                    "pattern": "^http(s?)://(www.)?(youtube|vimeo)\\."
+                    "pattern": "^http(s?):\\/\\/(www.)?(youtube|vimeo)\\."
                   },
                   "copyrightHolder": {
                     "type": "string",

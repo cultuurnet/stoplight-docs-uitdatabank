@@ -23,7 +23,7 @@
       "example": "publiq",
       "minLength": 3,
       "description": "The copyright holder of the video source.",
-      "pattern": "\"^http(s?)://(www.)?(youtube|vimeo)\\\\.\""
+      "pattern": "^http(s?):\\/\\/(www.)?(youtube|vimeo)\\."
     }
   },
   "required": [
