@@ -744,7 +744,7 @@
                     "example": "https://www.youtube.com/?v=re34sf",
                     "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
                   },
-                  "copyright": {
+                  "copyrightHolder": {
                     "type": "string",
                     "minLength": 3,
                     "example": "publiq",
@@ -758,7 +758,7 @@
               "examples": {
                 "Video from Youtube and with Copyright": {
                   "url": "https://www.youtube.com/?v=re34sf",
-                  "copyright": "publiq"
+                  "copyrightHolder": "publiq"
                 },
                 "Video from Vimeo": {
                   "url": "https://www.vimeo.com/4dwe2"
@@ -1200,7 +1200,7 @@
                     "example": "https://www.youtube.com/?v=re34sf",
                     "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
                   },
-                  "copyright": {
+                  "copyrightHolder": {
                     "type": "string",
                     "minLength": 3,
                     "example": "publiq",
@@ -1214,7 +1214,7 @@
               "examples": {
                 "Video from Youtube and with Copyright": {
                   "url": "https://www.youtube.com/?v=re34sf",
-                  "copyright": "publiq"
+                  "copyrightHolder": "publiq"
                 },
                 "Video from Vimeo": {
                   "url": "https://www.vimeo.com/4dwe2"
