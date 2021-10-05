@@ -757,12 +757,22 @@
               },
               "examples": {
                 "Video from Youtube and with Copyright": {
-                  "url": "https://www.youtube.com/?v=re34sf",
-                  "copyrightHolder": "publiq"
+                  "value": {
+                    "url": "https://www.youtube.com/?v=re34sf",
+                    "copyright": "publiq"
+                  }
                 },
                 "Video from Vimeo": {
-                  "url": "https://www.vimeo.com/4dwe2"
+                  "value": {
+                    "url": "https://www.vimeo.com/4dwe2"
+                  }
                 }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
               }
             }
           },
@@ -1213,11 +1223,15 @@
               },
               "examples": {
                 "Video from Youtube and with Copyright": {
-                  "url": "https://www.youtube.com/?v=re34sf",
-                  "copyrightHolder": "publiq"
+                  "value": {
+                    "url": "https://www.youtube.com/?v=re34sf",
+                    "copyright": "publiq"
+                  }
                 },
                 "Video from Vimeo": {
-                  "url": "https://www.vimeo.com/4dwe2"
+                  "value" : {
+                    "url": "https://www.vimeo.com/4dwe2"
+                  }
                 }
               }
             }
