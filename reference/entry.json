@@ -696,7 +696,9 @@
                 },
                 "examples": {
                   "The new videoId": {
-                    "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    "value": {
+                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                  }
                   }
                 }
               }
@@ -1168,7 +1170,9 @@
                 },
                 "examples": {
                   "The new videoId": {
-                    "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    "value": {
+                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
                   }
                 }
               }
