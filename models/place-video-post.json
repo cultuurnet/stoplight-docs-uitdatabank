@@ -1,5 +1,5 @@
 {
-  "title": "place.add.video",
+  "title": "place.video.post",
   "type": "object",
   "description": "Describes the request body to add a video to a place.",
   "examples": [

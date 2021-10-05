@@ -1,5 +1,5 @@
 {
-  "title": "event.add.video",
+  "title": "event.video.post",
   "type": "object",
   "description": "Describes the request body to add a video to an event.",
   "examples": [
