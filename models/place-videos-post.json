@@ -16,14 +16,14 @@
       "type": "string",
       "format": "url",
       "example": "https://www.youtube.com/?v=ewr53d",
-      "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed."
+      "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
+      "pattern": "^http(s?):\\/\\/(www.)?(youtube|vimeo)\\."
     },
     "copyrightHolder": {
       "type": "string",
       "example": "publiq",
       "minLength": 3,
-      "description": "The copyright holder of the video source.",
-      "pattern": "^http(s?):\\/\\/(www.)?(youtube|vimeo)\\."
+      "description": "The copyright holder of the video source."
     }
   },
   "required": [
