@@ -778,7 +778,7 @@
           },
           "description": "The new video to add to an event"
         },
-        "description": "Add a video with a URL to an event",
+        "description": "Add a video as a URL reference to an event\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
         "tags": [
           "Events"
         ],
@@ -1229,7 +1229,7 @@
                   }
                 },
                 "Video from Vimeo": {
-                  "value" : {
+                  "value": {
                     "url": "https://www.vimeo.com/4dwe2"
                   }
                 }
@@ -1238,7 +1238,7 @@
           },
           "description": "The new video to add to a place"
         },
-        "description": "Add a video with a URL to a place",
+        "description": "Add a video as a URL reference to place\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
         "tags": [
           "Places"
         ],
