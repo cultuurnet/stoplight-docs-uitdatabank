@@ -1,0 +1,71 @@
+{
+  "title": "event.videos",
+  "type": "array",
+  "description": "Describes an array of video objects that are linked to an event.",
+  "examples": [
+    [
+      {
+        "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+        "url": "https://www.youtube.com/?v=ewr53d",
+        "copyrightHolder": "publiq"
+      }
+    ],
+    [
+      {
+        "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "url": "https://www.vimeo.com/54fdrg"
+      }
+    ],
+    [
+      {
+        "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+        "url": "https://www.youtube.com/?v=ewr53d",
+        "copyrightHolder": "publiq"
+      },
+      {
+        "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "url": "https://www.vimeo.com/54fdrg"
+      }
+    ]
+  ],
+  "items": {
+    "title": "video",
+    "type": "object",
+    "description": "Describes a video object that is linked to an event or a place.",
+    "examples": [
+      {
+        "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+        "url": "https://www.youtube.com/?v=ewr53d",
+        "copyrightHolder": "publiq"
+      },
+      {
+        "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "url": "https://www.vimeo.com/54fdrg"
+      }
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "example": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "description": "The id of the added video."
+      },
+      "url": {
+        "type": "string",
+        "format": "url",
+        "example": "https://www.youtube.com/?v=ewr53d",
+        "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed."
+      },
+      "copyrightHolder": {
+        "type": "string",
+        "example": "publiq",
+        "minLength": 3,
+        "description": "The copyright holder of the video source."
+      }
+    },
+    "required": [
+      "id",
+      "url"
+    ]
+  }
+}

@@ -84,6 +84,9 @@
     "image": {
       "$ref": "./place-image.json"
     },
+    "videos": {
+      "$ref": "./place-videos.json"
+    },
     "labels": {
       "$ref": "./place-labels.json"
     },
@@ -250,6 +253,13 @@
         }
       ],
       "image": "https://io-test.uitdatabank.be/images/example.png",
+      "videos": [
+        {
+          "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+          "url": "https://www.youtube.com/?v=ewr53d",
+          "copyrightHolder": "publiq"
+        }
+      ],
       "labels": [
         "label1"
       ],
