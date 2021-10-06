@@ -324,6 +324,113 @@
         "description": "Updates the calendar information of the given `eventId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| single  | subEvent\\[0\\].startDate, subEvent\\[0\\].endDate | subEvent\\[0\\].status, subEvent\\[0\\].bookingAvailability  |\n| multiple  | subEvent\\[\\*\\].startDate, subEvent[\\*\\].endDate  | subEvent\\[\\*\\].status, subEvent\\[\\*\\].bookingAvailability  |\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If `status` or `bookingAvailability` is missing on the event or a subEvent, it will default to `Available`.\n>\n> Although the status and bookingAvailability are optional they have a default value of `Available`. When the status and bookingAvailability is not provided an already set value will be overwritten to `Available`!\n\n<!-- theme: success -->\n\n> You can use `single` and `multiple` interchangeably as long as you also include `subEvent` as well. The API will use the correct type based on the number of subEvents inside `subEvent`.\n\n<!-- theme: info -->\n\n> This endpoint also supports a deprecated schema that uses `timeSpans` instead of `subEvent`. The `timeSpans` also have a slightly different structure than `subEvent`. For new integrations, it is recommended to use the schema with the `subEvent` property. \n> \n> For existing integrations the `timeSpans` property will be supported indefinitely for backward compatibility."
       }
     },
+    "/events/{eventId}/calendar-summary": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "get": {
+        "summary": "Get calendar summary",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "The calendar summary in either plain text or HTML.\n\nFor example:\n```\nVan 6 januari 2021 tot 23 juni 2021 (geannuleerd)\n```\n\nOr:\n```\n<span class=\\\"cf-from cf-meta\\\">Van</span> <span class=\\\"cf-date\\\">6 januari 2021</span> <span class=\\\"cf-to cf-meta\\\">tot</span> <span class=\\\"cf-date\\\">23 juni 2021</span> <span title=\\\"Deze activiteit is waarschijnlijk geannuleerd omwille van preventieve coronamaatregelen.\\\" class=\\\"cf-status\\\">(geannuleerd)</span>\n```"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/query-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/query-parameter-invalid",
+                      "title": "Query parameter invalid",
+                      "status": 400,
+                      "detail": "Query parameter \"langCode\" does not support value \"es\"."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "get-event-calendar-summary",
+        "description": "Returns a human-readable summary of the calendar information of the event. Can be configured to return either plain text or HTML, and to switch between four different formats depending on the amount of space you have to display it.\n\n> For backward compatibility this endpoint is also accessible at the old abbreviated `/events/{eventId}/calsum` path.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ],
+              "default": "text"
+            },
+            "in": "query",
+            "name": "style",
+            "description": "Defines whether the response should contain plain text or HTML."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ],
+              "default": "lg"
+            },
+            "in": "query",
+            "name": "format",
+            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl",
+                "fr",
+                "en",
+                "de"
+              ],
+              "default": "nl"
+            },
+            "in": "query",
+            "name": "langCode",
+            "description": "Defines the language that the summary will be written in. Also influences the date/time format used."
+          },
+          {
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "in": "query",
+            "name": "hidePast",
+            "description": "Will hide past dates in summaries of events with multiple dates."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "Europe/Brussels"
+            },
+            "in": "query",
+            "name": "timeZone",
+            "description": "The timezone to format date/times in."
+          }
+        ],
+        "x-internal": true
+      }
+    },
     "/events/{eventId}/sub-events": {
       "parameters": [
         {
