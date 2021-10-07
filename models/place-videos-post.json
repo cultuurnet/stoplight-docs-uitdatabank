@@ -2,20 +2,12 @@
   "title": "place.videos.post",
   "type": "object",
   "description": "Describes the request body to add a video to a place.",
-  "examples": [
-    {
-      "url": "https://www.youtube.com/?v=ewr53d",
-      "copyrightHolder": "publiq"
-    },
-    {
-      "url": "https://www.vimeo.com/54fdrg"
-    }
-  ],
+  "examples": [],
   "properties": {
     "url": {
       "type": "string",
       "format": "url",
-      "example": "https://www.youtube.com/?v=ewr53d",
+      "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
       "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
       "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*)))"
     },
