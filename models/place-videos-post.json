@@ -2,15 +2,7 @@
   "title": "place.videos.post",
   "type": "object",
   "description": "Describes the request body to add a video to a place.",
-  "examples": [
-    {
-      "url": "https://www.youtube.com/?v=ewr53d",
-      "copyrightHolder": "publiq"
-    },
-    {
-      "url": "https://www.vimeo.com/54fdrg"
-    }
-  ],
+  "examples": [],
   "properties": {
     "url": {
       "type": "string",
