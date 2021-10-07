@@ -449,6 +449,135 @@
         ]
       }
     },
+    "/events/{eventId}/videos": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "post": {
+        "summary": "Add a video",
+        "operationId": "post-event-video",
+        "responses": {
+          "200": {
+            "description": "The video was added to the event.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "videoId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                },
+                "examples": {
+                  "The new videoId": {
+                    "value": {
+                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required properties url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://www.youtube.com/?v=re34sf",
+                    "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
+                  },
+                  "copyrightHolder": {
+                    "type": "string",
+                    "minLength": 3,
+                    "example": "publiq",
+                    "description": "The copyright holder of the video source."
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              },
+              "examples": {
+                "Video from Youtube and with Copyright": {
+                  "value": {
+                    "url": "https://www.youtube.com/?v=re34sf",
+                    "copyrightHolder": "publiq"
+                  }
+                },
+                "Video from Vimeo": {
+                  "value": {
+                    "url": "https://www.vimeo.com/4dwe2"
+                  }
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          },
+          "description": "The new video to add to an event."
+        },
+        "description": "Add a video as a URL reference to an event\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/major-info": {
       "parameters": [
         {
@@ -670,135 +799,6 @@
         ]
       }
     },
-    "/events/{eventId}/videos": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/eventId"
-        }
-      ],
-      "post": {
-        "summary": "Add a video",
-        "operationId": "post-event-video",
-        "responses": {
-          "200": {
-            "description": "The video was added to the event.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "videoId": {
-                      "type": "string",
-                      "format": "uuid",
-                      "example": "b504cf44-9ab8-4641-9934-38d1cc67242c"
-                    }
-                  }
-                },
-                "examples": {
-                  "The new videoId": {
-                    "value": {
-                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
-                  }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                },
-                "examples": {
-                  "Invalid data": {
-                    "value": {
-                      "type": "https://api.publiq.be/probs/body/invalid-data",
-                      "title": "Invalid body data",
-                      "status": 400,
-                      "schemaErrors": [
-                        {
-                          "jsonPointer": "/url",
-                          "error": "The required properties url is missing."
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/EventNotFound"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "example": "https://www.youtube.com/?v=re34sf",
-                    "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
-                  },
-                  "copyrightHolder": {
-                    "type": "string",
-                    "minLength": 3,
-                    "example": "publiq",
-                    "description": "The copyright holder of the video source."
-                  }
-                },
-                "required": [
-                  "url"
-                ]
-              },
-              "examples": {
-                "Video from Youtube and with Copyright": {
-                  "value": {
-                    "url": "https://www.youtube.com/?v=re34sf",
-                    "copyrightHolder": "publiq"
-                  }
-                },
-                "Video from Vimeo": {
-                  "value": {
-                    "url": "https://www.vimeo.com/4dwe2"
-                  }
-                }
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
-            }
-          },
-          "description": "The new video to add to an event."
-        },
-        "description": "Add a video as a URL reference to an event\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
-        "tags": [
-          "Events"
-        ],
-        "security": [
-          {
-            "USER_ACCESS_TOKEN": []
-          },
-          {
-            "CLIENT_ACCESS_TOKEN": []
-          }
-        ]
-      }
-    },
     "/places/{placeId}": {
       "parameters": [
         {
@@ -967,6 +967,129 @@
           }
         ],
         "description": "Updates the calendar information of the given `placeId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If the event has a `status` or `bookingAvailability` that is not `Available`, and you do not include this `status` or `bookingAvailability` in the new calendar information, they will get reverted back to the default `Available`!\n\n<!-- theme: danger -->\n\n> Contrary to events, places cannot use calendarType `single` or `multiple`!"
+      }
+    },
+    "/places/{placeId}/videos": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "post": {
+        "summary": "Add a video",
+        "operationId": "post-place-video",
+        "responses": {
+          "200": {
+            "description": "The video was added to the place.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "videoId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                },
+                "examples": {
+                  "The new videoId": {
+                    "value": {
+                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required properties url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://www.youtube.com/?v=re34sf",
+                    "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
+                  },
+                  "copyrightHolder": {
+                    "type": "string",
+                    "minLength": 3,
+                    "example": "publiq",
+                    "description": "The copyright holder of the video source."
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              },
+              "examples": {
+                "Video from Youtube and with Copyright": {
+                  "value": {
+                    "url": "https://www.youtube.com/?v=re34sf",
+                    "copyrightHolder": "publiq"
+                  }
+                },
+                "Video from Vimeo": {
+                  "value": {
+                    "url": "https://www.vimeo.com/4dwe2"
+                  }
+                }
+              }
+            }
+          },
+          "description": "The new video to add to a place."
+        },
+        "description": "Add a video as a URL reference to place\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Places"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
       }
     },
     "/places/{placeId}/major-info": {
@@ -1140,129 +1263,6 @@
         ],
         "tags": [
           "Places"
-        ]
-      }
-    },
-    "/places/{placeId}/videos": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/placeId"
-        }
-      ],
-      "post": {
-        "summary": "Add a video",
-        "operationId": "post-place-video",
-        "responses": {
-          "200": {
-            "description": "The video was added to the place.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "videoId": {
-                      "type": "string",
-                      "format": "uuid",
-                      "example": "b504cf44-9ab8-4641-9934-38d1cc67242c"
-                    }
-                  }
-                },
-                "examples": {
-                  "The new videoId": {
-                    "value": {
-                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                },
-                "examples": {
-                  "Invalid data": {
-                    "value": {
-                      "type": "https://api.publiq.be/probs/body/invalid-data",
-                      "title": "Invalid body data",
-                      "status": 400,
-                      "schemaErrors": [
-                        {
-                          "jsonPointer": "/url",
-                          "error": "The required properties url is missing."
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/EventNotFound"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "example": "https://www.youtube.com/?v=re34sf",
-                    "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
-                  },
-                  "copyrightHolder": {
-                    "type": "string",
-                    "minLength": 3,
-                    "example": "publiq",
-                    "description": "The copyright holder of the video source."
-                  }
-                },
-                "required": [
-                  "url"
-                ]
-              },
-              "examples": {
-                "Video from Youtube and with Copyright": {
-                  "value": {
-                    "url": "https://www.youtube.com/?v=re34sf",
-                    "copyrightHolder": "publiq"
-                  }
-                },
-                "Video from Vimeo": {
-                  "value": {
-                    "url": "https://www.vimeo.com/4dwe2"
-                  }
-                }
-              }
-            }
-          },
-          "description": "The new video to add to a place."
-        },
-        "description": "Add a video as a URL reference to place\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
-        "tags": [
-          "Places"
-        ],
-        "security": [
-          {
-            "USER_ACCESS_TOKEN": []
-          },
-          {
-            "CLIENT_ACCESS_TOKEN": []
-          }
         ]
       }
     }
