@@ -7,7 +7,7 @@
     "url": {
       "type": "string",
       "format": "url",
-      "example": "https://www.youtube.com/?v=ewr53d",
+      "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
       "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
       "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*)))"
     },
