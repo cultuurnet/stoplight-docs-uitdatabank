@@ -522,24 +522,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "example": "https://www.youtube.com/?v=re34sf",
-                    "description": "The URL of the video to add. Currently only Youtube and Vimeo sources are allowed."
-                  },
-                  "copyrightHolder": {
-                    "type": "string",
-                    "minLength": 3,
-                    "example": "publiq",
-                    "description": "The copyright holder of the video source."
-                  }
-                },
-                "required": [
-                  "url"
-                ]
+                "$ref": "../models/event-videos-post.json"
               },
               "examples": {
                 "Video from Youtube and with Copyright": {
