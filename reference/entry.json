@@ -426,6 +426,18 @@
             "in": "query",
             "name": "timeZone",
             "description": "The timezone to format date/times in."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text/plain",
+                "text/html"
+              ]
+            },
+            "in": "header",
+            "name": "accept",
+            "description": "Indicates the expected content-type. Defaults to `text/plain` but can be set to `text/html` for a HTML response."
           }
         ],
         "x-internal": false
@@ -1178,6 +1190,18 @@
             "in": "query",
             "name": "timeZone",
             "description": "The timezone to format date/times in."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text/plain",
+                "text/html"
+              ]
+            },
+            "in": "header",
+            "name": "accept",
+            "description": "Indicates the expected content-type. Defaults to `text/plain` but can be set to `text/html` for a HTML response."
           }
         ],
         "x-internal": false
