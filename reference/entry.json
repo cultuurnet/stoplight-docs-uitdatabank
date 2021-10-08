@@ -392,7 +392,7 @@
             },
             "in": "query",
             "name": "format",
-            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI."
+            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful"
           },
           {
             "schema": {
@@ -416,7 +416,7 @@
             },
             "in": "query",
             "name": "hidePast",
-            "description": "Will hide past dates in summaries of events with multiple dates."
+            "description": "Will hide past dates in summaries of events with multiple dates. By default, past dates are not excluded from the calendar summary."
           },
           {
             "schema": {
@@ -1144,7 +1144,7 @@
             },
             "in": "query",
             "name": "format",
-            "description": "Defines the size of the summary. Larger summaries contain more detail for places with multiple dates/hours but will also take up more space when shown in a UI."
+            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful"
           },
           {
             "schema": {
@@ -1168,7 +1168,7 @@
             },
             "in": "query",
             "name": "hidePast",
-            "description": "Will hide past dates in summaries of places with multiple dates."
+            "description": "Will hide past dates in summaries of events with multiple dates. By default, past dates are not excluded from the calendar summary."
           },
           {
             "schema": {
