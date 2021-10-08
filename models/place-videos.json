@@ -64,6 +64,10 @@
         "type": "string",
         "example": "https://www.youtube.com/embed/cEItmb_a20D"
       },
+      "language": {
+        "type": "string",
+        "example": "nl"
+      },
       "copyrightHolder": {
         "type": "string",
         "example": "publiq",
@@ -74,7 +78,8 @@
     "required": [
       "id",
       "url",
-      "embedUrl"
+      "embedUrl",
+      "language"
     ]
   }
 }
