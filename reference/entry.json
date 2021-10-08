@@ -428,7 +428,7 @@
             "description": "The timezone to format date/times in."
           }
         ],
-        "x-internal": true
+        "x-internal": false
       }
     },
     "/events/{eventId}/sub-events": {
@@ -1180,7 +1180,7 @@
             "description": "The timezone to format date/times in."
           }
         ],
-        "x-internal": true
+        "x-internal": false
       }
     },
     "/places/{placeId}/videos": {
