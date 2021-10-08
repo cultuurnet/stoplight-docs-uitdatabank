@@ -377,7 +377,8 @@
             },
             "in": "query",
             "name": "style",
-            "description": "Defines whether the response should contain plain text or HTML."
+            "description": "Defines whether the response should contain plain text or HTML. (Deprecated, use `accept` header instead.)",
+            "deprecated": true
           },
           {
             "schema": {
@@ -1141,7 +1142,8 @@
             },
             "in": "query",
             "name": "style",
-            "description": "Defines whether the response should contain plain text or HTML."
+            "description": "Defines whether the response should contain plain text or HTML. (Deprecated, use `accept` header instead.)",
+            "deprecated": true
           },
           {
             "schema": {
