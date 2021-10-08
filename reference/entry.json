@@ -528,12 +528,14 @@
                 "Video from Youtube and with Copyright": {
                   "value": {
                     "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                    "language": "nl",
                     "copyrightHolder": "publiq"
                   }
                 },
                 "Video from Vimeo": {
                   "value": {
-                    "url": "https://www.vimeo.com/4dwe2"
+                    "url": "https://www.vimeo.com/4dwe2",
+                    "language": "nl"
                   }
                 }
               }
@@ -1031,12 +1033,14 @@
                 "Video from Youtube and with Copyright": {
                   "value": {
                     "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                    "language": "nl",
                     "copyrightHolder": "publiq"
                   }
                 },
                 "Video from Vimeo": {
                   "value": {
-                    "url": "https://www.vimeo.com/4dwe2"
+                    "url": "https://www.vimeo.com/4dwe2",
+                    "language": "nl"
                   }
                 }
               }
