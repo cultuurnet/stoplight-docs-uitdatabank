@@ -13,6 +13,12 @@
     },
     "language": {
       "type": "string",
+      "enum": [
+        "nl",
+        "fr",
+        "de",
+        "en"
+      ],
       "example": "nl"
     },
     "copyrightHolder": {
