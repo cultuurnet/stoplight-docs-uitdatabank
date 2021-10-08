@@ -2,7 +2,13 @@
   "title": "place.videos.post",
   "type": "object",
   "description": "Describes the request body to add a video to a place.",
-  "examples": [],
+  "examples": [
+    {
+      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+      "language": "nl",
+      "copyrightHolder": "publiq"
+    }
+  ],
   "properties": {
     "url": {
       "type": "string",
