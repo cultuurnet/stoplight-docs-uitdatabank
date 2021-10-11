@@ -377,7 +377,7 @@
             },
             "in": "query",
             "name": "style",
-            "description": "Defines whether the response should contain plain text or HTML. (Deprecated, use `accept` header instead.)",
+            "description": "Deprecated alternative to `accept` header.",
             "deprecated": true
           },
           {
@@ -1142,7 +1142,7 @@
             },
             "in": "query",
             "name": "style",
-            "description": "Defines whether the response should contain plain text or HTML. (Deprecated, use `accept` header instead.)",
+            "description": "Deprecated alternative to `accept` header.",
             "deprecated": true
           },
           {
