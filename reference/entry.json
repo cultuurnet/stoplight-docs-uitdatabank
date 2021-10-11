@@ -425,7 +425,7 @@
               "default": "Europe/Brussels"
             },
             "in": "query",
-            "name": "timeZone",
+            "name": "timezone",
             "description": "The timezone to format date/times in."
           },
           {
@@ -1190,7 +1190,7 @@
               "default": "Europe/Brussels"
             },
             "in": "query",
-            "name": "timeZone",
+            "name": "timezone",
             "description": "The timezone to format date/times in."
           },
           {
