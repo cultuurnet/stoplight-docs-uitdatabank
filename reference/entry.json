@@ -407,7 +407,7 @@
               "default": "nl"
             },
             "in": "query",
-            "name": "langCode",
+            "name": "language",
             "description": "Defines the language that the summary will be written in. Also influences the date/time format used."
           },
           {
@@ -1172,7 +1172,7 @@
               "default": "nl"
             },
             "in": "query",
-            "name": "langCode",
+            "name": "language",
             "description": "Defines the language that the summary will be written in. Also influences the date/time format used."
           },
           {
