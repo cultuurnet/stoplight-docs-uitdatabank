@@ -377,7 +377,7 @@
             },
             "in": "query",
             "name": "style",
-            "description": "Deprecated alternative to `accept` header.",
+            "description": "Deprecated alternative to the `accept` header. Supported for backward compatibility.",
             "deprecated": true
           },
           {
@@ -392,8 +392,8 @@
               "default": "lg"
             },
             "in": "query",
-            "name": "format",
-            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful"
+            "name": "size",
+            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful."
           },
           {
             "schema": {
@@ -452,7 +452,22 @@
             },
             "in": "query",
             "name": "langCode",
-            "description": "Deprecated alternative to `language` parameter.",
+            "description": "Deprecated alternative to the `language` query parameter. Supported for backward compatibility.",
+            "deprecated": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ]
+            },
+            "in": "query",
+            "name": "format",
+            "description": "Deprecated alternative to the `size` query parameter. Supported for backward compatibility.",
             "deprecated": true
           }
         ],
@@ -1157,7 +1172,7 @@
             },
             "in": "query",
             "name": "style",
-            "description": "Deprecated alternative to `accept` header.",
+            "description": "Deprecated alternative to the `accept` header. Supported for backward compatibility.",
             "deprecated": true
           },
           {
@@ -1172,7 +1187,7 @@
               "default": "lg"
             },
             "in": "query",
-            "name": "format",
+            "name": "size",
             "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful"
           },
           {
@@ -1232,8 +1247,23 @@
             },
             "in": "query",
             "name": "langCode",
-            "description": "Deprecated alternative to `language` parameter.",
+            "description": "Deprecated alternative to the `language` query parameter. Supported for backward compatibility.",
             "deprecated": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ]
+            },
+            "in": "query",
+            "name": "format",
+            "deprecated": true,
+            "description": "Deprecated alternative to the `size` query parameter. Supported for backward compatibility."
           }
         ],
         "x-internal": false
