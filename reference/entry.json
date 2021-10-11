@@ -439,6 +439,21 @@
             "in": "header",
             "name": "accept",
             "description": "Indicates the expected content-type. Defaults to `text/plain` but can be set to `text/html` for a HTML response."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl_BE",
+                "fr_BE",
+                "en_BE",
+                "de_BE"
+              ]
+            },
+            "in": "query",
+            "name": "langCode",
+            "description": "Deprecated alternative to `language` parameter.",
+            "deprecated": true
           }
         ],
         "x-internal": false
@@ -1204,6 +1219,21 @@
             "in": "header",
             "name": "accept",
             "description": "Indicates the expected content-type. Defaults to `text/plain` but can be set to `text/html` for a HTML response."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl_BE",
+                "fr_BE",
+                "en_BE",
+                "de_BE"
+              ]
+            },
+            "in": "query",
+            "name": "langCode",
+            "description": "Deprecated alternative to `language` parameter.",
+            "deprecated": true
           }
         ],
         "x-internal": false
