@@ -390,6 +390,10 @@
       ]
     },
     {
+      "type": "divider",
+      "title": "API References"
+    },
+    {
       "type": "item",
       "title": "Entry API",
       "uri": "reference/entry.json"
