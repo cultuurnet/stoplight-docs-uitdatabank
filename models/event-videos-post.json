@@ -11,6 +11,16 @@
       "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
       "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*)))"
     },
+    "language": {
+      "type": "string",
+      "example": "nl",
+      "enum": [
+        "nl",
+        "fr",
+        "de",
+        "en"
+      ]
+    },
     "copyrightHolder": {
       "type": "string",
       "example": "publiq",
@@ -19,6 +29,7 @@
     }
   },
   "required": [
-    "url"
+    "url",
+    "language"
   ]
 }
