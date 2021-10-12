@@ -713,6 +713,46 @@
         ]
       }
     },
+    "/events/{eventId}/videos/{videoId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        },
+        {
+          "$ref": "#/components/parameters/videoId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete a video from an event",
+        "operationId": "delete-event-video",
+        "responses": {
+          "204": {
+            "description": "No Content. The video was deleted from the event."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Delete an embedded video from an event based on the event id and the video id.",
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/major-info": {
       "parameters": [
         {
@@ -1362,6 +1402,46 @@
         ]
       }
     },
+    "/places/{placeId}/videos/{videoId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        },
+        {
+          "$ref": "#/components/parameters/videoId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete a video from a place",
+        "operationId": "delete-place-video",
+        "responses": {
+          "204": {
+            "description": "No Content. The video was deleted from the place."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "description": "Delete an embedded video from an place based on the place id and the video id.",
+        "tags": [
+          "Places"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/places/{placeId}/major-info": {
       "parameters": [
         {
@@ -1590,6 +1670,17 @@
           "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
         },
         "description": "Unique id of an place, in the format of a UUID"
+      },
+      "videoId": {
+        "name": "videoId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of a video embedded in a place or event, in the format of a UUID"
       }
     },
     "responses": {
