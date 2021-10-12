@@ -78,7 +78,8 @@
           "fr",
           "de",
           "en"
-        ]
+        ],
+        "description": "The language of the video."
       },
       "copyrightHolder": {
         "type": "string",
