@@ -1,10 +1,6 @@
 <!-- focus: false -->
 ![](../assets/images/uitdatabank.png)
 
-<br />
-
-# Introduction
-
 A warm welcome to our UiTdatabank API documentation! 👋
 
 <!-- theme: warning -->
