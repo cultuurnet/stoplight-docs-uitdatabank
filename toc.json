@@ -26,6 +26,15 @@
     },
     {
       "type": "divider",
+      "title": "API References"
+    },
+    {
+      "type": "item",
+      "title": "Entry API",
+      "uri": "reference/entry.json"
+    },
+    {
+      "type": "divider",
       "title": "Models"
     },
     {
@@ -388,15 +397,6 @@
           ]
         }
       ]
-    },
-    {
-      "type": "divider",
-      "title": "API References"
-    },
-    {
-      "type": "item",
-      "title": "Entry API",
-      "uri": "reference/entry.json"
     }
   ]
 }
