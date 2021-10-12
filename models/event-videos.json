@@ -7,24 +7,28 @@
       {
         "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
         "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+        "embedUrl": "https://www.youtube.com/embed/cEItmb_a20D",
         "copyrightHolder": "publiq"
       }
     ],
     [
       {
         "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
-        "url": "https://www.vimeo.com/54fdrg"
+        "url": "https://vimeo.com/54fdrg",
+        "embedUrl": "https://player.vimeo.com/video/54fdrg"
       }
     ],
     [
       {
         "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
         "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+        "embedUrl": "https://www.youtube.com/embed/cEItmb_a20D",
         "copyrightHolder": "publiq"
       },
       {
         "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
-        "url": "https://www.vimeo.com/54fdrg"
+        "url": "https://www.vimeo.com/54fdrg",
+        "embedUrl": "https://player.vimeo.com/video/54fdrg"
       }
     ]
   ],
@@ -56,6 +60,12 @@
         "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
         "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed."
       },
+      "embedUrl": {
+        "type": "string",
+        "format": "url",
+        "example": "https://www.youtube.com/embed/cEItmb_a20D",
+        "description": "The url that can be used to embed the video inside an iFrame."
+      },
       "copyrightHolder": {
         "type": "string",
         "example": "publiq",
@@ -65,7 +75,8 @@
     },
     "required": [
       "id",
-      "url"
+      "url",
+      "embedUrl"
     ]
   }
 }
