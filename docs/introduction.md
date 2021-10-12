@@ -1,3 +1,4 @@
+<!-- focus: false -->
 ![](../assets/images/uitdatabank.png)
 
 # Introduction
