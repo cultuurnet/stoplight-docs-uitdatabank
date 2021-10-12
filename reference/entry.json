@@ -1125,7 +1125,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "$ref": "#/components/responses/EventNotFound"
+            "$ref": "#/components/responses/PlaceNotFound"
           }
         },
         "description": "Delete an embedded video from an place based on the place id and the video id.",
