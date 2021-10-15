@@ -26,7 +26,16 @@
     },
     {
       "type": "divider",
-      "title": "Models"
+      "title": "API References"
+    },
+    {
+      "type": "item",
+      "title": "Entry API",
+      "uri": "reference/entry.json"
+    },
+    {
+      "type": "divider",
+      "title": "Model schemas"
     },
     {
       "type": "group",
@@ -398,11 +407,6 @@
           ]
         }
       ]
-    },
-    {
-      "type": "item",
-      "title": "Entry API",
-      "uri": "reference/entry.json"
     }
   ]
 }
