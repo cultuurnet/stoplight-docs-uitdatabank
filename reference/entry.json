@@ -1034,7 +1034,8 @@
   "components": {
     "schemas": {
       "Error": {
-        "$ref": "https://raw.githubusercontent.com/cultuurnet/stoplight-docs-errors/main/models/Error.json"
+        "$ref": "https://raw.githubusercontent.com/cultuurnet/stoplight-docs-errors/main/models/Error.json",
+        "x-internal": true
       }
     },
     "securitySchemes": {
