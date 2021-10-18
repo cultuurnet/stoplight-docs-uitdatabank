@@ -71,17 +71,6 @@
                   "description": "",
                   "minItems": 1,
                   "uniqueItems": true,
-                  "x-examples": {
-                    "example-1": [
-                      {
-                        "date": "2021-08-26T16:54:38+00:00",
-                        "description": "Event aangemaakt in UiTdatabank",
-                        "author": "google-oauth2|108326107941342286958",
-                        "auth0ClientId": "JGJ3rAJLurRM9DHDE072zVhF3azl57mo",
-                        "api": "JSON-LD Import API"
-                      }
-                    ]
-                  },
                   "items": {
                     "type": "object",
                     "properties": {
@@ -1150,17 +1139,6 @@
                   "description": "",
                   "minItems": 1,
                   "uniqueItems": true,
-                  "x-examples": {
-                    "example-1": [
-                      {
-                        "date": "2021-08-26T16:54:38+00:00",
-                        "description": "Place aangemaakt in UiTdatabank",
-                        "author": "google-oauth2|108326107941342286958",
-                        "auth0ClientId": "JGJ3rAJLurRM9DHDE072zVhF3azl57mo",
-                        "api": "JSON-LD Import API"
-                      }
-                    ]
-                  },
                   "items": {
                     "type": "object",
                     "properties": {
