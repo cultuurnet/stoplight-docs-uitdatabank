@@ -69,8 +69,6 @@
                 "schema": {
                   "type": "array",
                   "description": "",
-                  "minItems": 1,
-                  "uniqueItems": true,
                   "items": {
                     "type": "object",
                     "properties": {
@@ -1137,8 +1135,6 @@
                 "schema": {
                   "type": "array",
                   "description": "",
-                  "minItems": 1,
-                  "uniqueItems": true,
                   "items": {
                     "type": "object",
                     "properties": {
