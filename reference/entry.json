@@ -586,6 +586,43 @@
         "x-internal": false
       }
     },
+    "/events/{eventId}/location/{placeId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        },
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "summary": "Update location",
+        "operationId": "put-event-location",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Updates the event's location to a new place based on the given `eventId` and `placeId` in the URL.\n\nIf the `eventId` or `placeId` do not exist, a `404` response will be returned. Otherwise a `204` will be returned if successful.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/sub-events": {
       "parameters": [
         {
