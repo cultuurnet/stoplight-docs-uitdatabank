@@ -1638,7 +1638,7 @@
         "x-internal": false
       }
     },
-    	"/places/{placeId}/type/{termId}": {
+    "/places/{placeId}/type/{termId}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/placeId"
