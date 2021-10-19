@@ -1966,6 +1966,15 @@
           "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
         },
         "description": "Unique id of a video embedded in a place or event, in the format of a UUID"
+      },
+      "termId": {
+        "name": "termId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/Terms.md) guide"
       }
     },
     "responses": {
