@@ -771,6 +771,66 @@
         ]
       }
     },
+    "/events/{eventId}/type/{termId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        },
+        {
+          "$ref": "#/components/parameters/termId"
+        }
+      ],
+      "put": {
+        "summary": "Update type",
+        "operationId": "put-event-type",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "Term with id \"1.2.1.0.0\" can not be used as an event type."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `typeId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/videos": {
       "parameters": [
         {
@@ -1578,6 +1638,66 @@
         "x-internal": false
       }
     },
+    "/places/{placeId}/type/{termId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        },
+        {
+          "$ref": "#/components/parameters/termId"
+        }
+      ],
+      "put": {
+        "summary": "Update type",
+        "operationId": "put-place-type",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "Term with id \"1.2.1.0.0\" can not be used as a place type."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "tags": [
+          "Places"
+        ],
+        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `typeId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/places/{placeId}/videos": {
       "parameters": [
         {
@@ -1966,6 +2086,15 @@
           "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
         },
         "description": "Unique id of a video embedded in a place or event, in the format of a UUID"
+      },
+      "termId": {
+        "name": "termId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/terms.md) guide"
       }
     },
     "responses": {
