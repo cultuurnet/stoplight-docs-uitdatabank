@@ -2094,7 +2094,7 @@
         "schema": {
           "type": "string"
         },
-        "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/Terms.md) guide"
+        "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/terms.md) guide"
       }
     },
     "responses": {
