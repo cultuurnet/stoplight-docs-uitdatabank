@@ -825,8 +825,8 @@
         ]
       },
       "patch": {
-        "summary": "Update a video",
-        "operationId": "patch-events-eventId-videos",
+        "summary": "Update one or multiple videos",
+        "operationId": "patch-events-videos",
         "responses": {
           "204": {
             "description": "No Content. The videos are updated."
@@ -859,22 +859,7 @@
               "schema": {
                 "$ref": "../models/event-videos-patch.json"
               },
-              "examples": {
-                "Videos to be changed": {
-                  "value": [
-                    {
-                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
-                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
-                      "language": "fr",
-                      "copyrightHolder": "publiq"
-                    },
-                    {
-                      "id": "55f3859b-ad56-426e-acd8-435401372019",
-                      "copyrightHolder": "Creative Commons"
-                    }
-                  ]
-                }
-              }
+              "examples": {}
             }
           },
           "description": "An array of videos to be changed."
@@ -1682,8 +1667,8 @@
         ]
       },
       "patch": {
-        "summary": "Update a video",
-        "operationId": "patch-places-placeId-videos",
+        "summary": "Update one or multiple videos",
+        "operationId": "patch-places-videos",
         "responses": {
           "204": {
             "description": "No Content. The videos are updated."
