@@ -825,7 +825,7 @@
         ]
       },
       "patch": {
-        "summary": "",
+        "summary": "Update a video",
         "operationId": "patch-events-eventId-videos",
         "responses": {
           "204": {
@@ -842,6 +842,9 @@
           }
         },
         "description": "Update one or more videos of an event.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated target language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Events"
+        ],
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1679,7 +1682,7 @@
         ]
       },
       "patch": {
-        "summary": "",
+        "summary": "Update a video",
         "operationId": "patch-places-placeId-videos",
         "responses": {
           "204": {
@@ -1722,6 +1725,9 @@
           },
           "description": "An array of videos to be changed."
         },
+        "tags": [
+          "Places"
+        ],
         "security": [
           {
             "USER_ACCESS_TOKEN": []
