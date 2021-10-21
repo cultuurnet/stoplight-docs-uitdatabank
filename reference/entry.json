@@ -823,84 +823,13 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
-      }
-    },
-    "/events/{eventid}/videos": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "eventid",
-          "in": "path",
-          "required": true
-        }
-      ],
+      },
       "patch": {
         "summary": "",
-        "operationId": "patch-events-eventid-videos",
+        "operationId": "patch-events-eventId-videos",
         "responses": {
-          "204": {
-            "description": "No Content. The video was updated."
-          },
-          "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/EventNotFound"
-          }
-        },
-        "description": "Update a video attached to an event\n\nThe video objects contains:\n\n* `id`: The id of the video to be changed\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.\n* `language`: The target language of the video.",
-        "security": [
-          {
-            "USER_ACCESS_TOKEN": []
-          },
-          {
-            "CLIENT_ACCESS_TOKEN": []
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "../models/event-videos-patch.json"
-                }
-              },
-              "examples": {
-                "Changing one video": {
-                  "value": [
-                    {
-                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
-                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
-                      "language": "fr",
-                      "copyrightHolder": "publiq"
-                    }
-                  ]
-                },
-                "Changing multiple videos": {
-                  "value": [
-                    {
-                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
-                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
-                      "language": "fr",
-                      "copyrightHolder": "publiq"
-                    },
-                    {
-                      "id": "55f3859b-ad56-426e-acd8-435401372019",
-                      "copyrightHolder": "Creative Commons"
-                    }
-                  ]
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -1704,84 +1633,14 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
-      }
-    },
-    "/places/{placeid}/videos": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "placeid",
-          "in": "path",
-          "required": true
-        }
-      ],
+      },
       "patch": {
         "summary": "",
-        "operationId": "patch-places-placeid-videos",
+        "operationId": "patch-places-placeId-videos",
         "responses": {
-          "204": {
-            "description": "No Content. The video was updated."
-          },
-          "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/PlaceNotFound"
+          "200": {
+            "description": "OK"
           }
-        },
-        "description": "Update a video attached to an place\n\nThe video objects contains:\n\n* `id`: The id of the video to be changed\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.\n* `language`: The target language of the video.",
-        "security": [
-          {
-            "USER_ACCESS_TOKEN": []
-          },
-          {
-            "CLIENT_ACCESS_TOKEN": []
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "../models/place-videos-patch.json"
-                }
-              },
-              "examples": {
-                "Changing one video": {
-                  "value": [
-                    {
-                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
-                      "copyrightHolder": "Creative Commons"
-                    }
-                  ]
-                },
-                "Changing multiple videos": {
-                  "value": [
-                    {
-                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
-                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
-                      "language": "fr",
-                      "copyrightHolder": "publiq"
-                    },
-                    {
-                      "id": "55f3859b-ad56-426e-acd8-435401372019",
-                      "copyrightHolder": "Creative Commons"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "description": "Array of changed videos."
         }
       }
     },
