@@ -1,0 +1,55 @@
+{
+  "title": "place.videos.patch",
+  "type": "array",
+  "description": "Describes the request body to update one or more videos on a place.",
+  "examples": [
+    [
+      {
+        "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+        "copyrightHolder": "publiq"
+      },
+      {
+        "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+        "language": "fr"
+      }
+    ]
+  ],
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "example": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "description": "The id of the added video."
+      },
+      "url": {
+        "type": "string",
+        "format": "url",
+        "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
+        "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
+        "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*)))"
+      },
+      "language": {
+        "type": "string",
+        "example": "nl",
+        "enum": [
+          "nl",
+          "fr",
+          "de",
+          "en"
+        ]
+      },
+      "copyrightHolder": {
+        "type": "string",
+        "example": "publiq",
+        "minLength": 3,
+        "description": "The copyright holder of the video source."
+      }
+    },
+    "required": [
+      "id"
+    ]
+  }
+}
