@@ -854,8 +854,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {}
+                "$ref": "../models/event-videos-patch.json"
               },
               "examples": {
                 "Videos to be changed": {
@@ -1701,8 +1700,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {}
+                "$ref": "../models/place-videos-patch.json"
               },
               "examples": {
                 "Videos to be changed": {
