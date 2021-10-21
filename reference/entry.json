@@ -849,7 +849,34 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "Videos to be changed": {
+                  "value": [
+                    {
+                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "language": "fr",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "55f3859b-ad56-426e-acd8-435401372019",
+                      "copyrightHolder": "Creative Commons"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "An array of videos to be changed."
+        }
       }
     },
     "/events/{eventId}/videos/{videoId}": {
@@ -1658,9 +1685,53 @@
         "responses": {
           "204": {
             "description": "No Content. The videos are updated."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
           }
         },
-        "description": "Update one or more videos of a place.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated target language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material."
+        "description": "Update one or more videos of a place.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated target language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "Videos to be changed": {
+                  "value": [
+                    {
+                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "language": "fr",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "55f3859b-ad56-426e-acd8-435401372019",
+                      "copyrightHolder": "Creative Commons"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "An array of videos to be changed."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
       }
     },
     "/places/{placeId}/videos/{videoId}": {
