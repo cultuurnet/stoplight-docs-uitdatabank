@@ -859,7 +859,21 @@
               "schema": {
                 "$ref": "../models/event-videos-patch.json"
               },
-              "examples": {}
+              "examples": {
+                "Videos to be updated.": {
+                  "value": [
+                    {
+                      "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+                      "language": "fr"
+                    }
+                  ]
+                }
+              }
             }
           },
           "description": "An array of videos to be changed."
@@ -1691,7 +1705,7 @@
                 "$ref": "../models/place-videos-patch.json"
               },
               "examples": {
-                "Videos to be changed": {
+                "Videos to be updated.": {
                   "value": [
                     {
                       "id": "30a880ba-c406-4308-8031-eb39c334f8c2",

@@ -2,19 +2,7 @@
   "title": "event.videos.patch",
   "type": "array",
   "description": "Describes the request body to update one or more videos on an event.",
-  "examples": [
-    [
-      {
-        "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
-        "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
-        "copyrightHolder": "publiq"
-      },
-      {
-        "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
-        "language": "fr"
-      }
-    ]
-  ],
+  "examples": [],
   "items": {
     "type": "object",
     "properties": {
