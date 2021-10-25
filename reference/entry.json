@@ -943,6 +943,61 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      },
+      "patch": {
+        "summary": "Update one or multiple videos",
+        "operationId": "patch-events-videos",
+        "responses": {
+          "204": {
+            "description": "No Content. The videos are updated."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Update one or more videos of an event.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-videos-patch.json"
+              },
+              "examples": {
+                "Videos to be updated.": {
+                  "value": [
+                    {
+                      "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+                      "language": "fr"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "An array of videos to be changed."
+        }
       }
     },
     "/events/{eventId}/videos/{videoId}": {
@@ -1793,6 +1848,62 @@
           "description": "The new video to add to a place."
         },
         "description": "Add a video as a URL reference to place\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Places"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Update one or multiple videos",
+        "operationId": "patch-places-videos",
+        "responses": {
+          "204": {
+            "description": "No Content. The videos are updated."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "description": "Update one or more videos of a place.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-videos-patch.json"
+              },
+              "examples": {
+                "Videos to be updated.": {
+                  "value": [
+                    {
+                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "language": "fr",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "55f3859b-ad56-426e-acd8-435401372019",
+                      "copyrightHolder": "Creative Commons"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "An array of videos to be changed."
+        },
         "tags": [
           "Places"
         ],

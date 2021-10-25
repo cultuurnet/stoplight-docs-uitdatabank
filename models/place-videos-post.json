@@ -19,7 +19,8 @@
         "de",
         "en"
       ],
-      "example": "nl"
+      "example": "nl",
+      "description": "The language of the video.\nCan be one of `nl`, `fr`, `de`, or `en`."
     },
     "copyrightHolder": {
       "type": "string",
