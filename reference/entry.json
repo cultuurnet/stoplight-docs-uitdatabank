@@ -841,7 +841,7 @@
             "$ref": "#/components/responses/EventNotFound"
           }
         },
-        "description": "Update one or more videos of an event.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated target language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "description": "Update one or more videos of an event.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
         "tags": [
           "Events"
         ],
@@ -1697,7 +1697,7 @@
             "$ref": "#/components/responses/PlaceNotFound"
           }
         },
-        "description": "Update one or more videos of a place.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated target language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "description": "Update one or more videos of a place.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
         "requestBody": {
           "content": {
             "application/json": {

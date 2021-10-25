@@ -79,7 +79,7 @@
           "de",
           "en"
         ],
-        "description": "The target language of the video.\nCan be one of `nl`, `fr`, `de`, or `en`."
+        "description": "The language of the video.\nCan be one of `nl`, `fr`, `de`, or `en`."
       },
       "copyrightHolder": {
         "type": "string",
