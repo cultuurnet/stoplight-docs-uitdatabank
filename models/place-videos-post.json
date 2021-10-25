@@ -1,0 +1,36 @@
+{
+  "title": "place.videos.post",
+  "type": "object",
+  "description": "Describes the request body to add a video to a place.",
+  "examples": [],
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "url",
+      "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
+      "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
+      "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*)))"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "nl",
+        "fr",
+        "de",
+        "en"
+      ],
+      "example": "nl",
+      "description": "The language of the video.\nCan be one of `nl`, `fr`, `de`, or `en`."
+    },
+    "copyrightHolder": {
+      "type": "string",
+      "example": "publiq",
+      "minLength": 3,
+      "description": "The copyright holder of the video source."
+    }
+  },
+  "required": [
+    "url",
+    "language"
+  ]
+}

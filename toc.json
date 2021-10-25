@@ -26,7 +26,21 @@
     },
     {
       "type": "divider",
-      "title": "Models"
+      "title": "API References"
+    },
+    {
+      "type": "item",
+      "title": "Entry API",
+      "uri": "reference/entry.json"
+    },
+    {
+      "type": "item",
+      "title": "Taxonomy API",
+      "uri": "reference/taxonomy.json"
+    },
+    {
+      "type": "divider",
+      "title": "Model schemas"
     },
     {
       "type": "group",
@@ -150,6 +164,11 @@
               "type": "item",
               "title": "image",
               "uri": "models/event-image.json"
+            },
+            {
+              "type": "item",
+              "title": "videos",
+              "uri": "models/event-videos.json"
             },
             {
               "type": "item",
@@ -325,6 +344,11 @@
             },
             {
               "type": "item",
+              "title": "videos",
+              "uri": "models/place-videos.json"
+            },
+            {
+              "type": "item",
               "title": "creator",
               "uri": "models/place-creator.json"
             },
@@ -388,16 +412,6 @@
           ]
         }
       ]
-    },
-    {
-      "type": "item",
-      "title": "Entry API",
-      "uri": "reference/entry.json"
-    },
-    {
-      "type": "item",
-      "title": "Taxonomy API",
-      "uri": "reference/taxonomy.json"
     }
   ]
 }

@@ -50,7 +50,119 @@
         "description": "Returns the details of the event for the given `eventId`."
       }
     },
-    "/events/{eventId}/bookingAvailability": {
+    "/events/{eventId}/history": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "get": {
+        "summary": "Get event history",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event history.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string",
+                        "description": "A human-readable description of the update to the event. (Always in Dutch.)"
+                      },
+                      "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2021-08-26T16:54:38+00:00",
+                        "description": "The date and time that the update happened in an ISO-8601 format with a timezone offset. For example `2021-08-26T16:54:38+00:00`."
+                      },
+                      "author": {
+                        "type": "string",
+                        "description": "Identifier of the user who made the change. Should not be treated as a semantic user id though, because it can be an email, v1 user id, or v2 user id. Should only be displayed and used by admins that look at the history log to look up the user in the correct system."
+                      },
+                      "api": {
+                        "type": "string",
+                        "description": "Human-readable name of the API that was used to make the change. Not always present in older history logs."
+                      },
+                      "auth0ClientId": {
+                        "type": "string",
+                        "description": "The id of the Auth0 client that made the change. (If it was an Auth0 API client.)"
+                      },
+                      "auth0ClientName": {
+                        "type": "string",
+                        "description": "Name of the client in Auth0 that made the change. (If it was an Auth0 API client.)"
+                      },
+                      "apiKey": {
+                        "type": "string",
+                        "description": "API key of the UiTID v1 consumer that made the change (if it was an UiTID v1 consumer)."
+                      },
+                      "consumerName": {
+                        "type": "string",
+                        "description": "Name of the UiTID v1 consumer that made the change (if it was an UiTID v1 consumer)."
+                      }
+                    },
+                    "required": [
+                      "description",
+                      "date"
+                    ]
+                  }
+                },
+                "examples": {
+                  "Auth0 client": {
+                    "value": [
+                      {
+                        "date": "2021-09-30T14:57:17+00:00",
+                        "description": "Kalender-info aangepast",
+                        "author": "google-oauth2|108326107941342286958",
+                        "auth0ClientId": "JGJ3rAJLurRM9DHDE072zVhF3azl57mo",
+                        "auth0ClientName": "UiTdatabase JWT Provider",
+                        "api": "JSON-LD API"
+                      }
+                    ]
+                  },
+                  "UiTID v1 consumer": {
+                    "value": [
+                      {
+                        "date": "2021-10-04T09:40:59+00:00",
+                        "description": "Reservatie-info aangepast",
+                        "author": "google-oauth2|108326107941342286958",
+                        "apiKey": "deb306a6-6f46-4c98-89ce-b03ec4fd11e2",
+                        "api": "JSON-LD API",
+                        "consumerName": "UiTdatabank Acceptatie"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "get-event-history",
+        "description": "Returns the history log of the event for the given `eventId`.\n\nThe history log is an array of objects that contain info about each individual update to the event, who did the update, using what API, etc.\n\nBecause this history log can contain API keys which are secret (deprecated but still usable for backward compatibility), it can only be accessed by users that are a \"god user\".\n\nBecause of this limitation, the endpoint is also documented as internal and not visible in the public docs.",
+        "x-internal": true,
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/events/{eventId}/booking-availability": {
       "parameters": [
         {
           "$ref": "#/components/parameters/eventId"
@@ -64,7 +176,7 @@
             "description": "No Content. The bookingAvailability has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -145,7 +257,7 @@
             "description": "No Content. The calendar information has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -324,7 +436,217 @@
         "description": "Updates the calendar information of the given `eventId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| single  | subEvent\\[0\\].startDate, subEvent\\[0\\].endDate | subEvent\\[0\\].status, subEvent\\[0\\].bookingAvailability  |\n| multiple  | subEvent\\[\\*\\].startDate, subEvent[\\*\\].endDate  | subEvent\\[\\*\\].status, subEvent\\[\\*\\].bookingAvailability  |\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If `status` or `bookingAvailability` is missing on the event or a subEvent, it will default to `Available`.\n>\n> Although the status and bookingAvailability are optional they have a default value of `Available`. When the status and bookingAvailability is not provided an already set value will be overwritten to `Available`!\n\n<!-- theme: success -->\n\n> You can use `single` and `multiple` interchangeably as long as you also include `subEvent` as well. The API will use the correct type based on the number of subEvents inside `subEvent`.\n\n<!-- theme: info -->\n\n> This endpoint also supports a deprecated schema that uses `timeSpans` instead of `subEvent`. The `timeSpans` also have a slightly different structure than `subEvent`. For new integrations, it is recommended to use the schema with the `subEvent` property. \n> \n> For existing integrations the `timeSpans` property will be supported indefinitely for backward compatibility."
       }
     },
-    "/events/{eventId}/subEvents": {
+    "/events/{eventId}/calendar-summary": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "get": {
+        "summary": "Get calendar summary",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "The calendar summary in either plain text or HTML.\n\nFor example:\n```\nVan 6 januari 2021 tot 23 juni 2021 (geannuleerd)\n```\n\nOr:\n```\n<span class=\\\"cf-from cf-meta\\\">Van</span> <span class=\\\"cf-date\\\">6 januari 2021</span> <span class=\\\"cf-to cf-meta\\\">tot</span> <span class=\\\"cf-date\\\">23 juni 2021</span> <span title=\\\"Deze activiteit is waarschijnlijk geannuleerd omwille van preventieve coronamaatregelen.\\\" class=\\\"cf-status\\\">(geannuleerd)</span>\n```"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/query-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/query-parameter-invalid",
+                      "title": "Query parameter invalid",
+                      "status": 400,
+                      "detail": "Query parameter \"langCode\" does not support value \"es\"."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "get-event-calendar-summary",
+        "description": "Returns a human-readable summary of the calendar information of the event. Can be configured to return either plain text or HTML, and to switch between four different formats depending on the amount of space you have to display it.\n\n> For backward compatibility this endpoint is also accessible at the old abbreviated `/events/{eventId}/calsum` path.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ],
+              "default": "text"
+            },
+            "in": "query",
+            "name": "style",
+            "description": "Deprecated alternative to the `accept` header. Supported for backward compatibility.",
+            "deprecated": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ],
+              "default": "lg"
+            },
+            "in": "query",
+            "name": "size",
+            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl",
+                "fr",
+                "en",
+                "de"
+              ],
+              "default": "nl"
+            },
+            "in": "query",
+            "name": "language",
+            "description": "Defines the language that the summary will be written in. Also influences the date/time format used."
+          },
+          {
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "in": "query",
+            "name": "hidePast",
+            "description": "Will hide past dates in summaries of events with multiple dates. By default, past dates are not excluded from the calendar summary."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "Europe/Brussels"
+            },
+            "in": "query",
+            "name": "timezone",
+            "description": "The timezone to format date/times in."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text/plain",
+                "text/html"
+              ]
+            },
+            "in": "header",
+            "name": "accept",
+            "description": "Indicates the expected content-type. Defaults to `text/plain` but can be set to `text/html` for a HTML response."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl_BE",
+                "fr_BE",
+                "en_BE",
+                "de_BE"
+              ]
+            },
+            "in": "query",
+            "name": "langCode",
+            "description": "Deprecated alternative to the `language` query parameter. Supported for backward compatibility.",
+            "deprecated": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ]
+            },
+            "in": "query",
+            "name": "format",
+            "description": "Deprecated alternative to the `size` query parameter. Supported for backward compatibility.",
+            "deprecated": true
+          }
+        ],
+        "x-internal": false
+      }
+    },
+    "/events/{eventId}/location/{placeId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        },
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "summary": "Update location",
+        "operationId": "put-event-location",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "Location with id \"74e62b6c-9df4-42e4-bcd5-f4c242b4df2e\" does not exist."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Updates the event's location to a new place based on the given `eventId` and `placeId` in the URL.\n\nIf the `eventId` does not exist a `404 Not Found` response will be returned. If the `placeId` does not exist a `400 Bad Request` response will be returned. Otherwise a `204 No Content` will be returned if successful. (See response examples below.)",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Events"
+        ]
+      }
+    },
+    "/events/{eventId}/sub-events": {
       "parameters": [
         {
           "$ref": "#/components/parameters/eventId"
@@ -341,7 +663,7 @@
             "description": "No Content. The subEvents have been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/calendar-type-not-supported",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -449,6 +771,638 @@
         ]
       }
     },
+    "/events/{eventId}/type/{termId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        },
+        {
+          "$ref": "#/components/parameters/termId"
+        }
+      ],
+      "put": {
+        "summary": "Update type",
+        "operationId": "put-event-type",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "Term with id \"1.2.1.0.0\" can not be used as an event type."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `typeId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/events/{eventId}/videos": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "post": {
+        "summary": "Add a video",
+        "operationId": "post-event-video",
+        "responses": {
+          "200": {
+            "description": "The video was added to the event.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "videoId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                },
+                "examples": {
+                  "The new videoId": {
+                    "value": {
+                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required properties url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-videos-post.json"
+              },
+              "examples": {
+                "Video from Youtube and with Copyright": {
+                  "value": {
+                    "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                    "language": "nl",
+                    "copyrightHolder": "publiq"
+                  }
+                },
+                "Video from Vimeo": {
+                  "value": {
+                    "url": "https://www.vimeo.com/4dwe2",
+                    "language": "nl"
+                  }
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          },
+          "description": "The new video to add to an event."
+        },
+        "description": "Add a video as a URL reference to an event\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Update one or multiple videos",
+        "operationId": "patch-events-videos",
+        "responses": {
+          "204": {
+            "description": "No Content. The videos are updated."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Update one or more videos of an event.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-videos-patch.json"
+              },
+              "examples": {
+                "Videos to be updated.": {
+                  "value": [
+                    {
+                      "id": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
+                      "language": "fr"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "An array of videos to be changed."
+        }
+      }
+    },
+    "/events/{eventId}/videos/{videoId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        },
+        {
+          "$ref": "#/components/parameters/videoId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete a video from an event",
+        "operationId": "delete-event-video",
+        "responses": {
+          "204": {
+            "description": "No Content. The video was deleted from the event."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Delete an embedded video from an event based on the event id and the video id.",
+        "tags": [
+          "Events"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/events/{eventId}/major-info": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "operationId": "put-event-major-info",
+        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\nUpdates the \"major info\" of the event with the given `eventId`.\n\nThe major info contains:\n\n* `name`: The name of the event in the event's `mainLanguage`, as a string\n* `type`: Id of the event's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the event's `theme` taxonomy `term`, as a string\n* `location`: Object with the id of the event's location, as a place's uuid (string)\n* `calendar`: Object with the event's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the event. If the event has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.\n\n<!-- theme: success -->\n> For backward-compatibility with older integrations, this operation can also be requested via `POST /event/{eventId}/major-info`.",
+        "summary": "Update major info (deprecated)",
+        "deprecated": true,
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The major-info has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "theme": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "object",
+                    "required": [
+                      "id"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "calendar": {
+                    "$ref": "../models/event-calendar-put-deprecated.json"
+                  }
+                },
+                "required": [
+                  "name",
+                  "type",
+                  "location",
+                  "calendar"
+                ]
+              },
+              "examples": {
+                "Single day": {
+                  "value": {
+                    "name": "Single day example",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "single",
+                      "timeSpans": [
+                        {
+                          "start": "2021-05-17T22:00:00+00:00",
+                          "end": "2021-05-17T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Multiple days": {
+                  "value": {
+                    "name": "Multiple days example",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "multiple",
+                      "timeSpans": [
+                        {
+                          "start": "2021-05-17T22:00:00+00:00",
+                          "end": "2021-05-17T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        },
+                        {
+                          "start": "2021-05-18T22:00:00+00:00",
+                          "end": "2021-05-18T22:00:00+00:00",
+                          "status": {
+                            "type": "Available"
+                          },
+                          "bookingAvailability": {
+                            "type": "Available"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Periodic with opening hours": {
+                  "value": {
+                    "name": "Periodic with opening hours",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "periodic",
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2021-05-17T22:00:00+00:00",
+                      "openingHours": [
+                        {
+                          "opens": "13:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "monday"
+                          ]
+                        },
+                        {
+                          "opens": "09:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Permanent with opening hours": {
+                  "value": {
+                    "name": "Periodic with opening hours",
+                    "type": "0.50.4.0.0",
+                    "theme": "1.8.3.3.0",
+                    "location": {
+                      "id": "DA5499B2-9C79-48D3-A02D-8F471308100D"
+                    },
+                    "calendar": {
+                      "calendarType": "permanent",
+                      "openingHours": [
+                        {
+                          "opens": "13:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "monday"
+                          ]
+                        },
+                        {
+                          "opens": "09:00",
+                          "closes": "17:00",
+                          "dayOfWeek": [
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/places/{placeId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "get": {
+        "summary": "Get place details",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Place details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/place.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "operationId": "get-place",
+        "description": "Returns the details of the place for the given `placeId`."
+      }
+    },
+    "/places/{placeId}/history": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "get": {
+        "summary": "Get place history",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Place history.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string",
+                        "description": "A human-readable description of the update to the place. (Always in Dutch.)"
+                      },
+                      "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2021-08-26T16:54:38+00:00",
+                        "description": "The date and time that the update happened in an ISO-8601 format with a timezone offset. For example `2021-08-26T16:54:38+00:00`."
+                      },
+                      "author": {
+                        "type": "string",
+                        "description": "Identifier of the user who made the change. Should not be treated as a semantic user id though, because it can be an email, v1 user id, or v2 user id. Should only be displayed and used by admins that look at the history log to look up the user in the correct system."
+                      },
+                      "api": {
+                        "type": "string",
+                        "description": "Human-readable name of the API that was used to make the change. Not always present in older history logs."
+                      },
+                      "auth0ClientId": {
+                        "type": "string",
+                        "description": "The id of the Auth0 client that made the change. (If it was an Auth0 API client.)"
+                      },
+                      "auth0ClientName": {
+                        "type": "string",
+                        "description": "Name of the client in Auth0 that made the change. (If it was an Auth0 API client.)"
+                      },
+                      "apiKey": {
+                        "type": "string",
+                        "description": "API key of the UiTID v1 consumer that made the change (if it was an UiTID v1 consumer)."
+                      },
+                      "consumerName": {
+                        "type": "string",
+                        "description": "Name of the UiTID v1 consumer that made the change (if it was an UiTID v1 consumer)."
+                      }
+                    },
+                    "required": [
+                      "description",
+                      "date"
+                    ]
+                  }
+                },
+                "examples": {
+                  "Auth0 client": {
+                    "value": [
+                      {
+                        "date": "2021-09-30T14:57:17+00:00",
+                        "description": "Kalender-info aangepast",
+                        "author": "google-oauth2|108326107941342286958",
+                        "auth0ClientId": "JGJ3rAJLurRM9DHDE072zVhF3azl57mo",
+                        "auth0ClientName": "UiTdatabase JWT Provider",
+                        "api": "JSON-LD API"
+                      }
+                    ]
+                  },
+                  "UiTID v1 consumer": {
+                    "value": [
+                      {
+                        "date": "2021-10-04T09:40:59+00:00",
+                        "description": "Reservatie-info aangepast",
+                        "author": "google-oauth2|108326107941342286958",
+                        "apiKey": "deb306a6-6f46-4c98-89ce-b03ec4fd11e2",
+                        "api": "JSON-LD API",
+                        "consumerName": "UiTdatabank Acceptatie"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "operationId": "get-place-history",
+        "description": "Returns the history log of the place for the given `placeId`.\n\nThe history log is an array of objects that contain info about each individual update to the place, who did the update, using what API, etc.\n\nBecause this history log can contain API keys which are secret (deprecated but still usable for backward compatibility), it can only be accessed by users that are a \"god user\".\n\nBecause of this limitation, the endpoint is also documented as internal and not visible in the public docs.",
+        "x-internal": true,
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/places/{placeId}/calendar": {
       "parameters": [
         {
@@ -465,7 +1419,7 @@
             "description": "No Content. The calendar information has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possbile error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -496,7 +1450,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "$ref": "#/components/responses/EventNotFound"
+            "$ref": "#/components/responses/PlaceNotFound"
           }
         },
         "operationId": "put-place-calendar",
@@ -588,12 +1542,601 @@
         ],
         "description": "Updates the calendar information of the given `placeId`. The calendar information will be completely replaced with the new one.\n\nThe required properties depend on the `calendarType` property.\n\n| calendarType  | required  | optional  |\n|---|---|---|\n| periodic  | startDate, endDate  | openingHours, status, bookingAvailability  |\n| permanent  |   | openingHours, status, bookingAvailability  |\n\n<!-- theme: warning -->\n\n> If the event has a `status` or `bookingAvailability` that is not `Available`, and you do not include this `status` or `bookingAvailability` in the new calendar information, they will get reverted back to the default `Available`!\n\n<!-- theme: danger -->\n\n> Contrary to events, places cannot use calendarType `single` or `multiple`!"
       }
+    },
+    "/places/{placeId}/calendar-summary": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "get": {
+        "summary": "Get calendar summary",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "The calendar summary in either plain text or HTML.\n\nFor example:\n```\nVan 6 januari 2021 tot 23 juni 2021 (geannuleerd)\n```\n\nOr:\n```\n<span class=\\\"cf-from cf-meta\\\">Van</span> <span class=\\\"cf-date\\\">6 januari 2021</span> <span class=\\\"cf-to cf-meta\\\">tot</span> <span class=\\\"cf-date\\\">23 juni 2021</span> <span title=\\\"Deze activiteit is waarschijnlijk geannuleerd omwille van prplaceieve coronamaatregelen.\\\" class=\\\"cf-status\\\">(geannuleerd)</span>\n```"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/query-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/query-parameter-invalid",
+                      "title": "Query parameter invalid",
+                      "status": 400,
+                      "detail": "Query parameter \"langCode\" does not support value \"es\"."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "operationId": "get-place-calendar-summary",
+        "description": "Returns a human-readable summary of the calendar information of the place. Can be configured to return either plain text or HTML, and to switch between four different formats depending on the amount of space you have to display it.\n\n> For backward compatibility this endpoint is also accessible at the old abbreviated `/places/{placeId}/calsum` path.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ],
+              "default": "text"
+            },
+            "in": "query",
+            "name": "style",
+            "description": "Deprecated alternative to the `accept` header. Supported for backward compatibility.",
+            "deprecated": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ],
+              "default": "lg"
+            },
+            "in": "query",
+            "name": "size",
+            "description": "Defines the size of the summary. Larger summaries contain more detail for events with multiple dates/hours but will also take up more space when shown in a UI. We recommend to use the format `md` for the search results (and `lg` for events with calendarType single), and to always use `lg` for the detailpage. In some cases (e.g. mobile apps) calendar summary `xs` can be useful"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl",
+                "fr",
+                "en",
+                "de"
+              ],
+              "default": "nl"
+            },
+            "in": "query",
+            "name": "language",
+            "description": "Defines the language that the summary will be written in. Also influences the date/time format used."
+          },
+          {
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "in": "query",
+            "name": "hidePast",
+            "description": "Will hide past dates in summaries of events with multiple dates. By default, past dates are not excluded from the calendar summary."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "Europe/Brussels"
+            },
+            "in": "query",
+            "name": "timezone",
+            "description": "The timezone to format date/times in."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text/plain",
+                "text/html"
+              ]
+            },
+            "in": "header",
+            "name": "accept",
+            "description": "Indicates the expected content-type. Defaults to `text/plain` but can be set to `text/html` for a HTML response."
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "nl_BE",
+                "fr_BE",
+                "en_BE",
+                "de_BE"
+              ]
+            },
+            "in": "query",
+            "name": "langCode",
+            "description": "Deprecated alternative to the `language` query parameter. Supported for backward compatibility.",
+            "deprecated": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg"
+              ]
+            },
+            "in": "query",
+            "name": "format",
+            "deprecated": true,
+            "description": "Deprecated alternative to the `size` query parameter. Supported for backward compatibility."
+          }
+        ],
+        "x-internal": false
+      }
+    },
+    "/places/{placeId}/type/{termId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        },
+        {
+          "$ref": "#/components/parameters/termId"
+        }
+      ],
+      "put": {
+        "summary": "Update type",
+        "operationId": "put-place-type",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "Term with id \"1.2.1.0.0\" can not be used as a place type."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "tags": [
+          "Places"
+        ],
+        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `typeId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/places/{placeId}/videos": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "post": {
+        "summary": "Add a video",
+        "operationId": "post-place-video",
+        "responses": {
+          "200": {
+            "description": "The video was added to the place.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "videoId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                },
+                "examples": {
+                  "The new videoId": {
+                    "value": {
+                      "videoId": "b504cf44-9ab8-4641-9934-38d1cc67242c"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required properties url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-videos-post.json"
+              },
+              "examples": {
+                "Video from Youtube and with Copyright": {
+                  "value": {
+                    "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                    "language": "nl",
+                    "copyrightHolder": "publiq"
+                  }
+                },
+                "Video from Vimeo": {
+                  "value": {
+                    "url": "https://www.vimeo.com/4dwe2",
+                    "language": "nl"
+                  }
+                }
+              }
+            }
+          },
+          "description": "The new video to add to a place."
+        },
+        "description": "Add a video as a URL reference to place\n\nThe video objects contains:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "tags": [
+          "Places"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Update one or multiple videos",
+        "operationId": "patch-places-videos",
+        "responses": {
+          "204": {
+            "description": "No Content. The videos are updated."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "description": "Update one or more videos of a place.\n\nThe video object(s) must contain\n\n* `id`: The id of the video object to be changed.\n\nThe video object(s) can contain:\n\n* `url`: The full URL of the video. Currently only *Vimeo* and *Youtube* are supported as video source locations.\n* `language`: The updated language of a video\n* `copyrightHolder`: The copyright holder of the video material. Although this field is optional it is strongly recommended to add a reference to the entity owning the rights on the video material.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-videos-patch.json"
+              },
+              "examples": {
+                "Videos to be updated.": {
+                  "value": [
+                    {
+                      "id": "30a880ba-c406-4308-8031-eb39c334f8c2",
+                      "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+                      "language": "fr",
+                      "copyrightHolder": "publiq"
+                    },
+                    {
+                      "id": "55f3859b-ad56-426e-acd8-435401372019",
+                      "copyrightHolder": "Creative Commons"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "description": "An array of videos to be changed."
+        },
+        "tags": [
+          "Places"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/places/{placeId}/videos/{videoId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        },
+        {
+          "$ref": "#/components/parameters/videoId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete a video from a place",
+        "operationId": "delete-place-video",
+        "responses": {
+          "204": {
+            "description": "No Content. The video was deleted from the place."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "description": "Delete an embedded video from an place based on the place id and the video id.",
+        "tags": [
+          "Places"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/places/{placeId}/major-info": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "operationId": "put-place-major-info",
+        "description": "<!-- theme: danger -->\n\n> The major-info endpoint is deprecated and should not be used in new integrations!\n\nUpdates the \"major info\" of the event with the given `placeId`.\n\nThe major info contains:\n\n* `name`: The name of the place in the place's `mainLanguage`, as a string\n* `type`: Id of the place's `eventtype` taxonomy `term`, as a string\n* `theme` (optional): Id of the place's `theme` taxonomy `term`, as a string\n* `address`: Object with the address of the place (see schema below)\n* `calendar`: Object with the place's calendar information (see schema below)\n\nAll properties are required (except for `theme`) and will overwrite existing values of these properties on the place. If the place has a `theme` `term` before this update, but there is no `theme` in this major-info update, the `theme` will be removed.\n\n<!-- theme: success -->\n> For backward-compatibility with older integrations, this operation can also be requested via `POST /place/{placeId}/major-info`",
+        "summary": "Update major info (deprecated)",
+        "deprecated": true,
+        "responses": {
+          "204": {
+            "description": "No Content. The major-info has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "theme": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "object",
+                    "required": [
+                      "streetAddress",
+                      "postalCode",
+                      "addressLocality",
+                      "addressCountry"
+                    ],
+                    "properties": {
+                      "streetAddress": {
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "type": "string"
+                      },
+                      "addressLocality": {
+                        "type": "string"
+                      },
+                      "addressCountry": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "calendar": {
+                    "$ref": "../models/place-calendar-put.json"
+                  }
+                },
+                "required": [
+                  "name",
+                  "type",
+                  "address",
+                  "calendar"
+                ]
+              },
+              "examples": {
+                "Permanent with opening hours": {
+                  "value": {
+                    "name": "Sint-Pieterskerk",
+                    "type": "0.14.0.0.0",
+                    "theme": "1.44.0.0.0",
+                    "address": {
+                      "streetAddress": "Grote Markt 1",
+                      "postalCode": "3000",
+                      "addressLocality": "Leuven",
+                      "addressCountry": "BE"
+                    },
+                    "calendar": {
+                      "calendarType": "permanent",
+                      "openingHours": [
+                        {
+                          "opens": "10:00",
+                          "closes": "16:30",
+                          "dayOfWeek": [
+                            "monday",
+                            "tuesday",
+                            "thursday",
+                            "friday",
+                            "saturday"
+                          ]
+                        },
+                        {
+                          "opens": "11:00",
+                          "closes": "16:30",
+                          "dayOfWeek": [
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Periodic with opening hours": {
+                  "value": {
+                    "name": "Velodroom",
+                    "type": "Yf4aZBfsUEu2NsQqsprngw",
+                    "address": {
+                      "streetAddress": "Brusselsestraat",
+                      "postalCode": "3000",
+                      "addressLocality": "Leuven",
+                      "addressCountry": "BE"
+                    },
+                    "calendar": {
+                      "calendarType": "periodic",
+                      "startDate": "2021-05-17T22:00:00+00:00",
+                      "endDate": "2023-11-17T22:00:00+00:00",
+                      "openingHours": [
+                        {
+                          "opens": "17:00",
+                          "closes": "22:00",
+                          "dayOfWeek": [
+                            "thursday",
+                            "friday"
+                          ]
+                        },
+                        {
+                          "opens": "13:00",
+                          "closes": "22:00",
+                          "dayOfWeek": [
+                            "saturday",
+                            "sunday"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Places"
+        ]
+      }
     }
   },
   "components": {
     "schemas": {
       "Error": {
-        "$ref": "https://raw.githubusercontent.com/cultuurnet/stoplight-docs-errors/main/models/Error.json"
+        "$ref": "https://raw.githubusercontent.com/cultuurnet/stoplight-docs-errors/main/models/Error.json",
+        "x-internal": true
       }
     },
     "securitySchemes": {
@@ -643,6 +2186,26 @@
           "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
         },
         "description": "Unique id of an place, in the format of a UUID"
+      },
+      "videoId": {
+        "name": "videoId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of a video embedded in a place or event, in the format of a UUID"
+      },
+      "termId": {
+        "name": "termId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/terms.md) guide"
       }
     },
     "responses": {
@@ -699,6 +2262,26 @@
                   "title": "Event not found",
                   "status": 404,
                   "detail": "The event with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
+      },
+      "PlaceNotFound": {
+        "description": "No place found for the given `placeId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/place-not-found",
+                  "title": "Place not found",
+                  "status": 404,
+                  "detail": "The place with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
                 }
               }
             }

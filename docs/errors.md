@@ -15,3 +15,13 @@ The request you are trying to perform is not supported on the calendar type of t
 Usually the `detail` of the error will contain more information about the specific operation that is not supported and on which calendar types.
 
 Try using an event or place id with a calendar type that is supported by the operation that you are trying to perform.
+
+## resource-id-already-in-use
+
+*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/resource-id-already-in-use`
+*   **Title**: `Resource id already in use`
+*   **Status**: `400`
+
+The given id to create a new resource is already in use by an existing resource of another type.
+
+Try creating the new resource with another unique resource id.
