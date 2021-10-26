@@ -2287,6 +2287,26 @@
             }
           }
         }
+      },
+      "OrganizerNotFound": {
+        "description": "No organizer found for the given `organizerId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/organizer-not-found",
+                  "title": "Organizer not found",
+                  "status": 404,
+                  "detail": "The organizer with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
