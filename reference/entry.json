@@ -2183,7 +2183,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "$ref": "#/components/responses/PlaceNotFound"
+            "$ref": "#/components/responses/OrganizerNotFound"
           }
         },
         "requestBody": {
