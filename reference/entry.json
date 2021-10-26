@@ -2141,7 +2141,7 @@
         }
       ],
       "put": {
-        "summary": "Update the name of an organizer",
+        "summary": "Update name",
         "description": "Updates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer in the given `language`.",
         "operationId": "put-organizer-name",
         "tags": [
