@@ -2187,6 +2187,17 @@
         },
         "description": "Unique id of an place, in the format of a UUID"
       },
+      "organizerId": {
+        "name": "organizerId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of an organizer, in the format of a UUID"
+      },
       "videoId": {
         "name": "videoId",
         "in": "path",
