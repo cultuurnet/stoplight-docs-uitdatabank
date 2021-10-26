@@ -1827,6 +1827,80 @@
         "x-internal": false
       }
     },
+    "/places/{placeId}/facilities": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "summary": "Update facilities",
+        "operationId": "put-place-facilities",
+        "responses": {
+          "204": {
+            "description": "No Content. The facilities have been successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "tags": [
+          "Places"
+        ],
+        "description": "Updates the list of available (accessibility) facilities on the place. These will show up in the [place's `terms`](../models/place-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an place's facilities in UiTdatabank, even if you are the place owner. Contact an administrator for further information.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-facilities-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": [
+                    "3.13.2.0.0",
+                    "3.23.2.0.0"
+                  ]
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
     "/places/{placeId}/type/{termId}": {
       "parameters": [
         {
