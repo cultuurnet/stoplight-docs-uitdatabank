@@ -799,6 +799,13 @@
                     "url": "https://www.vimeo.com/4dwe2",
                     "language": "nl"
                   }
+                },
+                "Video from Youtube with Url Shortener": {
+                  "value": {
+                    "url": "https://youtu.be/bsaAOun-dec",
+                    "language": "nl",
+                    "copyrightHolder": "publiq"
+                  }
                 }
               }
             },
@@ -1660,6 +1667,13 @@
                   "value": {
                     "url": "https://www.vimeo.com/4dwe2",
                     "language": "nl"
+                  }
+                },
+                "Video from Youtube with Url Shortener": {
+                  "value": {
+                    "url": "https://youtu.be/bsaAOun-dec",
+                    "language": "nl",
+                    "copyrightHolder": "publiq"
                   }
                 }
               }
