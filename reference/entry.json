@@ -2198,6 +2198,21 @@
         },
         "description": "Unique id of an organizer, in the format of a UUID"
       },
+      "language": {
+        "name": "language",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "nl",
+            "fr",
+            "en",
+            "de"
+          ]
+        },
+        "description": "The language of the request body properties"
+      },
       "videoId": {
         "name": "videoId",
         "in": "path",
