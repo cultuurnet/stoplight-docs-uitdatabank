@@ -2190,6 +2190,87 @@
           "Places"
         ]
       }
+    },
+    "/organizers/{organizerId}/name/{language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/language"
+        }
+      ],
+      "put": {
+        "summary": "Update name",
+        "description": "Updates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer in the given `language`. The new name needs to be at least one character long.",
+        "operationId": "put-organizer-name",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer name has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (name) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-name-put.json"
+              },
+              "examples": {
+                "Set a new name": {
+                  "value": {
+                    "name": "publiq"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -2246,6 +2327,32 @@
           "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
         },
         "description": "Unique id of an place, in the format of a UUID"
+      },
+      "organizerId": {
+        "name": "organizerId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+        },
+        "description": "Unique id of an organizer, in the format of a UUID"
+      },
+      "language": {
+        "name": "language",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "nl",
+            "fr",
+            "en",
+            "de"
+          ]
+        },
+        "description": "The language of the request body properties"
       },
       "videoId": {
         "name": "videoId",
@@ -2347,12 +2454,35 @@
             }
           }
         }
+      },
+      "OrganizerNotFound": {
+        "description": "No organizer found for the given `organizerId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/organizer-not-found",
+                  "title": "Organizer not found",
+                  "status": 404,
+                  "detail": "The organizer with id \"76C6AC08-763C-492E-A68C-CBC43A857229\" was not found."
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
   "tags": [
     {
       "name": "Events"
+    },
+    {
+      "name": "Organizers"
     },
     {
       "name": "Places"
