@@ -5,7 +5,8 @@
     "name": {
       "type": "string",
       "example": "publiq",
-      "description": "The new name of the organizer"
+      "description": "The new name of the organizer (requires at least one character)",
+      "minLength": 1
     }
   },
   "required": [
