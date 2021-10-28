@@ -586,6 +586,80 @@
         "x-internal": false
       }
     },
+    "/events/{eventId}/facilities": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update facilities",
+        "operationId": "put-event-facilities",
+        "responses": {
+          "204": {
+            "description": "No Content. The facilities have been successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](../models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-facilities-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": [
+                    "3.13.2.0.0",
+                    "3.23.2.0.0"
+                  ]
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
     "/events/{eventId}/location/{placeId}": {
       "parameters": [
         {
@@ -820,7 +894,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -880,7 +954,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the event's theme (examples of themes are `Audiovisuele kunst`, `Moderne dans`, `Actie en avontuur`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `theme` domain can be used as theme.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `theme` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the event's theme (examples of themes are `Audiovisuele kunst`, `Moderne dans`, `Actie en avontuur`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `theme` domain can be used as theme.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `theme` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1753,6 +1827,80 @@
         "x-internal": false
       }
     },
+    "/places/{placeId}/facilities": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "summary": "Update facilities",
+        "operationId": "put-place-facilities",
+        "responses": {
+          "204": {
+            "description": "No Content. The facilities have been successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "tags": [
+          "Places"
+        ],
+        "description": "Updates the list of available (accessibility) facilities on the place. These will show up in the [place's `terms`](../models/place-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an place's facilities in UiTdatabank, even if you are the place owner. Contact an administrator for further information.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-facilities-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": [
+                    "3.13.2.0.0",
+                    "3.23.2.0.0"
+                  ]
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
     "/places/{placeId}/type/{termId}": {
       "parameters": [
         {
@@ -1802,7 +1950,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](./docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []

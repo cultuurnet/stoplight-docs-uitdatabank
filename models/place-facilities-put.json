@@ -1,0 +1,16 @@
+{
+  "title": "place.facilities.put",
+  "x-internal": true,
+  "type": "array",
+  "description": "",
+  "uniqueItems": true,
+  "items": {
+    "type": "string"
+  },
+  "examples": [
+    [
+      "3.13.1.0.0",
+      "3.25.0.0.0"
+    ]
+  ]
+}
