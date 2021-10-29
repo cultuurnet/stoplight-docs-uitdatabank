@@ -2433,6 +2433,90 @@
           }
         ]
       }
+    },
+    "/organizers/{organizerId}/address/{language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/language"
+        }
+      ],
+      "put": {
+        "summary": "Update address",
+        "description": "Updates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the given `language`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
+        "operationId": "put-organizer-address",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer address has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (streetAddress) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-address-put.json"
+              },
+              "examples": {
+                "Update the address of an organizer": {
+                  "value": {
+                    "streetAddress": "Kerkstraat 2",
+                    "postalCode": "3000",
+                    "addressLocality": "Leuven",
+                    "addressCountry": "BE"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
     }
   },
   "components": {
