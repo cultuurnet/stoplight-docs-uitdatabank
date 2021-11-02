@@ -2360,7 +2360,7 @@
         }
       ],
       "put": {
-        "summary": "Update Url",
+        "summary": "Update url",
         "description": "Updates the url of the organizer with the given `organizerId`. The provided url can not be used for another organizer.",
         "operationId": "put-organizer-url",
         "tags": [
