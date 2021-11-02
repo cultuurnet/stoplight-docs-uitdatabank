@@ -2371,7 +2371,7 @@
             "description": "No Content. The organizer contact point has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/not-found\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
