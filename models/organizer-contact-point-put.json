@@ -2,7 +2,7 @@
   "title": "organizer-contact-point-put",
   "type": "object",
   "properties": {
-    "urls": {
+    "url": {
       "type": "array",
       "description": "An array of urls.",
       "items": {
@@ -11,7 +11,7 @@
         "example": "https://www.publiq.be"
       }
     },
-    "emails": {
+    "email": {
       "type": "array",
       "description": "An array of email addresses.",
       "items": {
@@ -20,7 +20,7 @@
         "example": "info@publiq.be"
       }
     },
-    "phones": {
+    "phone": {
       "type": "array",
       "description": "An array of phone numbers.",
       "items": {

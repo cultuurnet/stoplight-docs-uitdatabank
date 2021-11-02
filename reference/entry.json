@@ -2361,7 +2361,7 @@
       ],
       "put": {
         "summary": "Update contact point",
-        "description": "Updates the contact point information of the organizer with the given `organizerId`. A contact point has a list of the following properties:\n* Urls: an array of valid urls\n* Emails: an array of valid emails\n* Phones: an array of phone numbers\n\nAll properties are optional.",
+        "description": "Updates the contact point information of the organizer with the given `organizerId`. A contact point has a list of the following properties:\n* Url: an array of valid urls\n* Email: an array of valid emails\n* Phone: an array of phone numbers\n\nAll properties are optional.",
         "operationId": "put-organizer-contact-point",
         "tags": [
           "Organizers"
@@ -2400,15 +2400,15 @@
               "examples": {
                 "Update multiple values": {
                   "value": {
-                    "urls": [
+                    "url": [
                       "https://www.publiq.be",
                       "https://www.cultuurnet.be"
                     ],
-                    "emails": [
+                    "email": [
                       "info@publiq.be",
                       "info@cultuurnet.be"
                     ],
-                    "phones": [
+                    "phone": [
                       "016 10 20 30",
                       "016 11 22 33",
                       "016 99 99 99"
