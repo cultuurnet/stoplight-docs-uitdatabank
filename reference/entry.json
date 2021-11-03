@@ -2754,6 +2754,18 @@
         },
         "description": "The language of the request body properties"
       },
+      "label": {
+        "name": "label",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "MyLabel",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "description": "The label to add to an event, place or organizer. The label should be longer than 1 character but shorter than 255 characters. The label should not contain semicolons."
+      },
       "videoId": {
         "name": "videoId",
         "in": "path",
