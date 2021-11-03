@@ -2371,7 +2371,7 @@
             "description": "No Content. The organizer contact point has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/not-found\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -2447,7 +2447,7 @@
             "description": "No Content. The organizer url has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/not-found\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -2507,6 +2507,66 @@
         ]
       }
     },
+    "/organizers/{organizerId}/labels/{labelName}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/labelName"
+        }
+      ],
+      "put": {
+        "summary": "Add label",
+        "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label does not exist yet in UiTdatabank a new label will be created with default visibility and public permissions (usable by anyone), and linked to the organizer.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `\\A[^;]{2,255}\\z`",
+        "operationId": "put-organizer-label",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The label has been added successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "The provided label name is not valid."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/organizers/{organizerId}/name/{language}": {
       "parameters": [
         {
@@ -2528,7 +2588,7 @@
             "description": "No Content. The organizer name has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/not-found\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -2609,7 +2669,7 @@
             "description": "No Content. The organizer address has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/not-found\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -2753,6 +2813,17 @@
           ]
         },
         "description": "The language of the request body properties"
+      },
+      "labelName": {
+        "name": "labelName",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "MyLabel",
+          "pattern": "\\A[^;]{2,255}\\z"
+        },
+        "description": "The label to add to an event, place or organizer. The label name should be longer than 1 character but shorter than 255 characters. The label name should not contain semicolons."
       },
       "videoId": {
         "name": "videoId",
