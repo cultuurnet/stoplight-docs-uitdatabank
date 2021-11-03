@@ -2507,6 +2507,66 @@
         ]
       }
     },
+    "/organizers/{organizerId}/labels/{label}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/label"
+        }
+      ],
+      "put": {
+        "summary": "Update label",
+        "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label is not yet available in UiTdatabank a new label will be created and linked to the organizer.",
+        "operationId": "put-organizer-label",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The label has been added successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "The given label could not be created."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/organizers/{organizerId}/name/{language}": {
       "parameters": [
         {
