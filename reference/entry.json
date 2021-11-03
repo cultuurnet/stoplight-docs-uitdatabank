@@ -2565,6 +2565,56 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      },
+      "delete": {
+        "summary": "Delete label",
+        "description": "Deletes the given label from the organizer with the given `organizerId`.",
+        "operationId": "delete-organizer-label",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The label has been deleted from the organizer successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
+                      "title": "Path parameter invalid",
+                      "status": 400,
+                      "detail": "The provided label name is not valid."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
       }
     },
     "/organizers/{organizerId}/name/{language}": {
