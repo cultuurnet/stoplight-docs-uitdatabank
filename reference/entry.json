@@ -2353,6 +2353,82 @@
         ]
       }
     },
+    "/organizers/{organizerId}/contact-point": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "put": {
+        "summary": "Update contact point",
+        "description": "Updates the contact point information of the organizer with the given `organizerId`. A contact point has a list of the following properties:\n* Url: an array of valid urls\n* Email: an array of valid emails\n* Phone: an array of phone numbers\n\nAll properties are optional.",
+        "operationId": "put-organizer-contact-point",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer contact point has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/not-found\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-contact-point-put.json"
+              },
+              "examples": {
+                "Update multiple values": {
+                  "value": {
+                    "url": [
+                      "https://www.publiq.be",
+                      "https://www.cultuurnet.be"
+                    ],
+                    "email": [
+                      "info@publiq.be",
+                      "info@cultuurnet.be"
+                    ],
+                    "phone": [
+                      "016 10 20 30",
+                      "016 11 22 33",
+                      "016 99 99 99"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/organizers/{organizerId}/url": {
       "parameters": [
         {
