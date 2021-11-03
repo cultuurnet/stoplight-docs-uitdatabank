@@ -2568,7 +2568,7 @@
       },
       "delete": {
         "summary": "Delete label",
-        "description": "Deletes the given label from the organizer with the given `organizerId`.",
+        "description": "Deletes the given label from the organizer with the given `organizerId`.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `\\A[^;]{2,255}\\z`",
         "operationId": "delete-organizer-label",
         "tags": [
           "Organizers"
