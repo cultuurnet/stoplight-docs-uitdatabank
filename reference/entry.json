@@ -2540,7 +2540,7 @@
                       "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
                       "title": "Path parameter invalid",
                       "status": 400,
-                      "detail": "The given label could not be created."
+                      "detail": "The provided label name is not valid."
                     }
                   }
                 }
