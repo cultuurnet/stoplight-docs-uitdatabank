@@ -2518,7 +2518,7 @@
       ],
       "put": {
         "summary": "Add label",
-        "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label is not yet available in UiTdatabank a new label will be created and linked to the organizer.",
+        "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label does not exist yet in UiTdatabank a new label will be created with default visibility and public permissions (usable by anyone), and linked to the organizer.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `\\A[^;]{2,255}\\z`",
         "operationId": "put-organizer-label",
         "tags": [
           "Organizers"
@@ -2540,7 +2540,7 @@
                       "type": "https://api.publiq.be/probs/url/path-parameter-invalid",
                       "title": "Path parameter invalid",
                       "status": 400,
-                      "detail": "The given label could not be created."
+                      "detail": "The provided label name is not valid."
                     }
                   }
                 }
@@ -2871,8 +2871,7 @@
         "schema": {
           "type": "string",
           "example": "MyLabel",
-          "minLength": 1,
-          "maxLength": 255
+          "pattern": "\\A[^;]{2,255}\\z"
         },
         "description": "The label to add to an event, place or organizer. The label name should be longer than 1 character but shorter than 255 characters. The label name should not contain semicolons."
       },
