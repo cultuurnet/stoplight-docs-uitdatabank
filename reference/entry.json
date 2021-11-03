@@ -2507,17 +2507,17 @@
         ]
       }
     },
-    "/organizers/{organizerId}/labels/{label}": {
+    "/organizers/{organizerId}/labels/{labelName}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/organizerId"
         },
         {
-          "$ref": "#/components/parameters/label"
+          "$ref": "#/components/parameters/labelName"
         }
       ],
       "put": {
-        "summary": "Update label",
+        "summary": "Add label",
         "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label is not yet available in UiTdatabank a new label will be created and linked to the organizer.",
         "operationId": "put-organizer-label",
         "tags": [
@@ -2814,8 +2814,8 @@
         },
         "description": "The language of the request body properties"
       },
-      "label": {
-        "name": "label",
+      "labelName": {
+        "name": "labelName",
         "in": "path",
         "required": true,
         "schema": {
@@ -2824,7 +2824,7 @@
           "minLength": 1,
           "maxLength": 255
         },
-        "description": "The label to add to an event, place or organizer. The label should be longer than 1 character but shorter than 255 characters. The label should not contain semicolons."
+        "description": "The label to add to an event, place or organizer. The label name should be longer than 1 character but shorter than 255 characters. The label name should not contain semicolons."
       },
       "videoId": {
         "name": "videoId",
