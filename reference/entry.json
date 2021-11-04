@@ -3,7 +3,7 @@
   "info": {
     "title": "Entry API",
     "version": "3.0",
-    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.\n\n<!-- focus: false -->\n\n[![Download postman collection](../assets/images/postman.png)](https://openapi2postman-frontend.vercel.app/)",
+    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.\n\n<!-- focus: false -->\n\n[![Download postman collection](https://raw.github.com/cultuurnet/stoplight-docs-uitdatabank/postman-download/assets/images/postman.png)](https://openapi2postman-frontend.vercel.app/)",
     "contact": {
       "name": "publiq helpdesk",
       "email": "vragen@publiq.be"
