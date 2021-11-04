@@ -54,7 +54,7 @@
         "operationId": "delete-event",
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "No Content. The event's `workflowStatus` has successfully been updated to `DELETED`."
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1466,7 +1466,7 @@
         "operationId": "delete-place",
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "No Content. The place's `workflowStatus` has successfully been updated to `DELETED`."
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
