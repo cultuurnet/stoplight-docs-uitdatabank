@@ -61,6 +61,9 @@
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
           }
         },
         "description": "Does a soft-delete of the event. The event will continue to exist but it's `workflowStatus` will be changed to `DELETED`. This will remove it from all publication channels.",
@@ -1470,6 +1473,9 @@
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
           }
         },
         "description": "Does a soft-delete of the place. The place will continue to exist but it's `workflowStatus` will be changed to `DELETED`. This will remove it from all publication channels.",
