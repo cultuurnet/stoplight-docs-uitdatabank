@@ -2698,6 +2698,44 @@
         ]
       }
     },
+    "/organizers/{organizerId}/address": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete address",
+        "description": "Delete the address of the organizer with the given `organizerId`.",
+        "operationId": "delete-organizer-address",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer address has been deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "x-internal": true
+      }
+    },
     "/organizers/{organizerId}/address/{language}": {
       "parameters": [
         {
