@@ -192,6 +192,59 @@
         ]
       }
     },
+    "/events/{eventId}/audience": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update audience",
+        "operationId": "put-event-audience",
+        "responses": {
+          "204": {
+            "description": "No Content. The event's audience was successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/audienceType",
+                          "error": "The data (int) should match the type: string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the intended audience of the event, which currently only has one property `audienceType`. \n\nBy default the audienceType is set to `everyone`. If needed the audience can be updated to `members` to hide it on public channels, or `education` for CultuurKuur events for schools.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/booking-availability": {
       "parameters": [
         {
