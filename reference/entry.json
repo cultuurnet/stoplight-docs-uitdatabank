@@ -2448,7 +2448,8 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
-        ]
+        ],
+        "x-internal": true
       }
     },
     "/organizers/{organizerId}/contact-point": {
