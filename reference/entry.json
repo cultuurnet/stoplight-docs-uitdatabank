@@ -2757,7 +2757,7 @@
                 "$ref": "../models/organizer-name-put.json"
               },
               "examples": {
-                "Set a new name": {
+                "Example": {
                   "value": {
                     "name": "publiq"
                   }
