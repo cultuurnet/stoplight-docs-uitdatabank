@@ -242,7 +242,34 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-audience.json"
+              },
+              "examples": {
+                "Everyone (default)": {
+                  "value": {
+                    "audienceType": "everyone"
+                  }
+                },
+                "Members": {
+                  "value": {
+                    "audienceType": "members"
+                  }
+                },
+                "Education (CultuurKuur)": {
+                  "value": {
+                    "audienceType": "education"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       }
     },
     "/events/{eventId}/booking-availability": {
