@@ -2488,7 +2488,7 @@
                 "$ref": "../models/organizer-url-put.json"
               },
               "examples": {
-                "Update the url of an organizer": {
+                "Example": {
                   "value": {
                     "url": "https://www.publiq.be"
                   }
@@ -2679,7 +2679,7 @@
                 "$ref": "../models/organizer-name-put.json"
               },
               "examples": {
-                "Set a new name": {
+                "Example": {
                   "value": {
                     "name": "publiq"
                   }
@@ -2836,7 +2836,7 @@
                 "$ref": "../models/organizer-address-put.json"
               },
               "examples": {
-                "Update the address of an organizer": {
+                "Example": {
                   "value": {
                     "streetAddress": "Kerkstraat 2",
                     "postalCode": "3000",
@@ -2952,7 +2952,7 @@
                 "$ref": "../models/organizer-address-put.json"
               },
               "examples": {
-                "Update the address of an organizer": {
+                "Example": {
                   "value": {
                     "streetAddress": "Kerkstraat 2",
                     "postalCode": "3000",
