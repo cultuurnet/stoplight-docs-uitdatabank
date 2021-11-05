@@ -2705,9 +2705,9 @@
         }
       ],
       "put": {
-        "summary": "Update name",
+        "summary": "Update name nl",
         "description": "Updates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer with default language `nl`. The new name needs to be at least one character long.",
-        "operationId": "put-organizer-name",
+        "operationId": "put-organizer-name-nl",
         "tags": [
           "Organizers"
         ],
