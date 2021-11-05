@@ -2785,7 +2785,7 @@
       ],
       "put": {
         "summary": "Update address nl",
-        "description": "Updates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/address/{language}` instead.\n\n\nUpdates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
         "operationId": "put-organizer-address-nl",
         "tags": [
           "Organizers"
