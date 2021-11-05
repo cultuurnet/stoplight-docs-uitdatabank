@@ -1,10 +1,44 @@
 {
   "title": "organizer",
   "type": "object",
+  "description": "An organisation ...",
   "properties": {
-    "id": {
+    "@id": {
+      "$ref": "./organizer-@id.json"
+    },
+    "#context": {
       "type": "string"
+    },
+    "mainLanguage": {
+      "$ref": "./organizer-mainLanguage.json"
+    },
+    "languages": {
+      "$ref": "./organizer-languages.json"
+    },
+    "completedLanguages": {
+      "$ref": "./organizer-completedLanguages.json"
+    },
+    "name": {
+      "$ref": "./organizer-name.json"
+    },
+    "created": {
+      "$ref": "./organizer-created.json"
+    },
+    "modified": {
+      "$ref": "./organizer-modified.json"
+    },
+    "creator": {
+      "$ref": "./organizer-creator.json"
+    },
+    "workflowStatus": {
+      "$ref": "./organizer-workflowStatus.json"
+    },
+    "contactPoint": {
+      "type": "string"
+    },
+    "labels": {
+      "$ref": "./organizer-labels.json"
+    },
+    "hiddenLabels": {
+      "$ref": "./organizer-hiddenLabels.json"
     }
-  },
-  "description": "PLACEHOLDER"
-}
