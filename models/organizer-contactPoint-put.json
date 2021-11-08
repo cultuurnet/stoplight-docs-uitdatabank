@@ -8,7 +8,8 @@
       "minItems": 0,
       "items": {
         "type": "string",
-        "description": "Phone number for contact purposes."
+        "description": "Phone number for contact purposes.",
+        "minLength": 1
       }
     },
     "email": {
@@ -19,7 +20,7 @@
         "type": "string",
         "description": "Email address for contact purposes.",
         "format": "email",
-        "example": "info@example.com"
+        "example": "info@publiq.be"
       }
     },
     "url": {
@@ -28,8 +29,9 @@
       "minItems": 0,
       "items": {
         "type": "string",
-        "format": "uri",
-        "example": "https://www.example.com",
+        "format": "string",
+        "pattern": "^http[s]?:\\/\\/",
+        "example": "https://www.publiq.be",
         "description": "URL to a website for contact purposes."
       }
     }
