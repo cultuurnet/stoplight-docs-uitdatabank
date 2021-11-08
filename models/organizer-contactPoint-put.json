@@ -2,31 +2,35 @@
   "title": "organizer-contactPoint-put",
   "type": "object",
   "properties": {
-    "url": {
+    "phone": {
       "type": "array",
-      "description": "An array of urls.",
+      "description": "List of phone numbers for contact purposes (can be empty)",
+      "minItems": 0,
       "items": {
         "type": "string",
-        "pattern": "^http[s]?:\\/\\/",
-        "example": "https://www.publiq.be"
+        "description": "Phone number for contact purposes."
       }
     },
     "email": {
       "type": "array",
-      "description": "An array of email addresses.",
+      "description": "List of email addresses for contact purposes (can be empty)",
+      "minItems": 0,
       "items": {
         "type": "string",
+        "description": "Email address for contact purposes.",
         "format": "email",
-        "example": "info@publiq.be"
+        "example": "info@example.com"
       }
     },
-    "phone": {
+    "url": {
       "type": "array",
-      "description": "An array of phone numbers.",
+      "description": "List of URLs for contact purposes (can be empty)",
+      "minItems": 0,
       "items": {
         "type": "string",
-        "example": "016 10 20 30",
-        "minLength": 1
+        "format": "uri",
+        "example": "https://www.example.com",
+        "description": "URL to a website for contact purposes."
       }
     }
   }
