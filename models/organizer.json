@@ -39,5 +39,19 @@
     "hiddenLabels": {
       "$ref": "./organizer-hiddenLabels.json"
     }
-  }
+  },
+  "required": [
+    "@id",
+    "mainLanguage",
+    "languages",
+    "completedLanguages",
+    "name",
+    "created",
+    "modified",
+    "creator",
+    "workflowStatus",
+    "contactPoint",
+    "labels",
+    "hiddenLabels"
+  ]
 }
