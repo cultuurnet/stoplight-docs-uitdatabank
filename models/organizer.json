@@ -31,7 +31,7 @@
       "$ref": "./organizer-workflowStatus.json"
     },
     "contactPoint": {
-      "type": "./organizer-contactPoint.json"
+      "$ref": "./organizer-contactPoint.json"
     },
     "labels": {
       "$ref": "./organizer-labels.json"
