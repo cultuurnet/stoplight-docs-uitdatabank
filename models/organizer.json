@@ -42,3 +42,5 @@
     "hiddenLabels": {
       "$ref": "./organizer-hiddenLabels.json"
     }
+  }
+}
