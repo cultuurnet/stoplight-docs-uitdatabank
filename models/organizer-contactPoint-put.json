@@ -1,5 +1,5 @@
 {
-  "title": "organizer-contact-point-put",
+  "title": "organizer-contactPoint-put",
   "type": "object",
   "properties": {
     "url": {

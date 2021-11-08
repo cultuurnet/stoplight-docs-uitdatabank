@@ -2494,7 +2494,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/organizer-contact-point-put.json"
+                "$ref": "../models/organizer-contactPoint-put.json"
               },
               "examples": {
                 "Update multiple values": {
