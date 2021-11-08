@@ -2494,6 +2494,44 @@
         ]
       }
     },
+    "/organizers/{organizerId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete organizer",
+        "description": "<!-- theme: info !-->\n> Note: only users with the permissions `Organisaties beheren` can delete an organizer.\n\nDelete the organizer with the given `organizerId`.",
+        "operationId": "delete-organizer",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer was deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "x-internal": true
+      }
+    },
     "/organizers/{organizerId}/contact-point": {
       "parameters": [
         {
@@ -2536,7 +2574,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/organizer-contact-point-put.json"
+                "$ref": "../models/organizer-contactPoint-put.json"
               },
               "examples": {
                 "Update multiple values": {
