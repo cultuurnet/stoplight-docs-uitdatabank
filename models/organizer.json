@@ -6,9 +6,6 @@
     "@id": {
       "$ref": "./organizer-@id.json"
     },
-    "#context": {
-      "type": "string"
-    },
     "mainLanguage": {
       "$ref": "./organizer-mainLanguage.json"
     },
