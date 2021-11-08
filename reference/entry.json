@@ -2422,7 +2422,7 @@
       ],
       "delete": {
         "summary": "Delete organizer",
-        "description": "Delete the organizer with the given `organizerId`.",
+        "description": "<!-- theme: info !-->\n> Note: only users with the permissions `Organisaties beheren` can delete an organizer.\n\nDelete the organizer with the given `organizerId`.",
         "operationId": "delete-organizer",
         "tags": [
           "Organizers"
