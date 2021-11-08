@@ -29,8 +29,9 @@
       "minItems": 0,
       "items": {
         "type": "string",
-        "format": "uri",
         "example": "https://www.example.com",
+        "format": "string",
+        "pattern": "^http[s]?:\\/\\/",
         "description": "URL to a website for contact purposes."
       }
     }
