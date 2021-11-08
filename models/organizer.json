@@ -1,10 +1,102 @@
 {
   "title": "organizer",
   "type": "object",
+  "description": "An organisation that is hosting an event or is the owner of a location.",
   "properties": {
-    "id": {
-      "type": "string"
+    "@id": {
+      "$ref": "./organizer-@id.json"
+    },
+    "mainLanguage": {
+      "$ref": "./organizer-mainLanguage.json"
+    },
+    "languages": {
+      "$ref": "./organizer-languages.json"
+    },
+    "completedLanguages": {
+      "$ref": "./organizer-completedLanguages.json"
+    },
+    "name": {
+      "$ref": "./organizer-name.json"
+    },
+    "created": {
+      "$ref": "./organizer-created.json"
+    },
+    "modified": {
+      "$ref": "./organizer-modified.json"
+    },
+    "creator": {
+      "$ref": "./organizer-creator.json"
+    },
+    "workflowStatus": {
+      "$ref": "./organizer-workflowStatus.json"
+    },
+    "contactPoint": {
+      "$ref": "./organizer-contactPoint.json"
+    },
+    "labels": {
+      "$ref": "./organizer-labels.json"
+    },
+    "hiddenLabels": {
+      "$ref": "./organizer-hiddenLabels.json"
     }
   },
-  "description": "PLACEHOLDER"
+  "required": [
+    "@id",
+    "mainLanguage",
+    "languages",
+    "completedLanguages",
+    "name",
+    "created",
+    "modified",
+    "creator",
+    "workflowStatus",
+    "contactPoint",
+    "labels",
+    "hiddenLabels"
+  ],
+  "examples": [
+    {
+      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+      "mainLanguage": "nl",
+      "languages": [
+        "nl",
+        "fr",
+        "de",
+        "en"
+      ],
+      "completedLanguages": [
+        "nl",
+        "fr"
+      ],
+      "name": {
+        "nl": "Nederlandse tekst",
+        "fr": "Texte français",
+        "de": "Deutscher Text",
+        "en": "English text"
+      },
+      "created": "2021-05-17T22:00:00+00:00",
+      "modified": "2021-05-17T22:00:00+00:00",
+      "creator": "auth0|CE1423AC-655C-4025-86E5-247E06164C85",
+      "workflowStatus": "ACTIVE",
+      "contactPoint": {
+        "phone": [
+          "+32/1234567890"
+        ],
+        "email": [
+          "info@publiq.be"
+        ],
+        "url": [
+          "https://www.publiq.be"
+        ]
+      },
+      "labels": [
+        "label1",
+        "label2"
+      ],
+      "hiddenLabels": [
+        "labelA",
+        "labelB"
+      ]
+    }
+  ]
 }
