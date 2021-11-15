@@ -281,6 +281,83 @@
         }
       }
     },
+    "/events/{eventId}/available-from": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update available from",
+        "operationId": "put-event-available-from",
+        "responses": {
+          "204": {
+            "description": "No Content. The event's availableFrom was successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/availableFrom",
+                          "error": "The data (int) should match the type: date-time"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the availableFrom of the [event](./event.json). This is the first date & time that the event is allowed to be visible on publication channels.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-availableFrom.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": "2021-05-17T22:00:00+00:00"
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
     "/events/{eventId}/booking-availability": {
       "parameters": [
         {
