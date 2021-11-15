@@ -345,11 +345,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/event-availableFrom.json"
+                "$ref": "../models/event-availableFrom-put.json"
               },
               "examples": {
                 "Example": {
-                  "value": "2021-05-17T22:00:00+00:00"
+                  "value": {
+                    "availableFrom": "2021-05-17T22:00:00+00:00"
+                  }
                 }
               }
             }
@@ -1704,7 +1706,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "$ref": "#/components/responses/PlaceNotFound"
+            "$ref": "#/components/responses/EventNotFound"
           }
         },
         "tags": [
@@ -1723,11 +1725,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/place-availableFrom.json"
+                "$ref": "../models/place-availableFrom-put.json"
               },
               "examples": {
                 "Example": {
-                  "value": "2021-05-17T22:00:00+00:00"
+                  "value": {
+                    "availableFrom": "2021-05-17T22:00:00+00:00"
+                  }
                 }
               }
             }
