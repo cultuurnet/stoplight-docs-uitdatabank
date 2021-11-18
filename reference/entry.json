@@ -1103,6 +1103,43 @@
         ]
       }
     },
+    "/events/{eventId}/theme": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete theme",
+        "operationId": "delete-event-theme",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Deletes the event's current theme based on the given `eventId`.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/theme/{termId}": {
       "parameters": [
         {
