@@ -59,7 +59,7 @@
     },
     "fr": {
       "type": "object",
-      "description": "Address localized in Dutch. Usually the locality and street address can be candidates to be localized.",
+      "description": "Address localized in French. Usually the locality and street address can be candidates to be localized.",
       "properties": {
         "addressCountry": {
           "type": "string",
@@ -97,7 +97,7 @@
     },
     "de": {
       "type": "object",
-      "description": "Address localized in Dutch. Usually the locality and street address can be candidates to be localized.",
+      "description": "Address localized in German. Usually the locality and street address can be candidates to be localized.",
       "properties": {
         "addressCountry": {
           "type": "string",
@@ -135,7 +135,7 @@
     },
     "en": {
       "type": "object",
-      "description": "Address localized in Dutch. Usually the locality and street address can be candidates to be localized.",
+      "description": "Address localized in English. Usually the locality and street address can be candidates to be localized.",
       "properties": {
         "addressCountry": {
           "type": "string",
