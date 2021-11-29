@@ -3504,7 +3504,7 @@
                   "type": "https://api.publiq.be/probs/auth/forbidden",
                   "title": "Forbidden",
                   "status": 403,
-                  "detail": "user must be admin of organiser abcd1234"
+                  "detail": "user must be admin of organizer abcd1234"
                 }
               }
             }
