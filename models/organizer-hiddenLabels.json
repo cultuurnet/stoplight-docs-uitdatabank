@@ -4,19 +4,18 @@
   "description": "Same as [labels](./organizer-labels.json), but for labels that should not be visible for end users on publication channels and should instead only be used for filtering or other processing.",
   "uniqueItems": true,
   "minItems": 1,
-  "items": {
-    "type": "string",
-    "format": "uri",
-    "example": "label2",
-    "minLength": 2,
-    "maxLength": 50,
-    "pattern": "^[A-Za-z0-9-_]+"
-  },
   "examples": [
     [
       "label1",
       "label2",
       "label3"
     ]
-  ]
+  ],
+  "items": {
+    "type": "string",
+    "example": "label2",
+    "minLength": 2,
+    "maxLength": 50,
+    "pattern": "^[A-Za-z0-9-_]+"
+  }
 }
