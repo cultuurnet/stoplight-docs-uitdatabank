@@ -15,8 +15,17 @@
     "completedLanguages": {
       "$ref": "./organizer-completedLanguages.json"
     },
+    "website": {
+      "type": "string",
+      "example": "https://www.publiq.be",
+      "description": "The unique website of the organizer.",
+      "pattern": "^http[s]?:\\/\\/"
+    },
     "name": {
       "$ref": "./organizer-name.json"
+    },
+    "address": {
+      "$ref": "./organizer-address.json"
     },
     "created": {
       "$ref": "./organizer-created.json"
@@ -45,7 +54,9 @@
     "mainLanguage",
     "languages",
     "completedLanguages",
+    "website",
     "name",
+    "address",
     "created",
     "modified",
     "creator",
