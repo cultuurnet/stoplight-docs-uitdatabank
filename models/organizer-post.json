@@ -6,12 +6,7 @@
     {
       "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
       "mainLanguage": "nl",
-      "name": {
-        "nl": "Nederlandse tekst",
-        "fr": "Texte français",
-        "de": "Deutscher Text",
-        "en": "English text"
-      },
+      "name": "Nederlandse naam",
       "address": {
         "addressCountry": "BE",
         "addressLocality": "Brussel",
@@ -53,7 +48,9 @@
       "description": "The unique url of the organizer."
     },
     "name": {
-      "$ref": "./organizer-name.json"
+      "type": "string",
+      "description": "The name of the organizer",
+      "minLength": 1
     },
     "address": {
       "type": "object",
