@@ -101,6 +101,7 @@
     }
   },
   "required": [
+    "mainLanguage",
     "website",
     "name"
   ]
