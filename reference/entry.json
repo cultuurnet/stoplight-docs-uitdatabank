@@ -2698,6 +2698,110 @@
         ]
       }
     },
+    "/organizers": {
+      "post": {
+        "summary": "Create organizer",
+        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the unique website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url",
+        "operationId": "post-organizer",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "201": {
+            "description": "The organizer contact point has been created successfully with the returned id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "organizerId": {
+                      "type": "string",
+                      "description": "The id of newly created organizer."
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The url of the JSON-LD data of the newly created organizer."
+                    }
+                  },
+                  "required": [
+                    "organizerId",
+                    "url"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-post.json"
+              },
+              "examples": {
+                "Create organizer with all possible properties": {
+                  "value": {
+                    "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+                    "mainLanguage": "nl",
+                    "name": "Nederlandse naam",
+                    "address": {
+                      "addressCountry": "BE",
+                      "addressLocality": "Brussel",
+                      "postalCode": "1000",
+                      "streetAddress": "Wetstraat 1"
+                    },
+                    "contactPoint": {
+                      "phone": [
+                        "+32/1234567890"
+                      ],
+                      "email": [
+                        "info@publiq.be"
+                      ],
+                      "url": [
+                        "https://www.publiq.be"
+                      ]
+                    },
+                    "labels": [
+                      "label1",
+                      "label2"
+                    ],
+                    "hiddenLabels": [
+                      "labelA",
+                      "labelB"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/organizers/{organizerId}": {
       "parameters": [
         {
