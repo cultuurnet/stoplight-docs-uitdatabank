@@ -1,0 +1,113 @@
+{
+  "title": "organizer-post",
+  "type": "object",
+  "description": "",
+  "examples": [
+    {
+      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+      "mainLanguage": "nl",
+      "name": {
+        "nl": "Nederlandse tekst",
+        "fr": "Texte français",
+        "de": "Deutscher Text",
+        "en": "English text"
+      },
+      "address": {
+        "addressCountry": "BE",
+        "addressLocality": "Brussel",
+        "postalCode": "1000",
+        "streetAddress": "Wetstraat 1"
+      },
+      "contactPoint": {
+        "phone": [
+          "+32/1234567890"
+        ],
+        "email": [
+          "info@publiq.be"
+        ],
+        "url": [
+          "https://www.publiq.be"
+        ]
+      },
+      "labels": [
+        "label1",
+        "label2"
+      ],
+      "hiddenLabels": [
+        "labelA",
+        "labelB"
+      ]
+    }
+  ],
+  "properties": {
+    "@id": {
+      "$ref": "./organizer-@id.json"
+    },
+    "mainLanguage": {
+      "$ref": "./organizer-mainLanguage.json"
+    },
+    "website": {
+      "type": "string",
+      "example": "https://www.publiq.be/",
+      "pattern": "^http[s]?:\\/\\/",
+      "description": "The unique url of the organizer."
+    },
+    "name": {
+      "$ref": "./organizer-name.json"
+    },
+    "address": {
+      "type": "object",
+      "description": "The address of the organization",
+      "properties": {
+        "streetAddress": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Street address in the main language, for example `Wetstraat 1` for `nl`.",
+          "example": "Wetstraat 1"
+        },
+        "postalCode": {
+          "type": "string",
+          "description": "Postal code of the municipality, for example `1000`. Formatted as a string because some international postal codes use letters.",
+          "minLength": 1,
+          "example": "1000"
+        },
+        "addressLocality": {
+          "type": "string",
+          "minLength": 1,
+          "example": "Brussel",
+          "description": "Municipality of the address in the main language, for example `Brussel` for `nl`."
+        },
+        "addressCountry": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Country code in the ISO-3166 format. For example `BE`.",
+          "maxLength": 2,
+          "pattern": "^[A-Z][A-Z]$",
+          "example": "BE"
+        }
+      },
+      "required": [
+        "streetAddress",
+        "postalCode",
+        "addressLocality",
+        "addressCountry"
+      ]
+    },
+    "workflowStatus": {
+      "$ref": "./organizer-workflowStatus.json"
+    },
+    "contactPoint": {
+      "$ref": "./organizer-contactPoint.json"
+    },
+    "labels": {
+      "$ref": "./organizer-labels.json"
+    },
+    "hiddenLabels": {
+      "$ref": "./organizer-hiddenLabels.json"
+    }
+  },
+  "required": [
+    "website",
+    "name"
+  ]
+}
