@@ -93,9 +93,6 @@
         "addressCountry"
       ]
     },
-    "workflowStatus": {
-      "$ref": "./organizer-workflowStatus.json"
-    },
     "contactPoint": {
       "$ref": "./organizer-contactPoint.json"
     },
