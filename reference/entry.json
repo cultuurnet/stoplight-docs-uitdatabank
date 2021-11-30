@@ -2776,17 +2776,20 @@
                       "postalCode": "1000",
                       "streetAddress": "Wetstraat 1"
                     },
-                    "contactPoint": {
-                      "phone": [
-                        "+32/1234567890"
-                      ],
-                      "email": [
-                        "info@publiq.be"
-                      ],
-                      "url": [
-                        "https://www.publiq.be"
-                      ]
-                    },
+                    "contact": [
+                      {
+                        "type": "phone",
+                        "value": "+32/1234567890"
+                      },
+                      {
+                        "type": "email",
+                        "value": "info@publiq.be"
+                      },
+                      {
+                        "type": "url",
+                        "value": "https://www.publiq.be"
+                      }
+                    ],
                     "labels": [
                       "label1",
                       "label2"
