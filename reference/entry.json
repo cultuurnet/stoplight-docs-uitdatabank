@@ -3698,6 +3698,9 @@
     },
     {
       "name": "Places"
+    },
+    {
+      "name": "NewsArticles"
     }
   ]
 }
