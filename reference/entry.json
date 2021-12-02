@@ -3697,6 +3697,26 @@
             }
           }
         }
+      },
+      "NewsArticleNotFound": {
+        "description": "No news article found for the given `articleId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/news-article-not-found",
+                  "title": "News article not found",
+                  "status": 404,
+                  "detail": "The news article with id \"a96bb713-45fc-421b-bc04-86cc78030859\" was not found."
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
