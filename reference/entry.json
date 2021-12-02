@@ -3770,13 +3770,13 @@
       "name": "Events"
     },
     {
+      "name": "NewsArticles"
+    },
+    {
       "name": "Organizers"
     },
     {
       "name": "Places"
-    },
-    {
-      "name": "NewsArticles"
     }
   ]
 }
