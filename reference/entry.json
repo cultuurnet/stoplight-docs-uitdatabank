@@ -3473,7 +3473,7 @@
         ]
       }
     },
-    "/news_articles/": {
+    "/news_articles": {
       "get": {
         "summary": "Get All News Article",
         "description": "Get the details of all News Article.",
