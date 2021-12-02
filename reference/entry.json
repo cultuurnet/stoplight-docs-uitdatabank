@@ -3472,6 +3472,51 @@
           }
         ]
       }
+    },
+    "/news_articles/{articleId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/articleId"
+        }
+      ],
+      "get": {
+        "summary": "Get News Article",
+        "description": "Get the details of a News Article with the given article id.",
+        "operationId": "get-news-article",
+        "tags": [
+          "NewsArticles"
+        ],
+        "responses": {
+          "200": {
+            "description": "News Article details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "headline": "API reward for publiq",
+                      "inLanguage": "nl",
+                      "text": "This year publiq won an API reward for it's innovative RESTful API",
+                      "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                      "publisher": "BILL",
+                      "publisherLogo": "https://www.bill.be/img/favicon.png",
+                      "url": "https://www.bill.be/blog/publiq-award"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NewsArticleNotFound"
+          }
+        },
+        "x-internal": true
+      }
     }
   },
   "components": {
