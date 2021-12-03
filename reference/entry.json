@@ -3568,6 +3568,20 @@
           }
         },
         "x-internal": true
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-news-article",
+        "tags": [
+          "NewsArticles"
+        ],
+        "responses": {
+          "204": {
+            "description": "The News Article with the given article id was deleted."
+          }
+        },
+        "description": "Delete a News Article with the given article id.",
+        "x-internal": true
       }
     }
   },
