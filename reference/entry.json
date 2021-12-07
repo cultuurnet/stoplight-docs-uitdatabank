@@ -3612,6 +3612,39 @@
         },
         "description": "Delete a News Article with the given article id.",
         "x-internal": true
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-news-article",
+        "responses": {
+          "200": {
+            "description": "The News Article was update successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NewsArticleNotFound"
+          }
+        },
+        "description": "Update an existing News Article",
+        "x-internal": true,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/newsArticle-post.json"
+              }
+            }
+          }
+        },
+        "tags": [
+          "NewsArticles"
+        ]
       }
     }
   },
