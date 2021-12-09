@@ -3522,7 +3522,36 @@
             }
           }
         },
-        "x-internal": true
+        "x-internal": true,
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "in": "query",
+            "name": "publisher",
+            "description": "The publisher of the News Article"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "in": "query",
+            "name": "about",
+            "description": "The id of the event this News Article is about"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^http[s]?:\\/\\/"
+            },
+            "in": "query",
+            "name": "url",
+            "description": "The url of the News Article"
+          }
+        ]
       },
       "post": {
         "summary": "",
