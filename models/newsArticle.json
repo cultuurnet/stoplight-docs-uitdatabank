@@ -55,6 +55,13 @@
     }
   },
   "required": [
-    "id"
+    "id",
+    "headline",
+    "inLanguage",
+    "text",
+    "about",
+    "publisher",
+    "publisherLogo",
+    "url"
   ]
 }

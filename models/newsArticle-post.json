@@ -48,5 +48,14 @@
       "example": "https://www.bill.be/blog/publiq-award",
       "description": "The link pointing to the published news article itself."
     }
-  }
+  },
+  "required": [
+    "headline",
+    "inLanguage",
+    "text",
+    "about",
+    "publisher",
+    "publisherLogo",
+    "url"
+  ]
 }
