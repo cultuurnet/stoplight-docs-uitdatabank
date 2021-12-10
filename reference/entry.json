@@ -3476,7 +3476,7 @@
     "/news_articles": {
       "get": {
         "summary": "Get All News Article",
-        "description": "Get the details of all News Article.",
+        "description": "Get the details of all News Article matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 News Articles.\nThe extra query parameter `page` can be used to get News Articles after the first 30 results.  ",
         "operationId": "get-all-news-article",
         "tags": [
           "NewsArticles"
@@ -3487,35 +3487,42 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../models/newsArticle.json"
+                  "type": "object",
+                  "properties": {
+                    "hydra:member": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "../models/newsArticle.json"
+                      }
+                    }
                   }
                 },
                 "examples": {
                   "Example": {
-                    "value": [
-                      {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "headline": "API reward for publiq",
-                        "inLanguage": "en",
-                        "text": "This year publiq won an API reward for it's innovative RESTful API",
-                        "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
-                        "publisher": "BILL",
-                        "publisherLogo": "https://www.bill.be/img/favicon.png",
-                        "url": "https://www.bill.be/blog/publiq-award"
-                      },
-                      {
-                        "id": "9bf7f5fa-4a0b-4475-9ebb-f776e33510f5",
-                        "headline": "madewithlove maakt een API",
-                        "inLanguage": "nl",
-                        "text": "madewithlove maakt een RESTful API in samenwerking met publiq",
-                        "about": "a359d337-4f83-4d05-9b81-b1f048ad2309",
-                        "publisher": "BUZZ",
-                        "publisherLogo": "https://www.buzz.be/img/favicon.png",
-                        "url": "https://www.buzz.be/blog/api"
-                      }
-                    ]
+                    "value": {
+                      "hydra:member": [
+                        {
+                          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                          "headline": "API reward for publiq",
+                          "inLanguage": "en",
+                          "text": "This year publiq won an API reward for it's innovative RESTful API",
+                          "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                          "publisher": "BILL",
+                          "publisherLogo": "https://www.bill.be/img/favicon.png",
+                          "url": "https://www.bill.be/blog/publiq-award"
+                        },
+                        {
+                          "id": "9bf7f5fa-4a0b-4475-9ebb-f776e33510f5",
+                          "headline": "madewithlove maakt een API",
+                          "inLanguage": "nl",
+                          "text": "madewithlove maakt een RESTful API in samenwerking met publiq",
+                          "about": "a359d337-4f83-4d05-9b81-b1f048ad2309",
+                          "publisher": "BUZZ",
+                          "publisherLogo": "https://www.buzz.be/img/favicon.png",
+                          "url": "https://www.buzz.be/blog/api"
+                        }
+                      ]
+                    }
                   }
                 }
               }
@@ -3550,6 +3557,14 @@
             "in": "query",
             "name": "url",
             "description": "The url of the News Article"
+          },
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "page",
+            "description": "The page the results should start from"
           }
         ]
       },
