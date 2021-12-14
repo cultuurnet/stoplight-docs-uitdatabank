@@ -23,6 +23,12 @@
         "de": "Deutscher Text",
         "en": "English text"
       },
+      "description": {
+        "nl": "Nederlandse beschrijving",
+        "fr": "Description français",
+        "de": "Deutscher Bezeichnung",
+        "en": "English description"
+      },
       "address": {
         "nl": {
           "addressCountry": "BE",
@@ -83,6 +89,9 @@
     },
     "name": {
       "$ref": "./organizer-name.json"
+    },
+    "description": {
+      "$ref": "./organizer-description.json"
     },
     "address": {
       "$ref": "./organizer-address.json"
