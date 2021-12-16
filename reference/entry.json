@@ -3606,7 +3606,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/organizer-images-post.json"
+                "$ref": "../models/organizer-image-post.json"
               },
               "examples": {
                 "Example": {

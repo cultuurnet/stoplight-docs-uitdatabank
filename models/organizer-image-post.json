@@ -1,5 +1,5 @@
 {
-  "title": "organizer.images.post",
+  "title": "organizer.image.post",
   "type": "object",
   "description": "Describes the request body to add an image to an [organizer](./organizer.json).",
   "examples": [],
