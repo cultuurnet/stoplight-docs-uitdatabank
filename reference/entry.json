@@ -3636,13 +3636,29 @@
         ]
       }
     },
-    "/organizers/images/{imageId}": {
+    "/organizers/{organizerId}/images/{imageId}": {
       "parameters": [
         {
-          "$ref": "#/components/parameters/organizerId"
+          "name": "organizerId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "F2D5D20C-CC98-4979-9CD2-453ABAD979B5"
+          },
+          "description": "Unique id of an organizer, in the format of a UUID"
         },
         {
-          "$ref": "#/components/parameters/imageId"
+          "name": "imageId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "365f99a4-5490-4313-8ee9-adebea2dceb0"
+          },
+          "description": "The unique uuid of an already uploaded image."
         }
       ],
       "delete": {
