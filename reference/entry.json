@@ -3671,7 +3671,7 @@
             "description": "The image was removed from the organizer."
           },
           "401": {
-            "$ref": "#/components/responses/Forbidden"
+            "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
