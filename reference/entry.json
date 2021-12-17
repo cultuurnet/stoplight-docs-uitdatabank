@@ -3636,6 +3636,46 @@
         ]
       }
     },
+    "/organizers/{organizerId}/images/{imageId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/imageId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete image",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "The image was removed from the organizer."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "operationId": "delete-organizer-image",
+        "description": "Remove an image from an organizer.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/news_articles": {
       "get": {
         "summary": "Get All News Article",
@@ -3977,6 +4017,17 @@
           "type": "string"
         },
         "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/terms.md) guide"
+      },
+      "imageId": {
+        "name": "imageId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "365f99a4-5490-4313-8ee9-adebea2dceb0"
+        },
+        "description": "The unique uuid of an already uploaded image."
       }
     },
     "responses": {
