@@ -3562,7 +3562,7 @@
       ],
       "post": {
         "summary": "Add an image",
-        "operationId": "post-organizer-video",
+        "operationId": "post-organizer-image",
         "responses": {
           "204": {
             "description": "The image was added to the organizer."
