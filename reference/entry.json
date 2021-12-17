@@ -3636,6 +3636,46 @@
         ]
       }
     },
+    "/organizers/images/{imageId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/imageId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete image",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "The image was removed from the organizer."
+          },
+          "401": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "operationId": "delete-organizer-image",
+        "description": "Remove an image from an organizer.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/news_articles": {
       "get": {
         "summary": "Get All News Article",
