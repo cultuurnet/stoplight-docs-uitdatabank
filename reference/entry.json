@@ -3977,6 +3977,17 @@
           "type": "string"
         },
         "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/terms.md) guide"
+      },
+      "imageId": {
+        "name": "imageId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "365f99a4-5490-4313-8ee9-adebea2dceb0"
+        },
+        "description": "The unique uuid of an already uploaded image."
       }
     },
     "responses": {
