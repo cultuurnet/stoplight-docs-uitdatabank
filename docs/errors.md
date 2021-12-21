@@ -16,6 +16,16 @@ Usually the `detail` of the error will contain more information about the specif
 
 Try using an event or place id with a calendar type that is supported by the operation that you are trying to perform.
 
+## incompatible-audience-type
+
+*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/incompatible-audience-type`
+*   **Title**: `Incompatible audience type`
+*   **Status**: `400`
+
+The provided audience type is incompatible. Check the `detail` of the error for more information.
+
+Most likely this is caused by updating the audience of an event that only supports `education` as audience type.
+
 ## resource-id-already-in-use
 
 *   **Complete type:** `https://api.publiq.be/probs/uitdatabank/resource-id-already-in-use`

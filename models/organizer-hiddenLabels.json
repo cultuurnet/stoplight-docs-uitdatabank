@@ -1,7 +1,7 @@
 {
   "type": "array",
-  "title": "event.hiddenLabels",
-  "description": "Same as [labels](./event-labels.json), but for labels that should not be visible for end users on publication channels and should instead only be used for filtering or other processing.",
+  "title": "organizer.hiddenLabels",
+  "description": "Same as [labels](./organizer-labels.json), but for labels that should not be visible for end users on publication channels and should instead only be used for filtering or other processing.",
   "uniqueItems": true,
   "minItems": 1,
   "examples": [

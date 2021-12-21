@@ -1,0 +1,36 @@
+{
+  "title": "organizer.name",
+  "description": "The human-readable, localized name of the [organizer](./organizer.json). \n\nRequires at least one value, for the language specified in the [mainLanguage](./organizer-mainLanguage.json) property.",
+  "type": "object",
+  "minProperties": 1,
+  "examples": [
+    {
+      "nl": "Nederlandse tekst",
+      "fr": "Texte français",
+      "de": "Deutscher Text",
+      "en": "English text"
+    }
+  ],
+  "properties": {
+    "nl": {
+      "type": "string",
+      "description": "Dutch name",
+      "example": "Nederlandse naam"
+    },
+    "fr": {
+      "type": "string",
+      "description": "French name",
+      "example": "Nom français"
+    },
+    "de": {
+      "type": "string",
+      "description": "German name",
+      "example": "Deutscher Name"
+    },
+    "en": {
+      "type": "string",
+      "description": "English name",
+      "example": "English name"
+    }
+  }
+}

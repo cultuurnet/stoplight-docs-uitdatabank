@@ -48,6 +48,36 @@
         },
         "operationId": "get-event",
         "description": "Returns the details of the event for the given `eventId`."
+      },
+      "delete": {
+        "summary": "Delete event",
+        "operationId": "delete-event",
+        "responses": {
+          "204": {
+            "description": "No Content. The event's `workflowStatus` was successfully updated to `DELETED`."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Does a soft-delete of the event. The event will continue to exist but it's `workflowStatus` will be changed to `DELETED`. This will remove it from all publication channels.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Events"
+        ]
       }
     },
     "/events/{eventId}/history": {
@@ -160,6 +190,174 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      }
+    },
+    "/events/{eventId}/audience": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update audience",
+        "operationId": "put-event-audience",
+        "responses": {
+          "204": {
+            "description": "No Content. The event's audience was successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/incompatible-audience-type",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/audienceType",
+                          "error": "The data (int) should match the type: string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the intended audience of the event, which currently only has one property `audienceType`. \n\nBy default the audienceType is set to `everyone`. If needed the audience can be updated to `members` to hide it on public channels, or `education` for CultuurKuur events for schools.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-audience.json"
+              },
+              "examples": {
+                "Everyone (default)": {
+                  "value": {
+                    "audienceType": "everyone"
+                  }
+                },
+                "Members": {
+                  "value": {
+                    "audienceType": "members"
+                  }
+                },
+                "Education (CultuurKuur)": {
+                  "value": {
+                    "audienceType": "education"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
+    "/events/{eventId}/available-from": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "put": {
+        "summary": "Update available from",
+        "operationId": "put-event-available-from",
+        "responses": {
+          "204": {
+            "description": "No Content. The event's availableFrom was successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/availableFrom",
+                          "error": "The data (int) should match the type: date-time"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Updates the availableFrom of the [event](./event.json). This is the first date & time that the event is allowed to be visible on publication channels.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event-availableFrom-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "availableFrom": "2021-05-17T22:00:00+00:00"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       }
     },
     "/events/{eventId}/booking-availability": {
@@ -905,6 +1103,43 @@
         ]
       }
     },
+    "/events/{eventId}/theme": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete theme",
+        "operationId": "delete-event-theme",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "description": "Deletes the event's current theme based on the given `eventId`.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/events/{eventId}/theme/{termId}": {
       "parameters": [
         {
@@ -1430,6 +1665,116 @@
         },
         "operationId": "get-place",
         "description": "Returns the details of the place for the given `placeId`."
+      },
+      "delete": {
+        "summary": "Delete place",
+        "operationId": "delete-place",
+        "responses": {
+          "204": {
+            "description": "No Content. The place's `workflowStatus` was successfully updated to `DELETED`."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/PlaceNotFound"
+          }
+        },
+        "description": "Does a soft-delete of the place. The place will continue to exist but it's `workflowStatus` will be changed to `DELETED`. This will remove it from all publication channels.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Places"
+        ],
+        "x-internal": false
+      }
+    },
+    "/places/{placeId}/available-from": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/placeId"
+        }
+      ],
+      "put": {
+        "summary": "Update available from",
+        "operationId": "put-place-available-from",
+        "responses": {
+          "204": {
+            "description": "No Content. The place availableFrom was successfully updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/availableFrom",
+                          "error": "The data (int) should match the type: date-time"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "tags": [
+          "Places"
+        ],
+        "description": "Updates the availableFrom of the [place](./place.json). This is the first date & time that the place is allowed to be visible on publication channels.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/place-availableFrom-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "availableFrom": "2021-05-17T22:00:00+00:00"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       }
     },
     "/places/{placeId}/history": {
@@ -2353,6 +2698,160 @@
         ]
       }
     },
+    "/organizers": {
+      "post": {
+        "summary": "Create organizer",
+        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the unique website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url",
+        "operationId": "post-organizer",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "201": {
+            "description": "The organizer contact point has been created successfully with the returned id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "organizerId": {
+                      "type": "string",
+                      "description": "The id of newly created organizer."
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The url of the JSON-LD data of the newly created organizer."
+                    }
+                  },
+                  "required": [
+                    "organizerId",
+                    "url"
+                  ]
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
+                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-post.json"
+              },
+              "examples": {
+                "Create organizer with all possible properties": {
+                  "value": {
+                    "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+                    "mainLanguage": "nl",
+                    "name": "Nederlandse naam",
+                    "website": "https://www.publiq.be",
+                    "address": {
+                      "addressCountry": "BE",
+                      "addressLocality": "Brussel",
+                      "postalCode": "1000",
+                      "streetAddress": "Wetstraat 1"
+                    },
+                    "contact": [
+                      {
+                        "type": "phone",
+                        "value": "+32/1234567890"
+                      },
+                      {
+                        "type": "email",
+                        "value": "info@publiq.be"
+                      },
+                      {
+                        "type": "url",
+                        "value": "https://www.publiq.be"
+                      }
+                    ],
+                    "labels": [
+                      "label1",
+                      "label2"
+                    ],
+                    "hiddenLabels": [
+                      "labelA",
+                      "labelB"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/organizers/{organizerId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete organizer",
+        "description": "<!-- theme: info !-->\n> Note: only users with the permissions `Organisaties beheren` can delete an organizer.\n\nDelete the organizer with the given `organizerId`.",
+        "operationId": "delete-organizer",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer was deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "x-internal": true
+      }
+    },
     "/organizers/{organizerId}/contact-point": {
       "parameters": [
         {
@@ -2395,7 +2894,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/organizer-contact-point-put.json"
+                "$ref": "../models/organizer-contactPoint-put.json"
               },
               "examples": {
                 "Update multiple values": {
@@ -2488,7 +2987,7 @@
                 "$ref": "../models/organizer-url-put.json"
               },
               "examples": {
-                "Update the url of an organizer": {
+                "Example": {
                   "value": {
                     "url": "https://www.publiq.be"
                   }
@@ -2617,6 +3116,87 @@
         ]
       }
     },
+    "/organizers/{organizerId}/description/{language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/language"
+        }
+      ],
+      "put": {
+        "summary": "Update description",
+        "description": "Updates the description of the organizer with the given `organizerId`. The new description of the request body will be set on the organizer in the given `language`. The new description needs to be at least one character long.",
+        "operationId": "put-organizer-description",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer description has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (description) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-description-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "description": "This organizer is responsible for creating cultural events for schools around Brussels."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
     "/organizers/{organizerId}/name/{language}": {
       "parameters": [
         {
@@ -2679,7 +3259,7 @@
                 "$ref": "../models/organizer-name-put.json"
               },
               "examples": {
-                "Set a new name": {
+                "Example": {
                   "value": {
                     "name": "publiq"
                   }
@@ -2696,6 +3276,198 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      }
+    },
+    "/organizers/{organizerId}/name": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "put": {
+        "summary": "Update name nl",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/name/{language}` instead.\n\nUpdates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer with default language `nl`. The new name needs to be at least one character long.",
+        "operationId": "put-organizer-name-nl",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer name has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (name) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-name-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "name": "publiq"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "deprecated": true
+      }
+    },
+    "/organizers/{organizerId}/address": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "put": {
+        "summary": "Update address nl",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/address/{language}` instead.\n\n\nUpdates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
+        "operationId": "put-organizer-address-nl",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer address has been updated successfully."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (streetAddress) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-address-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "streetAddress": "Kerkstraat 2",
+                    "postalCode": "3000",
+                    "addressLocality": "Leuven",
+                    "addressCountry": "BE"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "deprecated": true
+      },
+      "delete": {
+        "summary": "Delete address",
+        "description": "Delete the address of the organizer with the given `organizerId`.",
+        "operationId": "delete-organizer-address",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The organizer address has been deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "x-internal": true
       }
     },
     "/organizers/{organizerId}/address/{language}": {
@@ -2760,7 +3532,7 @@
                 "$ref": "../models/organizer-address-put.json"
               },
               "examples": {
-                "Update the address of an organizer": {
+                "Example": {
                   "value": {
                     "streetAddress": "Kerkstraat 2",
                     "postalCode": "3000",
@@ -2779,6 +3551,346 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
+        ]
+      }
+    },
+    "/organizers/{organizerId}/images": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        }
+      ],
+      "post": {
+        "summary": "Add an image",
+        "operationId": "post-organizer-image",
+        "responses": {
+          "204": {
+            "description": "The image was added to the organizer."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required properties url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-image-post.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "id": "546a90cd-a238-417b-aa98-1b6c50c1345c",
+                    "language": "nl",
+                    "copyrightHolder": "publiq",
+                    "description": "Picture of the last publiq event"
+                  }
+                }
+              }
+            }
+          },
+          "description": "The image to add to an organizer."
+        },
+        "description": "Add an image to an organizer.\n\nThe image objects contains the following properties:\n* `id`: the id of the image.\n* `language`: the language of the image and description.\n* `copyrightHolder`: the copyright holder of the image.\n* `description`: description of the image.\n\nAll properties are required.",
+        "tags": [
+          "Organizers"
+        ],
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/organizers/{organizerId}/images/{imageId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/organizerId"
+        },
+        {
+          "$ref": "#/components/parameters/imageId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete image",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "The image was removed from the organizer."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "operationId": "delete-organizer-image",
+        "description": "Remove an image from an organizer.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
+      }
+    },
+    "/news_articles": {
+      "get": {
+        "summary": "Get All News Article",
+        "description": "Get the details of all News Article matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 News Articles.\nThe extra query parameter `page` can be used to get News Articles after the first 30 results.  ",
+        "operationId": "get-all-news-article",
+        "tags": [
+          "NewsArticles"
+        ],
+        "responses": {
+          "200": {
+            "description": "News Articles details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hydra:member": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "../models/newsArticle.json"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "hydra:member": [
+                        {
+                          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                          "headline": "API reward for publiq",
+                          "inLanguage": "en",
+                          "text": "This year publiq won an API reward for it's innovative RESTful API",
+                          "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                          "publisher": "BILL",
+                          "publisherLogo": "https://www.bill.be/img/favicon.png",
+                          "url": "https://www.bill.be/blog/publiq-award"
+                        },
+                        {
+                          "id": "9bf7f5fa-4a0b-4475-9ebb-f776e33510f5",
+                          "headline": "madewithlove maakt een API",
+                          "inLanguage": "nl",
+                          "text": "madewithlove maakt een RESTful API in samenwerking met publiq",
+                          "about": "a359d337-4f83-4d05-9b81-b1f048ad2309",
+                          "publisher": "BUZZ",
+                          "publisherLogo": "https://www.buzz.be/img/favicon.png",
+                          "url": "https://www.buzz.be/blog/api"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-internal": true,
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "in": "query",
+            "name": "publisher",
+            "description": "The publisher of the News Article"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "in": "query",
+            "name": "about",
+            "description": "The id of the event this News Article is about"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^http[s]?:\\/\\/"
+            },
+            "in": "query",
+            "name": "url",
+            "description": "The url of the News Article"
+          },
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "page",
+            "description": "The page the results should start from"
+          }
+        ]
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-news-articles",
+        "responses": {
+          "201": {
+            "description": "The News Article was created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              }
+            }
+          }
+        },
+        "description": "Create a News Article",
+        "x-internal": true,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/newsArticle-post.json"
+              }
+            }
+          }
+        },
+        "tags": [
+          "NewsArticles"
+        ]
+      }
+    },
+    "/news_articles/{articleId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/articleId"
+        }
+      ],
+      "get": {
+        "summary": "Get News Article",
+        "description": "Get the details of a News Article with the given article id.",
+        "operationId": "get-news-article",
+        "tags": [
+          "NewsArticles"
+        ],
+        "responses": {
+          "200": {
+            "description": "News Article details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "headline": "API reward for publiq",
+                      "inLanguage": "nl",
+                      "text": "This year publiq won an API reward for it's innovative RESTful API",
+                      "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                      "publisher": "BILL",
+                      "publisherLogo": "https://www.bill.be/img/favicon.png",
+                      "url": "https://www.bill.be/blog/publiq-award"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NewsArticleNotFound"
+          }
+        },
+        "x-internal": true
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-news-article",
+        "tags": [
+          "NewsArticles"
+        ],
+        "responses": {
+          "204": {
+            "description": "The News Article with the given article id was deleted."
+          }
+        },
+        "description": "Delete a News Article with the given article id.",
+        "x-internal": true
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-news-article",
+        "responses": {
+          "200": {
+            "description": "The News Article was update successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NewsArticleNotFound"
+          }
+        },
+        "description": "Update an existing News Article",
+        "x-internal": true,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/newsArticle-post.json"
+              }
+            }
+          }
+        },
+        "tags": [
+          "NewsArticles"
         ]
       }
     }
@@ -2849,6 +3961,17 @@
         },
         "description": "Unique id of an organizer, in the format of a UUID"
       },
+      "articleId": {
+        "name": "articleId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+        },
+        "description": "Unique id of a news article, in the format of a UUID"
+      },
       "language": {
         "name": "language",
         "in": "path",
@@ -2894,6 +4017,17 @@
           "type": "string"
         },
         "description": "Unique id of a taxonomy term. Taxonomy terms are pre-defined and can be found using our [Terms](./docs/terms.md) guide"
+      },
+      "imageId": {
+        "name": "imageId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "365f99a4-5490-4313-8ee9-adebea2dceb0"
+        },
+        "description": "The unique uuid of an already uploaded image."
       }
     },
     "responses": {
@@ -2929,7 +4063,7 @@
                   "type": "https://api.publiq.be/probs/auth/forbidden",
                   "title": "Forbidden",
                   "status": 403,
-                  "detail": "user must be admin of organiser abcd1234"
+                  "detail": "user must be admin of organizer abcd1234"
                 }
               }
             }
@@ -2995,12 +4129,35 @@
             }
           }
         }
+      },
+      "NewsArticleNotFound": {
+        "description": "No news article found for the given `articleId`.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "type": "https://api.publiq.be/probs/uitdatabank/news-article-not-found",
+                  "title": "News article not found",
+                  "status": 404,
+                  "detail": "The news article with id \"a96bb713-45fc-421b-bc04-86cc78030859\" was not found."
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
   "tags": [
     {
       "name": "Events"
+    },
+    {
+      "name": "NewsArticles"
     },
     {
       "name": "Organizers"
