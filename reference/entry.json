@@ -3634,6 +3634,56 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      },
+      "patch": {
+        "summary": "",
+        "operationId": "patch-organizer-images",
+        "responses": {
+          "204": {
+            "description": "The images were updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "description": "Update one or more images of an organizer.\n\nThe images to update are identified by their id. It is possible to update one or more of the following properties:\n\n* The `language` of an image\n* The `description` of an image\n* The `copyrightHolder` of an image",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-images-patch.json"
+              }
+            }
+          },
+          "description": "A list of videos to update."
+        },
+        "tags": [
+          "Organizers"
+        ]
       }
     },
     "/organizers/{organizerId}/images/{imageId}": {
@@ -3673,46 +3723,6 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
-        ]
-      },
-      "put": {
-        "summary": "",
-        "operationId": "put-organizer-image",
-        "responses": {
-          "204": {
-            "description": "The image of the organizer was updated"
-          },
-          "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/OrganizerNotFound"
-          }
-        },
-        "description": "Update the `description` and/or `copyright` of an image of a certain organizer.",
-        "security": [
-          {
-            "USER_ACCESS_TOKEN": []
-          },
-          {
-            "CLIENT_ACCESS_TOKEN": []
-          }
-        ],
-        "tags": [
-          "Organizers"
         ]
       }
     },
