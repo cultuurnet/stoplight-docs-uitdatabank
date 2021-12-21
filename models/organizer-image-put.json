@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "title": "organizer.image.put",
+  "description": "Describes the request body to update an image of an [organizer](./organizer.json).",
+  "examples": [],
+  "minProperties": 1,
+  "maxProperties": 2,
+  "properties": {
+    "copyrightHolder": {
+      "type": "string",
+      "example": "publiq",
+      "minLength": 3,
+      "description": "The copyright holder of the image."
+    },
+    "description": {
+      "type": "string",
+      "example": "Picture of the last publiq event",
+      "minLength": 1,
+      "description": "Description of the image object, in the language used in the `language` property of the image object."
+    }
+  }
+}
