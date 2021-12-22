@@ -127,7 +127,7 @@
     "images": {
       "$ref": "./organizer-images.json"
     },
-    "image": {
+    "mainImage": {
       "type": "string",
       "format": "url",
       "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
