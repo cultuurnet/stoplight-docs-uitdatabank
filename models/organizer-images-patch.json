@@ -5,7 +5,7 @@
   "examples": [],
   "items": {
     "type": "object",
-    "minProperties": 1,
+    "minProperties": 2,
     "properties": {
       "id": {
         "type": "string",
