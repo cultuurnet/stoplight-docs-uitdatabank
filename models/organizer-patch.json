@@ -9,7 +9,7 @@
   ],
   "minProperties": 1,
   "properties": {
-    "mainImage": {
+    "mainImageId": {
       "type": "string",
       "format": "uuid",
       "example": "4b349765-9499-4d35-b295-c82ede576cf0",
