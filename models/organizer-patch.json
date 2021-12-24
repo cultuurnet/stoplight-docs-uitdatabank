@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "organizer-patch",
+  "description": "",
+  "examples": [
+    {
+      "mainImage": "4b349765-9499-4d35-b295-c82ede576cf0"
+    }
+  ],
+  "minProperties": 1,
+  "properties": {
+    "mainImageId": {
+      "type": "string",
+      "format": "uuid",
+      "example": "4b349765-9499-4d35-b295-c82ede576cf0",
+      "description": "The id of the image to set as main image on the organizer."
+    }
+  }
+}

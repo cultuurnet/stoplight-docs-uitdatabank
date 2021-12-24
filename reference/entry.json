@@ -2850,6 +2850,63 @@
           }
         ],
         "x-internal": true
+      },
+      "patch": {
+        "summary": "Patch organizer",
+        "operationId": "patch-organizer",
+        "responses": {
+          "204": {
+            "description": "The organizer was updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "description": "Update one or more properties of an organizer. For now only the `mainImage` property is supported.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-patch.json"
+              },
+              "examples": {
+                "Update the main image": {
+                  "value": {
+                    "mainImage": "4b349765-9499-4d35-b295-c82ede576cf0"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Organizers"
+        ]
       }
     },
     "/organizers/{organizerId}/contact-point": {
