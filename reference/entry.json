@@ -3678,9 +3678,9 @@
     },
     "/news_articles": {
       "get": {
-        "summary": "Get All News Article",
-        "description": "Get the details of all News Article matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 News Articles.\nThe extra query parameter `page` can be used to get News Articles after the first 30 results.  ",
-        "operationId": "get-all-news-article",
+        "summary": "Get all news articles",
+        "description": "Returns the details of all news articles matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 news articles.\n\nThe extra query parameter `page` can be used to get news articles after the first 30 results.  ",
+        "operationId": "get-all-news-articles",
         "tags": [
           "NewsArticles"
         ],
