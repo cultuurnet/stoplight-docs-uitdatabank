@@ -3809,8 +3809,8 @@
         }
       ],
       "get": {
-        "summary": "Get News Article",
-        "description": "Get the details of a News Article with the given article id.",
+        "summary": "Get news article",
+        "description": "Returns the details of a news article with the given article id.",
         "operationId": "get-news-article",
         "tags": [
           "NewsArticles"
