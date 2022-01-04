@@ -3861,7 +3861,7 @@
         "x-internal": true
       },
       "put": {
-        "summary": "",
+        "summary": "Update news article",
         "operationId": "put-news-article",
         "responses": {
           "200": {
@@ -3878,7 +3878,7 @@
             "$ref": "#/components/responses/NewsArticleNotFound"
           }
         },
-        "description": "Update an existing News Article",
+        "description": "Updates an existing news article.",
         "x-internal": true,
         "requestBody": {
           "content": {
