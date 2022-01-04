@@ -3809,7 +3809,7 @@
         }
       ],
       "get": {
-        "summary": "Get news article",
+        "summary": "Get a news article",
         "description": "Returns the details of a news article with the given article id.",
         "operationId": "get-news-article",
         "responses": {
@@ -3861,7 +3861,7 @@
         ]
       },
       "put": {
-        "summary": "Update news article",
+        "summary": "Update a news article",
         "operationId": "put-news-article",
         "responses": {
           "200": {
