@@ -3768,7 +3768,7 @@
           }
         ],
         "tags": [
-          "News Articles"
+          "News articles"
         ]
       },
       "post": {
@@ -3798,7 +3798,7 @@
           }
         },
         "tags": [
-          "News Articles"
+          "News articles"
         ]
       }
     },
@@ -3843,7 +3843,7 @@
         },
         "x-internal": true,
         "tags": [
-          "News Articles"
+          "News articles"
         ]
       },
       "delete": {
@@ -3857,7 +3857,7 @@
         "description": "Delete a news article with the given article id.",
         "x-internal": true,
         "tags": [
-          "News Articles"
+          "News articles"
         ]
       },
       "put": {
@@ -3890,7 +3890,7 @@
           }
         },
         "tags": [
-          "News Articles"
+          "News articles"
         ]
       }
     }
