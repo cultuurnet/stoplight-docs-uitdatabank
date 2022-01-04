@@ -3772,8 +3772,8 @@
         ]
       },
       "post": {
-        "summary": "",
-        "operationId": "post-news-articles",
+        "summary": "Add a news article",
+        "operationId": "add-news-article",
         "responses": {
           "201": {
             "description": "The News Article was created successfully",
@@ -3786,7 +3786,7 @@
             }
           }
         },
-        "description": "Create a News Article",
+        "description": "Creates a news article.",
         "x-internal": true,
         "requestBody": {
           "content": {
