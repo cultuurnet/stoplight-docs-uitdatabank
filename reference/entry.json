@@ -3681,9 +3681,6 @@
         "summary": "Get all news articles",
         "description": "Returns the details of all news articles matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 news articles.\n\nThe extra query parameter `page` can be used to get news articles after the first 30 results.  ",
         "operationId": "get-all-news-articles",
-        "tags": [
-          "NewsArticles"
-        ],
         "responses": {
           "200": {
             "description": "News Articles details",
@@ -3769,6 +3766,9 @@
             "name": "page",
             "description": "The page the results should start from"
           }
+        ],
+        "tags": [
+          "News Articles"
         ]
       },
       "post": {
@@ -3798,7 +3798,7 @@
           }
         },
         "tags": [
-          "NewsArticles"
+          "News Articles"
         ]
       }
     },
@@ -3812,9 +3812,6 @@
         "summary": "Get news article",
         "description": "Returns the details of a news article with the given article id.",
         "operationId": "get-news-article",
-        "tags": [
-          "NewsArticles"
-        ],
         "responses": {
           "200": {
             "description": "News Article details",
@@ -3844,21 +3841,24 @@
             "$ref": "#/components/responses/NewsArticleNotFound"
           }
         },
-        "x-internal": true
+        "x-internal": true,
+        "tags": [
+          "News Articles"
+        ]
       },
       "delete": {
         "summary": "Delete a news article",
         "operationId": "delete-news-article",
-        "tags": [
-          "NewsArticles"
-        ],
         "responses": {
           "204": {
             "description": "The News Article with the given article id was deleted."
           }
         },
         "description": "Delete a news article with the given article id.",
-        "x-internal": true
+        "x-internal": true,
+        "tags": [
+          "News Articles"
+        ]
       },
       "put": {
         "summary": "Update news article",
@@ -3890,7 +3890,7 @@
           }
         },
         "tags": [
-          "NewsArticles"
+          "News Articles"
         ]
       }
     }
@@ -4157,7 +4157,7 @@
       "name": "Events"
     },
     {
-      "name": "NewsArticles"
+      "name": "News Articles"
     },
     {
       "name": "Organizers"
