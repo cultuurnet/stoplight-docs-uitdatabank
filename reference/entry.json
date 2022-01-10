@@ -3783,7 +3783,7 @@
         ]
       }
     },
-    "/news_articles": {
+    "/news-articles": {
       "get": {
         "summary": "Get all news articles",
         "description": "Returns the details of all news articles matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 news articles.\n\nThe extra query parameter `page` can be used to get news articles after the first 30 results.  ",
@@ -3909,7 +3909,7 @@
         ]
       }
     },
-    "/news_articles/{articleId}": {
+    "/news-articles/{articleId}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/articleId"
