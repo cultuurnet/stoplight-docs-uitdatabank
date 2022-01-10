@@ -3678,12 +3678,9 @@
     },
     "/news_articles": {
       "get": {
-        "summary": "Get All News Article",
-        "description": "Get the details of all News Article matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 News Articles.\nThe extra query parameter `page` can be used to get News Articles after the first 30 results.  ",
-        "operationId": "get-all-news-article",
-        "tags": [
-          "NewsArticles"
-        ],
+        "summary": "Get all news articles",
+        "description": "Returns the details of all news articles matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 news articles.\n\nThe extra query parameter `page` can be used to get news articles after the first 30 results.  ",
+        "operationId": "get-all-news-articles",
         "responses": {
           "200": {
             "description": "News Articles details",
@@ -3769,11 +3766,14 @@
             "name": "page",
             "description": "The page the results should start from"
           }
+        ],
+        "tags": [
+          "News articles"
         ]
       },
       "post": {
-        "summary": "",
-        "operationId": "post-news-articles",
+        "summary": "Add a news article",
+        "operationId": "add-news-article",
         "responses": {
           "201": {
             "description": "The News Article was created successfully",
@@ -3786,7 +3786,7 @@
             }
           }
         },
-        "description": "Create a News Article",
+        "description": "Creates a news article.",
         "x-internal": true,
         "requestBody": {
           "content": {
@@ -3798,7 +3798,7 @@
           }
         },
         "tags": [
-          "NewsArticles"
+          "News articles"
         ]
       }
     },
@@ -3809,12 +3809,9 @@
         }
       ],
       "get": {
-        "summary": "Get News Article",
-        "description": "Get the details of a News Article with the given article id.",
+        "summary": "Get a news article",
+        "description": "Returns the details of a news article with the given article id.",
         "operationId": "get-news-article",
-        "tags": [
-          "NewsArticles"
-        ],
         "responses": {
           "200": {
             "description": "News Article details",
@@ -3844,24 +3841,27 @@
             "$ref": "#/components/responses/NewsArticleNotFound"
           }
         },
-        "x-internal": true
+        "x-internal": true,
+        "tags": [
+          "News articles"
+        ]
       },
       "delete": {
-        "summary": "",
+        "summary": "Delete a news article",
         "operationId": "delete-news-article",
-        "tags": [
-          "NewsArticles"
-        ],
         "responses": {
           "204": {
             "description": "The News Article with the given article id was deleted."
           }
         },
-        "description": "Delete a News Article with the given article id.",
-        "x-internal": true
+        "description": "Delete a news article with the given article id.",
+        "x-internal": true,
+        "tags": [
+          "News articles"
+        ]
       },
       "put": {
-        "summary": "",
+        "summary": "Update a news article",
         "operationId": "put-news-article",
         "responses": {
           "200": {
@@ -3878,7 +3878,7 @@
             "$ref": "#/components/responses/NewsArticleNotFound"
           }
         },
-        "description": "Update an existing News Article",
+        "description": "Updates an existing news article.",
         "x-internal": true,
         "requestBody": {
           "content": {
@@ -3890,7 +3890,7 @@
           }
         },
         "tags": [
-          "NewsArticles"
+          "News articles"
         ]
       }
     }
@@ -4157,7 +4157,7 @@
       "name": "Events"
     },
     {
-      "name": "NewsArticles"
+      "name": "News articles"
     },
     {
       "name": "Organizers"
