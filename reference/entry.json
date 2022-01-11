@@ -3803,7 +3803,7 @@
         ]
       },
       "patch": {
-        "summary": "",
+        "summary": "Update image(s)",
         "operationId": "patch-organizer-images",
         "responses": {
           "204": {
@@ -3829,7 +3829,7 @@
             "$ref": "#/components/responses/OrganizerNotFound"
           }
         },
-        "description": "Update one or more images of an organizer.\n\nThe images to update are identified by their id. It is possible to update one or more of the following properties:\n\n* The `language` of an image\n* The `description` of an image\n* The `copyrightHolder` of an image",
+        "description": "Update one or more images of an organizer.\n\nThe images to update are identified by their `id`. It is possible to update one or more of the following properties:\n\n* The `language` of an image\n* The `description` of an image\n* The `copyrightHolder` of an image\n\nOnly images included in the `PATCH` request will be updated. Other images that also exist on the organizer will not be removed or updated.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -3846,7 +3846,7 @@
               }
             }
           },
-          "description": "A list of videos to update."
+          "description": ""
         },
         "tags": [
           "Organizers"
