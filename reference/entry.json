@@ -3693,7 +3693,7 @@
         ]
       },
       "patch": {
-        "summary": "",
+        "summary": "Update image(s)",
         "operationId": "patch-organizer-images",
         "responses": {
           "204": {
