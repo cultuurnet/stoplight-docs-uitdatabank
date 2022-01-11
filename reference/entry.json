@@ -3736,7 +3736,7 @@
               }
             }
           },
-          "description": "A list of videos to update."
+          "description": ""
         },
         "tags": [
           "Organizers"
