@@ -4029,6 +4029,11 @@
           "201": {
             "description": "The News Article was created successfully",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
