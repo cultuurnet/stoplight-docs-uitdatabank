@@ -4140,6 +4140,11 @@
           "200": {
             "description": "The News Article was update successfully.",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
