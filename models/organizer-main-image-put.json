@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "title": "organizer-main-image-update",
+  "title": "organizer-main-image-put",
   "description": "",
   "examples": [
     {
