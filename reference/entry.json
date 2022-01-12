@@ -3929,7 +3929,7 @@
           "200": {
             "description": "News Articles details",
             "content": {
-              "application/json": {
+              "application/ld+json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -3967,6 +3967,40 @@
                         }
                       ]
                     }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../models/newsArticle.json"
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": [
+                      {
+                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                        "headline": "API reward for publiq",
+                        "inLanguage": "en",
+                        "text": "This year publiq won an API reward for it's innovative RESTful API",
+                        "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                        "publisher": "BILL",
+                        "publisherLogo": "https://www.bill.be/img/favicon.png",
+                        "url": "https://www.bill.be/blog/publiq-award"
+                      },
+                      {
+                        "id": "9bf7f5fa-4a0b-4475-9ebb-f776e33510f5",
+                        "headline": "madewithlove maakt een API",
+                        "inLanguage": "nl",
+                        "text": "madewithlove maakt een RESTful API in samenwerking met publiq",
+                        "about": "a359d337-4f83-4d05-9b81-b1f048ad2309",
+                        "publisher": "BUZZ",
+                        "publisherLogo": "https://www.buzz.be/img/favicon.png",
+                        "url": "https://www.buzz.be/blog/api"
+                      }
+                    ]
                   }
                 }
               }
@@ -4022,6 +4056,11 @@
           "201": {
             "description": "The News Article was created successfully",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
@@ -4060,6 +4099,25 @@
           "200": {
             "description": "News Article details",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "headline": "API reward for publiq",
+                      "inLanguage": "nl",
+                      "text": "This year publiq won an API reward for it's innovative RESTful API",
+                      "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                      "publisher": "BILL",
+                      "publisherLogo": "https://www.bill.be/img/favicon.png",
+                      "url": "https://www.bill.be/blog/publiq-award"
+                    }
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
@@ -4067,6 +4125,9 @@
                 "examples": {
                   "Example": {
                     "value": {
+                      "@context": "/contexts/NewsArticle",
+                      "@id": "/news-articles/497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "@type": "https://schema.org/NewsArticle",
                       "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
                       "headline": "API reward for publiq",
                       "inLanguage": "nl",
@@ -4111,6 +4172,11 @@
           "200": {
             "description": "The News Article was update successfully.",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
