@@ -3732,7 +3732,7 @@
           },
           "description": "The image to add to an organizer."
         },
-        "description": "Add an image to an organizer.\n\nThe image objects contains the following properties:\n* `id`: the id of the image.\n* `language`: the language of the image and description.\n* `copyrightHolder`: the copyright holder of the image.\n* `description`: description of the image.\n\nAll properties are required.",
+        "description": "Add an image to an organizer.\n\nThe image objects contains the following properties:\n* `id`: the id of the image which is required\n* `language`: an optional language of the image and description\n* `copyrightHolder`: the optional copyright holder of the image\n* `description`: the description of the image which is also optional",
         "tags": [
           "Organizers"
         ],
