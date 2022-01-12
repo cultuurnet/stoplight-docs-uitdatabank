@@ -1,19 +1,22 @@
 {
   "type": "object",
-  "title": "organizer-patch",
+  "title": "organizer-main-image-put",
   "description": "",
   "examples": [
     {
-      "mainImage": "4b349765-9499-4d35-b295-c82ede576cf0"
+      "imageId": "4b349765-9499-4d35-b295-c82ede576cf0"
     }
   ],
-  "minProperties": 1,
+  "additionalProperties": false,
   "properties": {
-    "mainImageId": {
+    "imageId": {
       "type": "string",
       "format": "uuid",
       "example": "4b349765-9499-4d35-b295-c82ede576cf0",
       "description": "The id of the image to set as main image on the organizer."
     }
-  }
+  },
+  "required": [
+    "imageId"
+  ]
 }
