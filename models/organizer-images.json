@@ -7,6 +7,7 @@
     [
       {
         "@id": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+        "id": "546a90cd-a238-417b-aa98-1b6c50c1345c",
         "contentUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
         "thumbnailUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
         "description": "Een voorbeeld beschrijving",
@@ -27,6 +28,12 @@
           "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c"
         ],
         "readOnly": true
+      },
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "The UUID of the image.",
+        "example": "546a90cd-a238-417b-aa98-1b6c50c1345c"
       },
       "contentUrl": {
         "type": "string",
@@ -64,6 +71,7 @@
     },
     "required": [
       "@id",
+      "id",
       "contentUrl",
       "thumbnailUrl",
       "description",
