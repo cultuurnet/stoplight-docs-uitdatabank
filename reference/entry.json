@@ -4067,9 +4067,34 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required property url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
-        "description": "Creates a news article.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles`. However the preferred path is `/news-articles`.",
+        "description": "Creates a news article.\n\n<!-- theme: warning -->\n\n> If a news article with the same `url` and `about` already exists, this request will result in a `400` error response to prevent duplicates. If you want to update the existing news article instead, find it programmatically using `GET /news-articles` with `url` and `about` query parameters, and send a `PUT /news-articles/{articleId}` request instead.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles`. However the preferred path is `/news-articles`.",
         "x-internal": true,
         "requestBody": {
           "content": {
@@ -4180,6 +4205,31 @@
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required property url is missing."
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
