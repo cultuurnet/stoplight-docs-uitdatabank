@@ -11,11 +11,11 @@
   },
   "servers": [
     {
-      "url": "http://io-test.uitdatabank.be",
+      "url": "https://io-test.uitdatabank.be",
       "description": "Testing"
     },
     {
-      "url": "http://io.uitdatabank.be",
+      "url": "https://io.uitdatabank.be",
       "description": "Production"
     }
   ],
