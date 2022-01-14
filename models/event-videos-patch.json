@@ -1,0 +1,45 @@
+{
+  "title": "event.videos.patch",
+  "type": "array",
+  "description": "Describes the request body to update one or more videos on an event.",
+  "examples": [],
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "example": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
+        "description": "The id of the video to update.",
+        "readOnly": true
+      },
+      "url": {
+        "type": "string",
+        "format": "url",
+        "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
+        "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
+        "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*))|(youtu\\.be\\/([^\\/#&?]*)))"
+      },
+      "language": {
+        "type": "string",
+        "example": "nl",
+        "enum": [
+          "nl",
+          "fr",
+          "de",
+          "en"
+        ],
+        "description": "The language of the video.\nCan be one of `nl`, `fr`, `de`, or `en`."
+      },
+      "copyrightHolder": {
+        "type": "string",
+        "example": "publiq",
+        "minLength": 3,
+        "description": "The copyright holder of the video source."
+      }
+    },
+    "required": [
+      "id"
+    ]
+  }
+}

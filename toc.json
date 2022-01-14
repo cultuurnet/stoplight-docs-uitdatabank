@@ -162,6 +162,11 @@
             },
             {
               "type": "item",
+              "title": "videos",
+              "uri": "models/event-videos.json"
+            },
+            {
+              "type": "item",
               "title": "creator",
               "uri": "models/event-creator.json"
             },
@@ -331,6 +336,11 @@
               "type": "item",
               "title": "image",
               "uri": "models/place-image.json"
+            },
+            {
+              "type": "item",
+              "title": "videos",
+              "uri": "models/place-videos.json"
             },
             {
               "type": "item",

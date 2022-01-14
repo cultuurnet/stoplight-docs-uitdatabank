@@ -1,0 +1,21 @@
+{
+  "type": "array",
+  "title": "organizer.labels",
+  "description": "One or more labels that categorize the [organizer](./organizer.json). Labels do not have a defined set of possible values or a hierarchy.\n\nLabels are allowed to be visible for end users on publication channels.\n\nSee [hiddenLabels](./organizer-hiddenLabels.json) for labels that should not be visible on publication channels.",
+  "uniqueItems": true,
+  "minItems": 1,
+  "examples": [
+    [
+      "label1",
+      "label2",
+      "label3"
+    ]
+  ],
+  "items": {
+    "type": "string",
+    "minLength": 2,
+    "maxLength": 50,
+    "pattern": "^[A-Za-z0-9-_]+",
+    "example": "label1"
+  }
+}
