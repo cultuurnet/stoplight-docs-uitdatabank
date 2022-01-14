@@ -3306,6 +3306,36 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-organizer-description",
+        "responses": {
+          "204": {
+            "description": "No Content. The description was deleted."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "tags": [
+          "Organizers"
+        ],
+        "description": "Deletes the description in the given `language` from the organizer with the given `organizerId`.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
       }
     },
     "/organizers/{organizerId}/name/{language}": {
