@@ -3314,6 +3314,9 @@
           "204": {
             "description": "No Content. The description was deleted."
           },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
