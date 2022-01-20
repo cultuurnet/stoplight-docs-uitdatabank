@@ -1416,6 +1416,225 @@
         ]
       }
     },
+    "/events/{eventId}/copies": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "post": {
+        "summary": "Copy an event",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "201": {
+            "description": "The event was copied successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "eventId": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "eventId": "83a12220-9459-4fc8-b1ed-71b3d1668e65",
+                      "url": "https://io.uitdatabank.be/events/83a12220-9459-4fc8-b1ed-71b3d1668e65"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (subEvent) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "copy-event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "../models/event-calendar-put.json"
+                  },
+                  {
+                    "$ref": "../models/event-calendar-put-deprecated.json"
+                  }
+                ]
+              },
+              "examples": {
+                "single": {
+                  "value": {
+                    "calendarType": "single",
+                    "subEvent": [
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "multiple": {
+                  "value": {
+                    "calendarType": "multiple",
+                    "subEvent": [
+                      {
+                        "startDate": "2020-05-17T22:00:00+00:00",
+                        "endDate": "2020-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Unavailable",
+                          "reason": {
+                            "nl": "Geannuleerd wegens COVID-19",
+                            "en": "Cancelled due to COVID-19"
+                          }
+                        },
+                        "bookingAvailability": {
+                          "type": "Unavailable"
+                        }
+                      },
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "periodic": {
+                  "value": {
+                    "calendarType": "periodic",
+                    "startDate": "2021-05-17T22:00:00+00:00",
+                    "endDate": "2021-05-17T22:00:00+00:00",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                },
+                "permanent": {
+                  "value": {
+                    "calendarType": "permanent",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "New calendar information for the event copy."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "description": "Creates a new event based on all the properties of an existing event with the given `eventId`. Only the calendar information will be completely replaced with a new one, which has to be included in the request body.\n\nThe schema of the request body is the same as the one for the `PUT /events/{eventId}/calendar` endpoint.",
+        "x-internal": true
+      }
+    },
     "/events/{eventId}/major-info": {
       "parameters": [
         {
