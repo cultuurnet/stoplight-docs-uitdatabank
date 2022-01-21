@@ -829,7 +829,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](../models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
+        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](/models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](/docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
