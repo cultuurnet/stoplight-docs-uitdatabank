@@ -332,7 +332,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the availableFrom of the [event](./event.json). This is the first date & time that the event is allowed to be visible on publication channels.",
+        "description": "Updates the availableFrom of the event. This is the first date & time that the event is allowed to be visible on publication channels.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
