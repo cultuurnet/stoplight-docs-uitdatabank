@@ -3273,7 +3273,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content. The organizer url has been updated successfully."
+            "description": "No Content. The organizer website has been updated successfully."
           },
           "400": {
             "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-website",
