@@ -180,7 +180,7 @@
           }
         },
         "operationId": "get-event-history",
-        "description": "Returns the history log of the event for the given `eventId`.\n\nThe history log is an array of objects that contain info about each individual update to the event, who did the update, using what API, etc.\n\nBecause this history log can contain API keys which are secret (deprecated but still usable for backward compatibility), it can only be accessed by users that are a \"god user\".\n\nBecause of this limitation, the endpoint is also documented as internal and not visible in the public docs.",
+        "description": "Returns the history log of the event for the given `eventId`.\n\nThe history log is an array of objects that contain info about each individual update to the event, who did the update, using what API, etc.\n\nBecause this history log can contain API keys which are secret (deprecated but still usable for backward compatibility), it can only be accessed by users that are a \"god user\".\n\nBecause of this limitation, the endpoint is also documented as internal and not visible in the public docs.\n\n[Test link to other endpoint](/entry.json/paths/~1events~1{eventId}/get)",
         "x-internal": true,
         "security": [
           {
@@ -4273,7 +4273,7 @@
             "scopes": {}
           }
         },
-        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/user-access-token.md)"
+        "description": "A user access token, obtained by redirecting the end user to publiq's authorization server to login. See the [authentication docs about user access tokens](https://publiq.stoplight.io/docs/authentication/docs/user-access-token.md) for more info."
       },
       "CLIENT_ACCESS_TOKEN": {
         "type": "oauth2",
@@ -4284,7 +4284,7 @@
             "scopes": {}
           }
         },
-        "description": "See [Authentication docs](https://publiq.stoplight.io/docs/authentication/docs/client-access-token.md)"
+        "description": "A client access token, obtained by exchanging your client id and client secret for a token via an HTTP request to publiq's authorization server. See the [authentication docs about client access tokens](https://publiq.stoplight.io/docs/authentication/docs/client-access-token.md) for more info."
       }
     },
     "parameters": {
