@@ -2920,7 +2920,7 @@
     "/organizers": {
       "post": {
         "summary": "Create organizer",
-        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the unique website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url",
+        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the _unique_ website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url\n\n<!-- theme: info -->\n\n> Organizers are required to have a unique `website` value to avoid accidental duplicate organizers.",
         "operationId": "post-organizer",
         "tags": [
           "Organizers"
