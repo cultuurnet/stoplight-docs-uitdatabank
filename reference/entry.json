@@ -3265,8 +3265,8 @@
         }
       ],
       "put": {
-        "summary": "Update url",
-        "description": "Updates the url of the organizer with the given `organizerId`. The provided url can not be in use on another organizer.",
+        "summary": "Update url (deprecated)",
+        "description": "Updates the `website` of the organizer with the given `organizerId`. The provided website can not be in use on another organizer.\n\n<!-- theme: warning -->\n\n> This endpoint is deprecated in favor of [`PUT /organizers/{organizerId}/website`](reference/entry.json/paths/~1organizers~1{organizerId}~1website/put).",
         "operationId": "put-organizer-url",
         "tags": [
           "Organizers"
@@ -3333,7 +3333,8 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
-        ]
+        ],
+        "deprecated": true
       }
     },
     "/organizers/{organizerId}/labels/{labelName}": {

@@ -5,7 +5,7 @@
     "url": {
       "type": "string",
       "example": "https://www.publiq.be",
-      "description": "The unique url of the organizer.",
+      "description": "The unique url of the organizer's website.",
       "pattern": "^http[s]?:\\/\\/"
     }
   },
