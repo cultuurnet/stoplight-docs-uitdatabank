@@ -46,4 +46,4 @@ To avoid having duplicate organizers in UiTdatabank, every organizer needs to ha
 
 To check if an existing organizer already exists for a specific URL, use the `GET /organizers` endpoint with the `website` query parameter.
 
-This error can also be returned for other resources with an `url` property in the future.
+This error type may also be used by other resources in the future if necessary.
