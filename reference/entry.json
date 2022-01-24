@@ -3527,7 +3527,7 @@
         ]
       },
       "delete": {
-        "summary": "",
+        "summary": "Remove description",
         "operationId": "delete-organizer-description",
         "responses": {
           "204": {
