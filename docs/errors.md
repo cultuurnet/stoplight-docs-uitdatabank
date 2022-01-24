@@ -44,6 +44,6 @@ Try creating the new resource with another unique resource id.
 
 To avoid having duplicate organizers in UiTdatabank, every organizer needs to have a unique URL as website. This uniqueness is enforced on the URL of the organizer's website because it is the most likely part of the organizer's data that is unique. Some organizers actually have the same name or are located on the same address, so we cannot enforce uniqueness on those properties.
 
-To check if an existing organizer already exists for a specific URL, use the `GET /organizers` endpoint with the `url` query parameter.
+To check if an existing organizer already exists for a specific URL, use the `GET /organizers` endpoint with the `website` query parameter.
 
 This error can also be returned for other resources with an `url` property in the future.
