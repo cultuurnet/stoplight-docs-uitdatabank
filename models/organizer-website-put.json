@@ -1,0 +1,15 @@
+{
+  "title": "organizer-website-put",
+  "type": "object",
+  "properties": {
+    "website": {
+      "type": "string",
+      "example": "https://www.publiq.be",
+      "description": "The unique url of the organizer's website.",
+      "pattern": "^http[s]?:\\/\\/"
+    }
+  },
+  "required": [
+    "website"
+  ]
+}
