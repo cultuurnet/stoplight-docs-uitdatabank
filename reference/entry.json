@@ -332,7 +332,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the availableFrom of the [event](./event.json). This is the first date & time that the event is allowed to be visible on publication channels.",
+        "description": "Updates the availableFrom of the event. This is the first date & time that the event is allowed to be visible on publication channels.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -829,7 +829,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](../models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
+        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](/models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](/docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1092,7 +1092,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](/docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1189,7 +1189,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the event's theme (examples of themes are `Audiovisuele kunst`, `Moderne dans`, `Actie en avontuur`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `theme` domain can be used as theme.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `theme` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the event's theme (examples of themes are `Audiovisuele kunst`, `Moderne dans`, `Actie en avontuur`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](/docs/terms.md) guide. Only terms from the `theme` domain can be used as theme.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `theme` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1631,7 +1631,7 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ],
-        "description": "Creates a new event based on all the properties of an existing event with the given `eventId`. Only the calendar information will be completely replaced with a new one, which has to be included in the request body.\n\nThe schema of the request body is the same as the one for the `PUT /events/{eventId}/calendar` endpoint.",
+        "description": "Creates a new event based on all the properties of an existing event with the given `eventId`. Only the calendar information will be completely replaced with a new one, which has to be included in the request body.\n\nThe schema of the request body is the same as the one for the [`PUT /events/{eventId}/calendar`](/reference/entry.json/paths/~1events~1{eventId}~1calendar/put) endpoint.",
         "x-internal": true
       }
     },
@@ -1968,7 +1968,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the availableFrom of the [place](./place.json). This is the first date & time that the place is allowed to be visible on publication channels.",
+        "description": "Updates the availableFrom of the place. This is the first date & time that the place is allowed to be visible on publication channels.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -2443,7 +2443,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the list of available (accessibility) facilities on the place. These will show up in the [place's `terms`](../models/place-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an place's facilities in UiTdatabank, even if you are the place owner. Contact an administrator for further information.",
+        "description": "Updates the list of available (accessibility) facilities on the place. These will show up in the [place's `terms`](/models/place-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](/docs/terms.md).\n\n**Note**: A special permission is required to update an place's facilities in UiTdatabank, even if you are the place owner. Contact an administrator for further information.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -2521,7 +2521,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](/docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -3649,7 +3649,7 @@
       ],
       "put": {
         "summary": "Update name nl",
-        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/name/{language}` instead.\n\nUpdates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer with default language `nl`. The new name needs to be at least one character long.",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use [`PUT /organizers/{organizerId}/name/{language}`](/reference/entry.json/paths/~1organizers~1{organizerId}~1name~1{language}/put) instead.\n\nUpdates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer with default language `nl`. The new name needs to be at least one character long.",
         "operationId": "put-organizer-name-nl",
         "tags": [
           "Organizers"
@@ -3728,7 +3728,7 @@
       ],
       "put": {
         "summary": "Update address nl",
-        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/address/{language}` instead.\n\n\nUpdates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use [`PUT /organizers/{organizerId}/address/{language}`](/reference/entry.json/paths/~1organizers~1{organizerId}~1address~1{language}/put) instead.\n\n\nUpdates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
         "operationId": "put-organizer-address-nl",
         "tags": [
           "Organizers"
@@ -4347,7 +4347,7 @@
             }
           }
         },
-        "description": "Creates a news article.\n\n<!-- theme: warning -->\n\n> If a news article with the same `url` and `about` already exists, this request will result in a `400` error response to prevent duplicates. If you want to update the existing news article instead, find it programmatically using `GET /news-articles` with `url` and `about` query parameters, and send a `PUT /news-articles/{articleId}` request instead.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles`. However the preferred path is `/news-articles`.",
+        "description": "Creates a news article.\n\n<!-- theme: warning -->\n\n> If a news article with the same `url` and `about` already exists, this request will result in a `400` error response to prevent duplicates. If you want to update the existing news article instead, find it programmatically using [`GET /news-articles`](reference/entry.json/paths/~1news-articles/get) with `url` and `about` query parameters, and send a [`PUT /news-articles/{articleId}`](/reference/entry.json/paths/~1news-articles~1{articleId}/put) request instead.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles`. However the preferred path is `/news-articles`.",
         "x-internal": true,
         "requestBody": {
           "content": {
