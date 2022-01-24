@@ -1,0 +1,23 @@
+{
+  "title": "organizer.languages",
+  "type": "array",
+  "description": "List of languages that the [organizer](./organizer.json) is available in. (Not all localizable properties may contain every language though)\n\nAdded automatically by UiTdatabank based on the languages present in localized properties.\n\nSee also [completedLanguages](./organizer-completedLanguages.json).",
+  "items": {
+    "type": "string",
+    "enum": [
+      "nl",
+      "fr",
+      "de",
+      "en"
+    ],
+    "example": "nl"
+  },
+  "examples": [
+    [
+      "nl",
+      "fr",
+      "de",
+      "en"
+    ]
+  ]
+}
