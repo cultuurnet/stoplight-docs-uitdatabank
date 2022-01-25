@@ -2920,7 +2920,7 @@
     "/organizers": {
       "post": {
         "summary": "Create organizer",
-        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the unique website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url",
+        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the _unique_ website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url\n\n<!-- theme: info -->\n\n> Organizers are required to have a unique `website` value to avoid accidental duplicate organizers.",
         "operationId": "post-organizer",
         "tags": [
           "Organizers"
@@ -2959,7 +2959,7 @@
             }
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-url",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -3096,7 +3096,7 @@
                         "nl",
                         "fr"
                       ],
-                      "website": "https://www.publiq.be",
+                      "url": "https://www.publiq.be",
                       "name": {
                         "nl": "Nederlandse tekst",
                         "fr": "Texte français",
@@ -3276,7 +3276,7 @@
             "description": "No Content. The organizer url has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-url",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -3527,7 +3527,7 @@
         ]
       },
       "delete": {
-        "summary": "",
+        "summary": "Delete description",
         "operationId": "delete-organizer-description",
         "responses": {
           "204": {
