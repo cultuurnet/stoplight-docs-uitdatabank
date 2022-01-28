@@ -87,12 +87,6 @@
     "mainLanguage": {
       "$ref": "./organizer-mainLanguage.json"
     },
-    "languages": {
-      "$ref": "./organizer-languages.json"
-    },
-    "completedLanguages": {
-      "$ref": "./organizer-completedLanguages.json"
-    },
     "url": {
       "type": "string",
       "example": "https://www.publiq.be",
@@ -107,18 +101,6 @@
     },
     "address": {
       "$ref": "./organizer-address.json"
-    },
-    "created": {
-      "$ref": "./organizer-created.json"
-    },
-    "modified": {
-      "$ref": "./organizer-modified.json"
-    },
-    "creator": {
-      "$ref": "./organizer-creator.json"
-    },
-    "workflowStatus": {
-      "$ref": "./organizer-workflowStatus.json"
     },
     "contactPoint": {
       "$ref": "./organizer-contactPoint.json"
@@ -137,6 +119,24 @@
     },
     "hiddenLabels": {
       "$ref": "./organizer-hiddenLabels.json"
+    },
+    "created": {
+      "$ref": "./organizer-created.json"
+    },
+    "workflowStatus": {
+      "$ref": "./organizer-workflowStatus.json"
+    },
+    "languages": {
+      "$ref": "./organizer-languages.json"
+    },
+    "completedLanguages": {
+      "$ref": "./organizer-completedLanguages.json"
+    },
+    "modified": {
+      "$ref": "./organizer-modified.json"
+    },
+    "creator": {
+      "$ref": "./organizer-creator.json"
     }
   },
   "required": [
