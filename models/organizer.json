@@ -97,7 +97,7 @@
       "type": "string",
       "example": "https://www.publiq.be",
       "description": "The unique website of the organizer.",
-      "pattern": "^http[s]?:\\/\\/"
+      "format": "uri"
     },
     "name": {
       "$ref": "./organizer-name.json"
