@@ -142,8 +142,6 @@
   "required": [
     "@id",
     "mainLanguage",
-    "languages",
-    "completedLanguages",
     "url",
     "name"
   ]
