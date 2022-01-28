@@ -145,14 +145,6 @@
     "languages",
     "completedLanguages",
     "url",
-    "name",
-    "address",
-    "created",
-    "modified",
-    "creator",
-    "workflowStatus",
-    "contactPoint",
-    "labels",
-    "hiddenLabels"
+    "name"
   ]
 }
