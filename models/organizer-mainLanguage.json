@@ -1,10 +1,15 @@
 {
-  "type": "string",
-  "description": "The main language that the [organizer](./organizer.json) is described in. All localized properties like [name](./organizer-name.json) will be required to have at least a value for this language.\n\nCommonly used languages are `nl`, `fr`, `de`, and `en`.",
+  "description": "The main language that the [organizer](./organizer.json) is described in. All localized properties like [name](./organizer-name.json) will be required to have at least a value for this language.\n\nCan be one of `nl`, `fr`, `de`, or `en`.",
   "title": "organizer.mainLanguage",
+  "type": "string",
+  "enum": [
+    "nl",
+    "fr",
+    "de",
+    "en"
+  ],
   "example": "nl",
   "examples": [
     "nl"
-  ],
-  "pattern": "^[a-z]{2}$"
+  ]
 }
