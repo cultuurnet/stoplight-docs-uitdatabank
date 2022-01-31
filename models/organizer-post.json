@@ -51,6 +51,7 @@
       "type": "string",
       "example": "https://www.publiq.be/",
       "pattern": "^http[s]?:\\/\\/",
+      "format": "uri",
       "description": "The unique url of the organizer."
     },
     "name": {
