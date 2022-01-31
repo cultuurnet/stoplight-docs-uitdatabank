@@ -50,7 +50,7 @@
     "website": {
       "type": "string",
       "example": "https://www.publiq.be/",
-      "format": "uri",
+      "pattern": "^http[s]?:\\/\\/",
       "description": "The unique url of the organizer."
     },
     "name": {

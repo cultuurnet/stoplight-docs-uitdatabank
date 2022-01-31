@@ -4283,7 +4283,7 @@
           {
             "schema": {
               "type": "string",
-              "format": "uri"
+              "pattern": "^http[s]?:\\/\\/"
             },
             "in": "query",
             "name": "url",

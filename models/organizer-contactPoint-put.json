@@ -30,7 +30,7 @@
       "items": {
         "type": "string",
         "format": "string",
-        "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://www.publiq.be",
         "description": "URL to a website for contact purposes."
       }
