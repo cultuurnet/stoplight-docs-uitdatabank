@@ -47,3 +47,25 @@ To avoid having duplicate organizers in UiTdatabank, every organizer needs to ha
 To check if an existing organizer already exists for a specific URL, use the `GET /organizers` endpoint with the `website` query parameter.
 
 This error type may also be used by other resources in the future if necessary.
+
+## label-not-allowed
+
+*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/label-not-allowed`
+*   **Title**: `Label not allowed`
+*   **Status**: `403`
+
+Some labels are reserved and can only be used by users or API clients with sufficient permissions.
+
+To fix this issue, do not include the label mentioned in the `label` property in the error response in your request when you retry.
+
+Example error response:
+
+```json
+{
+  "type": "https://api.publiq.be/probs/uitdatabank/label-not-allowed",
+  "title": "Label not allowed",
+  "status": 403,
+  "detail": "The label \"reserved_label_example\" is reserved and you do not have sufficient permissions to use it.",
+  "label": "reserved_label_example"
+}
+```
