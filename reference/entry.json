@@ -3000,28 +3000,29 @@
                   "value": {
                     "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
                     "mainLanguage": "nl",
-                    "name": "Nederlandse naam",
-                    "website": "https://www.publiq.be",
-                    "address": {
-                      "addressCountry": "BE",
-                      "addressLocality": "Brussel",
-                      "postalCode": "1000",
-                      "streetAddress": "Wetstraat 1"
+                    "name": {
+                      "nl": "Nederlandse naam"
                     },
-                    "contact": [
-                      {
-                        "type": "phone",
-                        "value": "+32/1234567890"
-                      },
-                      {
-                        "type": "email",
-                        "value": "info@publiq.be"
-                      },
-                      {
-                        "type": "url",
-                        "value": "https://www.publiq.be"
+                    "url": "https://www.publiq.be",
+                    "address": {
+                      "nl": {
+                        "addressCountry": "BE",
+                        "addressLocality": "Brussel",
+                        "postalCode": "1000",
+                        "streetAddress": "Wetstraat 1"
                       }
-                    ],
+                    },
+                    "contactPoint": {
+                      "phones": [
+                        "+32/1234567890"
+                      ],
+                      "emails": [
+                        "info@publiq.be"
+                      ],
+                      "urls": [
+                        "https://www.publiq.be"
+                      ]
+                    },
                     "labels": [
                       "label1",
                       "label2"
