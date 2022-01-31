@@ -8,5 +8,6 @@
   ],
   "examples": [
     "active"
-  ]
+  ],
+  "readOnly": true
 }
