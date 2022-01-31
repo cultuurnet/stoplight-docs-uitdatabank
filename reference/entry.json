@@ -3013,13 +3013,13 @@
                       }
                     },
                     "contactPoint": {
-                      "phones": [
+                      "phone": [
                         "+32/1234567890"
                       ],
-                      "emails": [
+                      "email": [
                         "info@publiq.be"
                       ],
-                      "urls": [
+                      "url": [
                         "https://www.publiq.be"
                       ]
                     },
