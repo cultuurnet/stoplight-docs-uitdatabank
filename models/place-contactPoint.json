@@ -30,6 +30,7 @@
       "items": {
         "type": "string",
         "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://www.example.com",
         "description": "URL to a website for contact purposes."
       }
