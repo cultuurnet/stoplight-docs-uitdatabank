@@ -38,13 +38,13 @@
     },
     "publisherLogo": {
       "type": "string",
-      "pattern": "^http[s]?:\\/\\/",
+      "format": "uri",
       "description": "The url pointing to the logo of the publisher of the news article.",
       "example": "https://www.bill.be/img/favicon.png"
     },
     "url": {
       "type": "string",
-      "pattern": "^http[s]?:\\/\\/",
+      "format": "uri",
       "example": "https://www.bill.be/blog/publiq-award",
       "description": "The link pointing to the published news article itself."
     }
