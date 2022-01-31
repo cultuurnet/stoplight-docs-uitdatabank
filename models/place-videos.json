@@ -60,13 +60,13 @@
       },
       "url": {
         "type": "string",
-        "format": "url",
+        "format": "uri",
         "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
         "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed."
       },
       "embedUrl": {
         "type": "string",
-        "format": "url",
+        "format": "uri",
         "example": "https://www.youtube.com/embed/cEItmb_a20D",
         "description": "The url that can be used to embed the video inside an iFrame."
       },

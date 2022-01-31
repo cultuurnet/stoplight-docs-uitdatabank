@@ -38,13 +38,13 @@
       "contentUrl": {
         "type": "string",
         "description": "URL of the image file.",
-        "format": "url",
+        "format": "uri",
         "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
       },
       "thumbnailUrl": {
         "type": "string",
         "description": "URL to a thumbnail image.",
-        "format": "url",
+        "format": "uri",
         "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
       },
       "description": {
