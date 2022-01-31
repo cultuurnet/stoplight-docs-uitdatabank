@@ -2920,22 +2920,27 @@
     "/organizers": {
       "post": {
         "summary": "Create organizer",
-        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the _unique_ website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url\n\n<!-- theme: info -->\n\n> Organizers are required to have a unique `website` value to avoid accidental duplicate organizers.",
+        "description": "Creates a new organizer.\n\n<!-- theme: info -->\n\n> Organizers are required to have a unique `url` value to avoid accidental duplicate organizers.\n\n<!-- theme: warning -->\n\n> This request is also supported with an older, deprecated schema that was used to create an organizer with just its required fields.",
         "operationId": "post-organizer",
         "tags": [
           "Organizers"
         ],
         "responses": {
           "201": {
-            "description": "The organizer contact point has been created successfully with the returned id.",
+            "description": "The organizer has been created successfully.",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "organizerId": {
+                    "id": {
                       "type": "string",
                       "description": "The id of newly created organizer."
+                    },
+                    "organizerId": {
+                      "type": "string",
+                      "description": "The id of newly created organizer. (Deprecated in favor of `id`.)",
+                      "deprecated": true
                     },
                     "url": {
                       "type": "string",
@@ -2943,6 +2948,7 @@
                     }
                   },
                   "required": [
+                    "id",
                     "organizerId",
                     "url"
                   ]
@@ -2980,7 +2986,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/organizer-post.json"
+                "anyOf": [
+                  {
+                    "$ref": "../models/organizer.json"
+                  },
+                  {
+                    "$ref": "../models/organizer-post-deprecated.json"
+                  }
+                ]
               },
               "examples": {
                 "Create organizer with all possible properties": {
