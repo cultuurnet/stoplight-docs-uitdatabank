@@ -44,7 +44,10 @@
                           "fr": "Facilités pour fauteuils roulants",
                           "de": "EInrichtung für Rollstuhlfahrer",
                           "en": "Wheelchair facilities"
-                        }
+                        },
+                        "scope": [
+                          "places"
+                        ]
                       },
                       {
                         "id": "0.50.4.0.0",
@@ -55,6 +58,9 @@
                           "de": "Konzert",
                           "en": "Concert"
                         },
+                        "scope": [
+                          "events"
+                        ],
                         "otherSuggestedTerms": [
                           {
                             "id": "1.8.3.5.0",
@@ -64,7 +70,10 @@
                               "fr": "Cabaret",
                               "de": "Schlager",
                               "en": "Cabaret music"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           },
                           {
                             "id": "1.8.3.3.0",
@@ -74,7 +83,10 @@
                               "fr": "Musique de danse",
                               "de": "Tanzmusik",
                               "en": "Dance music"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           },
                           {
                             "id": "1.8.4.0.0",
@@ -84,7 +96,10 @@
                               "fr": "Musique folklorique et mondiale",
                               "de": "Folk und World",
                               "en": "Folk and world music"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           },
                           {
                             "id": "1.8.3.2.0",
@@ -94,7 +109,10 @@
                               "fr": "Hip hop, rnb et rap",
                               "de": "Hip-Hop, R und B und Rap",
                               "en": "Hip hop, rnb and rap"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           },
                           {
                             "id": "1.8.2.0.0",
@@ -104,7 +122,10 @@
                               "fr": "Jazz et blues",
                               "de": "Jazz und Blues",
                               "en": "Jazz and blues"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           },
                           {
                             "id": "1.8.1.0.0",
@@ -114,7 +135,10 @@
                               "fr": "Musique classique",
                               "de": "Klassische Musik",
                               "en": "Classical music"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           },
                           {
                             "id": "1.8.3.1.0",
@@ -124,7 +148,10 @@
                               "fr": "Pop et rock",
                               "de": "Pop und Rock",
                               "en": "Pop and rock"
-                            }
+                            },
+                            "scope": [
+                              "events"
+                            ]
                           }
                         ]
                       }
@@ -245,7 +272,10 @@
               "fr": "Facilités pour fauteuils roulants",
               "de": "EInrichtung für Rollstuhlfahrer",
               "en": "Wheelchair facilities"
-            }
+            },
+            "scope": [
+              "places"
+            ]
           },
           {
             "id": "0.50.4.0.0",
@@ -256,6 +286,9 @@
               "de": "Konzert",
               "en": "Concert"
             },
+            "scope": [
+              "events"
+            ],
             "otherSuggestedTerms": [
               {
                 "id": "1.8.3.5.0",
@@ -265,7 +298,10 @@
                   "fr": "Cabaret",
                   "de": "Schlager",
                   "en": "Cabaret music"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               },
               {
                 "id": "1.8.3.3.0",
@@ -275,7 +311,10 @@
                   "fr": "Musique de danse",
                   "de": "Tanzmusik",
                   "en": "Dance music"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               },
               {
                 "id": "1.8.4.0.0",
@@ -285,7 +324,10 @@
                   "fr": "Musique folklorique et mondiale",
                   "de": "Folk und World",
                   "en": "Folk and world music"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               },
               {
                 "id": "1.8.3.2.0",
@@ -295,7 +337,10 @@
                   "fr": "Hip hop, rnb et rap",
                   "de": "Hip-Hop, R und B und Rap",
                   "en": "Hip hop, rnb and rap"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               },
               {
                 "id": "1.8.2.0.0",
@@ -305,7 +350,10 @@
                   "fr": "Jazz et blues",
                   "de": "Jazz und Blues",
                   "en": "Jazz and blues"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               },
               {
                 "id": "1.8.1.0.0",
@@ -315,7 +363,10 @@
                   "fr": "Musique classique",
                   "de": "Klassische Musik",
                   "en": "Classical music"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               },
               {
                 "id": "1.8.3.1.0",
@@ -325,7 +376,10 @@
                   "fr": "Pop et rock",
                   "de": "Pop und Rock",
                   "en": "Pop and rock"
-                }
+                },
+                "scope": [
+                  "events"
+                ]
               }
             ]
           }
