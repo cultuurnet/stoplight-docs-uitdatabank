@@ -182,6 +182,8 @@
           }
         },
         "operationId": "get-terms",
+        "description": "Returns the taxonomy terms of all existing domains.\n\nThe possible domains are:\n\n| domain   | description  |\n|---|---|\n| `eventtype`  | **Event** or **place** type. Called `eventtype` for backward compatibility with existing systems. Each event or place in UiTdatabank is required to have exactly 1 `eventtype` term. |\n| `theme` | An optional subtype to classify the event or place in more detail. For example if the `eventtype` is `Concert`, the `theme` can be `Jazz en blues`. Any `theme` can be used with any `eventtype` to ensure maximum flexibility. However, `eventtype` terms will contain a list of `otherSuggestedTerms` that contain the `theme` terms that are best suited to be used in combination with them. |\n| `facility` | An accessibility feature, for example wheelchair access. The list of facilities was made in consultation with [INTER](https://www.inter.vlaanderen/). Only users / clients with a specific permission can add `facility` terms to events or places. |",
+        "parameters": []
       },
       "parameters": []
     },
