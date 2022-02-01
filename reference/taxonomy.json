@@ -182,22 +182,6 @@
           }
         },
         "operationId": "get-terms",
-        "description": "Returns the taxonomy terms of all existing domains or filtered by domain.",
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "theme",
-                "facility",
-                "eventtype"
-              ]
-            },
-            "in": "query",
-            "name": "domain",
-            "description": "Limits the results to the taxonomy terms that belong to the given domain."
-          }
-        ]
       },
       "parameters": []
     },
