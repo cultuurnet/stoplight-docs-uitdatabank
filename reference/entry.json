@@ -3329,6 +3329,9 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
+        ],
+        "tags": [
+          "Organizers"
         ]
       }
     },
