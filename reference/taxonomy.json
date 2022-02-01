@@ -349,6 +349,19 @@
             "description": "Indicates to what domain the taxonomy term belongs.",
             "example": "facility"
           },
+          "scope": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "description": "Resource(s) that the term is usable on in UiTdatabank.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "events",
+                "places"
+              ]
+            }
+          },
           "name": {
             "type": "object",
             "description": "Localized human-readable names of the term, as an object with languages as properties.",
@@ -383,6 +396,7 @@
         "required": [
           "id",
           "domain",
+          "scope",
           "name"
         ]
       },
