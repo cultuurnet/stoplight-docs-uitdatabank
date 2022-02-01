@@ -1,6 +1,6 @@
 {
-  "title": "organizer-post",
   "type": "object",
+  "title": "organizer-post-deprecated",
   "description": "",
   "examples": [
     {
@@ -40,6 +40,7 @@
       ]
     }
   ],
+  "deprecated": true,
   "properties": {
     "@id": {
       "$ref": "./organizer-@id.json"
@@ -51,6 +52,7 @@
       "type": "string",
       "example": "https://www.publiq.be/",
       "pattern": "^http[s]?:\\/\\/",
+      "format": "uri",
       "description": "The unique url of the organizer."
     },
     "name": {

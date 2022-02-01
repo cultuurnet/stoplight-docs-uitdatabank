@@ -33,7 +33,8 @@
       "items": {
         "type": "string",
         "example": "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367",
-        "format": "uri"
+        "format": "uri",
+        "pattern": "^http[s]?:\\/\\/"
       }
     }
   },

@@ -87,16 +87,11 @@
     "mainLanguage": {
       "$ref": "./organizer-mainLanguage.json"
     },
-    "languages": {
-      "$ref": "./organizer-languages.json"
-    },
-    "completedLanguages": {
-      "$ref": "./organizer-completedLanguages.json"
-    },
-    "website": {
+    "url": {
       "type": "string",
       "example": "https://www.publiq.be",
       "description": "The unique website of the organizer.",
+      "format": "uri",
       "pattern": "^http[s]?:\\/\\/"
     },
     "name": {
@@ -108,18 +103,6 @@
     "address": {
       "$ref": "./organizer-address.json"
     },
-    "created": {
-      "$ref": "./organizer-created.json"
-    },
-    "modified": {
-      "$ref": "./organizer-modified.json"
-    },
-    "creator": {
-      "$ref": "./organizer-creator.json"
-    },
-    "workflowStatus": {
-      "$ref": "./organizer-workflowStatus.json"
-    },
     "contactPoint": {
       "$ref": "./organizer-contactPoint.json"
     },
@@ -129,6 +112,7 @@
     "mainImage": {
       "type": "string",
       "format": "url",
+      "pattern": "^http[s]?:\\/\\/",
       "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
       "description": "The main image of the organizer"
     },
@@ -137,22 +121,29 @@
     },
     "hiddenLabels": {
       "$ref": "./organizer-hiddenLabels.json"
+    },
+    "created": {
+      "$ref": "./organizer-created.json"
+    },
+    "workflowStatus": {
+      "$ref": "./organizer-workflowStatus.json"
+    },
+    "languages": {
+      "$ref": "./organizer-languages.json"
+    },
+    "completedLanguages": {
+      "$ref": "./organizer-completedLanguages.json"
+    },
+    "modified": {
+      "$ref": "./organizer-modified.json"
+    },
+    "creator": {
+      "$ref": "./organizer-creator.json"
     }
   },
   "required": [
-    "@id",
     "mainLanguage",
-    "languages",
-    "completedLanguages",
-    "website",
-    "name",
-    "address",
-    "created",
-    "modified",
-    "creator",
-    "workflowStatus",
-    "contactPoint",
-    "labels",
-    "hiddenLabels"
+    "url",
+    "name"
   ]
 }

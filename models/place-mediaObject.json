@@ -23,6 +23,7 @@
         "type": "string",
         "minLength": 1,
         "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
         "description": "A unique URI that acts as globally unique ID for the media object. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
         "readOnly": true,
@@ -41,12 +42,14 @@
         "type": "string",
         "description": "URL of the media object file.",
         "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://io-test.uitdatabank.be/images/example.png"
       },
       "thumbnailUrl": {
         "type": "string",
         "description": "URL to a thumbnail image of the media object file.",
         "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://io-test.uitdatabank.be/images/example.png"
       },
       "description": {
