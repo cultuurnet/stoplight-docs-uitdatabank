@@ -12,7 +12,7 @@
         "thumbnailUrl": "https://io-test.uitdatabank.be/images/example.png",
         "description": "Een voorbeeld beschrijving",
         "copyrightHolder": "Jan",
-        "language": "nl"
+        "inLanguage": "nl"
       }
     ]
   ],
@@ -60,7 +60,7 @@
         "type": "string",
         "description": "Name of the copyright holder of the media object."
       },
-      "language": {
+      "inLanguage": {
         "type": "string",
         "description": "Locale of text or speech used in the mediaObject or its description",
         "enum": [
@@ -76,7 +76,7 @@
       "@id",
       "description",
       "copyrightHolder",
-      "language"
+      "inLanguage"
     ]
   }
 }
