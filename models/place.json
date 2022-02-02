@@ -261,7 +261,6 @@
     "name",
     "terms",
     "calendarType",
-    "address",
-    "bookingAvailability"
+    "address"
   ]
 }
