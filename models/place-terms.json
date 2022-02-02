@@ -4,6 +4,15 @@
   "description": "A list of taxonomy terms used to categorize the [place](./place.json).\n\nTerms are pre-defined and can be browsed in our [Terms](../docs/terms.md) guide.\n\nA place requires at least one term, to define its type. (For example a museum, monument, ...)",
   "uniqueItems": true,
   "minItems": 1,
+  "examples": [
+    [
+      {
+        "id": "0.50.4.0.0",
+        "label": "Concert",
+        "domain": "eventtype"
+      }
+    ]
+  ],
   "items": {
     "title": "",
     "type": "object",
@@ -31,23 +40,14 @@
         "example": "placetype",
         "description": "The domain of the term. Can be one of `placetype`, `theme`, or `facility`.",
         "enum": [
-          "placetype",
           "theme",
-          "facility"
+          "facility",
+          "eventtype"
         ]
       }
     },
     "required": [
       "id"
     ]
-  },
-  "examples": [
-    [
-      {
-        "id": "0.50.4.0.0",
-        "label": "Concert",
-        "domain": "placetype"
-      }
-    ]
-  ]
+  }
 }
