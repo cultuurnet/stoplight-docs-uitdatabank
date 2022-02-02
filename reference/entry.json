@@ -1297,12 +1297,6 @@
                   }
                 }
               }
-            },
-            "application/xml": {
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
             }
           },
           "description": "The new video to add to an event."
