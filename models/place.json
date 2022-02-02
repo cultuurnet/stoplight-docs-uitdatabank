@@ -97,23 +97,6 @@
       "$ref": "./place-bookingAvailability.json"
     }
   },
-  "required": [
-    "@id",
-    "mainLanguage",
-    "name",
-    "calendarType",
-    "status",
-    "availableFrom",
-    "availableTo",
-    "terms",
-    "created",
-    "creator",
-    "workflowStatus",
-    "audience",
-    "languages",
-    "completedLanguages",
-    "bookingAvailability"
-  ],
   "examples": [
     {
       "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
@@ -272,5 +255,12 @@
         "type": "Available"
       }
     }
+  "required": [
+    "mainLanguage",
+    "name",
+    "terms",
+    "calendarType",
+    "address",
+    "bookingAvailability"
   ]
 }
