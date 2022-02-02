@@ -315,9 +315,6 @@
             ]
           }
         ],
-        "x-tags": [
-          "Models"
-        ],
         "properties": {
           "id": {
             "type": "string",
