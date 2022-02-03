@@ -9,7 +9,8 @@
       "minItems": 0,
       "items": {
         "type": "string",
-        "description": "Phone number for contact purposes."
+        "description": "Phone number for contact purposes.",
+        "minLength": 1
       }
     },
     "email": {
@@ -20,7 +21,8 @@
         "type": "string",
         "description": "Email address for contact purposes.",
         "format": "email",
-        "example": "info@example.com"
+        "example": "info@example.com",
+        "minLength": 1
       }
     },
     "url": {
