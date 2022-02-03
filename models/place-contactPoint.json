@@ -21,8 +21,7 @@
         "type": "string",
         "description": "Email address for contact purposes.",
         "format": "email",
-        "example": "info@example.com",
-        "minLength": 1
+        "example": "info@example.com"
       }
     },
     "url": {
