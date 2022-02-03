@@ -5,7 +5,8 @@
   "properties": {
     "phone": {
       "type": "string",
-      "description": "Phone number for booking purposes."
+      "description": "Phone number for booking purposes.",
+      "pattern": "\\S"
     },
     "email": {
       "type": "string",
