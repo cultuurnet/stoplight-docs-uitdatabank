@@ -38,22 +38,30 @@
         "nl": {
           "type": "string",
           "description": "Dutch description",
-          "example": "Nederlandse beschrijving"
+          "example": "Nederlandse beschrijving",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "fr": {
           "type": "string",
           "description": "French description",
-          "example": "Description français"
+          "example": "Description français",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "de": {
           "type": "string",
           "description": "German description",
-          "example": "Deutscher Beschreibung"
+          "example": "Deutscher Beschreibung",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "en": {
           "type": "string",
           "description": "English description",
-          "example": "English description"
+          "example": "English description",
+          "pattern": "\\S",
+          "minLength": 1
         }
       }
     },
