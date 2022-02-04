@@ -6,6 +6,7 @@
     "phone": {
       "type": "string",
       "description": "Phone number for booking purposes.",
+      "minLength": 1,
       "pattern": "\\S"
     },
     "email": {

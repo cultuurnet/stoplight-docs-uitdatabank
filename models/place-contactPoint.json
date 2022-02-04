@@ -10,6 +10,7 @@
       "items": {
         "type": "string",
         "description": "Phone number for contact purposes.",
+        "minLength": 1,
         "pattern": "\\S"
       }
     },
