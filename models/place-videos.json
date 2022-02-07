@@ -88,7 +88,8 @@
         "type": "string",
         "example": "publiq",
         "minLength": 3,
-        "description": "The copyright holder of the video source."
+        "description": "The copyright holder of the video source.",
+        "pattern": "\\S"
       }
     },
     "required": [
