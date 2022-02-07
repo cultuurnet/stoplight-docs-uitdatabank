@@ -201,18 +201,6 @@
     "availableTo": {
       "$ref": "./place-availableTo.json"
     },
-    "sameAs": {
-      "$ref": "./place-sameAs.json"
-    },
-    "created": {
-      "$ref": "./place-created.json"
-    },
-    "modified": {
-      "$ref": "./place-modified.json"
-    },
-    "creator": {
-      "$ref": "./place-creator.json"
-    },
     "workflowStatus": {
       "$ref": "./place-workflowStatus.json"
     },
@@ -254,6 +242,18 @@
     },
     "bookingAvailability": {
       "$ref": "./place-bookingAvailability.json"
+    },
+    "creator": {
+      "$ref": "./place-creator.json"
+    },
+    "created": {
+      "$ref": "./place-created.json"
+    },
+    "modified": {
+      "$ref": "./place-modified.json"
+    },
+    "sameAs": {
+      "$ref": "./place-sameAs.json"
     }
   },
   "required": [
