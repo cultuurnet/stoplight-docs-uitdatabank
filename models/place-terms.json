@@ -40,7 +40,6 @@
         "example": "placetype",
         "description": "The domain of the term. Can be one of `placetype`, `theme`, or `facility`.",
         "enum": [
-          "theme",
           "facility",
           "eventtype"
         ]
