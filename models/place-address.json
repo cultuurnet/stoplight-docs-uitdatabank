@@ -35,19 +35,22 @@
           "type": "string",
           "minLength": 1,
           "example": "Brussel",
-          "description": "Municipality of the address in the relevant locale, for example `Brussel` for `nl`."
+          "description": "Municipality of the address in the relevant locale, for example `Brussel` for `nl`.",
+          "pattern": "\\S"
         },
         "postalCode": {
           "type": "string",
           "description": "Postal code of the municipality, for example `1000`. Formatted as a string because some international postal codes use letters.",
           "minLength": 1,
-          "example": "1000"
+          "example": "1000",
+          "pattern": "\\S"
         },
         "streetAddress": {
           "type": "string",
           "minLength": 1,
           "description": "Street address in the relevant locale, for example `Wetstraat 1` for `nl`.",
-          "example": "Wetstraat 1"
+          "example": "Wetstraat 1",
+          "pattern": "\\S"
         }
       },
       "required": [
@@ -73,19 +76,22 @@
           "type": "string",
           "minLength": 1,
           "example": "Bruxelles",
-          "description": "Municipality of the address in the relevant locale, for example `Bruxelles` for `fr`."
+          "description": "Municipality of the address in the relevant locale, for example `Bruxelles` for `fr`.",
+          "pattern": "\\S"
         },
         "postalCode": {
           "type": "string",
           "description": "Postal code of the municipality, for example `1000`. Formatted as a string because some international postal codes use letters.",
           "minLength": 1,
-          "example": "1000"
+          "example": "1000",
+          "pattern": "\\S"
         },
         "streetAddress": {
           "type": "string",
           "minLength": 1,
           "description": "Street address in the relevant locale, for example `Rue de la Loi 1` in `fr`.",
-          "example": "Rue de la Loi 1"
+          "example": "Rue de la Loi 1",
+          "pattern": "\\S"
         }
       },
       "required": [
@@ -111,19 +117,22 @@
           "type": "string",
           "minLength": 1,
           "example": "Brüssel",
-          "description": "Municipality of the address in the relevant locale."
+          "description": "Municipality of the address in the relevant locale.",
+          "pattern": "\\S"
         },
         "postalCode": {
           "type": "string",
           "description": "Postal code of the municipality, for example `1000`. Formatted as a string because some international postal codes use letters.",
           "minLength": 1,
-          "example": "1000"
+          "example": "1000",
+          "pattern": "\\S"
         },
         "streetAddress": {
           "type": "string",
           "minLength": 1,
           "description": "Street address in the relevant locale.",
-          "example": "Wetstraat 1"
+          "example": "Wetstraat 1",
+          "pattern": "\\S"
         }
       },
       "required": [
@@ -149,19 +158,22 @@
           "type": "string",
           "minLength": 1,
           "example": "Brussels",
-          "description": "Municipality of the address in the relevant locale, for example `Brussels` in `en`."
+          "description": "Municipality of the address in the relevant locale, for example `Brussels` in `en`.",
+          "pattern": "\\S"
         },
         "postalCode": {
           "type": "string",
           "description": "Postal code of the municipality, for example `1000`. Formatted as a string because some international postal codes use letters.",
           "minLength": 1,
-          "example": "1000"
+          "example": "1000",
+          "pattern": "\\S"
         },
         "streetAddress": {
           "type": "string",
           "minLength": 1,
           "description": "Street address in the relevant locale.",
-          "example": "Wetstraat 1"
+          "example": "Wetstraat 1",
+          "pattern": "\\S"
         }
       },
       "required": [
