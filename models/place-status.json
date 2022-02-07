@@ -48,22 +48,30 @@
         "nl": {
           "type": "string",
           "description": "Dutch reason",
-          "example": "Nederlandse reden"
+          "example": "Nederlandse reden",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "fr": {
           "type": "string",
           "description": "French reason",
-          "example": "Raison français"
+          "example": "Raison français",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "de": {
           "type": "string",
           "description": "German reason",
-          "example": "Deutscher Grund"
+          "example": "Deutscher Grund",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "en": {
           "type": "string",
           "description": "English reason",
-          "example": "English reason"
+          "example": "English reason",
+          "pattern": "\\S",
+          "minLength": 1
         }
       }
     }
