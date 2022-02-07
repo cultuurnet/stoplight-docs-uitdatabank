@@ -70,7 +70,8 @@
         "format": "uri",
         "pattern": "^http[s]?:\\/\\/",
         "example": "https://www.youtube.com/embed/cEItmb_a20D",
-        "description": "The url that can be used to embed the video inside an iFrame."
+        "description": "The url that can be used to embed the video inside an iFrame.",
+        "readOnly": true
       },
       "language": {
         "type": "string",
