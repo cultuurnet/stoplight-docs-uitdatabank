@@ -57,11 +57,15 @@
       },
       "description": {
         "type": "string",
-        "description": "Description of the media object, in the language used in the `language` property of the media object."
+        "description": "Description of the media object, in the language used in the `language` property of the media object.",
+        "pattern": "\\S",
+        "minLength": 1
       },
       "copyrightHolder": {
         "type": "string",
-        "description": "Name of the copyright holder of the media object."
+        "description": "Name of the copyright holder of the media object.",
+        "pattern": "\\S",
+        "minLength": 1
       },
       "inLanguage": {
         "type": "string",
