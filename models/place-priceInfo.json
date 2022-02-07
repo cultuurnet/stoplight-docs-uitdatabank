@@ -109,22 +109,30 @@
           "nl": {
             "type": "string",
             "description": "Dutch tariff name",
-            "example": "Basistarief"
+            "example": "Basistarief",
+            "pattern": "\\S",
+            "minLength": 1
           },
           "fr": {
             "type": "string",
             "description": "French tariff name",
-            "example": "Tarif de base"
+            "example": "Tarif de base",
+            "pattern": "\\S",
+            "minLength": 1
           },
           "de": {
             "type": "string",
             "description": "German tariff name",
-            "example": "Base tariff"
+            "example": "Base tariff",
+            "pattern": "\\S",
+            "minLength": 1
           },
           "en": {
             "type": "string",
             "description": "English tariff name",
-            "example": "Basisrate"
+            "example": "Basisrate",
+            "pattern": "\\S",
+            "minLength": 1
           }
         }
       }
