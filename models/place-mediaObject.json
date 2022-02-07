@@ -36,21 +36,24 @@
         "description": "Indicates the type of the media object. Currently only `schema:ImageObject` is supported (images).",
         "enum": [
           "schema:ImageObject"
-        ]
+        ],
+        "readOnly": true
       },
       "contentUrl": {
         "type": "string",
         "description": "URL of the media object file.",
         "format": "uri",
         "pattern": "^http[s]?:\\/\\/",
-        "example": "https://io-test.uitdatabank.be/images/example.png"
+        "example": "https://io-test.uitdatabank.be/images/example.png",
+        "readOnly": true
       },
       "thumbnailUrl": {
         "type": "string",
         "description": "URL to a thumbnail image of the media object file.",
         "format": "uri",
         "pattern": "^http[s]?:\\/\\/",
-        "example": "https://io-test.uitdatabank.be/images/example.png"
+        "example": "https://io-test.uitdatabank.be/images/example.png",
+        "readOnly": true
       },
       "description": {
         "type": "string",
