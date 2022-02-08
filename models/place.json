@@ -161,106 +161,128 @@
       }
     }
   ],
-  "properties": {
-    "@id": {
-      "$ref": "./place-@id.json"
+  "allOf": [
+    {
+      "properties": {
+        "@id": {
+          "$ref": "./place-@id.json"
+        },
+        "mainLanguage": {
+          "$ref": "./place-mainLanguage.json"
+        },
+        "name": {
+          "$ref": "./place-name.json"
+        },
+        "terms": {
+          "$ref": "./place-terms.json"
+        },
+        "calendarType": {
+          "$ref": "./place-calendarType.json"
+        },
+        "address": {
+          "$ref": "./place-address.json"
+        },
+        "geo": {
+          "$ref": "./place-geo.json"
+        },
+        "startDate": {
+          "$ref": "./place-startDate.json"
+        },
+        "endDate": {
+          "$ref": "./place-endDate.json"
+        },
+        "status": {
+          "$ref": "./place-status.json"
+        },
+        "openingHours": {
+          "$ref": "./place-openingHours.json"
+        },
+        "availableFrom": {
+          "$ref": "./place-availableFrom.json"
+        },
+        "availableTo": {
+          "$ref": "./place-availableTo.json"
+        },
+        "workflowStatus": {
+          "$ref": "./place-workflowStatus.json"
+        },
+        "languages": {
+          "$ref": "./place-languages.json"
+        },
+        "completedLanguages": {
+          "$ref": "./place-completedLanguages.json"
+        },
+        "typicalAgeRange": {
+          "$ref": "./place-typicalAgeRange.json"
+        },
+        "description": {
+          "$ref": "./place-description.json"
+        },
+        "priceInfo": {
+          "$ref": "./place-priceInfo.json"
+        },
+        "contactPoint": {
+          "$ref": "./place-contactPoint.json"
+        },
+        "bookingInfo": {
+          "$ref": "./place-bookingInfo.json"
+        },
+        "mediaObject": {
+          "$ref": "./place-mediaObject.json"
+        },
+        "image": {
+          "$ref": "./place-image.json"
+        },
+        "videos": {
+          "$ref": "./place-videos.json"
+        },
+        "labels": {
+          "$ref": "./place-labels.json"
+        },
+        "hiddenLabels": {
+          "$ref": "./place-hiddenLabels.json"
+        },
+        "bookingAvailability": {
+          "$ref": "./place-bookingAvailability.json"
+        },
+        "creator": {
+          "$ref": "./place-creator.json"
+        },
+        "created": {
+          "$ref": "./place-created.json"
+        },
+        "modified": {
+          "$ref": "./place-modified.json"
+        },
+        "sameAs": {
+          "$ref": "./place-sameAs.json"
+        }
+      },
+      "required": [
+        "mainLanguage",
+        "name",
+        "terms",
+        "calendarType",
+        "address"
+      ]
     },
-    "mainLanguage": {
-      "$ref": "./place-mainLanguage.json"
-    },
-    "name": {
-      "$ref": "./place-name.json"
-    },
-    "terms": {
-      "$ref": "./place-terms.json"
-    },
-    "calendarType": {
-      "$ref": "./place-calendarType.json"
-    },
-    "address": {
-      "$ref": "./place-address.json"
-    },
-    "geo": {
-      "$ref": "./place-geo.json"
-    },
-    "startDate": {
-      "$ref": "./place-startDate.json"
-    },
-    "endDate": {
-      "$ref": "./place-endDate.json"
-    },
-    "status": {
-      "$ref": "./place-status.json"
-    },
-    "openingHours": {
-      "$ref": "./place-openingHours.json"
-    },
-    "availableFrom": {
-      "$ref": "./place-availableFrom.json"
-    },
-    "availableTo": {
-      "$ref": "./place-availableTo.json"
-    },
-    "workflowStatus": {
-      "$ref": "./place-workflowStatus.json"
-    },
-    "languages": {
-      "$ref": "./place-languages.json"
-    },
-    "completedLanguages": {
-      "$ref": "./place-completedLanguages.json"
-    },
-    "typicalAgeRange": {
-      "$ref": "./place-typicalAgeRange.json"
-    },
-    "description": {
-      "$ref": "./place-description.json"
-    },
-    "priceInfo": {
-      "$ref": "./place-priceInfo.json"
-    },
-    "contactPoint": {
-      "$ref": "./place-contactPoint.json"
-    },
-    "bookingInfo": {
-      "$ref": "./place-bookingInfo.json"
-    },
-    "mediaObject": {
-      "$ref": "./place-mediaObject.json"
-    },
-    "image": {
-      "$ref": "./place-image.json"
-    },
-    "videos": {
-      "$ref": "./place-videos.json"
-    },
-    "labels": {
-      "$ref": "./place-labels.json"
-    },
-    "hiddenLabels": {
-      "$ref": "./place-hiddenLabels.json"
-    },
-    "bookingAvailability": {
-      "$ref": "./place-bookingAvailability.json"
-    },
-    "creator": {
-      "$ref": "./place-creator.json"
-    },
-    "created": {
-      "$ref": "./place-created.json"
-    },
-    "modified": {
-      "$ref": "./place-modified.json"
-    },
-    "sameAs": {
-      "$ref": "./place-sameAs.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "periodic"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "startDate",
+          "endDate"
+        ]
+      }
     }
-  },
-  "required": [
-    "mainLanguage",
-    "name",
-    "terms",
-    "calendarType",
-    "address"
   ]
 }
