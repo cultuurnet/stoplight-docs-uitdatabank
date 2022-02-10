@@ -35,9 +35,6 @@
     }
   },
   "required": [
-    "id",
-    "language",
-    "copyrightHolder",
-    "description"
+    "id"
   ]
 }

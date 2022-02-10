@@ -35,3 +35,37 @@ Most likely this is caused by updating the audience of an event that only suppor
 The given id to create a new resource is already in use by an existing resource of another type.
 
 Try creating the new resource with another unique resource id.
+
+## duplicate-url
+
+*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/duplicate-url`
+*   **Title**: `Duplicate URL`
+*   **Status**: `400`
+
+To avoid having duplicate organizers in UiTdatabank, every organizer needs to have a unique URL as website. This uniqueness is enforced on the URL of the organizer's website because it is the most likely part of the organizer's data that is unique. Some organizers actually have the same name or are located on the same address, so we cannot enforce uniqueness on those properties.
+
+To check if an existing organizer already exists for a specific URL, use the `GET /organizers` endpoint with the `website` query parameter.
+
+This error type may also be used by other resources in the future if necessary.
+
+## label-not-allowed
+
+*   **Complete type:** `https://api.publiq.be/probs/uitdatabank/label-not-allowed`
+*   **Title**: `Label not allowed`
+*   **Status**: `403`
+
+Some labels are reserved and can only be used by users or API clients with sufficient permissions.
+
+To fix this issue, do not include the label mentioned in the `label` property in the error response in your request when you retry.
+
+Example error response:
+
+```json
+{
+  "type": "https://api.publiq.be/probs/uitdatabank/label-not-allowed",
+  "title": "Label not allowed",
+  "status": 403,
+  "detail": "The label \"reserved_label_example\" is reserved and you do not have sufficient permissions to use it.",
+  "label": "reserved_label_example"
+}
+```

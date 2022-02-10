@@ -7,6 +7,7 @@
     [
       {
         "@id": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+        "id": "546a90cd-a238-417b-aa98-1b6c50c1345c",
         "contentUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
         "thumbnailUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
         "description": "Een voorbeeld beschrijving",
@@ -21,6 +22,7 @@
       "@id": {
         "type": "string",
         "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
         "description": "A unique URI that acts as globally unique ID for the image object. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
         "examples": [
@@ -28,16 +30,24 @@
         ],
         "readOnly": true
       },
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "The UUID of the image.",
+        "example": "546a90cd-a238-417b-aa98-1b6c50c1345c"
+      },
       "contentUrl": {
         "type": "string",
         "description": "URL of the image file.",
-        "format": "url",
+        "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
       },
       "thumbnailUrl": {
         "type": "string",
         "description": "URL to a thumbnail image.",
-        "format": "url",
+        "format": "uri",
+        "pattern": "^http[s]?:\\/\\/",
         "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
       },
       "description": {
@@ -64,6 +74,7 @@
     },
     "required": [
       "@id",
+      "id",
       "contentUrl",
       "thumbnailUrl",
       "description",

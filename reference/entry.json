@@ -3,7 +3,7 @@
   "info": {
     "title": "Entry API",
     "version": "3.0",
-    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.",
+    "description": "With UiTdatabank's Entry API you can create new events, places and organizers, and add extra info to them with specific requests to add/update properties. For example there are operations to add a label, remove a label, add an image, and so on.\n\n## Postman\n\n<!-- focus: false -->\n\n[![Download postman collection](https://postman.publiq.be/postman-download.svg)](https://postman.publiq.be/?api=udb-entry)\n\nDo you already have a **client id** and **client secret**?\nDownload a personalized Postman collection to start making requests in seconds!",
     "contact": {
       "name": "publiq helpdesk",
       "email": "vragen@publiq.be"
@@ -332,7 +332,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the availableFrom of the [event](./event.json). This is the first date & time that the event is allowed to be visible on publication channels.",
+        "description": "Updates the availableFrom of the event. This is the first date & time that the event is allowed to be visible on publication channels.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -829,7 +829,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](../models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
+        "description": "Updates the list of available (accessibility) facilities on the event. These will show up in the [event's `terms`](/models/event-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](/docs/terms.md).\n\n**Note**: A special permission is required to update an event's facilities in UiTdatabank, even if you are the event owner. Contact an administrator for further information.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1092,7 +1092,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the event's type (examples of types are `Concert`, `Opendeurdag`, `Lessenreeks`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](/docs/terms.md) guide. Only terms from the `eventtype` domain can be used as event types.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1189,7 +1189,7 @@
         "tags": [
           "Events"
         ],
-        "description": "Updates the event's theme (examples of themes are `Audiovisuele kunst`, `Moderne dans`, `Actie en avontuur`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `theme` domain can be used as theme.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `theme` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the event's theme (examples of themes are `Audiovisuele kunst`, `Moderne dans`, `Actie en avontuur`, and so on) based on the given `eventId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](/docs/terms.md) guide. Only terms from the `theme` domain can be used as theme.\n\nIf the `eventId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `theme` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -1296,12 +1296,6 @@
                     "copyrightHolder": "publiq"
                   }
                 }
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "type": "object",
-                "properties": {}
               }
             }
           },
@@ -1414,6 +1408,225 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      }
+    },
+    "/events/{eventId}/copies": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/eventId"
+        }
+      ],
+      "post": {
+        "summary": "Copy an event",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "201": {
+            "description": "The event was copied successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "eventId": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "eventId": "83a12220-9459-4fc8-b1ed-71b3d1668e65",
+                      "url": "https://io.uitdatabank.be/events/83a12220-9459-4fc8-b1ed-71b3d1668e65"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/",
+                          "error": "The required properties (subEvent) are missing"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "operationId": "copy-event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "../models/event-calendar-put.json"
+                  },
+                  {
+                    "$ref": "../models/event-calendar-put-deprecated.json"
+                  }
+                ]
+              },
+              "examples": {
+                "single": {
+                  "value": {
+                    "calendarType": "single",
+                    "subEvent": [
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "multiple": {
+                  "value": {
+                    "calendarType": "multiple",
+                    "subEvent": [
+                      {
+                        "startDate": "2020-05-17T22:00:00+00:00",
+                        "endDate": "2020-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Unavailable",
+                          "reason": {
+                            "nl": "Geannuleerd wegens COVID-19",
+                            "en": "Cancelled due to COVID-19"
+                          }
+                        },
+                        "bookingAvailability": {
+                          "type": "Unavailable"
+                        }
+                      },
+                      {
+                        "startDate": "2021-05-17T22:00:00+00:00",
+                        "endDate": "2021-05-17T22:00:00+00:00",
+                        "status": {
+                          "type": "Available"
+                        },
+                        "bookingAvailability": {
+                          "type": "Available"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "periodic": {
+                  "value": {
+                    "calendarType": "periodic",
+                    "startDate": "2021-05-17T22:00:00+00:00",
+                    "endDate": "2021-05-17T22:00:00+00:00",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                },
+                "permanent": {
+                  "value": {
+                    "calendarType": "permanent",
+                    "openingHours": [
+                      {
+                        "opens": "13:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "monday"
+                        ]
+                      },
+                      {
+                        "opens": "09:00",
+                        "closes": "17:00",
+                        "dayOfWeek": [
+                          "tuesday",
+                          "wednesday",
+                          "thursday",
+                          "friday",
+                          "saturday",
+                          "sunday"
+                        ]
+                      }
+                    ],
+                    "status": {
+                      "type": "Available"
+                    },
+                    "bookingAvailability": {
+                      "type": "Available"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "New calendar information for the event copy."
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "description": "Creates a new event based on all the properties of an existing event with the given `eventId`. Only the calendar information will be completely replaced with a new one, which has to be included in the request body.\n\nThe schema of the request body is the same as the one for the [`PUT /events/{eventId}/calendar`](/reference/entry.json/paths/~1events~1{eventId}~1calendar/put) endpoint.",
+        "x-internal": true
       }
     },
     "/events/{eventId}/major-info": {
@@ -1749,7 +1962,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the availableFrom of the [place](./place.json). This is the first date & time that the place is allowed to be visible on publication channels.",
+        "description": "Updates the availableFrom of the place. This is the first date & time that the place is allowed to be visible on publication channels.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -2224,7 +2437,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the list of available (accessibility) facilities on the place. These will show up in the [place's `terms`](../models/place-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](../docs/terms.md).\n\n**Note**: A special permission is required to update an place's facilities in UiTdatabank, even if you are the place owner. Contact an administrator for further information.",
+        "description": "Updates the list of available (accessibility) facilities on the place. These will show up in the [place's `terms`](/models/place-terms.json).\n\nA list of possible facilities can be found using our [Terms guide](/docs/terms.md).\n\n**Note**: A special permission is required to update an place's facilities in UiTdatabank, even if you are the place owner. Contact an administrator for further information.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -2302,7 +2515,7 @@
         "tags": [
           "Places"
         ],
-        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](../docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
+        "description": "Updates the place's type (examples of types are `Bioscoop`, `Monument`, `Theater`, and so on) based on the given `placeId` and `termId`.\n\nTerms are pre-defined and can be found using our [Terms](/docs/terms.md) guide. Only terms from the `eventtype` domain can be used as place types.\n\nIf the `placeId` does not exist a `404 Not Found` will be returned. If the `termId` does not exist or is not a term in the `eventtype` domain, a `400 Bad Request` will be returned. If the request is successful a `204 No Content` will be returned.",
         "security": [
           {
             "USER_ACCESS_TOKEN": []
@@ -2701,22 +2914,27 @@
     "/organizers": {
       "post": {
         "summary": "Create organizer",
-        "description": "Creates a new organizer. The organizer has several required properties and some optional properties.\n\nThe required properties are:\n- mainLanguage: the language the organizer is created in\n- website: the unique website of the organizer\n- name: the name or title of the organizer in the main language\n\nThe optional properties are:\n- address: the address of the organizer in the main language\n- contact: a list of possible contact details like phone, email or url",
+        "description": "Creates a new organizer.\n\n<!-- theme: info -->\n\n> Organizers are required to have a unique `url` value to avoid accidental duplicate organizers.\n\n<!-- theme: warning -->\n\n> This request is also supported with an older, deprecated schema that was used to create an organizer with just its required fields.",
         "operationId": "post-organizer",
         "tags": [
           "Organizers"
         ],
         "responses": {
           "201": {
-            "description": "The organizer contact point has been created successfully with the returned id.",
+            "description": "The organizer has been created successfully.",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "organizerId": {
+                    "id": {
                       "type": "string",
                       "description": "The id of newly created organizer."
+                    },
+                    "organizerId": {
+                      "type": "string",
+                      "description": "The id of newly created organizer. (Deprecated in favor of `id`.)",
+                      "deprecated": true
                     },
                     "url": {
                       "type": "string",
@@ -2724,6 +2942,7 @@
                     }
                   },
                   "required": [
+                    "id",
                     "organizerId",
                     "url"
                   ]
@@ -2731,6 +2950,7 @@
                 "examples": {
                   "Example": {
                     "value": {
+                      "id": "6b476d79-c404-425f-8b1c-357e39a60410",
                       "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
                       "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
                     }
@@ -2740,7 +2960,7 @@
             }
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-url",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -2761,35 +2981,51 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/organizer-post.json"
+                "anyOf": [
+                  {
+                    "$ref": "../models/organizer.json"
+                  },
+                  {
+                    "$ref": "../models/organizer-post-deprecated.json"
+                  }
+                ]
               },
               "examples": {
-                "Create organizer with all possible properties": {
+                "Organizer with required fields": {
                   "value": {
-                    "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
                     "mainLanguage": "nl",
-                    "name": "Nederlandse naam",
-                    "website": "https://www.publiq.be",
-                    "address": {
-                      "addressCountry": "BE",
-                      "addressLocality": "Brussel",
-                      "postalCode": "1000",
-                      "streetAddress": "Wetstraat 1"
+                    "name": {
+                      "nl": "Nederlandse naam"
                     },
-                    "contact": [
-                      {
-                        "type": "phone",
-                        "value": "+32/1234567890"
-                      },
-                      {
-                        "type": "email",
-                        "value": "info@publiq.be"
-                      },
-                      {
-                        "type": "url",
-                        "value": "https://www.publiq.be"
+                    "url": "https://www.publiq.be"
+                  }
+                },
+                "Organizer with all possible fields": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Nederlandse naam"
+                    },
+                    "url": "https://www.publiq.be",
+                    "address": {
+                      "nl": {
+                        "addressCountry": "BE",
+                        "addressLocality": "Brussel",
+                        "postalCode": "1000",
+                        "streetAddress": "Wetstraat 1"
                       }
-                    ],
+                    },
+                    "contactPoint": {
+                      "phone": [
+                        "+32/1234567890"
+                      ],
+                      "email": [
+                        "info@publiq.be"
+                      ],
+                      "url": [
+                        "https://www.publiq.be"
+                      ]
+                    },
                     "labels": [
                       "label1",
                       "label2"
@@ -2850,6 +3086,247 @@
           }
         ],
         "x-internal": true
+      },
+      "get": {
+        "summary": "Get organizer details",
+        "operationId": "get-organizer",
+        "responses": {
+          "200": {
+            "description": "Organizer details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/organizer.json"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+                      "mainLanguage": "nl",
+                      "languages": [
+                        "nl",
+                        "fr",
+                        "de",
+                        "en"
+                      ],
+                      "completedLanguages": [
+                        "nl",
+                        "fr"
+                      ],
+                      "url": "https://www.publiq.be",
+                      "name": {
+                        "nl": "Nederlandse tekst",
+                        "fr": "Texte français",
+                        "de": "Deutscher Text",
+                        "en": "English text"
+                      },
+                      "description": {
+                        "nl": "Nederlandse beschrijving",
+                        "fr": "Description français",
+                        "de": "Deutscher Bezeichnung",
+                        "en": "English description"
+                      },
+                      "address": {
+                        "nl": {
+                          "addressCountry": "BE",
+                          "addressLocality": "Brussel",
+                          "postalCode": "1000",
+                          "streetAddress": "Wetstraat 1"
+                        },
+                        "fr": {
+                          "addressCountry": "BE",
+                          "addressLocality": "Bruxelles",
+                          "postalCode": "1000",
+                          "streetAddress": "Rue de la Loi 1"
+                        }
+                      },
+                      "created": "2021-05-17T22:00:00+00:00",
+                      "modified": "2021-05-17T22:00:00+00:00",
+                      "creator": "auth0|CE1423AC-655C-4025-86E5-247E06164C85",
+                      "workflowStatus": "ACTIVE",
+                      "contactPoint": {
+                        "phone": [
+                          "+32/1234567890"
+                        ],
+                        "email": [
+                          "info@publiq.be"
+                        ],
+                        "url": [
+                          "https://www.publiq.be"
+                        ]
+                      },
+                      "images": [
+                        {
+                          "@id": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+                          "id": "546a90cd-a238-417b-aa98-1b6c50c1345c",
+                          "contentUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+                          "thumbnailUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+                          "description": "Een voorbeeld beschrijving",
+                          "copyrightHolder": "Jan",
+                          "language": "nl"
+                        }
+                      ],
+                      "mainImage": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+                      "labels": [
+                        "label1",
+                        "label2"
+                      ],
+                      "hiddenLabels": [
+                        "labelA",
+                        "labelB"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "description": "Returns an the organizer with the given `organizerId`",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Organizers"
+        ]
+      },
+      "put": {
+        "summary": "Update organizer completely",
+        "operationId": "put-organizers-organizerId",
+        "responses": {
+          "200": {
+            "description": "The organizer has been updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The id of the updated organizer."
+                    },
+                    "organizerId": {
+                      "type": "string",
+                      "description": "The id of the updated organizer. (Deprecated in favor of `id`.)",
+                      "deprecated": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The url of the JSON-LD data of the updated organizer."
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "organizerId",
+                    "url"
+                  ]
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "6b476d79-c404-425f-8b1c-357e39a60410",
+                      "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
+                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-url",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        },
+        "description": "Updates the organizer with the given `organizerId` by completely overwriting it with the properties in the given JSON. \n\n<!-- theme: danger -->\n\n> Any existing (optional) properties on the organizer that are not included in the update request will be removed from the organizer.\n\n<!-- theme: info -->\n\n> Certain existing `labels` or `hiddenLabels` may be kept on the organizer even if they are not included in the update request. For example if they were added via the UiTdatabank UI, or if the client or user making the request does not have sufficient permission to remove specific labels.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer.json"
+              },
+              "examples": {
+                "Organizer with required fields": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Nederlandse naam"
+                    },
+                    "url": "https://www.publiq.be"
+                  }
+                },
+                "Organizer with all possible fields": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Nederlandse naam"
+                    },
+                    "url": "https://www.publiq.be",
+                    "address": {
+                      "nl": {
+                        "addressCountry": "BE",
+                        "addressLocality": "Brussel",
+                        "postalCode": "1000",
+                        "streetAddress": "Wetstraat 1"
+                      }
+                    },
+                    "contactPoint": {
+                      "phone": [
+                        "+32/1234567890"
+                      ],
+                      "email": [
+                        "info@publiq.be"
+                      ],
+                      "url": [
+                        "https://www.publiq.be"
+                      ]
+                    },
+                    "labels": [
+                      "label1",
+                      "label2"
+                    ],
+                    "hiddenLabels": [
+                      "labelA",
+                      "labelB"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Organizers"
+        ]
       }
     },
     "/organizers/{organizerId}/contact-point": {
@@ -2946,7 +3423,7 @@
             "description": "No Content. The organizer url has been updated successfully."
           },
           "400": {
-            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-url",
             "content": {
               "application/problem+json": {
                 "schema": {
@@ -3195,6 +3672,39 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ]
+      },
+      "delete": {
+        "summary": "Delete description",
+        "operationId": "delete-organizer-description",
+        "responses": {
+          "204": {
+            "description": "No Content. The description was deleted."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/url/path-parameter-invalid"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "tags": [
+          "Organizers"
+        ],
+        "description": "Deletes the description in the given `language` from the organizer with the given `organizerId`.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ]
       }
     },
     "/organizers/{organizerId}/name/{language}": {
@@ -3286,7 +3796,7 @@
       ],
       "put": {
         "summary": "Update name nl",
-        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/name/{language}` instead.\n\nUpdates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer with default language `nl`. The new name needs to be at least one character long.",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use [`PUT /organizers/{organizerId}/name/{language}`](/reference/entry.json/paths/~1organizers~1{organizerId}~1name~1{language}/put) instead.\n\nUpdates the name of the organizer with the given `organizerId`. The new name of the request body will be set on the organizer with default language `nl`. The new name needs to be at least one character long.",
         "operationId": "put-organizer-name-nl",
         "tags": [
           "Organizers"
@@ -3365,7 +3875,7 @@
       ],
       "put": {
         "summary": "Update address nl",
-        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use `PUT /organizers/{organizerId}/address/{language}` instead.\n\n\nUpdates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
+        "description": "<!-- theme: warning -->\n\n> This endpoint is deprecated, use [`PUT /organizers/{organizerId}/address/{language}`](/reference/entry.json/paths/~1organizers~1{organizerId}~1address~1{language}/put) instead.\n\n\nUpdates the address of the organizer with the given `organizerId`. The new address of the request body will be set on the organizer in the default language `nl`.\n\nAn address consists of the following properties which are all required:\n* streetAddress: the street name and street number\n* postalCode: the postal code\n* addressLocality: the town or city\n* addressCountry: the 2-character country code",
         "operationId": "put-organizer-address-nl",
         "tags": [
           "Organizers"
@@ -3622,7 +4132,7 @@
           },
           "description": "The image to add to an organizer."
         },
-        "description": "Add an image to an organizer.\n\nThe image objects contains the following properties:\n* `id`: the id of the image.\n* `language`: the language of the image and description.\n* `copyrightHolder`: the copyright holder of the image.\n* `description`: description of the image.\n\nAll properties are required.",
+        "description": "Add an image to an organizer.\n\nThe image objects contains the following properties:\n* `id`: the id of the image which is required\n* `language`: an optional language of the image and description\n* `copyrightHolder`: the optional copyright holder of the image\n* `description`: the description of the image which is also optional\n\n<!-- theme: info -->\n> The optional fields that are not provided will get the values from the properties of the orginally uploaded image.",
         "tags": [
           "Organizers"
         ],
@@ -3633,6 +4143,56 @@
           {
             "CLIENT_ACCESS_TOKEN": []
           }
+        ]
+      },
+      "patch": {
+        "summary": "Update image(s)",
+        "operationId": "patch-organizer-images",
+        "responses": {
+          "204": {
+            "description": "The images were updated."
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "description": "Update one or more images of an organizer.\n\nThe images to update are identified by their `id`. It is possible to update one or more of the following properties:\n\n* The `language` of an image\n* The `description` of an image\n* The `copyrightHolder` of an image\n\nOnly images included in the `PATCH` request will be updated. Other images that also exist on the organizer will not be removed or updated.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-images-patch.json"
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Organizers"
         ]
       }
     },
@@ -3676,16 +4236,100 @@
         ]
       }
     },
-    "/news_articles": {
+    "/organizers/{organizerId}/images/main": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "organizerId",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "put": {
+        "summary": "Set main image",
+        "tags": [
+          "Organizers"
+        ],
+        "responses": {
+          "204": {
+            "description": "Main image was set"
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/imageId",
+                          "error": "The required properties imageId is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/OrganizerNotFound"
+          }
+        },
+        "operationId": "put-organizer-main-image",
+        "description": "Sets the main image of an organizer. This only requires the `imageId` of the image to set as main.\n\n<!-- theme: info -->\n> For backwards compatible reasons `mediaObjectId` is also supported.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer-main-image-put.json"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "imageId": "4b349765-9499-4d35-b295-c82ede576cf0"
+                  }
+                }
+              }
+            }
+          },
+          "description": "The image id of the new main image."
+        }
+      }
+    },
+    "/news-articles": {
       "get": {
         "summary": "Get all news articles",
-        "description": "Returns the details of all news articles matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 news articles.\n\nThe extra query parameter `page` can be used to get news articles after the first 30 results.  ",
+        "description": "Returns the details of all news articles matching the provided search. The search can be created based on a combination of 3 query parameters:\n- `publisher`\n- `about`\n- `url`\n\nBasic pagination is supported and the results are limited to 30 news articles.\n\nThe extra query parameter `page` can be used to get news articles after the first 30 results.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles`. However the preferred path is `/news-articles`.",
         "operationId": "get-all-news-articles",
         "responses": {
           "200": {
             "description": "News Articles details",
             "content": {
-              "application/json": {
+              "application/ld+json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -3725,6 +4369,40 @@
                     }
                   }
                 }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../models/newsArticle.json"
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": [
+                      {
+                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                        "headline": "API reward for publiq",
+                        "inLanguage": "en",
+                        "text": "This year publiq won an API reward for it's innovative RESTful API",
+                        "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                        "publisher": "BILL",
+                        "publisherLogo": "https://www.bill.be/img/favicon.png",
+                        "url": "https://www.bill.be/blog/publiq-award"
+                      },
+                      {
+                        "id": "9bf7f5fa-4a0b-4475-9ebb-f776e33510f5",
+                        "headline": "madewithlove maakt een API",
+                        "inLanguage": "nl",
+                        "text": "madewithlove maakt een RESTful API in samenwerking met publiq",
+                        "about": "a359d337-4f83-4d05-9b81-b1f048ad2309",
+                        "publisher": "BUZZ",
+                        "publisherLogo": "https://www.buzz.be/img/favicon.png",
+                        "url": "https://www.buzz.be/blog/api"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3752,7 +4430,8 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^http[s]?:\\/\\/"
+              "pattern": "^http[s]?:\\/\\/",
+              "format": "uri"
             },
             "in": "query",
             "name": "url",
@@ -3778,15 +4457,45 @@
           "201": {
             "description": "The News Article was created successfully",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required property url is missing."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
-        "description": "Creates a news article.",
+        "description": "Creates a news article.\n\n<!-- theme: warning -->\n\n> If a news article with the same `url` and `about` already exists, this request will result in a `400` error response to prevent duplicates. If you want to update the existing news article instead, find it programmatically using [`GET /news-articles`](reference/entry.json/paths/~1news-articles/get) with `url` and `about` query parameters, and send a [`PUT /news-articles/{articleId}`](/reference/entry.json/paths/~1news-articles~1{articleId}/put) request instead.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles`. However the preferred path is `/news-articles`.",
         "x-internal": true,
         "requestBody": {
           "content": {
@@ -3802,7 +4511,7 @@
         ]
       }
     },
-    "/news_articles/{articleId}": {
+    "/news-articles/{articleId}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/articleId"
@@ -3810,12 +4519,31 @@
       ],
       "get": {
         "summary": "Get a news article",
-        "description": "Returns the details of a news article with the given article id.",
+        "description": "Returns the details of a news article with the given article id.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles/{articleId}`. However the preferred path is `/news-articles/{articleId}`.",
         "operationId": "get-news-article",
         "responses": {
           "200": {
             "description": "News Article details",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "headline": "API reward for publiq",
+                      "inLanguage": "nl",
+                      "text": "This year publiq won an API reward for it's innovative RESTful API",
+                      "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+                      "publisher": "BILL",
+                      "publisherLogo": "https://www.bill.be/img/favicon.png",
+                      "url": "https://www.bill.be/blog/publiq-award"
+                    }
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
@@ -3823,6 +4551,9 @@
                 "examples": {
                   "Example": {
                     "value": {
+                      "@context": "/contexts/NewsArticle",
+                      "@id": "/news-articles/497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "@type": "https://schema.org/NewsArticle",
                       "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
                       "headline": "API reward for publiq",
                       "inLanguage": "nl",
@@ -3854,7 +4585,7 @@
             "description": "The News Article with the given article id was deleted."
           }
         },
-        "description": "Delete a news article with the given article id.",
+        "description": "Delete a news article with the given article id.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles/{articleId}`. However the preferred path is `/news-articles/{articleId}`.",
         "x-internal": true,
         "tags": [
           "News articles"
@@ -3867,9 +4598,39 @@
           "200": {
             "description": "The News Article was update successfully.",
             "content": {
+              "application/ld+json": {
+                "schema": {
+                  "$ref": "../models/newsArticle.json"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "../models/newsArticle.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid data": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/body/invalid-data",
+                      "title": "Invalid body data",
+                      "status": 400,
+                      "schemaErrors": [
+                        {
+                          "jsonPointer": "/url",
+                          "error": "The required property url is missing."
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -3878,7 +4639,7 @@
             "$ref": "#/components/responses/NewsArticleNotFound"
           }
         },
-        "description": "Updates an existing news article.",
+        "description": "Updates an existing news article.\n\n<!-- theme: info -->\n\n> For backward compatibility with older API clients, this path is also available at `/news_articles/{articleId}`. However the preferred path is `/news-articles/{articleId}`.",
         "x-internal": true,
         "requestBody": {
           "content": {

@@ -6,7 +6,8 @@
       "type": "string",
       "example": "https://www.publiq.be",
       "description": "The unique url of the organizer.",
-      "pattern": "^http[s]?:\\/\\/"
+      "pattern": "^http[s]?:\\/\\/",
+      "format": "uri"
     }
   },
   "required": [
