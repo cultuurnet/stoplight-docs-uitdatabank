@@ -6,11 +6,13 @@
       "type": "string",
       "example": "Kerkstraat 2",
       "minLength": 1,
+      "pattern": "\\S",
       "description": "The street name and house number of the address."
     },
     "postalCode": {
       "type": "string",
       "minLength": 1,
+      "pattern": "\\S",
       "example": "3000",
       "description": "The postal code of the address."
     },
@@ -18,6 +20,7 @@
       "type": "string",
       "example": "Leuven",
       "minLength": 1,
+      "pattern": "\\S",
       "description": "The locality (town or city) of the address."
     },
     "addressCountry": {

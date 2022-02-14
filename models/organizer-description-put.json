@@ -6,7 +6,8 @@
       "type": "string",
       "example": "This organizer is responsible for creating cultural events for schools around Brussels.",
       "description": "The description of the organizer (requires at least one character)",
-      "minLength": 1
+      "minLength": 1,
+      "pattern": "\\S"
     }
   },
   "required": [

@@ -53,11 +53,13 @@
       "description": {
         "type": "string",
         "minLength": 1,
+        "pattern": "\\S",
         "description": "Description of the image object, in the language used in the `language` property of the image object."
       },
       "copyrightHolder": {
         "type": "string",
         "minLength": 3,
+        "pattern": "\\S",
         "description": "Name of the copyright holder of the image."
       },
       "language": {
