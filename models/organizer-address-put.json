@@ -24,7 +24,9 @@
       "type": "string",
       "example": "BE",
       "description": "The 2-character code of the country of the address.",
-      "pattern": "^[A-Z]{2}$"
+      "pattern": "^[A-Z]{2}$",
+      "minLength": 1,
+      "maxLength": 2
     }
   },
   "required": [
