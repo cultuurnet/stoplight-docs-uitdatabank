@@ -1,0 +1,8 @@
+{
+  "title": "organizer.url",
+  "type": "string",
+  "example": "https://www.publiq.be",
+  "description": "The unique website of the organizer.",
+  "format": "uri",
+  "pattern": "^http[s]?:\\/\\/"
+}

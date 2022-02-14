@@ -88,11 +88,7 @@
       "$ref": "./organizer-mainLanguage.json"
     },
     "url": {
-      "type": "string",
-      "example": "https://www.publiq.be",
-      "description": "The unique website of the organizer.",
-      "format": "uri",
-      "pattern": "^http[s]?:\\/\\/"
+      "$ref": "./organizer-url.json"
     },
     "name": {
       "$ref": "./organizer-name.json"
@@ -110,11 +106,7 @@
       "$ref": "./organizer-images.json"
     },
     "mainImage": {
-      "type": "string",
-      "format": "url",
-      "pattern": "^http[s]?:\\/\\/",
-      "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
-      "description": "The main image of the organizer"
+      "$ref": "./organizer-mainImage.json"
     },
     "labels": {
       "$ref": "./organizer-labels.json"
