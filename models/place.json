@@ -185,6 +185,9 @@
         "geo": {
           "$ref": "./place-geo.json"
         },
+        "organizer": {
+          "$ref": "./organizer-reference.json"
+        },
         "startDate": {
           "$ref": "./place-startDate.json"
         },
