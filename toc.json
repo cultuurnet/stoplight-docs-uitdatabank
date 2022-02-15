@@ -404,6 +404,86 @@
           "type": "group",
           "title": "Properties",
           "items": [
+            {
+              "type": "item",
+              "title": "@id",
+              "uri": "models/organizer-@id.json"
+            },
+            {
+              "type": "item",
+              "title": "name",
+              "uri": "models/organizer-name.json"
+            },
+            {
+              "type": "item",
+              "title": "url",
+              "uri": "models/organizer-url.json"
+            },
+            {
+              "type": "item",
+              "title": "description",
+              "uri": "models/organizer-description.json"
+            },
+            {
+              "type": "item",
+              "title": "address",
+              "uri": "models/organizer-address.json"
+            },
+            {
+              "type": "item",
+              "title": "labels",
+              "uri": "models/organizer-labels.json"
+            },
+            {
+              "type": "item",
+              "title": "hiddenLabels",
+              "uri": "models/organizer-hiddenLabels.json"
+            },
+            {
+              "type": "item",
+              "title": "images",
+              "uri": "models/organizer-images.json"
+            },
+            {
+              "type": "item",
+              "title": "mainImage",
+              "uri": "models/organizer-mainImage.json"
+            },
+            {
+              "type": "item",
+              "title": "contactPoint",
+              "uri": "models/organizer-contactPoint.json"
+            },
+            {
+              "type": "item",
+              "title": "workflowStatus",
+              "uri": "models/organizer-workflowStatus.json"
+            },
+            {
+              "type": "item",
+              "title": "creator",
+              "uri": "models/organizer-creator.json"
+            },
+            {
+              "type": "item",
+              "title": "created",
+              "uri": "models/organizer-created.json"
+            },
+            {
+              "type": "item",
+              "title": "modified",
+              "uri": "models/organizer-modified.json"
+            },
+            {
+              "type": "item",
+              "title": "languages",
+              "uri": "models/organizer-languages.json"
+            },
+            {
+              "type": "item",
+              "title": "completedLanguages",
+              "uri": "models/organizer-completedLanguages.json"
+            }
           ]
         }
       ]

@@ -29,12 +29,14 @@
         "type": "string",
         "example": "publiq",
         "minLength": 3,
+        "pattern": "\\S",
         "description": "The copyright holder of the image."
       },
       "description": {
         "type": "string",
         "example": "Picture of the last publiq event",
         "minLength": 1,
+        "pattern": "\\S",
         "description": "Description of the image object, in the language used in the `language` property of the image object."
       }
     },
