@@ -18,6 +18,7 @@
     }
   ],
   "title": "place.address",
+  "minProperties": 1,
   "properties": {
     "nl": {
       "type": "object",
