@@ -1,7 +1,7 @@
 {
   "x-internal": true,
   "description": "Schema for an address in a single language that can be used on various resources.",
-  "title": "common.address",
+  "title": "address",
   "type": "object",
   "properties": {
     "streetAddress": {
