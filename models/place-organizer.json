@@ -1,5 +1,0 @@
-{
-  "$ref": "./organizer.json",
-  "title": "place.organizer",
-  "description": "The organizer of the [place](./place.json). Links to another entity, but also embeds it automatically. Same model as an [organizer](./organizer.json)."
-}
