@@ -1,0 +1,20 @@
+{
+  "x-internal": true,
+  "description": "Schema for a multilingual address that can be used on various resources.",
+  "title": "address.i18n",
+  "type": "object",
+  "properties": {
+    "nl": {
+      "$ref": "./common-address.json"
+    },
+    "fr": {
+      "$ref": "./common-address.json"
+    },
+    "de": {
+      "$ref": "./common-address.json"
+    },
+    "en": {
+      "$ref": "./common-address.json"
+    }
+  }
+}
