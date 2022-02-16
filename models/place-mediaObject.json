@@ -21,7 +21,6 @@
     "properties": {
       "@id": {
         "type": "string",
-        "minLength": 1,
         "format": "uri",
         "pattern": "^http[s]?:\\/\\/",
         "example": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",

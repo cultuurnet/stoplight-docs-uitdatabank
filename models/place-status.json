@@ -22,7 +22,6 @@
   ],
   "properties": {
     "type": {
-      "minLength": 1,
       "enum": [
         "Available",
         "TemporarilyUnavailable",
