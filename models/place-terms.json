@@ -4,6 +4,13 @@
   "description": "A list of taxonomy terms used to categorize the [place](./place.json).\n\nTerms are pre-defined and can be browsed in our [Terms](../docs/terms.md) guide.\n\nA place requires at least one term, to define its type. (For example a museum, monument, ...)",
   "uniqueItems": true,
   "minItems": 1,
+  "contains": {
+    "properties": {
+      "domain": {"const": "eventtype"}
+    }
+  },
+  "minContains": 1,
+  "maxContains": 1,
   "examples": [
     [
       {
