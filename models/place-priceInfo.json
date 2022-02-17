@@ -40,6 +40,13 @@
     ]
   ],
   "minItems": 1,
+  "contains": {
+    "properties": {
+      "category": {"const": "base"}
+    }
+  },
+  "minContains": 1,
+  "maxContains": 1,
   "items": {
     "type": "object",
     "examples": [
