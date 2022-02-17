@@ -56,7 +56,8 @@
         "type": "string",
         "format": "uuid",
         "example": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
-        "description": "The id of the added video."
+        "description": "The id of the added video.",
+        "readOnly": true
       },
       "url": {
         "type": "string",
@@ -93,7 +94,6 @@
       }
     },
     "required": [
-      "id",
       "url",
       "language"
     ]
