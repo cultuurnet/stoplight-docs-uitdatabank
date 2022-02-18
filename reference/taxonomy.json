@@ -28,323 +28,330 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "Term",
-                    "type": "object",
-                    "description": "A taxonomy term like an event type, theme, or facility.",
-                    "examples": [
-                      {
-                        "id": "3.23.1.0.0",
-                        "domain": "facility",
-                        "name": {
-                          "nl": "Voorzieningen voor rolstoelgebruikers",
-                          "fr": "Facilités pour fauteuils roulants",
-                          "de": "EInrichtung für Rollstuhlfahrer",
-                          "en": "Wheelchair facilities"
-                        },
-                        "scope": [
-                          "places"
-                        ]
-                      },
-                      {
-                        "id": "0.50.4.0.0",
-                        "domain": "eventtype",
-                        "name": {
-                          "nl": "Concert",
-                          "fr": "Concert",
-                          "de": "Konzert",
-                          "en": "Concert"
-                        },
-                        "scope": [
-                          "events"
-                        ],
-                        "otherSuggestedTerms": [
+                  "type": "object",
+                  "properties": {
+                    "terms": {
+                      "type": "array",
+                      "items": {
+                        "title": "Term",
+                        "type": "object",
+                        "description": "A taxonomy term like an event type, theme, or facility.",
+                        "examples": [
                           {
-                            "id": "1.8.3.5.0",
-                            "domain": "theme",
+                            "id": "3.23.1.0.0",
+                            "domain": "facility",
                             "name": {
-                              "nl": "Amusementsmuziek",
-                              "fr": "Cabaret",
-                              "de": "Schlager",
-                              "en": "Cabaret music"
+                              "nl": "Voorzieningen voor rolstoelgebruikers",
+                              "fr": "Facilités pour fauteuils roulants",
+                              "de": "EInrichtung für Rollstuhlfahrer",
+                              "en": "Wheelchair facilities"
                             },
                             "scope": [
-                              "events"
+                              "places"
                             ]
                           },
                           {
-                            "id": "1.8.3.3.0",
-                            "domain": "theme",
+                            "id": "0.50.4.0.0",
+                            "domain": "eventtype",
                             "name": {
-                              "nl": "Dance muziek",
-                              "fr": "Musique de danse",
-                              "de": "Tanzmusik",
-                              "en": "Dance music"
+                              "nl": "Concert",
+                              "fr": "Concert",
+                              "de": "Konzert",
+                              "en": "Concert"
                             },
                             "scope": [
                               "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.4.0.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Folk en wereldmuziek",
-                              "fr": "Musique folklorique et mondiale",
-                              "de": "Folk und World",
-                              "en": "Folk and world music"
-                            },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.3.2.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Hip hop, rnb en rap",
-                              "fr": "Hip hop, rnb et rap",
-                              "de": "Hip-Hop, R und B und Rap",
-                              "en": "Hip hop, rnb and rap"
-                            },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.2.0.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Jazz en blues",
-                              "fr": "Jazz et blues",
-                              "de": "Jazz und Blues",
-                              "en": "Jazz and blues"
-                            },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.1.0.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Klassieke muziek",
-                              "fr": "Musique classique",
-                              "de": "Klassische Musik",
-                              "en": "Classical music"
-                            },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.3.1.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Pop en rock",
-                              "fr": "Pop et rock",
-                              "de": "Pop und Rock",
-                              "en": "Pop and rock"
-                            },
-                            "scope": [
-                              "events"
+                            ],
+                            "otherSuggestedTerms": [
+                              {
+                                "id": "1.8.3.5.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Amusementsmuziek",
+                                  "fr": "Cabaret",
+                                  "de": "Schlager",
+                                  "en": "Cabaret music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.3.3.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Dance muziek",
+                                  "fr": "Musique de danse",
+                                  "de": "Tanzmusik",
+                                  "en": "Dance music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.4.0.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Folk en wereldmuziek",
+                                  "fr": "Musique folklorique et mondiale",
+                                  "de": "Folk und World",
+                                  "en": "Folk and world music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.3.2.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Hip hop, rnb en rap",
+                                  "fr": "Hip hop, rnb et rap",
+                                  "de": "Hip-Hop, R und B und Rap",
+                                  "en": "Hip hop, rnb and rap"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.2.0.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Jazz en blues",
+                                  "fr": "Jazz et blues",
+                                  "de": "Jazz und Blues",
+                                  "en": "Jazz and blues"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.1.0.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Klassieke muziek",
+                                  "fr": "Musique classique",
+                                  "de": "Klassische Musik",
+                                  "en": "Classical music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.3.1.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Pop en rock",
+                                  "fr": "Pop et rock",
+                                  "de": "Pop und Rock",
+                                  "en": "Pop and rock"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              }
                             ]
                           }
-                        ]
-                      }
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "example": "3.23.1.0.0",
-                        "description": "Unique id of the taxonomy term."
-                      },
-                      "domain": {
-                        "type": "string",
-                        "enum": [
-                          "facility",
-                          "theme",
-                          "eventtype"
-                        ],
-                        "description": "Indicates to what domain the taxonomy term belongs.",
-                        "example": "facility"
-                      },
-                      "scope": {
-                        "type": "array",
-                        "uniqueItems": true,
-                        "minItems": 1,
-                        "description": "Resource(s) that the term is usable on in UiTdatabank.",
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "events",
-                            "places"
-                          ]
-                        }
-                      },
-                      "name": {
-                        "type": "object",
-                        "description": "Localized human-readable names of the term, as an object with languages as properties.",
-                        "required": [
-                          "nl"
                         ],
                         "properties": {
-                          "nl": {
+                          "id": {
                             "type": "string",
-                            "example": "Voorzieningen voor rolstoelgebruikers"
+                            "example": "3.23.1.0.0",
+                            "description": "Unique id of the taxonomy term."
                           },
-                          "fr": {
+                          "domain": {
                             "type": "string",
-                            "example": "Facilités pour fauteuils roulants"
+                            "enum": [
+                              "facility",
+                              "theme",
+                              "eventtype"
+                            ],
+                            "description": "Indicates to what domain the taxonomy term belongs.",
+                            "example": "facility"
                           },
-                          "de": {
-                            "type": "string",
-                            "example": "EInrichtung für Rollstuhlfahrer"
+                          "scope": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "minItems": 1,
+                            "description": "Resource(s) that the term is usable on in UiTdatabank.",
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "events",
+                                "places"
+                              ]
+                            }
                           },
-                          "en": {
-                            "type": "string",
-                            "example": "Wheelchair facilities"
+                          "name": {
+                            "type": "object",
+                            "description": "Localized human-readable names of the term, as an object with languages as properties.",
+                            "required": [
+                              "nl"
+                            ],
+                            "properties": {
+                              "nl": {
+                                "type": "string",
+                                "example": "Voorzieningen voor rolstoelgebruikers"
+                              },
+                              "fr": {
+                                "type": "string",
+                                "example": "Facilités pour fauteuils roulants"
+                              },
+                              "de": {
+                                "type": "string",
+                                "example": "EInrichtung für Rollstuhlfahrer"
+                              },
+                              "en": {
+                                "type": "string",
+                                "example": "Wheelchair facilities"
+                              }
+                            }
+                          },
+                          "otherSuggestedTerms": {
+                            "type": "array",
+                            "description": "A list of terms from another domain that are suggested to be used in combination with this term. Usually used on `eventtype` terms to suggest related `theme` terms.",
+                            "items": {}
                           }
-                        }
-                      },
-                      "otherSuggestedTerms": {
-                        "type": "array",
-                        "description": "A list of terms from another domain that are suggested to be used in combination with this term. Usually used on `eventtype` terms to suggest related `theme` terms.",
-                        "items": {}
+                        },
+                        "required": [
+                          "id",
+                          "domain",
+                          "scope",
+                          "name"
+                        ]
                       }
-                    },
-                    "required": [
-                      "id",
-                      "domain",
-                      "scope",
-                      "name"
-                    ]
+                    }
                   }
                 },
                 "examples": {
                   "Example": {
-                    "value": [
-                      {
-                        "id": "3.23.1.0.0",
-                        "domain": "facility",
-                        "name": {
-                          "nl": "Voorzieningen voor rolstoelgebruikers",
-                          "fr": "Facilités pour fauteuils roulants",
-                          "de": "EInrichtung für Rollstuhlfahrer",
-                          "en": "Wheelchair facilities"
+                    "value": {
+                      "terms": [
+                        {
+                          "id": "3.23.1.0.0",
+                          "domain": "facility",
+                          "name": {
+                            "nl": "Voorzieningen voor rolstoelgebruikers",
+                            "fr": "Facilités pour fauteuils roulants",
+                            "de": "EInrichtung für Rollstuhlfahrer",
+                            "en": "Wheelchair facilities"
+                          },
+                          "scope": [
+                            "places"
+                          ]
                         },
-                        "scope": [
-                          "places"
-                        ]
-                      },
-                      {
-                        "id": "0.50.4.0.0",
-                        "domain": "eventtype",
-                        "name": {
-                          "nl": "Concert",
-                          "fr": "Concert",
-                          "de": "Konzert",
-                          "en": "Concert"
-                        },
-                        "scope": [
-                          "events"
-                        ],
-                        "otherSuggestedTerms": [
-                          {
-                            "id": "1.8.3.5.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Amusementsmuziek",
-                              "fr": "Cabaret",
-                              "de": "Schlager",
-                              "en": "Cabaret music"
-                            },
-                            "scope": [
-                              "events"
-                            ]
+                        {
+                          "id": "0.50.4.0.0",
+                          "domain": "eventtype",
+                          "name": {
+                            "nl": "Concert",
+                            "fr": "Concert",
+                            "de": "Konzert",
+                            "en": "Concert"
                           },
-                          {
-                            "id": "1.8.3.3.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Dance muziek",
-                              "fr": "Musique de danse",
-                              "de": "Tanzmusik",
-                              "en": "Dance music"
+                          "scope": [
+                            "events"
+                          ],
+                          "otherSuggestedTerms": [
+                            {
+                              "id": "1.8.3.5.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Amusementsmuziek",
+                                "fr": "Cabaret",
+                                "de": "Schlager",
+                                "en": "Cabaret music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
                             },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.4.0.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Folk en wereldmuziek",
-                              "fr": "Musique folklorique et mondiale",
-                              "de": "Folk und World",
-                              "en": "Folk and world music"
+                            {
+                              "id": "1.8.3.3.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Dance muziek",
+                                "fr": "Musique de danse",
+                                "de": "Tanzmusik",
+                                "en": "Dance music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
                             },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.3.2.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Hip hop, rnb en rap",
-                              "fr": "Hip hop, rnb et rap",
-                              "de": "Hip-Hop, R und B und Rap",
-                              "en": "Hip hop, rnb and rap"
+                            {
+                              "id": "1.8.4.0.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Folk en wereldmuziek",
+                                "fr": "Musique folklorique et mondiale",
+                                "de": "Folk und World",
+                                "en": "Folk and world music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
                             },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.2.0.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Jazz en blues",
-                              "fr": "Jazz et blues",
-                              "de": "Jazz und Blues",
-                              "en": "Jazz and blues"
+                            {
+                              "id": "1.8.3.2.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Hip hop, rnb en rap",
+                                "fr": "Hip hop, rnb et rap",
+                                "de": "Hip-Hop, R und B und Rap",
+                                "en": "Hip hop, rnb and rap"
+                              },
+                              "scope": [
+                                "events"
+                              ]
                             },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.1.0.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Klassieke muziek",
-                              "fr": "Musique classique",
-                              "de": "Klassische Musik",
-                              "en": "Classical music"
+                            {
+                              "id": "1.8.2.0.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Jazz en blues",
+                                "fr": "Jazz et blues",
+                                "de": "Jazz und Blues",
+                                "en": "Jazz and blues"
+                              },
+                              "scope": [
+                                "events"
+                              ]
                             },
-                            "scope": [
-                              "events"
-                            ]
-                          },
-                          {
-                            "id": "1.8.3.1.0",
-                            "domain": "theme",
-                            "name": {
-                              "nl": "Pop en rock",
-                              "fr": "Pop et rock",
-                              "de": "Pop und Rock",
-                              "en": "Pop and rock"
+                            {
+                              "id": "1.8.1.0.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Klassieke muziek",
+                                "fr": "Musique classique",
+                                "de": "Klassische Musik",
+                                "en": "Classical music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
                             },
-                            "scope": [
-                              "events"
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                            {
+                              "id": "1.8.3.1.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Pop en rock",
+                                "fr": "Pop et rock",
+                                "de": "Pop und Rock",
+                                "en": "Pop and rock"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   }
                 }
               }
