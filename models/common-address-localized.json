@@ -30,6 +30,12 @@
       "description": "Street address in the relevant locale, for example `Wetstraat 1` for `nl` or `Rue de la Loi 1` for `fr`."
     }
   },
+  "required": [
+    "addressCountry",
+    "addressLocality",
+    "postalCode",
+    "streetAddress"
+  ],
   "examples": [
     {
       "addressCountry": "BE",
