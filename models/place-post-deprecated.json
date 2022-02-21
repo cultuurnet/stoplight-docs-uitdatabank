@@ -1,0 +1,92 @@
+{
+  "title": "place-post-deprecated",
+  "type": "object",
+  "x-internal": true,
+  "properties": {
+    "mainLanguage": {
+      "$ref": "./place-mainLanguage.json"
+    },
+    "name": {
+      "type": "string",
+      "pattern": "\\S",
+      "minLength": 1,
+      "description": "The name of the place.",
+      "example": "M – Museum"
+    },
+    "type": {
+      "type": "object",
+      "required": [
+        "id",
+        "label"
+      ],
+      "description": "The term (type) used to categorize the place. Terms are pre-defined and can be browsed in our [Terms](../docs/terms.md) guide.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "GnPFp9uvOUyqhOckIFMKmg",
+          "description": "Unique id of the term (type)."
+        },
+        "label": {
+          "type": "string",
+          "example": "Museum of galerij",
+          "description": "Human-readable label of the term (type). Currently only available in Dutch."
+        },
+        "domain": {
+          "type": "string",
+          "example": "eventtype",
+          "description": "The domain of the term (type)."
+        }
+      }
+    },
+    "address": {
+      "type": "object",
+      "required": [
+        "streetAddress",
+        "postalCode",
+        "addressLocality",
+        "addressCountry"
+      ],
+      "description": "The address of the place in the main language.",
+      "properties": {
+        "streetAddress": {
+          "type": "string",
+          "description": "The street in the main language.",
+          "example": "Leopold Vanderkelenstraat 28",
+          "pattern": "\\S",
+          "minLength": 1
+        },
+        "postalCode": {
+          "type": "string",
+          "description": "The postal code of municipality.",
+          "pattern": "\\S",
+          "minLength": 1,
+          "example": "3000"
+        },
+        "addressLocality": {
+          "type": "string",
+          "example": "Leuven",
+          "pattern": "\\S",
+          "minLength": 1,
+          "description": "Municipality in the main language."
+        },
+        "addressCountry": {
+          "type": "string",
+          "description": "The country code in ISO-3166 format.",
+          "example": "BE",
+          "pattern": "^[A-Z][A-Z]$",
+          "minLength": 1
+        }
+      }
+    },
+    "calendar": {
+      "$ref": "./place-calendar-put.json"
+    }
+  },
+  "required": [
+    "mainLanguage",
+    "name",
+    "type",
+    "address",
+    "calendar"
+  ]
+}
