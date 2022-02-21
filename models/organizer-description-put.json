@@ -1,13 +1,11 @@
 {
-  "title": "organizer-description-put",
+  "x-internal": true,
+  "title": "organizer.description.put",
   "type": "object",
   "properties": {
     "description": {
-      "type": "string",
-      "example": "This organizer is responsible for creating cultural events for schools around Brussels.",
-      "description": "The description of the organizer (requires at least one character)",
-      "minLength": 1,
-      "pattern": "\\S"
+      "$ref": "./common-description-localized.json",
+      "description": "New description of the organizer, localized in a single language."
     }
   },
   "required": [
