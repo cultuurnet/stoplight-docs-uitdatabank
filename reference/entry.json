@@ -1850,6 +1850,103 @@
         ]
       }
     },
+    "/places": {
+      "post": {
+        "summary": "post-place",
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "201": {
+            "description": "The place was created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The id of the created place.",
+                      "example": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "format": "uuid"
+                    },
+                    "placeId": {
+                      "type": "string",
+                      "description": "The id of the created place (deprecated and replaced with `id`).",
+                      "deprecated": true,
+                      "example": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "format": "uuid"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The url of the JSON-LD representation of the created place.",
+                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "placeId",
+                    "url"
+                  ]
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "placeId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "url": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        },
+        "operationId": "post-places",
+        "description": "Creates a new place.\n\n<!-- theme: warning -->\n\n> This request is also supported with an older, deprecated schema that was used to create a place with just its required fields.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "../models/place.json"
+                  },
+                  {
+                    "$ref": "../models/place-post-deprecated.json"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/places/{placeId}": {
       "parameters": [
         {
