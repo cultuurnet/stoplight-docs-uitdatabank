@@ -56,7 +56,8 @@
         "type": "string",
         "format": "uuid",
         "example": "46e9ea9f-fc42-4759-a81b-4308467b7c35",
-        "description": "The id of the added video."
+        "description": "The id of the video.",
+        "readOnly": true
       },
       "url": {
         "type": "string",
@@ -70,7 +71,8 @@
         "format": "uri",
         "pattern": "^http[s]?:\\/\\/",
         "example": "https://www.youtube.com/embed/cEItmb_a20D",
-        "description": "The url that can be used to embed the video inside an iFrame."
+        "description": "The url that can be used to embed the video inside an iFrame.",
+        "readOnly": true
       },
       "language": {
         "type": "string",
@@ -87,13 +89,12 @@
         "type": "string",
         "example": "publiq",
         "minLength": 3,
-        "description": "The copyright holder of the video source."
+        "description": "The copyright holder of the video source.",
+        "pattern": "\\S"
       }
     },
     "required": [
-      "id",
       "url",
-      "embedUrl",
       "language"
     ]
   }

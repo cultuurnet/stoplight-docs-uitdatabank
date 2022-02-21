@@ -15,22 +15,30 @@
     "nl": {
       "type": "string",
       "description": "Dutch name",
-      "example": "Nederlandse naam"
+      "example": "Nederlandse naam",
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "fr": {
       "type": "string",
       "description": "French name",
-      "example": "Nom français"
+      "example": "Nom français",
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "de": {
       "type": "string",
       "description": "German name",
-      "example": "Deutscher Name"
+      "example": "Deutscher Name",
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "en": {
       "type": "string",
       "description": "English name",
-      "example": "English name"
+      "example": "English name",
+      "minLength": 1,
+      "pattern": "\\S"
     }
   }
 }

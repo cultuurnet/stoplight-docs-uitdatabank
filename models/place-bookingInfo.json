@@ -5,7 +5,9 @@
   "properties": {
     "phone": {
       "type": "string",
-      "description": "Phone number for booking purposes."
+      "description": "Phone number for booking purposes.",
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "email": {
       "type": "string",
@@ -36,22 +38,30 @@
         "nl": {
           "type": "string",
           "description": "Dutch description",
-          "example": "Nederlandse beschrijving"
+          "example": "Nederlandse beschrijving",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "fr": {
           "type": "string",
           "description": "French description",
-          "example": "Description français"
+          "example": "Description français",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "de": {
           "type": "string",
           "description": "German description",
-          "example": "Deutscher Beschreibung"
+          "example": "Deutscher Beschreibung",
+          "pattern": "\\S",
+          "minLength": 1
         },
         "en": {
           "type": "string",
           "description": "English description",
-          "example": "English description"
+          "example": "English description",
+          "pattern": "\\S",
+          "minLength": 1
         }
       }
     },
@@ -60,7 +70,6 @@
       "type": "string",
       "format": "date-time",
       "example": "2021-05-17T22:00:00+00:00",
-      "minLength": 1,
       "examples": [
         "2021-05-17T22:00:00+00:00"
       ]
@@ -70,11 +79,13 @@
       "type": "string",
       "format": "date-time",
       "example": "2021-05-17T22:00:00+00:00",
-      "minLength": 1,
       "examples": [
         "2021-05-17T22:00:00+00:00"
       ]
     }
+  },
+  "dependentRequired": {
+    "url": ["urlLabel"]
   },
   "examples": [
     {
