@@ -31,14 +31,12 @@
         ]
       },
       "contentUrl": {
-        "$ref": "./common-string-uri.json",
-        "description": "URL of the media object file.",
-        "readOnly": true
+        "$ref": "./common-string-uri-readOnly.json",
+        "description": "URL of the media object file."
       },
       "thumbnailUrl": {
-        "$ref": "./common-string-uri.json",
-        "description": "URL to a thumbnail image of the media object file.",
-        "readOnly": true
+        "$ref": "./common-string-uri-readOnly.json",
+        "description": "URL to a thumbnail image of the media object file."
       },
       "description": {
         "type": "string",

@@ -63,9 +63,8 @@
         "$ref": "./common-string-uri-video.json"
       },
       "embedUrl": {
-        "$ref": "./common-string-uri.json",
-        "description": "The url that can be used to embed the video inside an iFrame.",
-        "readOnly": true
+        "$ref": "./common-string-uri-readOnly.json",
+        "description": "The url that can be used to embed the video inside an iFrame."
       },
       "language": {
         "type": "string",
