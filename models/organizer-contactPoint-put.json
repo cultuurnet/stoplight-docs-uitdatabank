@@ -1,5 +1,6 @@
 {
-  "title": "organizer-contactPoint-put",
+  "x-internal": true,
+  "title": "organizer.contactPoint.put",
   "type": "object",
   "properties": {
     "phone": {

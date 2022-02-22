@@ -1,4 +1,5 @@
 {
+  "x-internal": true,
   "title": "event.videos.patch",
   "type": "array",
   "description": "Describes the request body to update one or more videos on an event.",
