@@ -11,11 +11,7 @@
       "$ref": "./organizer-mainLanguage.json"
     },
     "website": {
-      "type": "string",
-      "example": "https://www.publiq.be/",
-      "pattern": "^http[s]?:\\/\\/",
-      "format": "uri",
-      "description": "The unique url of the organizer."
+      "$ref": "./organizer-url.json"
     },
     "name": {
       "$ref": "./common-name-localized.json",

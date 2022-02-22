@@ -16,10 +16,7 @@
       "example": "info@example.com"
     },
     "url": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^http[s]?:\\/\\/",
-      "example": "https://www.example.com",
+      "$ref": "./common-string-uri.json",
       "description": "URL to a website for booking purposes."
     },
     "urlLabel": {

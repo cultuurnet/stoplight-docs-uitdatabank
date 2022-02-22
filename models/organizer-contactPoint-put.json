@@ -29,10 +29,7 @@
       "description": "List of URLs for contact purposes (can be empty)",
       "minItems": 0,
       "items": {
-        "type": "string",
-        "pattern": "^http[s]?:\\/\\/",
-        "format": "uri",
-        "example": "https://www.publiq.be",
+        "$ref": "./common-string-uri.json",
         "description": "URL to a website for contact purposes."
       }
     }

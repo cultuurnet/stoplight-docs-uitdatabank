@@ -31,10 +31,7 @@
       "description": "A list of globally unique URIs of other events that are part of this production. See also [@id](./event-@id.json). Automatically added by UiTdatabank.",
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "example": "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/"
+        "$ref": "./event-@id.json"
       }
     }
   },

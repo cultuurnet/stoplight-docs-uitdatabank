@@ -20,14 +20,8 @@
     "type": "object",
     "properties": {
       "@id": {
-        "type": "string",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/",
-        "example": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+        "$ref": "./common-string-uri.json",
         "description": "A unique URI that acts as globally unique ID for the image object. Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
-        "examples": [
-          "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c"
-        ],
         "readOnly": true
       },
       "id": {
@@ -37,18 +31,12 @@
         "example": "546a90cd-a238-417b-aa98-1b6c50c1345c"
       },
       "contentUrl": {
-        "type": "string",
-        "description": "URL of the image file.",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/",
-        "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
+        "$ref": "./common-string-uri.json",
+        "description": "URL of the image file."
       },
       "thumbnailUrl": {
-        "type": "string",
-        "description": "URL to a thumbnail image.",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/",
-        "example": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
+        "$ref": "./common-string-uri.json",
+        "description": "URL to a thumbnail image."
       },
       "description": {
         "type": "string",

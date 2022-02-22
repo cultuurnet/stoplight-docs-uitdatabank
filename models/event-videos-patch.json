@@ -14,11 +14,7 @@
         "readOnly": true
       },
       "url": {
-        "type": "string",
-        "format": "uri",
-        "example": "https://www.youtube.com/watch?v=cEItmb_a20D",
-        "description": "The unique url of the video. Currently only Youtube and Vimeo sources are allowed.",
-        "pattern": "^http(s?):\\/\\/(www\\.)?((youtube\\.com\\/watch\\?v=([^\\/#&?]*))|(vimeo\\.com\\/([^\\/#&?]*))|(youtu\\.be\\/([^\\/#&?]*)))"
+        "$ref": "./common-string-uri-video.json"
       },
       "language": {
         "type": "string",

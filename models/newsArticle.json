@@ -42,17 +42,11 @@
       "description": "The publisher of the news article."
     },
     "publisherLogo": {
-      "type": "string",
-      "pattern": "^http[s]?:\\/\\/",
-      "format": "uri",
-      "description": "The url pointing to the logo of the publisher of the news article.",
-      "example": "https://www.bill.be/img/favicon.png"
+      "$ref": "./common-string-uri.json",
+      "description": "The url pointing to the logo of the publisher of the news article."
     },
     "url": {
-      "type": "string",
-      "pattern": "^http[s]?:\\/\\/",
-      "format": "uri",
-      "example": "https://www.bill.be/blog/publiq-award",
+      "$ref": "./common-string-uri.json",
       "description": "The link pointing to the published news article itself."
     }
   },

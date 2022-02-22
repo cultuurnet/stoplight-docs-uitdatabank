@@ -28,10 +28,7 @@
       "description": "List of URLs for contact purposes (can be empty)",
       "minItems": 0,
       "items": {
-        "type": "string",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/",
-        "example": "https://www.example.com",
+        "$ref": "./common-string-uri.json",
         "description": "URL to a website for contact purposes."
       }
     }

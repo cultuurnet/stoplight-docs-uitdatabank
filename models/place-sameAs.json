@@ -10,11 +10,7 @@
     ]
   ],
   "items": {
-    "type": "string",
-    "format": "uri",
-    "pattern": "^http[s]?:\\/\\/",
-    "example": "http://www.uitinvlaanderen.be/agenda/e/test-place/85b04295-479c-40f5-b3dd-469dfb4387b3",
-    "readOnly": true
+    "$ref": "./common-string-uri.json"
   },
   "readOnly": true
 }

@@ -1,10 +1,8 @@
 {
-  "type": "string",
+  "$ref": "./common-string-uri.json",
+  "x-internal": false,
   "title": "place.image",
   "description": "URL to the main image of the [place](./place.json). Must be one of the available `contentUrl` properties in the [mediaObject](./place-mediaObject.json) property.",
-  "format": "uri",
-  "pattern": "^http[s]?:\\/\\/",
-  "example": "https://io-test.uitdatabank.be/images/example.png",
   "examples": [
     "https://io-test.uitdatabank.be/images/example.png"
   ]
