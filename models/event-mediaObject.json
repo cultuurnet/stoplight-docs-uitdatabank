@@ -60,9 +60,6 @@
     },
     "required": [
       "@id",
-      "@type",
-      "contentUrl",
-      "thumbnailUrl",
       "description",
       "copyrightHolder",
       "language"

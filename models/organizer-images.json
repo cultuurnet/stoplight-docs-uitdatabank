@@ -62,10 +62,7 @@
       }
     },
     "required": [
-      "@id",
       "id",
-      "contentUrl",
-      "thumbnailUrl",
       "description",
       "copyrightHolder",
       "language"
