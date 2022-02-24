@@ -2008,7 +2008,7 @@
         "x-internal": false
       },
       "put": {
-        "summary": "",
+        "summary": "Update place",
         "operationId": "put-places",
         "responses": {
           "200": {
