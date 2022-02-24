@@ -2009,7 +2009,7 @@
       },
       "put": {
         "summary": "Update place",
-        "operationId": "put-places",
+        "operationId": "put-place",
         "responses": {
           "200": {
             "description": "The place was updated successfully",
