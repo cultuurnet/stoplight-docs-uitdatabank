@@ -2261,7 +2261,7 @@
               }
             }
           },
-          "description": ""
+          "description": "The details of the place to update."
         },
         "tags": [
           "Places"
