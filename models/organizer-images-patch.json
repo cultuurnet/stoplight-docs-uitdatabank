@@ -2,7 +2,6 @@
   "type": "array",
   "title": "organizer.images.patch",
   "description": "Describes the request body to update one or more images on an [organizer](./organizer.json).",
-  "examples": [],
   "minItems": 1,
   "items": {
     "type": "object",
