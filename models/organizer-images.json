@@ -1,6 +1,6 @@
 {
   "type": "array",
-  "title": "organizer.image",
+  "title": "organizer.images",
   "description": "Describes an array of images that are linked to an [organizer](./organizer.json)",
   "minItems": 1,
   "examples": [
