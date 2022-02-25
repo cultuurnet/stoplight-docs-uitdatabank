@@ -37,7 +37,8 @@
         "type": "string",
         "description": "Name of the copyright holder of the media object.",
         "pattern": "\\S",
-        "minLength": 1
+        "minLength": 2,
+        "maxLength": 250
       },
       "inLanguage": {
         "type": "string",
