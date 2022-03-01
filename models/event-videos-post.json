@@ -1,33 +1,6 @@
 {
+  "$ref": "./common-videos-post.json",
   "x-internal": true,
   "title": "event.videos.post",
-  "type": "object",
-  "description": "Describes the request body to add a video to an event.",
-  "examples": [],
-  "properties": {
-    "url": {
-      "$ref": "./common-string-uri-video.json"
-    },
-    "language": {
-      "type": "string",
-      "example": "nl",
-      "enum": [
-        "nl",
-        "fr",
-        "de",
-        "en"
-      ],
-      "description": "The language of the video.\nCan be one of `nl`, `fr`, `de`, or `en`."
-    },
-    "copyrightHolder": {
-      "type": "string",
-      "example": "publiq",
-      "minLength": 3,
-      "description": "The copyright holder of the video source."
-    }
-  },
-  "required": [
-    "url",
-    "language"
-  ]
+  "description": "Describes the request body to add a video to an event."
 }
