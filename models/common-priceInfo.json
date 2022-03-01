@@ -14,84 +14,58 @@
   "minContains": 1,
   "maxContains": 1,
   "items": {
-    "type": "object",
-    "properties": {
-      "category": {
-        "type": "string",
-        "enum": [
-          "base",
-          "tariff"
-        ],
-        "example": "base",
-        "description": "Indicates whether this is the base price or a custom tariff.\n`base` for the base price, and `tariff` for custom/extra tariffs."
-      },
-      "price": {
-        "type": "number",
-        "format": "float",
-        "minimum": 0,
-        "example": 10.5,
-        "description": "The price of a ticket in this category."
-      },
-      "priceCurrency": {
-        "type": "string",
-        "enum": [
-          "EUR"
-        ],
-        "description": "The currency of the price. Currently only `EUR` is supported."
-      },
-      "name": {
-        "description": "Name of a tariff inside priceInfo. Requires at least one value, for the language specified in the `mainLanguage` property.",
+    "allOf": [
+      {
         "type": "object",
-        "minProperties": 1,
-        "examples": [
-          {
-            "nl": "Basistarief",
-            "fr": "Tarif de base",
-            "en": "Base tariff",
-            "de": "Basisrate"
-          },
-          {
-            "nl": "Jongeren (<18j)",
-            "en": "Youth (<18yo)"
-          }
-        ],
         "properties": {
-          "nl": {
+          "category": {
             "type": "string",
-            "description": "Dutch tariff name",
-            "example": "Basistarief",
-            "pattern": "\\S",
-            "minLength": 1
+            "enum": [
+              "base",
+              "tariff"
+            ],
+            "example": "base",
+            "description": "Indicates whether this is the base price or a custom tariff.\n`base` for the base price, and `tariff` for custom/extra tariffs."
           },
-          "fr": {
-            "type": "string",
-            "description": "French tariff name",
-            "example": "Tarif de base",
-            "pattern": "\\S",
-            "minLength": 1
+          "price": {
+            "type": "number",
+            "format": "float",
+            "minimum": 0,
+            "example": 10.5,
+            "description": "The price of a ticket in this category."
           },
-          "de": {
+          "priceCurrency": {
             "type": "string",
-            "description": "German tariff name",
-            "example": "Base tariff",
-            "pattern": "\\S",
-            "minLength": 1
+            "enum": [
+              "EUR"
+            ],
+            "description": "The currency of the price. Currently only `EUR` is supported."
           },
-          "en": {
-            "type": "string",
-            "description": "English tariff name",
-            "example": "Basisrate",
-            "pattern": "\\S",
-            "minLength": 1
+          "name": {
+            "description": "Name of a tariff inside priceInfo. Required if category is set to `tariff`. For the `base` category UiTdatabank will set a default. Requires at least one value, for the language specified in the `mainLanguage` property.",
+            "type": "object",
+            "minProperties": 1
           }
+        },
+        "required": [
+          "category",
+          "price",
+          "priceCurrency"
+        ]
+      },
+      {
+        "if": {
+          "required": ["category"],
+          "properties": {
+            "category": {
+              "const": "tariff"
+            }
+          }
+        },
+        "then": {
+          "required": ["name"]
         }
       }
-    },
-    "required": [
-      "category",
-      "price",
-      "priceCurrency",
-      "name"
     ]
   },
   "examples": [
