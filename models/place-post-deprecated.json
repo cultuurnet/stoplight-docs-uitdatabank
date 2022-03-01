@@ -34,7 +34,10 @@
         "domain": {
           "type": "string",
           "example": "eventtype",
-          "description": "The domain of the term (type)."
+          "description": "The domain of the term (type).",
+          "enum": [
+            "eventtype"
+          ]
         }
       }
     },
