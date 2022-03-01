@@ -2097,8 +2097,7 @@
             "application/json": {
               "schema": {
                 "$ref": "../models/place.json"
-              },
-              "examples": {}
+              }
             }
           },
           "description": "The details of the place to update."
