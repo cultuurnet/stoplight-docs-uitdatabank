@@ -186,7 +186,7 @@
           "$ref": "./place-geo.json"
         },
         "organizer": {
-          "$ref": "./organizer-reference.json"
+          "$ref": "./place-organizer.json"
         },
         "startDate": {
           "$ref": "./place-startDate.json"

@@ -1,7 +1,7 @@
 {
+  "x-internal": true,
   "type": "object",
   "title": "organizer.reference",
-  "description": "A reference to an organizer referenced from a place or an event. It only contains and `@id` as described in [organizer.@id](./organizer-@id.json)",
   "examples": [
     {
       "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84"
@@ -14,6 +14,5 @@
   },
   "required": [
     "@id"
-  ],
-  "readOnly": true
+  ]
 }

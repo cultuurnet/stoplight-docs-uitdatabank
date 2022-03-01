@@ -304,6 +304,11 @@
             },
             {
               "type": "item",
+              "title": "organizer",
+              "uri": "models/place-organizer.json"
+            },
+            {
+              "type": "item",
               "title": "typicalAgeRange",
               "uri": "models/place-typicalAgeRange.json"
             },
