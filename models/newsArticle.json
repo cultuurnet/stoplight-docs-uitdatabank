@@ -5,8 +5,7 @@
   "description": "A news article that is linked to an event.",
   "properties": {
     "id": {
-      "type": "string",
-      "format": "uuid",
+      "$ref": "./common-string-uuid.json",
       "description": "The uuid of the news article."
     },
     "headline": {
