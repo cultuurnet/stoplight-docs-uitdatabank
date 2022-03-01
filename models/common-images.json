@@ -29,7 +29,7 @@
         "description": "Description of the image object, in the language used in the `language` property of the image object."
       },
       "copyrightHolder": {
-        "$ref": "./common-copyrightHolder",
+        "$ref": "./common-copyrightHolder.json",
         "description": "Name of the copyright holder of the image."
       },
       "language": {
