@@ -333,6 +333,9 @@
     "location": {
       "$ref": "./event-location.json"
     },
+    "organizer": {
+      "$ref": "./event-organizer.json"
+    },
     "sameAs": {
       "$ref": "./event-sameAs.json"
     },

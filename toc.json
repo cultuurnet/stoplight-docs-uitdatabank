@@ -122,6 +122,11 @@
             },
             {
               "type": "item",
+              "title": "organizer",
+              "uri": "models/event-organizer.json"
+            },
+            {
+              "type": "item",
               "title": "audience",
               "uri": "models/event-audience.json"
             },
