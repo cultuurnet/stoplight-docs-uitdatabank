@@ -3,6 +3,7 @@
   "title": "copyrightHolder",
   "type": "string",
   "example": "publiq",
-  "minLength": 3,
+  "minLength": 2,
+  "maxLength": 250,
   "pattern": "\\S"
 }

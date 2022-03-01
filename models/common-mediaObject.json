@@ -34,22 +34,12 @@
         "minLength": 1
       },
       "copyrightHolder": {
-        "type": "string",
-        "description": "Name of the copyright holder of the media object.",
-        "pattern": "\\S",
-        "minLength": 2,
-        "maxLength": 250
+        "$ref": "./common-copyrightHolder.json",
+        "description": "Name of the copyright holder of the media object."
       },
       "inLanguage": {
-        "type": "string",
-        "description": "Locale of text or speech used in the mediaObject or its description",
-        "enum": [
-          "nl",
-          "fr",
-          "de",
-          "en"
-        ],
-        "example": "nl"
+        "$ref": "./common-language.json",
+        "description": "Locale of text or speech used in the mediaObject or its description"
       }
     },
     "required": [
