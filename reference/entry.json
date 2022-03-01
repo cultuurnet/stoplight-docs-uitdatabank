@@ -1852,7 +1852,7 @@
     },
     "/places": {
       "post": {
-        "summary": "post-place",
+        "summary": "Create place",
         "tags": [
           "Places"
         ],
