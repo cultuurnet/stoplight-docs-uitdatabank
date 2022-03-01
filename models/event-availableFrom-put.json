@@ -1,4 +1,5 @@
 {
+  "x-internal": true,
   "title": "event.availableFrom.put",
   "type": "object",
   "properties": {

@@ -14,15 +14,8 @@
       "example": "API reward for publiq"
     },
     "inLanguage": {
-      "type": "string",
-      "description": "The language of the news article",
-      "enum": [
-        "nl",
-        "fr",
-        "en",
-        "de"
-      ],
-      "example": "en"
+      "$ref": "./common-language.json",
+      "description": "The language of the news article"
     },
     "text": {
       "type": "string",
