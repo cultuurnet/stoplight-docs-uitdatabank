@@ -7,11 +7,8 @@
       "$ref": "./place-mainLanguage.json"
     },
     "name": {
-      "type": "string",
-      "pattern": "\\S",
-      "minLength": 1,
-      "description": "The name of the place.",
-      "example": "M – Museum"
+      "$ref": "./common-name-localized.json",
+      "description": "The name of the place."
     },
     "type": {
       "type": "object",
@@ -42,44 +39,8 @@
       }
     },
     "address": {
-      "type": "object",
-      "required": [
-        "streetAddress",
-        "postalCode",
-        "addressLocality",
-        "addressCountry"
-      ],
-      "description": "The address of the place in the main language.",
-      "properties": {
-        "streetAddress": {
-          "type": "string",
-          "description": "The street in the main language.",
-          "example": "Leopold Vanderkelenstraat 28",
-          "pattern": "\\S",
-          "minLength": 1
-        },
-        "postalCode": {
-          "type": "string",
-          "description": "The postal code of municipality.",
-          "pattern": "\\S",
-          "minLength": 1,
-          "example": "3000"
-        },
-        "addressLocality": {
-          "type": "string",
-          "example": "Leuven",
-          "pattern": "\\S",
-          "minLength": 1,
-          "description": "Municipality in the main language."
-        },
-        "addressCountry": {
-          "type": "string",
-          "description": "The country code in ISO-3166 format.",
-          "example": "BE",
-          "pattern": "^[A-Z][A-Z]$",
-          "minLength": 1
-        }
-      }
+      "$ref": "./common-address-localized.json",
+      "description": "The address of the place in the main language."
     },
     "calendar": {
       "$ref": "./place-calendar-put.json"
