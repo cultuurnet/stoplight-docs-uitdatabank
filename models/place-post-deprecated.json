@@ -13,8 +13,7 @@
     "type": {
       "type": "object",
       "required": [
-        "id",
-        "label"
+        "id"
       ],
       "description": "The term (type) used to categorize the place. Terms are pre-defined and can be browsed in our [Terms](../docs/terms.md) guide.",
       "properties": {
@@ -22,19 +21,6 @@
           "type": "string",
           "example": "GnPFp9uvOUyqhOckIFMKmg",
           "description": "Unique id of the term (type)."
-        },
-        "label": {
-          "type": "string",
-          "example": "Museum of galerij",
-          "description": "Human-readable label of the term (type). Currently only available in Dutch."
-        },
-        "domain": {
-          "type": "string",
-          "example": "eventtype",
-          "description": "The domain of the term (type).",
-          "enum": [
-            "eventtype"
-          ]
         }
       }
     },
