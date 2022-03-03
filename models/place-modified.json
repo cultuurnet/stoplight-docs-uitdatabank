@@ -1,12 +1,6 @@
 {
-  "type": "string",
-  "format": "date-time",
-  "example": "2021-05-17T22:00:00+00:00",
-  "minLength": 1,
+  "$ref": "./common-string-datetime-readOnly.json",
+  "x-internal": false,
   "title": "place.modified",
-  "description": "Date formatted as an ISO-8601 datetime, added automatically by UiTdatabank based on the date & time the [place](./place.json) was last modified.\n\nFor example `2021-05-17T22:00:00+00:00`.",
-  "examples": [
-    "2021-05-17T22:00:00+00:00"
-  ],
-  "readOnly": true
+  "description": "Date formatted as an ISO-8601 datetime, added automatically by UiTdatabank based on the date & time the [place](./place.json) was last modified.\n\nFor example `2021-05-17T22:00:00+00:00`."
 }

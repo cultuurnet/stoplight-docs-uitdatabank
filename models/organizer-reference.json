@@ -1,11 +1,11 @@
 {
+  "x-internal": true,
   "type": "object",
   "title": "organizer.reference",
-  "format": "uri",
-  "example": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
-  "description": "A reference to an organizer referenced from a place or an event. It only contains and `@id` as described in [organizer.@id](./organizer-@id.json)",
   "examples": [
-    "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84"
+    {
+      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84"
+    }
   ],
   "properties": {
     "@id": {
@@ -14,6 +14,5 @@
   },
   "required": [
     "@id"
-  ],
-  "readOnly": true
+  ]
 }

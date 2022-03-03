@@ -1,13 +1,10 @@
 {
+  "x-internal": true,
   "title": "organizer-url-put",
   "type": "object",
   "properties": {
     "url": {
-      "type": "string",
-      "example": "https://www.publiq.be",
-      "description": "The unique url of the organizer.",
-      "pattern": "^http[s]?:\\/\\/",
-      "format": "uri"
+      "$ref": "./organizer-url.json"
     }
   },
   "required": [

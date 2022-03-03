@@ -2,7 +2,6 @@
   "title": "organizer.@id",
   "type": "string",
   "format": "uri",
-  "example": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
   "description": "A unique URI that acts as globally unique ID for the [organizer](./organizer.json). Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
   "examples": [
     "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84"

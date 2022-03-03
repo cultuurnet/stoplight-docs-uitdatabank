@@ -1,59 +1,6 @@
 {
+  "$ref": "./common-contactPoint-required.json",
+  "x-internal": false,
   "title": "place.contactPoint",
-  "type": "object",
-  "description": "Contact info of the [place](./place.json), containing one or more phone numbers, email addresses, and/or website URLs.",
-  "properties": {
-    "phone": {
-      "type": "array",
-      "description": "List of phone numbers for contact purposes (can be empty)",
-      "minItems": 0,
-      "items": {
-        "type": "string",
-        "description": "Phone number for contact purposes.",
-        "minLength": 1,
-        "pattern": "\\S"
-      }
-    },
-    "email": {
-      "type": "array",
-      "description": "List of email addresses for contact purposes (can be empty)",
-      "minItems": 0,
-      "items": {
-        "type": "string",
-        "description": "Email address for contact purposes.",
-        "format": "email",
-        "example": "info@example.com"
-      }
-    },
-    "url": {
-      "type": "array",
-      "description": "List of URLs for contact purposes (can be empty)",
-      "minItems": 0,
-      "items": {
-        "type": "string",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/",
-        "example": "https://www.example.com",
-        "description": "URL to a website for contact purposes."
-      }
-    }
-  },
-  "required": [
-    "phone",
-    "email",
-    "url"
-  ],
-  "examples": [
-    {
-      "phone": [
-        "+32/01234567890"
-      ],
-      "email": [
-        "info@example.com"
-      ],
-      "url": [
-        "https://www.example.com"
-      ]
-    }
-  ]
+  "description": "Contact info of the [place](./place.json), containing one or more phone numbers, email addresses, and/or website URLs."
 }

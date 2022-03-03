@@ -1,66 +1,6 @@
 {
+  "$ref": "./common-status.json",
+  "x-internal": false,
   "title": "event.status",
-  "type": "object",
-  "description": "Indicates if the [event](./event.json) is still happening as scheduled or not.",
-  "examples": [
-    {
-      "type": "Available"
-    },
-    {
-      "type": "TemporarilyUnavailable",
-      "reason": {
-        "nl": "Uitgesteld wegens covid-19",
-        "en": "Postponed due to covid-19"
-      }
-    },
-    {
-      "type": "Unavailable",
-      "reason": {
-        "nl": "Permanent gesloten"
-      }
-    }
-  ],
-  "properties": {
-    "type": {
-      "type": "string",
-      "minLength": 1,
-      "example": "Available",
-      "description": "One of three possible status types.\n\n- `available`: The event is happening as scheduled\n- `temporarilyUnavailable`: The event will be postponed\n- `unavailable`: The event is permanently cancelled",
-      "enum": [
-        "Available",
-        "TemporarilyUnavailable",
-        "Unavailable"
-      ]
-    },
-    "reason": {
-      "description": "The reason of the status on the event, as a localized human-readable text.",
-      "title": "",
-      "type": "object",
-      "properties": {
-        "nl": {
-          "type": "string",
-          "description": "Dutch reason",
-          "example": "Nederlandse reden"
-        },
-        "fr": {
-          "type": "string",
-          "description": "French reason",
-          "example": "Raison français"
-        },
-        "de": {
-          "type": "string",
-          "description": "German reason",
-          "example": "Deutscher Grund"
-        },
-        "en": {
-          "type": "string",
-          "description": "English reason",
-          "example": "English reason"
-        }
-      }
-    }
-  },
-  "required": [
-    "type"
-  ]
+  "description": "Indicates if the [event](./event.json) is still happening as scheduled or not."
 }

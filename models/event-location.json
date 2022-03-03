@@ -1,5 +1,6 @@
 {
-  "$ref": "./place.json",
+  "$ref": "./place-reference.json",
+  "x-internal": false,
   "title": "event.location",
-  "description": "The location the [event](./event.json) takes place at. Links to another entity, but also embeds it. Same model as a [place](./place.json)."
+  "description": "A reference to a [place](./place.json) linked to the event. When writing an event it should only contain an `@id` property. When reading an event it will contain all the properties from the [place](./place.json)."
 }

@@ -14,11 +14,8 @@
   "title": "event.production",
   "properties": {
     "id": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The unique id of the production, formatted as UUID. For example `10ce7cb1-7bc9-4ce4-a256-460f56c49965`.",
-      "example": "10ce7cb1-7bc9-4ce4-a256-460f56c49965",
-      "format": "uuid"
+      "$ref": "./common-string-uuid.json",
+      "description": "The unique id of the production, formatted as UUID. For example `10ce7cb1-7bc9-4ce4-a256-460f56c49965`."
     },
     "title": {
       "type": "string",
@@ -31,10 +28,7 @@
       "description": "A list of globally unique URIs of other events that are part of this production. See also [@id](./event-@id.json). Automatically added by UiTdatabank.",
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "example": "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367",
-        "format": "uri",
-        "pattern": "^http[s]?:\\/\\/"
+        "$ref": "./event-@id.json"
       }
     }
   },
@@ -42,5 +36,6 @@
     "id",
     "title",
     "otherEvents"
-  ]
+  ],
+  "readOnly": true
 }

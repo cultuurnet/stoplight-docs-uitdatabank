@@ -1,0 +1,9 @@
+{
+  "x-internal": true,
+  "title": "copyrightHolder",
+  "type": "string",
+  "example": "publiq",
+  "minLength": 2,
+  "maxLength": 250,
+  "pattern": "\\S"
+}

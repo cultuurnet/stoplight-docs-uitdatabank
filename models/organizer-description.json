@@ -1,44 +1,6 @@
 {
+  "$ref": "./common-description.json",
+  "x-internal": false,
   "title": "organizer.description",
-  "description": "A human-readable, localized description of the [organizer](./organizer.json).",
-  "type": "object",
-  "minProperties": 1,
-  "examples": [
-    {
-      "nl": "Nederlandse tekst",
-      "fr": "Texte français",
-      "de": "Deutscher Text",
-      "en": "English text"
-    }
-  ],
-  "properties": {
-    "nl": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "\\S",
-      "description": "Dutch description",
-      "example": "Nederlandse beschrijving"
-    },
-    "fr": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "\\S",
-      "description": "French description",
-      "example": "Description français"
-    },
-    "de": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "\\S",
-      "description": "German description",
-      "example": "Deutscher Beschreibung"
-    },
-    "en": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "\\S",
-      "description": "English description",
-      "example": "English description"
-    }
-  }
+  "description": "A human-readable, internationalized description of the [organizer](./organizer.json).\n\nRequires at least one value, for the language specified in the [mainLanguage](./organizer-mainLanguage.json) property."
 }
