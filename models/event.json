@@ -342,15 +342,6 @@
     "sameAs": {
       "$ref": "./event-sameAs.json"
     },
-    "created": {
-      "$ref": "./event-created.json"
-    },
-    "modified": {
-      "$ref": "./event-modified.json"
-    },
-    "creator": {
-      "$ref": "./event-creator.json"
-    },
     "workflowStatus": {
       "$ref": "./event-workflowStatus.json"
     },
@@ -398,6 +389,15 @@
     },
     "bookingAvailability": {
       "$ref": "./event-bookingAvailability.json"
+    },
+    "created": {
+      "$ref": "./event-created.json"
+    },
+    "modified": {
+      "$ref": "./event-modified.json"
+    },
+    "creator": {
+      "$ref": "./event-creator.json"
     }
   },
   "required": [
