@@ -1297,12 +1297,6 @@
                   }
                 }
               }
-            },
-            "application/xml": {
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
             }
           },
           "description": "The new video to add to an event."
@@ -2997,7 +2991,16 @@
                 ]
               },
               "examples": {
-                "Create organizer with all possible properties": {
+                "Organizer with required fields": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Nederlandse naam"
+                    },
+                    "url": "https://www.publiq.be"
+                  }
+                },
+                "Organizer with all possible fields": {
                   "value": {
                     "mainLanguage": "nl",
                     "name": {
@@ -3183,6 +3186,136 @@
           }
         },
         "description": "Returns an the organizer with the given `organizerId`",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "tags": [
+          "Organizers"
+        ]
+      },
+      "put": {
+        "summary": "Update organizer completely",
+        "operationId": "put-organizers-organizerId",
+        "responses": {
+          "200": {
+            "description": "The organizer has been updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The id of the updated organizer."
+                    },
+                    "organizerId": {
+                      "type": "string",
+                      "description": "The id of the updated organizer. (Deprecated in favor of `id`.)",
+                      "deprecated": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The url of the JSON-LD data of the updated organizer."
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "organizerId",
+                    "url"
+                  ]
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "6b476d79-c404-425f-8b1c-357e39a60410",
+                      "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
+                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data\n* https://api.publiq.be/probs/uitdatabank/duplicate-url",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        },
+        "description": "Updates the organizer with the given `organizerId` by completely overwriting it with the properties in the given JSON. \n\n<!-- theme: danger -->\n\n> Any existing (optional) properties on the organizer that are not included in the update request will be removed from the organizer.\n\n<!-- theme: info -->\n\n> Certain existing `labels` or `hiddenLabels` may be kept on the organizer even if they are not included in the update request. For example if they were added via the UiTdatabank UI, or if the client or user making the request does not have sufficient permission to remove specific labels.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/organizer.json"
+              },
+              "examples": {
+                "Organizer with required fields": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Nederlandse naam"
+                    },
+                    "url": "https://www.publiq.be"
+                  }
+                },
+                "Organizer with all possible fields": {
+                  "value": {
+                    "mainLanguage": "nl",
+                    "name": {
+                      "nl": "Nederlandse naam"
+                    },
+                    "url": "https://www.publiq.be",
+                    "address": {
+                      "nl": {
+                        "addressCountry": "BE",
+                        "addressLocality": "Brussel",
+                        "postalCode": "1000",
+                        "streetAddress": "Wetstraat 1"
+                      }
+                    },
+                    "contactPoint": {
+                      "phone": [
+                        "+32/1234567890"
+                      ],
+                      "email": [
+                        "info@publiq.be"
+                      ],
+                      "url": [
+                        "https://www.publiq.be"
+                      ]
+                    },
+                    "labels": [
+                      "label1",
+                      "label2"
+                    ],
+                    "hiddenLabels": [
+                      "labelA",
+                      "labelB"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
         "security": [
           {
             "USER_ACCESS_TOKEN": []

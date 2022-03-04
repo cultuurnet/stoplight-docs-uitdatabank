@@ -35,7 +35,8 @@
         "type": "string",
         "description": "The real value of the given contact information.",
         "example": "https://www.publiq.be",
-        "minLength": 1
+        "minLength": 1,
+        "pattern": "\\S"
       }
     },
     "required": [

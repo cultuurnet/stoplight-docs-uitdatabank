@@ -58,7 +58,8 @@
     "name": {
       "type": "string",
       "description": "The name of the organizer",
-      "minLength": 1
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "address": {
       "type": "object",
@@ -67,6 +68,7 @@
         "streetAddress": {
           "type": "string",
           "minLength": 1,
+          "pattern": "\\S",
           "description": "Street address in the main language, for example `Wetstraat 1` for `nl`.",
           "example": "Wetstraat 1"
         },
@@ -74,11 +76,13 @@
           "type": "string",
           "description": "Postal code of the municipality, for example `1000`. Formatted as a string because some international postal codes use letters.",
           "minLength": 1,
+          "pattern": "\\S",
           "example": "1000"
         },
         "addressLocality": {
           "type": "string",
           "minLength": 1,
+          "pattern": "\\S",
           "example": "Brussel",
           "description": "Municipality of the address in the main language, for example `Brussel` for `nl`."
         },
