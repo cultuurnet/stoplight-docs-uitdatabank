@@ -404,16 +404,7 @@
     "@id",
     "mainLanguage",
     "name",
-    "calendarType",
-    "status",
-    "availableFrom",
-    "availableTo",
     "terms",
-    "created",
-    "creator",
-    "workflowStatus",
-    "audience",
-    "languages",
-    "completedLanguages"
+    "calendarType"
   ]
 }
