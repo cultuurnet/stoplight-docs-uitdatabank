@@ -306,6 +306,9 @@
     "name": {
       "$ref": "./event-name.json"
     },
+    "terms": {
+      "$ref": "./event-terms.json"
+    },
     "calendarType": {
       "$ref": "./event-calendarType.json"
     },
@@ -338,9 +341,6 @@
     },
     "sameAs": {
       "$ref": "./event-sameAs.json"
-    },
-    "terms": {
-      "$ref": "./event-terms.json"
     },
     "created": {
       "$ref": "./event-created.json"
