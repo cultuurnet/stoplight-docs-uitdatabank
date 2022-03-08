@@ -296,115 +296,174 @@
     }
   ],
   "title": "event",
-  "properties": {
-    "@id": {
-      "$ref": "./event-@id.json"
+  "allOf": [
+    {
+      "properties": {
+        "@id": {
+          "$ref": "./event-@id.json"
+        },
+        "mainLanguage": {
+          "$ref": "./event-mainLanguage.json"
+        },
+        "name": {
+          "$ref": "./event-name.json"
+        },
+        "terms": {
+          "$ref": "./event-terms.json"
+        },
+        "calendarType": {
+          "$ref": "./event-calendarType.json"
+        },
+        "startDate": {
+          "$ref": "./event-startDate.json"
+        },
+        "endDate": {
+          "$ref": "./event-endDate.json"
+        },
+        "status": {
+          "$ref": "./event-status.json"
+        },
+        "subEvent": {
+          "$ref": "./event-subEvent.json"
+        },
+        "openingHours": {
+          "$ref": "./event-openingHours.json"
+        },
+        "availableFrom": {
+          "$ref": "./event-availableFrom.json"
+        },
+        "availableTo": {
+          "$ref": "./event-availableTo.json"
+        },
+        "location": {
+          "$ref": "./event-location.json"
+        },
+        "organizer": {
+          "$ref": "./event-organizer.json"
+        },
+        "sameAs": {
+          "$ref": "./event-sameAs.json"
+        },
+        "workflowStatus": {
+          "$ref": "./event-workflowStatus.json"
+        },
+        "audience": {
+          "$ref": "./event-audience.json"
+        },
+        "languages": {
+          "$ref": "./event-languages.json"
+        },
+        "completedLanguages": {
+          "$ref": "./event-completedLanguages.json"
+        },
+        "typicalAgeRange": {
+          "$ref": "./event-typicalAgeRange.json"
+        },
+        "description": {
+          "$ref": "./event-description.json"
+        },
+        "priceInfo": {
+          "$ref": "./event-priceInfo.json"
+        },
+        "contactPoint": {
+          "$ref": "./event-contactPoint.json"
+        },
+        "bookingInfo": {
+          "$ref": "./event-bookingInfo.json"
+        },
+        "mediaObject": {
+          "$ref": "./event-mediaObject.json"
+        },
+        "image": {
+          "$ref": "./event-image.json"
+        },
+        "videos": {
+          "$ref": "./event-videos.json"
+        },
+        "labels": {
+          "$ref": "./event-labels.json"
+        },
+        "hiddenLabels": {
+          "$ref": "./event-hiddenLabels.json"
+        },
+        "production": {
+          "$ref": "./event-production.json"
+        },
+        "bookingAvailability": {
+          "$ref": "./event-bookingAvailability.json"
+        },
+        "created": {
+          "$ref": "./event-created.json"
+        },
+        "modified": {
+          "$ref": "./event-modified.json"
+        },
+        "creator": {
+          "$ref": "./event-creator.json"
+        }
+      },
+      "required": [
+        "@id",
+        "mainLanguage",
+        "name",
+        "terms",
+        "calendarType"
+      ]
     },
-    "mainLanguage": {
-      "$ref": "./event-mainLanguage.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "periodic"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "startDate",
+          "endDate"
+        ]
+      }
     },
-    "name": {
-      "$ref": "./event-name.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "single"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "startDate",
+          "endDate"
+        ]
+      }
     },
-    "terms": {
-      "$ref": "./event-terms.json"
-    },
-    "calendarType": {
-      "$ref": "./event-calendarType.json"
-    },
-    "startDate": {
-      "$ref": "./event-startDate.json"
-    },
-    "endDate": {
-      "$ref": "./event-endDate.json"
-    },
-    "status": {
-      "$ref": "./event-status.json"
-    },
-    "subEvent": {
-      "$ref": "./event-subEvent.json"
-    },
-    "openingHours": {
-      "$ref": "./event-openingHours.json"
-    },
-    "availableFrom": {
-      "$ref": "./event-availableFrom.json"
-    },
-    "availableTo": {
-      "$ref": "./event-availableTo.json"
-    },
-    "location": {
-      "$ref": "./event-location.json"
-    },
-    "organizer": {
-      "$ref": "./event-organizer.json"
-    },
-    "sameAs": {
-      "$ref": "./event-sameAs.json"
-    },
-    "workflowStatus": {
-      "$ref": "./event-workflowStatus.json"
-    },
-    "audience": {
-      "$ref": "./event-audience.json"
-    },
-    "languages": {
-      "$ref": "./event-languages.json"
-    },
-    "completedLanguages": {
-      "$ref": "./event-completedLanguages.json"
-    },
-    "typicalAgeRange": {
-      "$ref": "./event-typicalAgeRange.json"
-    },
-    "description": {
-      "$ref": "./event-description.json"
-    },
-    "priceInfo": {
-      "$ref": "./event-priceInfo.json"
-    },
-    "contactPoint": {
-      "$ref": "./event-contactPoint.json"
-    },
-    "bookingInfo": {
-      "$ref": "./event-bookingInfo.json"
-    },
-    "mediaObject": {
-      "$ref": "./event-mediaObject.json"
-    },
-    "image": {
-      "$ref": "./event-image.json"
-    },
-    "videos": {
-      "$ref": "./event-videos.json"
-    },
-    "labels": {
-      "$ref": "./event-labels.json"
-    },
-    "hiddenLabels": {
-      "$ref": "./event-hiddenLabels.json"
-    },
-    "production": {
-      "$ref": "./event-production.json"
-    },
-    "bookingAvailability": {
-      "$ref": "./event-bookingAvailability.json"
-    },
-    "created": {
-      "$ref": "./event-created.json"
-    },
-    "modified": {
-      "$ref": "./event-modified.json"
-    },
-    "creator": {
-      "$ref": "./event-creator.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "multiple"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "startDate",
+          "endDate",
+          "subEvent"
+        ]
+      }
     }
-  },
-  "required": [
-    "@id",
-    "mainLanguage",
-    "name",
-    "terms",
-    "calendarType"
   ]
 }
