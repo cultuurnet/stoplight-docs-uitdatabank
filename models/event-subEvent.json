@@ -64,11 +64,8 @@
       }
     },
     "required": [
-      "id",
       "startDate",
-      "endDate",
-      "status",
-      "bookingAvailability"
+      "endDate"
     ]
   }
 }
