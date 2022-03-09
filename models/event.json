@@ -311,6 +311,9 @@
         "terms": {
           "$ref": "./event-terms.json"
         },
+        "location": {
+          "$ref": "./event-location.json"
+        },
         "calendarType": {
           "$ref": "./event-calendarType.json"
         },
@@ -334,9 +337,6 @@
         },
         "availableTo": {
           "$ref": "./event-availableTo.json"
-        },
-        "location": {
-          "$ref": "./event-location.json"
         },
         "organizer": {
           "$ref": "./event-organizer.json"
@@ -407,6 +407,7 @@
         "mainLanguage",
         "name",
         "terms",
+        "location",
         "calendarType"
       ]
     },
