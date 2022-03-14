@@ -11,8 +11,12 @@
   },
   "servers": [
     {
-      "url": "http://taxonomy.uitdatabank.be",
-      "description": "Production"
+      "url": "https://taxonomy-test.uitdatabank.be",
+      "description": "Testing"
+    },
+    {
+      "description": "Production",
+      "url": "https://taxonomy.uitdatabank.be"
     }
   ],
   "paths": {
