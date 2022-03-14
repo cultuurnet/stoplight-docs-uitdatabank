@@ -34,6 +34,11 @@
       "uri": "reference/entry.json"
     },
     {
+      "type": "item",
+      "title": "Taxonomy API",
+      "uri": "reference/taxonomy.json"
+    },
+    {
       "type": "divider",
       "title": "Model schemas"
     },

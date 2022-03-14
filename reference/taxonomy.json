@@ -1,0 +1,404 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Taxonomy API",
+    "version": "3.0",
+    "description": "UiTdatabank's taxonomy API is used to programmatically retrieve lists of taxonomy terms like event types, place types, themes and facilities.\n\n**Authentication**\n\nThe taxonomy API requires no authentication.\n\n**Environments**\n\nThe taxonomy API only has one environment, the production environment. Since the taxonomy terms are the same on all environments, you can also connect to this environment from your testing environment to retrieve taxonomy terms.",
+    "contact": {
+      "name": "publiq helpdesk",
+      "email": "vragen@publiq.be"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://taxonomy-test.uitdatabank.be",
+      "description": "Testing"
+    },
+    {
+      "description": "Production",
+      "url": "https://taxonomy.uitdatabank.be"
+    }
+  ],
+  "paths": {
+    "/terms": {
+      "get": {
+        "summary": "List taxonomy terms",
+        "tags": [
+          "Terms"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of taxonomy terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "terms": {
+                      "type": "array",
+                      "items": {
+                        "title": "Term",
+                        "type": "object",
+                        "description": "A taxonomy term like an event type, theme, or facility.",
+                        "examples": [
+                          {
+                            "id": "3.23.1.0.0",
+                            "domain": "facility",
+                            "name": {
+                              "nl": "Voorzieningen voor rolstoelgebruikers",
+                              "fr": "Facilités pour fauteuils roulants",
+                              "de": "EInrichtung für Rollstuhlfahrer",
+                              "en": "Wheelchair facilities"
+                            },
+                            "scope": [
+                              "places"
+                            ]
+                          },
+                          {
+                            "id": "0.50.4.0.0",
+                            "domain": "eventtype",
+                            "name": {
+                              "nl": "Concert",
+                              "fr": "Concert",
+                              "de": "Konzert",
+                              "en": "Concert"
+                            },
+                            "scope": [
+                              "events"
+                            ],
+                            "otherSuggestedTerms": [
+                              {
+                                "id": "1.8.3.5.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Amusementsmuziek",
+                                  "fr": "Cabaret",
+                                  "de": "Schlager",
+                                  "en": "Cabaret music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.3.3.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Dance muziek",
+                                  "fr": "Musique de danse",
+                                  "de": "Tanzmusik",
+                                  "en": "Dance music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.4.0.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Folk en wereldmuziek",
+                                  "fr": "Musique folklorique et mondiale",
+                                  "de": "Folk und World",
+                                  "en": "Folk and world music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.3.2.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Hip hop, rnb en rap",
+                                  "fr": "Hip hop, rnb et rap",
+                                  "de": "Hip-Hop, R und B und Rap",
+                                  "en": "Hip hop, rnb and rap"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.2.0.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Jazz en blues",
+                                  "fr": "Jazz et blues",
+                                  "de": "Jazz und Blues",
+                                  "en": "Jazz and blues"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.1.0.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Klassieke muziek",
+                                  "fr": "Musique classique",
+                                  "de": "Klassische Musik",
+                                  "en": "Classical music"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              },
+                              {
+                                "id": "1.8.3.1.0",
+                                "domain": "theme",
+                                "name": {
+                                  "nl": "Pop en rock",
+                                  "fr": "Pop et rock",
+                                  "de": "Pop und Rock",
+                                  "en": "Pop and rock"
+                                },
+                                "scope": [
+                                  "events"
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "3.23.1.0.0",
+                            "description": "Unique id of the taxonomy term."
+                          },
+                          "domain": {
+                            "type": "string",
+                            "enum": [
+                              "facility",
+                              "theme",
+                              "eventtype"
+                            ],
+                            "description": "Indicates to what domain the taxonomy term belongs.",
+                            "example": "facility"
+                          },
+                          "scope": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "minItems": 1,
+                            "description": "Resource(s) that the term is usable on in UiTdatabank.",
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "events",
+                                "places"
+                              ]
+                            }
+                          },
+                          "name": {
+                            "type": "object",
+                            "description": "Localized human-readable names of the term, as an object with languages as properties.",
+                            "required": [
+                              "nl"
+                            ],
+                            "properties": {
+                              "nl": {
+                                "type": "string",
+                                "example": "Voorzieningen voor rolstoelgebruikers"
+                              },
+                              "fr": {
+                                "type": "string",
+                                "example": "Facilités pour fauteuils roulants"
+                              },
+                              "de": {
+                                "type": "string",
+                                "example": "EInrichtung für Rollstuhlfahrer"
+                              },
+                              "en": {
+                                "type": "string",
+                                "example": "Wheelchair facilities"
+                              }
+                            }
+                          },
+                          "otherSuggestedTerms": {
+                            "type": "array",
+                            "description": "A list of terms from another domain that are suggested to be used in combination with this term. Usually used on `eventtype` terms to suggest related `theme` terms.",
+                            "items": {}
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "domain",
+                          "scope",
+                          "name"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "terms": [
+                        {
+                          "id": "3.23.1.0.0",
+                          "domain": "facility",
+                          "name": {
+                            "nl": "Voorzieningen voor rolstoelgebruikers",
+                            "fr": "Facilités pour fauteuils roulants",
+                            "de": "EInrichtung für Rollstuhlfahrer",
+                            "en": "Wheelchair facilities"
+                          },
+                          "scope": [
+                            "places"
+                          ]
+                        },
+                        {
+                          "id": "0.50.4.0.0",
+                          "domain": "eventtype",
+                          "name": {
+                            "nl": "Concert",
+                            "fr": "Concert",
+                            "de": "Konzert",
+                            "en": "Concert"
+                          },
+                          "scope": [
+                            "events"
+                          ],
+                          "otherSuggestedTerms": [
+                            {
+                              "id": "1.8.3.5.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Amusementsmuziek",
+                                "fr": "Cabaret",
+                                "de": "Schlager",
+                                "en": "Cabaret music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            },
+                            {
+                              "id": "1.8.3.3.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Dance muziek",
+                                "fr": "Musique de danse",
+                                "de": "Tanzmusik",
+                                "en": "Dance music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            },
+                            {
+                              "id": "1.8.4.0.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Folk en wereldmuziek",
+                                "fr": "Musique folklorique et mondiale",
+                                "de": "Folk und World",
+                                "en": "Folk and world music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            },
+                            {
+                              "id": "1.8.3.2.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Hip hop, rnb en rap",
+                                "fr": "Hip hop, rnb et rap",
+                                "de": "Hip-Hop, R und B und Rap",
+                                "en": "Hip hop, rnb and rap"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            },
+                            {
+                              "id": "1.8.2.0.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Jazz en blues",
+                                "fr": "Jazz et blues",
+                                "de": "Jazz und Blues",
+                                "en": "Jazz and blues"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            },
+                            {
+                              "id": "1.8.1.0.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Klassieke muziek",
+                                "fr": "Musique classique",
+                                "de": "Klassische Musik",
+                                "en": "Classical music"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            },
+                            {
+                              "id": "1.8.3.1.0",
+                              "domain": "theme",
+                              "name": {
+                                "nl": "Pop en rock",
+                                "fr": "Pop et rock",
+                                "de": "Pop und Rock",
+                                "en": "Pop and rock"
+                              },
+                              "scope": [
+                                "events"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The response will include a JSON body with more details in the form of a RFC7807 error model. Possible error types:\n\n* https://api.publiq.be/probs/uitdatabank/invalid-taxonomy-domain",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Invalid taxonomy term": {
+                    "value": {
+                      "type": "https://api.publiq.be/probs/uitdatabank/invalid-taxonomy-domain",
+                      "title": "Invalid taxonomy domain",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-terms",
+        "description": "Returns the taxonomy terms of all existing domains.\n\nThe possible domains are:\n\n| domain   | description  |\n|---|---|\n| `eventtype`  | **Event** or **place** type. Called `eventtype` for backward compatibility with existing systems. Each event or place in UiTdatabank is required to have exactly 1 `eventtype` term. |\n| `theme` | An optional subtype to classify an **event** in more detail. For example if the `eventtype` is `Concert`, the `theme` could be `Jazz en blues`. Any `theme` can be used with any `eventtype`, however `eventtype` terms will contain a list of `otherSuggestedTerms` that contain the `theme` terms that are best suited to be used in combination with them. **Places** cannot have a `theme`. |\n| `facility` | An accessibility feature that the **event** or **place** provides, for example wheelchair access. The list of facilities was made in consultation wit h [INTER](https://www.inter.vlaanderen/). Only users / clients with a specific permission can add `facility` terms to events or places. |",
+        "parameters": []
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "$ref": "https://raw.githubusercontent.com/cultuurnet/stoplight-docs-errors/main/models/Error.json"
+      }
+    },
+    "securitySchemes": {}
+  },
+  "tags": [
+    {
+      "name": "Terms"
+    }
+  ]
+}
