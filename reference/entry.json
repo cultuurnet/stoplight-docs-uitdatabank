@@ -20,6 +20,84 @@
     }
   ],
   "paths": {
+    "/events": {
+      "post": {
+        "summary": "Create event",
+        "tags": [
+          "Events"
+        ],
+        "responses": {
+          "201": {
+            "description": "The event was successfully created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "description": "The id of the created event."
+                    },
+                    "eventId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "description": "The id of the created event (deprecated and replaced with `id`)."
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "format": "uri",
+                      "description": "The url of the JSON-LD representation of the created event."
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "eventId",
+                    "url"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        },
+        "operationId": "post-events",
+        "description": "Creates a new event.\n\n<!-- theme: warning -->\n\n> This request is also supported with an older, deprecated schema that was used to create an event with just its required fields.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "../models/event.json"
+                  },
+                  {
+                    "$ref": "../models/event-post-deprecated.json"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/events/{eventId}": {
       "parameters": [
         {
