@@ -49,6 +49,12 @@
                       "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri",
                       "description": "The url of the JSON-LD representation of the created event."
+                    },
+                    "commandId": {
+                      "type": "string",
+                      "example": "92973349-967e-44d7-83a2-e1972d9e1622",
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
@@ -187,7 +193,8 @@
                     "commandId": {
                       "type": "string",
                       "example": "92973349-967e-44d7-83a2-e1972d9e1622",
-                      "format": "uuid"
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
@@ -2055,6 +2062,12 @@
                       "description": "The url of the JSON-LD representation of the created place.",
                       "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri"
+                    },
+                    "commandId": {
+                      "type": "string",
+                      "example": "92973349-967e-44d7-83a2-e1972d9e1622",
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
@@ -2214,7 +2227,8 @@
                       "type": "string",
                       "description": "The command id of the import job.",
                       "example": "92973349-967e-44d7-83a2-e1972d9e1622",
-                      "format": "uuid"
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
