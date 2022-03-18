@@ -49,6 +49,12 @@
                       "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri",
                       "description": "The url of the JSON-LD representation of the created event."
+                    },
+                    "commandId": {
+                      "type": "string",
+                      "example": "92973349-967e-44d7-83a2-e1972d9e1622",
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
@@ -153,6 +159,102 @@
             "CLIENT_ACCESS_TOKEN": []
           }
         ],
+        "tags": [
+          "Events"
+        ]
+      },
+      "put": {
+        "summary": "Update event",
+        "operationId": "put-event",
+        "responses": {
+          "200": {
+            "description": "The event was updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "format": "uuid"
+                    },
+                    "eventId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "deprecated": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://io.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "format": "uri"
+                    },
+                    "commandId": {
+                      "type": "string",
+                      "example": "92973349-967e-44d7-83a2-e1972d9e1622",
+                      "format": "uuid",
+                      "deprecated": true
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "eventId",
+                    "url"
+                  ]
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "eventId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "url": "https://io.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "commandId": "92973349-967e-44d7-83a2-e1972d9e1622"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Possible error types:\n\n* https://api.publiq.be/probs/body/missing\n* https://api.publiq.be/probs/body/invalid-syntax\n* https://api.publiq.be/probs/body/invalid-data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/EventNotFound"
+          }
+        },
+        "description": "Updates the event with the given `eventId` by completely overwriting it with the properties in the given JSON. \n\n<!-- theme: danger -->\n\n> Any existing and optional properties on the event that are not included in the update request will be removed from the event.\n\n<!-- theme: info -->\n\n> Certain existing `labels` or `hiddenLabels` may be kept on the event even if they are not included in the update request. For example if they were added via the UiTdatabank UI, or if the client or user making the request does not have sufficient permission to remove specific labels.",
+        "security": [
+          {
+            "USER_ACCESS_TOKEN": []
+          },
+          {
+            "CLIENT_ACCESS_TOKEN": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/event.json"
+              }
+            }
+          },
+          "description": "The details of the event to update."
+        },
         "tags": [
           "Events"
         ]
@@ -1960,6 +2062,12 @@
                       "description": "The url of the JSON-LD representation of the created place.",
                       "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri"
+                    },
+                    "commandId": {
+                      "type": "string",
+                      "example": "92973349-967e-44d7-83a2-e1972d9e1622",
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
@@ -2119,7 +2227,8 @@
                       "type": "string",
                       "description": "The command id of the import job.",
                       "example": "92973349-967e-44d7-83a2-e1972d9e1622",
-                      "format": "uuid"
+                      "format": "uuid",
+                      "deprecated": true
                     }
                   },
                   "required": [
