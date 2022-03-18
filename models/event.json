@@ -442,8 +442,7 @@
       },
       "then": {
         "required": [
-          "startDate",
-          "endDate"
+          "subEvent"
         ]
       }
     },
@@ -460,8 +459,6 @@
       },
       "then": {
         "required": [
-          "startDate",
-          "endDate",
           "subEvent"
         ]
       }

@@ -3768,7 +3768,7 @@
       ],
       "put": {
         "summary": "Add label",
-        "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label does not exist yet in UiTdatabank a new label will be created with default visibility and public permissions (usable by anyone), and linked to the organizer.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `^[^;]{2,255}$`",
+        "description": "Adds the given label to the organizer with the given `organizerId`.\n\nIf the specified label does not exist yet in UiTdatabank a new label will be created with default visibility and public permissions (usable by anyone), and linked to the organizer.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `^(?=.{2,255}$)(?=.*\\S.*\\S.*)[^;]*$`",
         "operationId": "put-organizer-label",
         "tags": [
           "Organizers"
@@ -3818,7 +3818,7 @@
       },
       "delete": {
         "summary": "Delete label",
-        "description": "Deletes the given label from the organizer with the given `organizerId`.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `^[^;]{2,255}$`",
+        "description": "Deletes the given label from the organizer with the given `organizerId`.\n\nThe label must be longer than 1 character and shorter than 255 characters. The label can also not contain the semicolon character. It should match the regex `^(?=.{2,255}$)(?=.*\\S.*\\S.*)[^;]*$`",
         "operationId": "delete-organizer-label",
         "tags": [
           "Organizers"
@@ -5029,7 +5029,7 @@
         "schema": {
           "type": "string",
           "example": "MyLabel",
-          "pattern": "^[^;]{2,255}$"
+          "pattern": "^(?=.{2,255}$)(?=.*\\S.*\\S.*)[^;]*$"
         },
         "description": "The label to add to an event, place or organizer. The label name should be longer than 1 character but shorter than 255 characters. The label name should not contain semicolons."
       },
