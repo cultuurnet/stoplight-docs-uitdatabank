@@ -1,5 +1,5 @@
 {
-  "$ref": "./common-contactPoint-required.json",
+  "$ref": "./common-contactPoint.json",
   "x-internal": false,
   "title": "event.contactPoint",
   "description": "Contact info of the [event](./event.json), containing one or more phone numbers, email addresses, and/or website URLs."
