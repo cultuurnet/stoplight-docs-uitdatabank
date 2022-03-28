@@ -3,7 +3,7 @@
   "type": "object",
   "examples": [
     {
-      "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
+      "@id": "https://io-test.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
         "nl": "Nederlandse naam",
@@ -45,7 +45,7 @@
       "availableFrom": "2021-05-17T22:00:00+00:00",
       "availableTo": "2021-05-17T22:00:00+00:00",
       "location": {
-        "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
+        "@id": "https://io-test.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
         "mainLanguage": "nl",
         "name": {
           "nl": "Nederlandse naam",
@@ -287,7 +287,7 @@
         "id": "10ce7cb1-7bc9-4ce4-a256-460f56c49965",
         "title": "Kommil Foo - OOGST",
         "otherEvents": [
-          "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367"
+          "https://io-test.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367"
         ]
       },
       "bookingAvailability": {

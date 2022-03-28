@@ -46,7 +46,7 @@
                     },
                     "url": {
                       "type": "string",
-                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri",
                       "description": "The url of the JSON-LD representation of the created event."
                     },
@@ -310,7 +310,7 @@
                     },
                     "url": {
                       "type": "string",
-                      "example": "https://io.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri"
                     },
                     "commandId": {
@@ -331,7 +331,7 @@
                     "value": {
                       "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "eventId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
-                      "url": "https://io.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "url": "https://io-test.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "commandId": "92973349-967e-44d7-83a2-e1972d9e1622"
                     }
                   }
@@ -1867,7 +1867,7 @@
                   "Example": {
                     "value": {
                       "eventId": "83a12220-9459-4fc8-b1ed-71b3d1668e65",
-                      "url": "https://io.uitdatabank.be/events/83a12220-9459-4fc8-b1ed-71b3d1668e65"
+                      "url": "https://io-test.uitdatabank.be/events/83a12220-9459-4fc8-b1ed-71b3d1668e65"
                     }
                   }
                 }
@@ -2306,7 +2306,7 @@
                     "url": {
                       "type": "string",
                       "description": "The url of the JSON-LD representation of the created place.",
-                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri"
                     },
                     "commandId": {
@@ -2327,7 +2327,7 @@
                     "value": {
                       "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "placeId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
-                      "url": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf"
+                      "url": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf"
                     }
                   }
                 }
@@ -2604,7 +2604,7 @@
                     },
                     "url": {
                       "type": "string",
-                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri",
                       "description": "The url of the JSON-LD representation of the updated place."
                     },
@@ -2627,7 +2627,7 @@
                     "value": {
                       "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "placeId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
-                      "url": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "url": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "commandId": "92973349-967e-44d7-83a2-e1972d9e1622"
                     }
                   }
@@ -3859,7 +3859,7 @@
                     "value": {
                       "id": "6b476d79-c404-425f-8b1c-357e39a60410",
                       "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
-                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                      "url": "https://io-test.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
                     }
                   }
                 }
@@ -4016,7 +4016,7 @@
                 "examples": {
                   "Example": {
                     "value": {
-                      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+                      "@id": "https://io-test.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
                       "mainLanguage": "nl",
                       "languages": [
                         "nl",
@@ -4149,7 +4149,7 @@
                     "value": {
                       "id": "6b476d79-c404-425f-8b1c-357e39a60410",
                       "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
-                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                      "url": "https://io-test.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
                     }
                   }
                 }

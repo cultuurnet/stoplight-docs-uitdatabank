@@ -7,6 +7,6 @@
   "description": "A unique URI that acts as globally unique ID for the [event](./event.json). Based on JSON-LD node identifiers. https://www.w3.org/TR/json-ld/#node-identifiers",
   "readOnly": true,
   "examples": [
-    "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3"
+    "https://io-test.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3"
   ]
 }
