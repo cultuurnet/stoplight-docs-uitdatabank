@@ -268,15 +268,15 @@
       "mediaObject": [
         {
           "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-          "@type": "schema:ImageObject",
-          "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-          "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+          "id": "85b04295-479c-40f5-b3dd-469dfb4387b3",
+          "contentUrl": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+          "thumbnailUrl": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
           "description": "string",
           "copyrightHolder": "string",
           "inLanguage": "nl"
         }
       ],
-      "image": "https://io-test.uitdatabank.be/images/example.png",
+      "image": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
       "labels": [
         "label1"
       ],
