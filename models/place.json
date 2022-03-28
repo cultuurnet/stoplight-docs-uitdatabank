@@ -131,13 +131,13 @@
       },
       "mediaObject": [
         {
-          "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
+          "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
           "@type": "schema:ImageObject",
-          "contentUrl": "https://io-test.uitdatabank.be/images/example.png",
-          "thumbnailUrl": "https://io-test.uitdatabank.be/images/example.png",
+          "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+          "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
           "description": "string",
           "copyrightHolder": "string",
-          "language": "nl"
+          "inLanguage": "nl"
         }
       ],
       "image": "https://io-test.uitdatabank.be/images/example.png",
