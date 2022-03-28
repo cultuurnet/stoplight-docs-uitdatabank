@@ -33,24 +33,21 @@
       },
       "description": {
         "type": "string",
-        "description": "Description of the media object, in the language used in the `language` property of the media object.",
+        "description": "Description of the media object, in the language used in the `language` property of the media object. If omitted, the description that was given when the media object was uploaded will be used.",
         "pattern": "\\S",
         "minLength": 1
       },
       "copyrightHolder": {
         "$ref": "./common-copyrightHolder.json",
-        "description": "Name of the copyright holder of the media object."
+        "description": "Name of the copyright holder of the media object. If omitted, the copyright holder that was given when the media object was uploaded will be used."
       },
       "inLanguage": {
         "$ref": "./common-language.json",
-        "description": "Locale of text or speech used in the mediaObject or its description"
+        "description": "Locale of text used in the mediaObject or its description. If omitted, the language that was given when the media object was uploaded will be used."
       }
     },
     "required": [
-      "@id",
-      "description",
-      "copyrightHolder",
-      "inLanguage"
+      "@id"
     ]
   },
   "examples": [
