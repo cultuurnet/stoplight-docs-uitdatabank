@@ -205,11 +205,8 @@
                     "mediaObject": [
                       {
                         "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
                         "language": "nl"
                       }
                     ],
@@ -483,11 +480,8 @@
                     "mediaObject": [
                       {
                         "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
                         "language": "nl"
                       }
                     ],
@@ -2493,11 +2487,8 @@
                     "mediaObject": [
                       {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
                         "language": "nl"
                       }
                     ],
@@ -2792,11 +2783,8 @@
                     "mediaObject": [
                       {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
                         "language": "nl"
                       }
                     ],
