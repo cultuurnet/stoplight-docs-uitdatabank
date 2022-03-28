@@ -204,7 +204,7 @@
                     },
                     "mediaObject": [
                       {
-                        "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
                         "description": "optional description",
                         "copyrightHolder": "optional copyright holder",
                         "language": "nl"
@@ -479,7 +479,7 @@
                     },
                     "mediaObject": [
                       {
-                        "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
                         "description": "optional description",
                         "copyrightHolder": "optional copyright holder",
                         "language": "nl"
