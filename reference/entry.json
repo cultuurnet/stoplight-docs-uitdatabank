@@ -3940,6 +3940,14 @@
                     "hiddenLabels": [
                       "labelA",
                       "labelB"
+                    ],
+                    "images": [
+                      {
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "description": "Optional description",
+                        "copyrightHolder": "Optional copyright holder",
+                        "inLanguage": "nl"
+                      }
                     ]
                   }
                 }
@@ -4216,6 +4224,14 @@
                     "hiddenLabels": [
                       "labelA",
                       "labelB"
+                    ],
+                    "images": [
+                      {
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "description": "Optional description",
+                        "copyrightHolder": "Optional copyright holder",
+                        "inLanguage": "nl"
+                      }
                     ]
                   }
                 }
