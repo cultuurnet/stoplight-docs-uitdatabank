@@ -137,7 +137,7 @@
           "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
           "description": "string",
           "copyrightHolder": "string",
-          "language": "nl"
+          "inLanguage": "nl"
         }
       ],
       "image": "https://io-test.uitdatabank.be/images/example.png",
