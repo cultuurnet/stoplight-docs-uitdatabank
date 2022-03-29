@@ -3946,7 +3946,7 @@
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
                         "description": "Optional description",
                         "copyrightHolder": "Optional copyright holder",
-                        "language": "nl"
+                        "inLanguage": "nl"
                       }
                     ]
                   }
@@ -4078,7 +4078,7 @@
                           "thumbnailUrl": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
                           "description": "Een voorbeeld beschrijving",
                           "copyrightHolder": "Jan",
-                          "language": "nl"
+                          "inLanguage": "nl"
                         }
                       ],
                       "mainImage": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
@@ -4230,7 +4230,7 @@
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
                         "description": "Optional description",
                         "copyrightHolder": "Optional copyright holder",
-                        "language": "nl"
+                        "inLanguage": "nl"
                       }
                     ]
                   }
