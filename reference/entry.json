@@ -204,9 +204,12 @@
                     },
                     "mediaObject": [
                       {
+                        "@id": "https://io-test.uitdatabank.be/images/74969172-E2A6-4626-BA63-4B6919242A24"
+                      },
+                      {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "description": "optional description",
-                        "copyrightHolder": "optional copyright holder",
+                        "description": "optional overwritten description",
+                        "copyrightHolder": "optional overwritten copyright holder",
                         "inLanguage": "nl"
                       }
                     ],
@@ -479,9 +482,12 @@
                     },
                     "mediaObject": [
                       {
+                        "@id": "https://io-test.uitdatabank.be/images/74969172-E2A6-4626-BA63-4B6919242A24"
+                      },
+                      {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "description": "optional description",
-                        "copyrightHolder": "optional copyright holder",
+                        "description": "optional overwritten description",
+                        "copyrightHolder": "optional overwritten copyright holder",
                         "inLanguage": "nl"
                       }
                     ],
@@ -2486,9 +2492,12 @@
                     },
                     "mediaObject": [
                       {
+                        "@id": "https://io-test.uitdatabank.be/images/74969172-E2A6-4626-BA63-4B6919242A24"
+                      },
+                      {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "description": "optional description",
-                        "copyrightHolder": "optional copyright holder",
+                        "description": "optional overwritten description",
+                        "copyrightHolder": "optional overwritten copyright holder",
                         "inLanguage": "nl"
                       }
                     ],
@@ -2782,9 +2791,12 @@
                     },
                     "mediaObject": [
                       {
+                        "@id": "https://io-test.uitdatabank.be/images/74969172-E2A6-4626-BA63-4B6919242A24"
+                      },
+                      {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "description": "optional description",
-                        "copyrightHolder": "optional copyright holder",
+                        "description": "optional overwritten description",
+                        "copyrightHolder": "optional overwritten copyright holder",
                         "inLanguage": "nl"
                       }
                     ],
@@ -3943,9 +3955,12 @@
                     ],
                     "images": [
                       {
+                        "@id": "https://io-test.uitdatabank.be/images/74969172-E2A6-4626-BA63-4B6919242A24"
+                      },
+                      {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "description": "Optional description",
-                        "copyrightHolder": "Optional copyright holder",
+                        "description": "optional overwritten description",
+                        "copyrightHolder": "optional overwritten copyright holder",
                         "inLanguage": "nl"
                       }
                     ]
@@ -4227,9 +4242,12 @@
                     ],
                     "images": [
                       {
+                        "@id": "https://io-test.uitdatabank.be/images/74969172-E2A6-4626-BA63-4B6919242A24"
+                      },
+                      {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "description": "Optional description",
-                        "copyrightHolder": "Optional copyright holder",
+                        "description": "optional overwritten description",
+                        "copyrightHolder": "optional overwritten copyright holder",
                         "inLanguage": "nl"
                       }
                     ]
