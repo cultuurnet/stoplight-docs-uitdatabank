@@ -46,7 +46,7 @@
                     },
                     "url": {
                       "type": "string",
-                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri",
                       "description": "The url of the JSON-LD representation of the created event."
                     },
@@ -204,16 +204,12 @@
                     },
                     "mediaObject": [
                       {
-                        "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
-                        "language": "nl"
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
+                        "inLanguage": "nl"
                       }
                     ],
-                    "image": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
                     "labels": [
                       "label1"
                     ],
@@ -314,7 +310,7 @@
                     },
                     "url": {
                       "type": "string",
-                      "example": "https://io.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri"
                     },
                     "commandId": {
@@ -335,7 +331,7 @@
                     "value": {
                       "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "eventId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
-                      "url": "https://io.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "url": "https://io-test.uitdatabank.be/events/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "commandId": "92973349-967e-44d7-83a2-e1972d9e1622"
                     }
                   }
@@ -483,16 +479,12 @@
                     },
                     "mediaObject": [
                       {
-                        "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
-                        "language": "nl"
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
+                        "inLanguage": "nl"
                       }
                     ],
-                    "image": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
                     "labels": [
                       "label1"
                     ],
@@ -1875,7 +1867,7 @@
                   "Example": {
                     "value": {
                       "eventId": "83a12220-9459-4fc8-b1ed-71b3d1668e65",
-                      "url": "https://io.uitdatabank.be/events/83a12220-9459-4fc8-b1ed-71b3d1668e65"
+                      "url": "https://io-test.uitdatabank.be/events/83a12220-9459-4fc8-b1ed-71b3d1668e65"
                     }
                   }
                 }
@@ -2314,7 +2306,7 @@
                     "url": {
                       "type": "string",
                       "description": "The url of the JSON-LD representation of the created place.",
-                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri"
                     },
                     "commandId": {
@@ -2335,7 +2327,7 @@
                     "value": {
                       "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "placeId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
-                      "url": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf"
+                      "url": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf"
                     }
                   }
                 }
@@ -2495,15 +2487,11 @@
                     "mediaObject": [
                       {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
-                        "language": "nl"
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
+                        "inLanguage": "nl"
                       }
                     ],
-                    "image": "https://io-test.uitdatabank.be/images/example.png",
                     "videos": [
                       {
                         "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
@@ -2616,7 +2604,7 @@
                     },
                     "url": {
                       "type": "string",
-                      "example": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "example": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "format": "uri",
                       "description": "The url of the JSON-LD representation of the updated place."
                     },
@@ -2639,7 +2627,7 @@
                     "value": {
                       "id": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "placeId": "c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
-                      "url": "https://io.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
+                      "url": "https://io-test.uitdatabank.be/places/c8e6ff82-8b30-4295-b937-ab2f4f6ab4bf",
                       "commandId": "92973349-967e-44d7-83a2-e1972d9e1622"
                     }
                   }
@@ -2795,15 +2783,11 @@
                     "mediaObject": [
                       {
                         "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-                        "@type": "schema:ImageObject",
-                        "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-                        "description": "string",
-                        "copyrightHolder": "string",
-                        "language": "nl"
+                        "description": "optional description",
+                        "copyrightHolder": "optional copyright holder",
+                        "inLanguage": "nl"
                       }
                     ],
-                    "image": "https://io-test.uitdatabank.be/images/example.png",
                     "videos": [
                       {
                         "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",
@@ -3875,7 +3859,7 @@
                     "value": {
                       "id": "6b476d79-c404-425f-8b1c-357e39a60410",
                       "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
-                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                      "url": "https://io-test.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
                     }
                   }
                 }
@@ -3956,6 +3940,14 @@
                     "hiddenLabels": [
                       "labelA",
                       "labelB"
+                    ],
+                    "images": [
+                      {
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "description": "Optional description",
+                        "copyrightHolder": "Optional copyright holder",
+                        "inLanguage": "nl"
+                      }
                     ]
                   }
                 }
@@ -4024,7 +4016,7 @@
                 "examples": {
                   "Example": {
                     "value": {
-                      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+                      "@id": "https://io-test.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
                       "mainLanguage": "nl",
                       "languages": [
                         "nl",
@@ -4080,16 +4072,16 @@
                       },
                       "images": [
                         {
-                          "@id": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+                          "@id": "https://io-test.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
                           "id": "546a90cd-a238-417b-aa98-1b6c50c1345c",
-                          "contentUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
-                          "thumbnailUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+                          "contentUrl": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+                          "thumbnailUrl": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
                           "description": "Een voorbeeld beschrijving",
                           "copyrightHolder": "Jan",
-                          "language": "nl"
+                          "inLanguage": "nl"
                         }
                       ],
-                      "mainImage": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+                      "mainImage": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
                       "labels": [
                         "label1",
                         "label2"
@@ -4157,7 +4149,7 @@
                     "value": {
                       "id": "6b476d79-c404-425f-8b1c-357e39a60410",
                       "organizerId": "6b476d79-c404-425f-8b1c-357e39a60410",
-                      "url": "https://io.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
+                      "url": "https://io-test.uitdatabank.be/organizers/6b476d79-c404-425f-8b1c-357e39a60410"
                     }
                   }
                 }
@@ -4232,6 +4224,14 @@
                     "hiddenLabels": [
                       "labelA",
                       "labelB"
+                    ],
+                    "images": [
+                      {
+                        "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+                        "description": "Optional description",
+                        "copyrightHolder": "Optional copyright holder",
+                        "inLanguage": "nl"
+                      }
                     ]
                   }
                 }

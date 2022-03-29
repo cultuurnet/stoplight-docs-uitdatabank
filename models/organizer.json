@@ -4,7 +4,7 @@
   "description": "An organization that is hosting an event or is the owner of a location.",
   "examples": [
     {
-      "@id": "https://io.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
+      "@id": "https://io-test.uitdatabank.be/organizers/5cf42d51-3a4f-46f0-a8af-1cf672be8c84",
       "mainLanguage": "nl",
       "languages": [
         "nl",
@@ -64,16 +64,16 @@
       },
       "images": [
         {
-          "@id": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+          "@id": "https://io-test.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
           "id": "546a90cd-a238-417b-aa98-1b6c50c1345c",
-          "contentUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
-          "thumbnailUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+          "contentUrl": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+          "thumbnailUrl": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
           "description": "Een voorbeeld beschrijving",
           "copyrightHolder": "Jan",
-          "language": "nl"
+          "inLanguage": "nl"
         }
       ],
-      "mainImage": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+      "mainImage": "https://images-test.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
       "labels": [
         "label1",
         "label2"

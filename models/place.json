@@ -4,7 +4,7 @@
   "description": "A cultural, leisure, or sports-related location that can be visited or where an event can be located at.",
   "examples": [
     {
-      "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
+      "@id": "https://io-test.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
         "nl": "Nederlandse naam",
@@ -132,15 +132,15 @@
       "mediaObject": [
         {
           "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
-          "@type": "schema:ImageObject",
-          "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
-          "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+          "id": "85b04295-479c-40f5-b3dd-469dfb4387b3",
+          "contentUrl": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+          "thumbnailUrl": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
           "description": "string",
           "copyrightHolder": "string",
           "inLanguage": "nl"
         }
       ],
-      "image": "https://io-test.uitdatabank.be/images/example.png",
+      "image": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
       "videos": [
         {
           "id": "b504cf44-9ab8-4641-9934-38d1cc67242c",

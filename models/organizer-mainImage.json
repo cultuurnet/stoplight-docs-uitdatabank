@@ -1,9 +1,6 @@
 {
-  "$ref": "./common-string-uri.json",
+  "$ref": "./common-mainImage.json",
   "x-internal": false,
   "title": "organizer.mainImage",
-  "description": "The main image of the organizer",
-  "examples": [
-    "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
-  ]
+  "description": "URL to the main image of the [organizer](./organizer.json). Will be automatically be set by UiTdatabank to the URL of the first image in `images`."
 }
