@@ -34,10 +34,7 @@
     }
   },
   "required": [
-    "@id",
-    "description",
-    "copyrightHolder",
-    "inLanguage"
+    "@id"
   ],
   "examples": [
     {
