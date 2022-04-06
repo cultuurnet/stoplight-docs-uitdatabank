@@ -1,8 +1,6 @@
 {
+  "$ref": "./common-creator.json",
+  "x-internal": false,
   "title": "place.creator",
-  "type": "string",
-  "description": "The unique identifier of the creator of the [place](./place.json). Usually a UUID, but can historally be an e-mail address.\n\nAdded automatically by UiTdatabank based on the authentication credentials used to create the place.",
-  "examples": [
-    "auth0|CE1423AC-655C-4025-86E5-247E06164C85"
-  ]
+  "description": "The unique identifier of the creator of the [place](./place.json). Usually a UUID, but can historally be an e-mail address.\n\nAdded automatically by UiTdatabank based on the authentication credentials used to create the place."
 }

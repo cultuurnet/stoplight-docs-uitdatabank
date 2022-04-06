@@ -1,41 +1,6 @@
 {
-  "title": "organizer-address-put",
-  "type": "object",
-  "properties": {
-    "streetAddress": {
-      "type": "string",
-      "example": "Kerkstraat 2",
-      "minLength": 1,
-      "pattern": "\\S",
-      "description": "The street name and house number of the address."
-    },
-    "postalCode": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "\\S",
-      "example": "3000",
-      "description": "The postal code of the address."
-    },
-    "addressLocality": {
-      "type": "string",
-      "example": "Leuven",
-      "minLength": 1,
-      "pattern": "\\S",
-      "description": "The locality (town or city) of the address."
-    },
-    "addressCountry": {
-      "type": "string",
-      "example": "BE",
-      "description": "The 2-character code of the country of the address.",
-      "pattern": "^[A-Z]{2}$",
-      "minLength": 1,
-      "maxLength": 2
-    }
-  },
-  "required": [
-    "streetAddress",
-    "postalCode",
-    "addressLocality",
-    "addressCountry"
-  ]
+  "$ref": "./common-address-localized.json",
+  "x-internal": true,
+  "title": "organizer.address.put",
+  "description": "New address of the organizer, localized in a single language."
 }

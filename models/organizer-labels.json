@@ -1,21 +1,6 @@
 {
-  "type": "array",
+  "$ref": "./common-labels.json",
+  "x-internal": false,
   "title": "organizer.labels",
-  "description": "One or more labels that categorize the [organizer](./organizer.json). Labels do not have a defined set of possible values or a hierarchy.\n\nLabels are allowed to be visible for end users on publication channels.\n\nLabels must match the `^[^;]{2,255}$` pattern.\n\nSee [hiddenLabels](./organizer-hiddenLabels.json) for labels that should not be visible on publication channels.",
-  "uniqueItems": true,
-  "minItems": 1,
-  "examples": [
-    [
-      "label1",
-      "label2",
-      "label3"
-    ]
-  ],
-  "items": {
-    "type": "string",
-    "pattern": "^[^;]{2,255}$",
-    "example": "label1",
-    "minLength": 2,
-    "maxLength": 255
-  }
+  "description": "One or more labels that categorize the [organizer](./organizer.json). Labels do not have a defined set of possible values or a hierarchy.\n\nLabels are allowed to be visible for end users on publication channels.\n\nLabels must match the `^(?=.{2,255}$)(?=.*\\S.*\\S.*)[^;]*$` pattern.\n\nSee [hiddenLabels](./organizer-hiddenLabels.json) for labels that should not be visible on publication channels."
 }

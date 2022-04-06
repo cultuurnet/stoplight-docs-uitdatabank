@@ -2,7 +2,6 @@
   "title": "place.facilities.put",
   "x-internal": true,
   "type": "array",
-  "description": "",
   "uniqueItems": true,
   "items": {
     "type": "string"

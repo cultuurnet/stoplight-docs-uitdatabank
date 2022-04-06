@@ -127,6 +127,11 @@
             },
             {
               "type": "item",
+              "title": "organizer",
+              "uri": "models/event-organizer.json"
+            },
+            {
+              "type": "item",
               "title": "audience",
               "uri": "models/event-audience.json"
             },
@@ -306,6 +311,11 @@
               "type": "item",
               "title": "status",
               "uri": "models/place-status.json"
+            },
+            {
+              "type": "item",
+              "title": "organizer",
+              "uri": "models/place-organizer.json"
             },
             {
               "type": "item",

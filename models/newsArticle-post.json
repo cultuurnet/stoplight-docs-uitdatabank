@@ -1,8 +1,6 @@
 {
-  "title": "newsArticle-post",
+  "title": "newsArticle.post",
   "type": "object",
-  "description": "",
-  "examples": [],
   "x-internal": true,
   "properties": {
     "headline": {
@@ -11,43 +9,27 @@
       "example": "API reward for publiq"
     },
     "inLanguage": {
-      "type": "string",
-      "description": "The language of the news article",
-      "enum": [
-        "nl",
-        "fr",
-        "en",
-        "de"
-      ],
-      "example": "en"
+      "$ref": "common-language.json",
+      "description": "The language of the news article"
     },
     "text": {
       "type": "string",
-      "example": "This year publiq won an API reward for it's innovative RESTful API",
       "description": "The text of the news article."
     },
     "about": {
       "type": "string",
-      "example": "17284745-7bcf-461a-aad0-d3ad54880e75",
       "description": "The id of the event linked to the news article."
     },
     "publisher": {
       "type": "string",
-      "example": "BILL",
       "description": "The publisher of the news article."
     },
     "publisherLogo": {
-      "type": "string",
-      "pattern": "^http[s]?:\\/\\/",
-      "format": "uri",
-      "description": "The url pointing to the logo of the publisher of the news article.",
-      "example": "https://www.bill.be/img/favicon.png"
+      "$ref": "./common-string-uri.json",
+      "description": "The url pointing to the logo of the publisher of the news article."
     },
     "url": {
-      "type": "string",
-      "pattern": "^http[s]?:\\/\\/",
-      "format": "uri",
-      "example": "https://www.bill.be/blog/publiq-award",
+      "$ref": "./common-string-uri.json",
       "description": "The link pointing to the published news article itself."
     }
   },
@@ -59,5 +41,16 @@
     "publisher",
     "publisherLogo",
     "url"
+  ],
+  "examples": [
+    {
+      "headline": "The headline of the news article.",
+      "inLanguage": "en",
+      "text": "This year publiq won an API reward for it's innovative RESTful API",
+      "about": "17284745-7bcf-461a-aad0-d3ad54880e75",
+      "publisher": "BILL",
+      "publisherLogo": "https://www.bill.be/img/favicon.png",
+      "url": "https://www.bill.be/blog/publiq-award"
+    }
   ]
 }

@@ -3,7 +3,7 @@
   "type": "object",
   "examples": [
     {
-      "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
+      "@id": "https://io-test.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
       "mainLanguage": "nl",
       "name": {
         "nl": "Nederlandse naam",
@@ -45,7 +45,7 @@
       "availableFrom": "2021-05-17T22:00:00+00:00",
       "availableTo": "2021-05-17T22:00:00+00:00",
       "location": {
-        "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
+        "@id": "https://io-test.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
         "mainLanguage": "nl",
         "name": {
           "nl": "Nederlandse naam",
@@ -111,9 +111,9 @@
         ],
         "terms": [
           {
-            "id": "0.50.4.0.0",
-            "label": "Concert",
-            "domain": "placetype"
+            "id": "OyaPaf64AEmEAYXHeLMAtA",
+            "label": "Zaal of expohal",
+            "domain": "eventtype"
           }
         ],
         "created": "2021-05-17T22:00:00+00:00",
@@ -172,13 +172,12 @@
         },
         "mediaObject": [
           {
-            "@id": "https://io.uitdatabank.be/place/85b04295-479c-40f5-b3dd-469dfb4387b3",
-            "@type": "schema:ImageObject",
-            "contentUrl": "https://io-test.uitdatabank.be/images/example.png",
-            "thumbnailUrl": "https://io-test.uitdatabank.be/images/example.png",
+            "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+            "contentUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+            "thumbnailUrl": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
             "description": "string",
             "copyrightHolder": "string",
-            "language": "nl"
+            "inLanguage": "nl"
           }
         ],
         "image": "https://io-test.uitdatabank.be/images/example.png",
@@ -236,8 +235,8 @@
           "name": {
             "nl": "Basistarief",
             "fr": "Tarif de base",
-            "de": "Base tariff",
-            "en": "Basisrate"
+            "en": "Base tariff",
+            "de": "Basisrate"
           }
         }
       ],
@@ -267,16 +266,16 @@
       },
       "mediaObject": [
         {
-          "@id": "https://io.uitdatabank.be/event/85b04295-479c-40f5-b3dd-469dfb4387b3",
-          "@type": "schema:ImageObject",
-          "contentUrl": "https://io-test.uitdatabank.be/images/example.png",
-          "thumbnailUrl": "https://io-test.uitdatabank.be/images/example.png",
+          "@id": "https://io-test.uitdatabank.be/images/85b04295-479c-40f5-b3dd-469dfb4387b3",
+          "id": "85b04295-479c-40f5-b3dd-469dfb4387b3",
+          "contentUrl": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
+          "thumbnailUrl": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
           "description": "string",
           "copyrightHolder": "string",
-          "language": "nl"
+          "inLanguage": "nl"
         }
       ],
-      "image": "https://io-test.uitdatabank.be/images/example.png",
+      "image": "https://images-test.uitdatabank.be/85b04295-479c-40f5-b3dd-469dfb4387b3.png",
       "labels": [
         "label1"
       ],
@@ -287,7 +286,7 @@
         "id": "10ce7cb1-7bc9-4ce4-a256-460f56c49965",
         "title": "Kommil Foo - OOGST",
         "otherEvents": [
-          "https://io.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367"
+          "https://io-test.uitdatabank.be/events/b815e4e6-d79f-40f2-b329-50e566e23367"
         ]
       },
       "bookingAvailability": {
@@ -296,121 +295,172 @@
     }
   ],
   "title": "event",
-  "properties": {
-    "@id": {
-      "$ref": "./event-@id.json"
+  "allOf": [
+    {
+      "properties": {
+        "@id": {
+          "$ref": "./event-@id.json"
+        },
+        "mainLanguage": {
+          "$ref": "./event-mainLanguage.json"
+        },
+        "name": {
+          "$ref": "./event-name.json"
+        },
+        "terms": {
+          "$ref": "./event-terms.json"
+        },
+        "location": {
+          "$ref": "./event-location.json"
+        },
+        "calendarType": {
+          "$ref": "./event-calendarType.json"
+        },
+        "startDate": {
+          "$ref": "./event-startDate.json"
+        },
+        "endDate": {
+          "$ref": "./event-endDate.json"
+        },
+        "status": {
+          "$ref": "./event-status.json"
+        },
+        "subEvent": {
+          "$ref": "./event-subEvent.json"
+        },
+        "openingHours": {
+          "$ref": "./event-openingHours.json"
+        },
+        "availableFrom": {
+          "$ref": "./event-availableFrom.json"
+        },
+        "availableTo": {
+          "$ref": "./event-availableTo.json"
+        },
+        "organizer": {
+          "$ref": "./event-organizer.json"
+        },
+        "sameAs": {
+          "$ref": "./event-sameAs.json"
+        },
+        "workflowStatus": {
+          "$ref": "./event-workflowStatus.json"
+        },
+        "audience": {
+          "$ref": "./event-audience.json"
+        },
+        "languages": {
+          "$ref": "./event-languages.json"
+        },
+        "completedLanguages": {
+          "$ref": "./event-completedLanguages.json"
+        },
+        "typicalAgeRange": {
+          "$ref": "./event-typicalAgeRange.json"
+        },
+        "description": {
+          "$ref": "./event-description.json"
+        },
+        "priceInfo": {
+          "$ref": "./event-priceInfo.json"
+        },
+        "contactPoint": {
+          "$ref": "./event-contactPoint.json"
+        },
+        "bookingInfo": {
+          "$ref": "./event-bookingInfo.json"
+        },
+        "mediaObject": {
+          "$ref": "./event-mediaObject.json"
+        },
+        "image": {
+          "$ref": "./event-image.json"
+        },
+        "videos": {
+          "$ref": "./event-videos.json"
+        },
+        "labels": {
+          "$ref": "./event-labels.json"
+        },
+        "hiddenLabels": {
+          "$ref": "./event-hiddenLabels.json"
+        },
+        "production": {
+          "$ref": "./event-production.json"
+        },
+        "bookingAvailability": {
+          "$ref": "./event-bookingAvailability.json"
+        },
+        "created": {
+          "$ref": "./event-created.json"
+        },
+        "modified": {
+          "$ref": "./event-modified.json"
+        },
+        "creator": {
+          "$ref": "./event-creator.json"
+        }
+      },
+      "required": [
+        "@id",
+        "mainLanguage",
+        "name",
+        "terms",
+        "location",
+        "calendarType"
+      ]
     },
-    "mainLanguage": {
-      "$ref": "./event-mainLanguage.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "periodic"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "startDate",
+          "endDate"
+        ]
+      }
     },
-    "name": {
-      "$ref": "./event-name.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "single"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subEvent"
+        ]
+      }
     },
-    "calendarType": {
-      "$ref": "./event-calendarType.json"
-    },
-    "startDate": {
-      "$ref": "./event-startDate.json"
-    },
-    "endDate": {
-      "$ref": "./event-endDate.json"
-    },
-    "status": {
-      "$ref": "./event-status.json"
-    },
-    "subEvent": {
-      "$ref": "./event-subEvent.json"
-    },
-    "openingHours": {
-      "$ref": "./event-openingHours.json"
-    },
-    "availableFrom": {
-      "$ref": "./event-availableFrom.json"
-    },
-    "availableTo": {
-      "$ref": "./event-availableTo.json"
-    },
-    "location": {
-      "$ref": "./event-location.json"
-    },
-    "sameAs": {
-      "$ref": "./event-sameAs.json"
-    },
-    "terms": {
-      "$ref": "./event-terms.json"
-    },
-    "created": {
-      "$ref": "./event-created.json"
-    },
-    "modified": {
-      "$ref": "./event-modified.json"
-    },
-    "creator": {
-      "$ref": "./event-creator.json"
-    },
-    "workflowStatus": {
-      "$ref": "./event-workflowStatus.json"
-    },
-    "audience": {
-      "$ref": "./event-audience.json"
-    },
-    "languages": {
-      "$ref": "./event-languages.json"
-    },
-    "completedLanguages": {
-      "$ref": "./event-completedLanguages.json"
-    },
-    "typicalAgeRange": {
-      "$ref": "./event-typicalAgeRange.json"
-    },
-    "description": {
-      "$ref": "./event-description.json"
-    },
-    "priceInfo": {
-      "$ref": "./event-priceInfo.json"
-    },
-    "contactPoint": {
-      "$ref": "./event-contactPoint.json"
-    },
-    "bookingInfo": {
-      "$ref": "./event-bookingInfo.json"
-    },
-    "mediaObject": {
-      "$ref": "./event-mediaObject.json"
-    },
-    "image": {
-      "$ref": "./event-image.json"
-    },
-    "videos": {
-      "$ref": "./event-videos.json"
-    },
-    "labels": {
-      "$ref": "./event-labels.json"
-    },
-    "hiddenLabels": {
-      "$ref": "./event-hiddenLabels.json"
-    },
-    "production": {
-      "$ref": "./event-production.json"
-    },
-    "bookingAvailability": {
-      "$ref": "./event-bookingAvailability.json"
+    {
+      "if": {
+        "required": [
+          "calendarType"
+        ],
+        "properties": {
+          "calendarType": {
+            "const": "multiple"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subEvent"
+        ]
+      }
     }
-  },
-  "required": [
-    "@id",
-    "mainLanguage",
-    "name",
-    "calendarType",
-    "status",
-    "availableFrom",
-    "availableTo",
-    "terms",
-    "created",
-    "creator",
-    "workflowStatus",
-    "audience",
-    "languages",
-    "completedLanguages"
   ]
 }
