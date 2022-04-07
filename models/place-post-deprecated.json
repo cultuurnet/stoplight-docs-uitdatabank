@@ -1,7 +1,6 @@
 {
   "title": "place-post-deprecated",
   "type": "object",
-  "x-internal": true,
   "properties": {
     "mainLanguage": {
       "$ref": "./place-mainLanguage.json"

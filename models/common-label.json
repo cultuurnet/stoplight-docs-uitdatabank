@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "label",
   "description": "String of 2-255 characters. Can contain any characters except for semicolons (`;`).",
   "type": "string",

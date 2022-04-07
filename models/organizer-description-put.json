@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "organizer.description.put",
   "type": "object",
   "properties": {

@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "type": "object",
   "title": "description",
   "description": "An internationalized description with one or more localized descriptions.",

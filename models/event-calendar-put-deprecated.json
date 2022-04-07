@@ -1,6 +1,5 @@
 {
   "title": "event.calendar.put (deprecated)",
-  "x-internal": true,
   "deprecated": true,
   "type": "object",
   "description": "",

@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "openingHours",
   "type": "array",
   "items": {

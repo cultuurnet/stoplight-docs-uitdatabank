@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "bookingInfo",
   "type": "object",
   "description": "Booking info to buy tickets or reserve a place, containing one or more phone numbers, email addresses, and/or website URLs.",

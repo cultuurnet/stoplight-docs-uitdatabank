@@ -1,7 +1,6 @@
 {
   "title": "event.post (deprecated)",
   "type": "object",
-  "x-internal": true,
   "properties": {
     "mainlanguage": {
       "$ref": "./event-mainLanguage.json"

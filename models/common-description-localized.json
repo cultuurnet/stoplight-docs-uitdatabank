@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "type": "string",
   "title": "description.localized",
   "description": "A human-readable description localized in a single value.",

@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "labels",
   "description": "A list of multiple labels.",
   "type": "array",

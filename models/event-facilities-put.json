@@ -1,6 +1,5 @@
 {
   "title": "event.facilities.put",
-  "x-internal": true,
   "type": "array",
   "uniqueItems": true,
   "items": {

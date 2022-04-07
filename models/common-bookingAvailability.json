@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "bookingAvailability",
   "type": "object",
   "description": "Indicates whether the there are tickets or reservations available. Currently only contains a `type` that can be `Available` or `Unavailable`, but can later be expanded with more detailed info.",
