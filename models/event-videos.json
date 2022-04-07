@@ -1,6 +1,5 @@
 {
   "$ref": "./common-videos.json",
-  "x-internal": false,
   "title": "event.videos",
   "description": "Describes an array of video objects that are linked to an event."
 }

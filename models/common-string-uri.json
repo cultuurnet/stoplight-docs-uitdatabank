@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "uri",
   "description": "A URI with the HTTP or HTTPS protocol.",
   "type": "string",

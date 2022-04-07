@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "uri.readOnly",
   "description": "A URI with the HTTP or HTTPS protocol. (Read-only)",
   "type": "string",

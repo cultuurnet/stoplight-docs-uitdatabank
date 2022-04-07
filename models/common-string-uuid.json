@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "uuid",
   "type": "string",
   "format": "uuid",

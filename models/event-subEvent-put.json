@@ -1,7 +1,6 @@
 {
   "title": "event.subEvent.put",
   "type": "array",
-  "x-internal": true,
   "description": "",
   "examples": [
     [

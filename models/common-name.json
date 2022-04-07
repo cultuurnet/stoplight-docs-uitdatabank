@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "type": "object",
   "title": "name",
   "description": "An internationalized name with one or more localized names.",

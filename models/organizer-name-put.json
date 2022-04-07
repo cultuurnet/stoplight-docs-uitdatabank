@@ -1,6 +1,5 @@
 {
   "title": "organizer.name.put",
-  "x-internal": true,
   "type": "object",
   "properties": {
     "name": {

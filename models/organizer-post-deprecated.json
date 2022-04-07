@@ -1,6 +1,5 @@
 {
   "title": "organizer.post.deprecated",
-  "x-internal": true,
   "type": "object",
   "deprecated": true,
   "properties": {

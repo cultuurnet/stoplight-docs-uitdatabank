@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "type": "array",
   "title": "priceInfo",
   "description": "A list of prices for tickets/reservations.",

@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "type": "object",
   "title": "organizer.reference",
   "examples": [

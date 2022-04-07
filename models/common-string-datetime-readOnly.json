@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "datetime.readOnly",
   "type": "string",
   "format": "date-time",

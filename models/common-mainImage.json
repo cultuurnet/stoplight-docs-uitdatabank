@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "$ref": "./common-string-uri-readOnly.json",
   "title": "common.mainImage",
   "examples": [

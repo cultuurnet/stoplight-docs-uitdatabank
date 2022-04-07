@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "creator",
   "type": "string",
   "description": "The unique identifier of the user or API client that created the document.",

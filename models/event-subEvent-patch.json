@@ -1,6 +1,5 @@
 {
   "title": "event.subEvent.patch",
-  "x-internal": true,
   "type": "array",
   "minItems": 1,
   "uniqueItems": true,

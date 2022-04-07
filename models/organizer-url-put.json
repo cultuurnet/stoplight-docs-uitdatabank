@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "organizer-url-put",
   "type": "object",
   "properties": {

@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "type": "object",
   "title": "address.localized",
   "description": "An address localized in a single language.",

@@ -1,5 +1,4 @@
 {
-  "x-internal": true,
   "title": "coordinates",
   "type": "object",
   "properties": {
