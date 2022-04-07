@@ -1,6 +1,5 @@
 {
   "$ref": "./common-priceInfo.json",
-  "x-internal": false,
   "title": "event.priceInfo",
   "description": "A list of tariffs available for tickets/reservations to attend the [event](./event.json)."
 }
